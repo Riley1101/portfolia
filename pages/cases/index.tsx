@@ -9,7 +9,7 @@ const Cases: NextPage = () => {
     return (
         <div className='font-nunito bg-primary-100 leading-relaxed p-2   box-border  min-h-screen '>
             <Navigation />
-            <CaseStudies />
+            <CaseStudies cases={[]} />
         </div>
     )
 }
