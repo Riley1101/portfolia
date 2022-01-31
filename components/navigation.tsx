@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 const Navigation: React.FunctionComponent = () => {
     const router = useRouter();
     return (
-        <header className='flexi-w w-full h-20 flex items-center lg:px-4'>
+        <header className='flexi-w w-full h-20 flex items-center px-4'>
             <nav className='w-full flex justify-between items-center'>
                 <ul className=' gap-12 hidden invisible lg:flex lg:visible '>
                     <li className={`text-pale-100 ${router.asPath === '/' && 'font-bold text-white'}`}>

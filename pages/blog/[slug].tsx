@@ -1,7 +1,6 @@
 // types
 import type { NextPage } from 'next'
 // components
-import Navigation from '@/components/navigation';
 import type { Blog } from '.contentlayer/types';
 import { allBlogs } from '.contentlayer/data'
 import { useMDXComponent } from 'next-contentlayer/hooks'
@@ -16,11 +15,9 @@ interface Props {
 const Blogs: NextPage<Props> = ({ post }) => {
   const MDXComponent = useMDXComponent(post.body.code);
   return (
-    <div className='page-container'>
-      <BlogPost post={post}>
-        <MDXComponent components={components} />
-      </BlogPost>
-    </div>
+    <BlogPost post={post}>
+      <MDXComponent components={components} />
+    </BlogPost>
   )
 }
 

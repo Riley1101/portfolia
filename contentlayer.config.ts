@@ -40,7 +40,6 @@ export default makeSource({
         rehypePlugins: [
             rehypeCodeTitles,
             rehypePrism,
-
         ]
     }
 })

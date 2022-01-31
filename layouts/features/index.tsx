@@ -11,7 +11,7 @@ const Features: React.FunctionComponent = () => {
                 <VCard />
                 <VCard />
                 <Link href='/blogs'>
-                    <a href="" className={`${styles.btn} w-max text-sm text-white my-4`}>Read More</a>
+                    <a href="" className={`${styles.btn} w-max text-sm text-white mt-4`}> More</a>
                 </Link>
             </div>
 

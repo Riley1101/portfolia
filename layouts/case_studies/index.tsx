@@ -11,14 +11,13 @@ interface Props {
 const CaseStudies: React.FunctionComponent<Props> = ({ cases }) => {
     return (
         <div className='flexi-w text-white p-4 pb-0 mx-auto cursor-pointer '>
-            <h2 className='block text-2xl font-normal lg:text-3xl lg:font-bold lg:mb-2'>Case Studies</h2 >
-            <div className='grid gap-5 py-4 lg:gap-6'>
+            <h2 className='block text-2xl font-normal lg:text-4xl lg:font-bold lg:mb-2 '>Blogs</h2 >
+            <div className='grid gap-5 py-4 lg:gap-6 lg:mt-4'>
                 {
                     cases && cases.map((item) => <HCard key={item._id} post={item} />)
                 }
                 <Link href='/studies'>
                     <a className={`${styles.btn} w-max btn text-sm`}>More</a>
-
                 </Link>
             </div>
 
