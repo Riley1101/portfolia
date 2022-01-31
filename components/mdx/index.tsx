@@ -1,0 +1,72 @@
+import Link from 'next/link';
+import Image from 'next/image';
+
+
+const CustomLink = (props) => {
+    const href = props.href;
+    const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+
+    if (isInternalLink) {
+        return (
+            <Link href={href}>
+                <a {...props}>{props.children}</a>
+            </Link>
+        );
+    }
+
+    return <a target="_blank" rel="noopener noreferrer" {...props} />;
+};
+
+function RoundedImage(props) {
+    return <Image alt={props.alt} className="rounded-lg" {...props} />;
+}
+
+
+function H2(props) {
+    return <h1 {...props} className='text-2xl text-white font-bold my-2 lg:text-2xl lg:my-4' />;
+}
+function H3(props) {
+    return <h3 {...props} className='text-lg text-white font-bold my-2 lg:my-4' />;
+}
+function H4(props) {
+    return <h3 {...props} className='text-md text-white font-bold my-2 lg:my-4' />;
+}
+
+let P = props => <p {...props} className='leading-loose text-read-100 text-[1.1rem] lg:text-[1.25rem]' />;
+
+function UL(props) {
+    return <ul {...props} className='text-white my-2 lg:my-4 list-disc px-4' />;
+}
+
+function OL(props) {
+    return <ol {...props} className='text-white my-2 lg:my-4 list-decimal px-4' />;
+}
+
+function HR(props) {
+    return <hr {...props} className='my-3 block invisible lg:my-3' />;
+}
+
+function Quote(props) {
+    return <blockquote  {...props} className='block pl-5 py-1 border-l-[4px] my-8 lg:py-2' />;
+}
+
+
+function Pre(props) {
+    return <pre {...props} className='pre-code' />;
+}
+const MDXComponents = {
+    Image: RoundedImage,
+    a: CustomLink,
+    h2: H2,
+    h3: H3,
+    h4: H4,
+    p: P,
+    ul: UL,
+    ol: OL,
+    hr: HR,
+    blockquote: Quote,
+    pre: Pre
+
+};
+
+export default MDXComponents;
