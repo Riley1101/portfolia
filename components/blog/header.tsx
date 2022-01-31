@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image'
 type Props = {};
 export default function Header({ }: Props) {
-    return <header className='flexi-w grid gap-4'>
+    return <header className='flexi-w grid gap-4 lg:p-4'>
         <h1 className='text-white text-4xl font-bold leading-normal lg:text-5xl lg:leading-normal '>Every thing I learnt from a trip to Norway </h1>
         <div className='flex text-white justify-between items-center'>
             <div className='flex gap-4'>

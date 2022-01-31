@@ -11,7 +11,7 @@ export default function BlogPost({ children, post }: Props) {
         <div className='page-container'>
             <Navigation />
             <Header></Header>
-            <article className='flexi-w  py-4'>
+            <article className='flexi-w p-4'>
                 {children}
             </article>
         </div>
