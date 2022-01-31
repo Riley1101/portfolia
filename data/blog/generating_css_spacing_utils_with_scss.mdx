@@ -1,0 +1,278 @@
+---
+title: 'Generating css spacing utilities with SCSS/SASS'
+publishedAt: '2020-07-15'
+summary: 'Greetings again , here I am  in the episode 2 of trying to generate utility classes with SCSS. ..'
+image: '/static/images/10-days-in-norway/banner.png'
+---
+
+### Hello World
+Greetings again , here I am  in the episode 2 of trying to generate utility classes with SCSS.
+
+Make sure you check  [the first one](https://dev.to/riley1101/on-my-way-to-generate-css-utils-with-sass--ghn) where Isetup my development environment and generate some color utils.
+
+Here we go !!
+
+
+### Spacing utilities !!
+
+If you are familiar with CSS utilities like tailwind , you would understand what I am trying to accomplish here !
+
+I want utility classes like p-4 , m-4 , mx , my in my generated CSS .
+
+So I added some base margin and padding values in my ***_variables.scss*** just so I can use them in my generating process.
+
+As I told in my previous [article](https://dev.to/riley1101/on-my-way-to-generate-css-utils-with-sass--ghn)  ***_variables.scss*** is the file where I store all my base variable values.
+
+```sass
+    $p-base:0.75rem;
+    $m-base:0.75rem;
+    $gap-base:0.75rem;
+```
+
+### _utilities.scss
+
+In my utils folder , I add a scss file to handle all my generating process and I named it _utilities.scss .
+
+```sass
+
+    // NOTE: _utilities.scss 
+
+    @use 'variables' as *;
+
+```
+#### @use 
+
+Hey also I forgot to mention that I am using [@use](https://sass-lang.com/documentation/at-rules/use) in SCSS because @import is [dying](https://stackoverflow.com/questions/62757419/whats-the-difference-between-import-and-use-scss-rules). 
+
+In short, @import allows all the stuffs in the file to be accessible throughout the whole project .
+
+> @import makes all variables, mixins, and functions globally accessible. This makes it very difficult for people (or tools) to tell where anything is defined.
+
+>Because everything’s global, libraries must prefix to all their members to avoid naming collision.
+
+All the naming collisions and as its hard to track where the specific rule comes from . Well I am gonna go with @use.
+
+```sass
+   // NOTE: _utilities.scss 
+
+   @use 'variables' as *;
+
+   $utilities:(
+     "padding":(
+         "prefix":"p",
+         "values" : (
+            "0":0,
+            "1":$p-base * 1,
+            "2":$p-base * 2,
+            "3":$p-base * 3,
+            "4":$p-base * 4,
+            "5":$p-base * 5,
+            "6":$p-base * 6,
+            "7":$p-base * 7,
+            "8":$p-base * 8,
+            "9":$p-base * 9,
+            "10":$p-base * 10,
+         ),
+     ),  
+  );
+
+```
+#### .p-4 for padding: px;
+
+We got an object to work with so I checkout the documentation of SCSS for the [flow controls](https://sass-lang.com/documentation/at-rules/control/each)
+
+Look what I found !!!
+
+```sass
+ $icons: ("eye": "\f112", "start": "\f12e", "stop": "\f12f");
+
+@each $name, $glyph in $icons {
+  .icon-#{$name}:before {
+    display: inline-block;
+    font-family: "Icon Font";
+    content: $glyph;
+  }
+}
+
+```
+
+In SASS, we can loop through the objects !
+I started programming with python so it's seem so familiar to me
+
+```python
+   data = {'name': "George Costanza", 'quote': "We are living  in the society",}
+   for property, value in data.items():
+       print(property,value);
+```
+Cool !!
+
+#### map-get
+
+```sass
+// NOTE: accessing values from object in SCSS
+
+$values:("value": 10px);
+@debug map-get($map: $values, $key: value)
+ 
+```
+
+```sass
+// NOTE: generating spacing utils
+
+@each $property,$map in $utilities {
+
+    $prefix : map-get($map: $map, $key: "prefix");
+    $values : map-get($map: $map, $key: "values");
+
+    @each $key,$value in $values {
+        .#{$prefix}-#{$key}{
+            #{$property}:$value;
+        }
+    }
+}
+
+```
+And its done !
+I checked the output CSS file and good thing I am seeing these
+
+```css
+/* 
+... more 
+ */
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: 0.75rem;
+}
+
+.p-2 {
+  padding: 1.5rem;
+}
+
+.p-3 {
+  padding: 2.25rem;
+}
+
+/* 
+... and more 
+ */
+
+```
+We got the padding and now  for the rest all we have to do is add more values to our utility object.
+
+```scss 
+
+$utilities:(
+    "padding":(
+        "prefix":"p",
+        "values" : (
+            //    values
+        ),
+    ),
+    "padding-right":(
+        "prefix":"pr",
+        "values" : (
+            //    values
+        ),
+    ),
+
+    // goes with top,right,bottom,left,
+
+    "padding-inline":(
+        "prefix":"px",
+        "values" : (
+            //    values
+        ),
+    ),
+    "padding-block":(
+        "prefix":"py",
+        "values" : (
+            // values
+        ),
+    ),
+    "margin":(
+        "prefix":"m",
+        "values" : (
+            // values
+        ),
+    ),
+
+    // goes with top,right,bottom,left,
+
+    "margin-inline":(
+        "prefix":"mx",
+        "values" : (
+            // values
+        ),
+    ),
+    "margin-block":(
+        "prefix":"my",
+        "values" : (
+            //    values
+        ),
+    ),
+);
+
+```
+I should have use better way for my values but that's fine I ended up with ctrl+c  and ctrl+v .
+
+###@forward to spit out all my _partials
+
+Currently now I have multiple partials in my utils folder ,good thing i can somehow gather them in a single file and spit out all these property together in a single index file .
+
+So in my index.scss file 
+
+```sass
+
+@forward '_colors';
+@forward '_variables';
+@forward '_utilities';
+
+```
+
+And that's how its done ! 
+
+No :( almost forgot I also created a partial file _base.scss just so I can remove all the browser's default styles .
+
+```scss
+body{
+    margin: 0;
+    font-family: 'Nunito';
+}
+
+ul,ol{
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+```
+
+Don't worry we gonna check out the _base.scss later in the series.
+This is what my final index.scss looks like 
+
+```sass
+@forward '_base';
+@forward '_variables';
+@forward '_colors';
+@forward '_utilities';
+
+```
+### Thank you ! 
+This is the episode of me trying to learn more about SCSS while generating CSS utils .
+
+### Feel free to suggest .
+
+
+
+
+
+
