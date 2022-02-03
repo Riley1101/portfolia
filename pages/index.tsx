@@ -17,7 +17,7 @@ const Home: NextPage<any> = ({ cases, posts }) => {
     <div className='page-container'>
       <Navigation />
       <Hero />
-      <CaseStudies cases={cases} />
+      <CaseStudies cases={cases} title={'Latests'} />
       <Features />
       <MailBox />
       <Footer />

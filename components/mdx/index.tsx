@@ -59,7 +59,6 @@ function Pre(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLPreElement>) {
 }
 const MDXComponents = {
     Image: RoundedImage,
-    a: CustomLink,
     h2: H2,
     h3: H3,
     h4: H4,
