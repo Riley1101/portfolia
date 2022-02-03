@@ -7,7 +7,7 @@
 }
 
 .page-container {
-    @apply leading-relaxed bg-primary-100 leading-relaxed p-2 grid gap-4 box-border lg:gap-4 font-nunito;
+    @apply leading-relaxed bg-primary-100  p-2 grid gap-4 box-border lg:gap-4 font-nunito;
 }
 
 

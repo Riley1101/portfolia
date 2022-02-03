@@ -20,7 +20,7 @@ const Hero: React.FunctionComponent = () => {
                 </div>
             </div>
             <Link href='/blogs'>
-                <a className={`${styles.btn} block w-full max-w-[50%]  lg:max-w-[10em] lg:mt-4 text-center`}>Learn with me</a>
+                <a className={`${styles.btn} font-bold block w-full max-w-[50%]  lg:max-w-[10em] lg:mt-4 text-center`}>Learn with me</a>
             </Link>
 
         </main>
