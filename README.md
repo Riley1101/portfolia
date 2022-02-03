@@ -4,7 +4,7 @@ This is me trying to learn more about NEXT while Learning MORE about NEXT
 
 ## Installation
 
-Live Preciew : [arkarkaungmyat](arkarkaungmyat.vercel.app/)
+Live Preciew : [arkarkaungmyat](https://arkarkaungmyat.vercel.app/)
 
 ```bash
 git clone https://github.com/Riley1101/portfolia
