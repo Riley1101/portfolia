@@ -13,6 +13,7 @@ import Footer from '@/components/footer';
 import { allBlogs } from '.contentlayer/data'
 
 const Home: NextPage<any> = ({ cases, posts }) => {
+  console.log(cases)
   return (
     <div className='page-container'>
       <Navigation />

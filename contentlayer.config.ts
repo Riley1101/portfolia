@@ -28,6 +28,7 @@ export const Blog = defineDocumentType(() => ({
         image: { type: 'string', required: true },
         summary: { type: 'string', required: true },
         publishedAt: { type: 'string', required: true },
+        pinned: { type: 'boolean', default: false }
     },
     computedFields
 }))
