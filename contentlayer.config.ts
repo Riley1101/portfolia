@@ -21,11 +21,24 @@ const computedFields: ComputedFields = {
 
 export const Blog = defineDocumentType(() => ({
     name: 'Blog',
-    filePathPattern: `blog/*.mdx`,
+    filePathPattern: `blog/en/*.mdx`,
     bodyType: 'mdx',
     fields: {
         title: { type: 'string', required: true },
         image: { type: 'string', required: true },
+        summary: { type: 'string', required: true },
+        publishedAt: { type: 'string', required: true },
+        pinned: { type: 'boolean', default: false }
+    },
+    computedFields
+}))
+
+export const Snippets = defineDocumentType(() => ({
+    name: 'Snippets',
+    filePathPattern: `snippets/en/*.mdx`,
+    bodyType: 'mdx',
+    fields: {
+        title: { type: 'string', required: true },
         summary: { type: 'string', required: true },
         publishedAt: { type: 'string', required: true },
     },
@@ -34,13 +47,12 @@ export const Blog = defineDocumentType(() => ({
 
 export default makeSource({
     contentDirPath: 'data',
-    documentTypes: [Blog],
+    documentTypes: [Blog, Snippets],
     mdx: {
         remarkPlugins: [remarkGfm],
         rehypePlugins: [
             rehypeCodeTitles,
             rehypePrism,
-
         ]
     }
 })

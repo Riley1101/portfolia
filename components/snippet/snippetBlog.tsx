@@ -3,17 +3,17 @@ import Header from './header';
 import Footer from '../footer';
 import MailBox from '@/layouts/mail';
 
-import type { Blog } from '.contentlayer/types'
+import type { Snippets } from '.contentlayer/types'
 type Props = {
     children: JSX.Element,
-    post: Blog
+    snippet: Snippets
 
 };
-export default function BlogPost({ children, post }: Props) {
+export default function SnippetPost({ children, snippet }: Props) {
     return (
         <div className='page-container'>
             <Navigation />
-            <Header post={post}></Header>
+            <Header snippet={snippet}></Header>
             <article className='flexi-w lg:p-4'>
                 {children}
             </article>

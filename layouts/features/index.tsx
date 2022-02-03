@@ -1,7 +1,6 @@
 import React from 'react'
 import VCard from '@/components/vcard';
-import styles from '@/styles/common/btn/index.module.css'
-import Link from 'next/link'
+
 const Features: React.FunctionComponent = () => {
     return (
         <div className='flexi-w'>
@@ -10,9 +9,7 @@ const Features: React.FunctionComponent = () => {
                 <VCard />
                 <VCard />
                 <VCard />
-                <Link href='/blogs'>
-                    <a href="" className={`${styles.btn} w-max text-sm text-white my-4`}>Read More</a>
-                </Link>
+
             </div>
 
         </div>

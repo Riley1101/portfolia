@@ -1,0 +1,76 @@
+---
+title: 'Generating css spacing utilities with SCSS/SASS'
+publishedAt: '2020-07-15'
+summary: 'Greetings again , here I am  in the episode 2 of trying to generate utility classes with SCSS. ..'
+image: '/blog/scss/banner.jpg'
+pinned : true
+---
+
+<Image
+  alt={`Norway`}
+  src={`/blog/scss/banner.jpg`}
+  width={1501 / 2}
+  height={712 / 2}
+  priority
+/>
+
+
+
+### Spacing utilities !!
+
+
+
+### _utilities.scss
+
+
+All the naming collisions and as its hard to track where the specific rule comes from . Well I am gonna go with @use.
+
+
+
+
+```sass
+$dimensions :(
+    "full":100%,
+    "screen":100vh,
+    "min":min-content,
+    "max":max-content,
+    // more and more
+    "2/5": 40%,
+    "3/5": 60%,
+    "4/5": 80%,
+    "1/6": 16.666667%,
+    "1/3": 33.333333%,
+    "1/2": 50%,
+    "auto":auto,
+);
+
+```
+
+
+In SASS, we can loop through the objects !
+I started programming with python so it's seem so familiar to me
+
+Cool !!
+
+
+
+
+And its done !
+I checked the output CSS file and good thing I am seeing these
+
+We got the padding and now  for the rest all we have to do is add more values to our utility object.
+
+
+I should have use better way for my values but that's fine I ended up with ctrl+c  and ctrl+v .
+
+###@forward to spit out all my _partials
+
+Currently now I have multiple partials in my utils folder ,good thing i can somehow gather them in a single file and spit out all these property together in a single index file .
+
+So in my index.scss file 
+
+
+
+
+
+

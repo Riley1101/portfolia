@@ -17,6 +17,9 @@
       "@/types/*": [
         "types/*"
       ],
+      "@/hooks/*": [
+        "hooks/*"
+      ],
     },
     "target": "es5",
     "lib": [

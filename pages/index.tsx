@@ -8,6 +8,8 @@ import Hero from '@/components/hero';
 import CaseStudies from '@/layouts/case_studies';
 import Features from '@/layouts/features';
 import MailBox from '@/layouts/mail';
+import Footer from '@/components/footer';
+
 import { allBlogs } from '.contentlayer/data'
 
 const Home: NextPage<any> = ({ cases, posts }) => {
@@ -15,10 +17,10 @@ const Home: NextPage<any> = ({ cases, posts }) => {
     <div className='page-container'>
       <Navigation />
       <Hero />
-      <CaseStudies cases={cases} />
-      {/* 
+      <CaseStudies cases={cases} title={'Latests'} />
       <Features />
-      <MailBox /> */}
+      <MailBox />
+      <Footer />
     </div>
   )
 }
@@ -26,7 +28,7 @@ const Home: NextPage<any> = ({ cases, posts }) => {
 export default Home;
 
 export async function getStaticProps() {
-  const cases = allBlogs.slice(0, 5);
-  const posts = allBlogs.slice(0, 5);
+  const cases = allBlogs.slice(0, 3);
+  const posts = allBlogs.slice(0, 3);
   return { props: { cases, posts } };
 }
