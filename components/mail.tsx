@@ -1,5 +1,7 @@
 import React from 'react'
 import { useForm } from '@formspree/react';
+import styles from '@/styles/common/btn/index.module.css'
+
 const Mail: React.FunctionComponent = () => {
     const [state, handleSubmit] = useForm('xpzbpjpj');
 
@@ -16,7 +18,7 @@ const Mail: React.FunctionComponent = () => {
             <div className='w-full p-2 bg-primary-100 rounded-md flex justify-between mt-2'>
                 <textarea required placeholder='Your message' name='message' className='bg-transparent outline-none px-1 border-none w-full' />
             </div>
-            <button type='submit' className={`p-1 text-md border-2 border-slate-800 rounded-md px-4 mt-1 ml-auto ${state.submitting && 'pointer-events-none'}`}> {state.submitting ? 'Submitting' : 'Submit'}</button>
+            <button className={`${styles.btn} text-right `}>Send</button>
 
         </form>
 

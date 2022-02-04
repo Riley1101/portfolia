@@ -9,14 +9,16 @@ import CaseStudies from '@/layouts/case_studies';
 import Features from '@/layouts/features';
 import MailBox from '@/layouts/mail';
 import Footer from '@/components/footer';
-
 import { allBlogs } from '.contentlayer/data'
 
 const Home: NextPage<any> = ({ cases, posts }) => {
   return (
-    <div className='page-container'>
+    <div className='page-container overflow-hidden'>
       <Navigation />
-      <Hero />
+      <div className='absolute w-[400px] top-[10%] right-20 aspect-square opacity-10 bg-no-repeat bg-hero-pattern ' ></div>
+      <div className='lg:absolute top-[10%] right-20'>
+        <Hero />
+      </div>
       <CaseStudies cases={cases} title={'Latests'} />
       <Features />
       <MailBox />
