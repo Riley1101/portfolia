@@ -5,8 +5,8 @@ type Props = {
     post: Blog
 };
 export default function Header({ post }: Props) {
-    return <header className='flexi-w grid gap-4 lg:p-4'>
-        <h1 className='text-white text-4xl font-bold leading-normal lg:text-5xl lg:leading-normal '>{post.title}</h1>
+    return <header className='flexi-w grid gap-4 p-4'>
+        <h1 className='text-display text-4xl font-bold leading-normal lg:text-5xl lg:leading-normal '>{post.title}</h1>
         <div className='flex text-white justify-between items-center'>
             <div className='flex gap-4'>
                 <div className='w-12 aspect-square relative'>

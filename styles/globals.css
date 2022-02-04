@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .flexi-w{
-    @apply w-full lg:w-2/5 lg:mx-auto;
+    @apply w-full lg:w-[40%] lg:mx-auto ;
 }
 
 .page-container {

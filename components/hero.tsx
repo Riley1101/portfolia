@@ -9,7 +9,7 @@ const Hero: React.FunctionComponent = () => {
                         <h1 className='text-3xl text-display font-bold lg:text-2xl'>Arkar Kaung Myat</h1>
                         <h2 className='text-white'>Inspiring frontend developer</h2>
                     </hgroup>
-                    <p className='my-2 text-pale-100 text-sm'>An inspiring frontend developer
+                    <p className='my-2 text-pale-100 text-sm italic'>An inspiring frontend developer
                         <br className='hidden lg:block' />
                         who loves frontend technlogies,coding and designs.</p>
                 </div>
