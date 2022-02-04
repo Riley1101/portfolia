@@ -18,7 +18,7 @@ const CaseStudies: React.FunctionComponent<Props> = ({ cases, title }) => {
                     cases && cases.map((item) => <HCard key={item._id} post={item} />)
                 }
                 <Link href='/blogs'>
-                    <a className={`${styles.btn} w-max btn text-sm`}>More</a>
+                    <a className={`${styles.btn}`}>More</a>
                 </Link>
             </div>
 

@@ -6,7 +6,7 @@ import Navigation from '@/components/navigation';
 
 const About: NextPage = () => {
     return (
-        <div className='font-nunito bg-primary-100 leading-relaxed p-2 grid gap-4 box-border lg:gap-6 min-h-screen'>
+        <div className='page-container'>
             <Navigation />
         </div>
     )

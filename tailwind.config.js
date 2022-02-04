@@ -19,7 +19,11 @@ module.exports = {
       },
       fontFamily: {
         "nunito": ["Nunito", "sans-serif"],
-      }
+        "display": ["Inconsolata", "monospace"]
+      },
+      backgroundImage: theme => ({
+        'hero-pattern': "url('/static/blob.svg')",
+      })
     },
   },
   plugins: [],

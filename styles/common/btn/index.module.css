@@ -1,3 +1,15 @@
 .btn{
-    @apply px-4 py-2  border-solid border-2 border-slate-800 bg-transparent rounded-md;
+    @apply  text-base block  transition-all relative font-bold rounded-md text-transparent bg-clip-text bg-gradient-to-t to-pink-600 from-red-400 ;
 }
+.btn::before{
+    content: '>  ';
+    @apply  pr-2 bg-transparent rounded-md text-transparent bg-clip-text bg-gradient-to-t  to-pink-600 from-red-400 ;
+}
+
+.btn:hover{
+    transform: translateX(-40px) scale(1.1);
+    @apply text-lg;
+}
+
+/* -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); */

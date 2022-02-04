@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +8,7 @@
 }
 
 .page-container {
-    @apply leading-relaxed bg-primary-100  p-2 grid gap-4 box-border lg:gap-4 font-nunito;
+    @apply leading-relaxed bg-primary-100  p-2 grid gap-4 box-border lg:gap-4 font-display;
 }
 
 
@@ -15,7 +16,32 @@
     @apply  text-sm whitespace-pre-wrap p-4 border border-gray-700 rounded-lg lg:p-4 lg:text-base overflow-x-auto; 
 }
 
+.text-display {
+    @apply  text-transparent  bg-clip-text bg-gradient-to-l  to-pink-600 from-red-400;
+}
 
+.bg-display{
+    @apply bg-gradient-to-r to-pink-500 from-red-500 ;
+}
+.threeD{
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+}
+.glass{
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    border-radius: 12px;
+    border: 1px solid rgba(184, 184, 184, 0.125);
+    transform-style: preserve-3d;
+    transition: all 250ms ease-in-out;
+    transform: scale3d(1, 1, 1) rotateX(-8deg) rotateY(-13deg) rotateZ(-6deg) translate3d(-6px, 0px, 0px) skew(0deg, 0deg);
+
+}
+
+.glass:hover{
+    background-color: rgba(17, 25, 40, 0.75);
+    transform: none;
+}
 /* code blocks styles themes */
 
 /**
