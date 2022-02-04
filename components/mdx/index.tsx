@@ -55,7 +55,7 @@ function Quote(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLElement> & B
 
 
 function Pre(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLPreElement>) {
-    return <pre {...props} className='pre-code' />;
+    return <pre {...props} className='pre-code ' />;
 }
 const MDXComponents = {
     Image: RoundedImage,

@@ -12,9 +12,8 @@ interface Props {
     snippets: Snippets[],
 }
 const SnippetsPage = ({ snippets }: Props) => {
-    console.log(snippets)
     return (
-        <div className='font-nunito bg-primary-100 leading-relaxed p-2 grid gap-4 box-border lg:gap-6 min-h-screen'>
+        <div className='page-container'>
             <Navigation />
             <div className='flexi-w min-h-[60vh] p-4 text-white'>
                 <h2 className='block text-2xl font-normal lg:text-4xl lg:font-bold lg:mb-2'>My Snippet Library</h2>

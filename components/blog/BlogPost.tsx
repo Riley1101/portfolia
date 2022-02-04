@@ -14,7 +14,7 @@ export default function BlogPost({ children, post }: Props) {
         <div className='page-container'>
             <Navigation />
             <Header post={post}></Header>
-            <article className='flexi-w lg:p-4'>
+            <article className='flexi-w p-4'>
                 {children}
             </article>
             <MailBox />
