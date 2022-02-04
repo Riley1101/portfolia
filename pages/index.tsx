@@ -15,7 +15,7 @@ const Home: NextPage<any> = ({ cases, posts }) => {
   return (
     <div className='page-container overflow-hidden'>
       <Navigation />
-      <div className='absolute w-[400px] top-[10%] right-20 aspect-square opacity-10 bg-no-repeat bg-hero-pattern ' ></div>
+      <div className='absolute w-[250px] right-0 lg:w-[400px]  top-[10%] lg:right-20 aspect-square opacity-10 bg-no-repeat bg-hero-pattern ' ></div>
       <div className='lg:absolute top-[10%] right-20'>
         <Hero />
       </div>
