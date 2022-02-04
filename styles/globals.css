@@ -17,7 +17,7 @@
 }
 
 .text-display {
-    @apply  text-transparent  bg-clip-text bg-gradient-to-l  to-pink-600 from-red-400;
+    @apply  text-transparent bg-clip-text bg-gradient-to-l  to-pink-600 from-red-400;
 }
 
 .bg-display{
