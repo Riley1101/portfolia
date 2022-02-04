@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^2.2.4",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^2.0.0-rc.2",
