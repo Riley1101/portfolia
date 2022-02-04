@@ -1,9 +1,8 @@
 import React from 'react'
-import styles from '@/styles/common/btn/index.module.css'
 import Link from 'next/link'
 const Hero: React.FunctionComponent = () => {
     return (
-        <main className='p-4 text-white glass rounded-lg lg:p-4 cursor-pointer threeD '>
+        <main className='p-4 m-2 lg:m-0 text-white  rounded-lg lg:p-4 cursor-pointer threeD glass'>
             <div className='flex justify-between flex-col gap-4 lg:flex-row '>
                 <div className=''>
                     <hgroup className='grid lg:gap-2'>
@@ -16,7 +15,7 @@ const Hero: React.FunctionComponent = () => {
                 </div>
             </div>
             <Link href='https://docs.google.com/document/d/12a-1QOBN-7CCbTBi4z3NuGXRg9Ihi0BXK3sDccfw4Vo/edit?usp=sharing'>
-                <a className={` text-sm`}>My Projects</a>
+                <a className={`text-sm`}>My Projects</a>
             </Link>
 
         </main>
