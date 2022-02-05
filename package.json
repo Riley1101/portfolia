@@ -17,6 +17,7 @@
     "babel-preset-es2015": "^6.24.1",
     "contentlayer": "^0.0.34",
     "next": "12.0.8",
+    "next-auth": "^4.2.1",
     "next-compose-plugins": "^2.2.1",
     "next-contentlayer": "^0.0.34",
     "next-mdx-enhanced": "^5.0.0",
