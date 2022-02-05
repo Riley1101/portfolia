@@ -12,4 +12,5 @@ cd /portfolia
 yarn 
 yarn dev
 ```
-### Documentations gonna publish soon you can now check out the code
+### Documentations gonna publish soon 
+
