@@ -14,7 +14,7 @@ export default function SnippetPost({ children, snippet }: Props) {
         <div className='page-container'>
             <Navigation />
             <Header snippet={snippet}></Header>
-            <article className='flexi-w lg:p-4'>
+            <article className='flexi-w p-4'>
                 {children}
             </article>
             <MailBox />
