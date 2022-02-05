@@ -2,18 +2,22 @@ import React from 'react';
 import Head from 'next/head';
 import type { Blog } from '.contentlayer/types'
 
-interface Props {
-    post: Blog
-}
-
 let metaDetaults = {
     title: 'Inspiring Frontend Developer',
     summary: 'Personal blog by @arkarkaungmyat',
     slug: 'arkarkaungmyat.vercel.app/',
     image: 'https://firebasestorage.googleapis.com/v0/b/arianagrande-a231e.appspot.com/o/Inspiring%20FRontend%20Developer(1).png?alt=media&token=d50ab1d9-782d-4457-8e63-2f952832f431',
+    type: 'Blog',
+    publishedAt: '2020-01-01T00:00:00.000Z',
+    pinned: false,
+    body: '',
+    readingTime: {},
+    wordCount: 0,
+    _id: '',
+    _row: 0,
 }
 
-export default function Meta({ post = metaDetaults }: Props) {
+export default function Meta({ post = metaDetaults }: any): JSX.Element {
     return <Head>
         <title>{post.title}</title>
         <meta name="title" content={post.title} />

@@ -12,7 +12,7 @@ const Drawer: React.FunctionComponent<Props> = ({ isOpen, setIsOpen }) => {
     if (!isOpen) return null
     return (<div className='w-full h-screen glass-bg fixed p-8 top-0 left-0 z-50 lg:z-0'>
         <div className='w-full flex text-white justify-end'>
-            <Image src={'/static/close.svg'} width='32' height={'32'} onClick={() => setIsOpen(!isOpen)}></Image>
+            <Image alt='Menu Icon' src={'/static/close.svg'} width='32' height={'32'} onClick={() => setIsOpen(!isOpen)}></Image>
         </div>
         <ul className='w-full h-[80%]  justify-center items-center gap-12 flex flex-col my-auto text-pale-100'>
             <li className={`text-2xl ${router.asPath === '/' && 'text-white'} `}>
