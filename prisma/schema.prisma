@@ -1,16 +1,26 @@
-generator client {
-  provider = "prisma-client-js"
-}
-
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  referentialIntegrity = "prisma"
 }
 
-model codes {
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+
+model Connections {
   id          Int     @id @default(autoincrement())
-  title       String  @db.VarChar(255)
-  description String? @db.VarChar(255)
-  snippets    String? @db.VarChar(255)
-  loves       String? @db.VarChar(255)
+  email       String  @db.VarChar(255)
+  text        String? @db.VarChar(255)
+  createdAt   DateTime @default(now())
+}
+
+model Remark {
+  id          Int     @id @default(autoincrement())
+  email       String  @db.VarChar(255)
+  text        String? @db.VarChar(255)
+  createdAt   DateTime @default(now())
 }
