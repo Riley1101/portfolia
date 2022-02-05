@@ -10,8 +10,14 @@ import Features from '@/layouts/features';
 import MailBox from '@/layouts/mail';
 import Footer from '@/components/footer';
 import { allBlogs } from '.contentlayer/data'
+import type { Blog } from '.contentlayer/types'
+interface Props {
+  blogs: Blog[],
+  features: Blog[]
+}
 
-const Home: NextPage<any> = ({ cases, posts }) => {
+const Home: NextPage<Props> = ({ blogs, features }) => {
+  console.log(features)
   return (
     <div className='page-container overflow-hidden'>
       <Navigation />
@@ -19,8 +25,8 @@ const Home: NextPage<any> = ({ cases, posts }) => {
       <div className=' top-[10%] right-20  md:w-[70%] md:mx-auto lg:absolute lg:w-[230px] xl:w-[350px]'>
         <Hero />
       </div>
-      <CaseStudies cases={cases} title={'Latests'} />
-      <Features />
+      <CaseStudies cases={blogs} title={'Latests'} />
+      <Features features={features} />
       <MailBox />
       <Footer />
     </div>
@@ -30,7 +36,7 @@ const Home: NextPage<any> = ({ cases, posts }) => {
 export default Home;
 
 export async function getStaticProps() {
-  const cases = allBlogs.slice(0, 3);
-  const posts = allBlogs.slice(0, 3);
-  return { props: { cases, posts } };
+  const blogs = allBlogs.filter(item => item.pinned === false).slice(0, 3);
+  const features = allBlogs.filter(item => item.pinned === true).slice(0, 3);
+  return { props: { blogs, features } };
 }
