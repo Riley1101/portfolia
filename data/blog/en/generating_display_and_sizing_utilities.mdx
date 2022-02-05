@@ -32,11 +32,12 @@ So I started typing in my [_utilities.scss](https://dev.to/riley1101/on-my-way-t
 
 Here's the code and it was pretty simple.
 
-```sass
-    @each $display in $displayProps {
+```scss
+@each $display in $displayProps {
     .#{$display}{
         display: #{$display};
     }
+  }
 ```
 
 I can just loop through the displayProps object and have to use some [interpolation](https://sass-lang.com/documentation/style-rules/declarations) .
