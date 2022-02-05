@@ -12,12 +12,12 @@ const CustomLink = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLAnchorE
     if (isInternalLink) {
         return (
             <Link href={href}>
-                <a {...props}>{props.children}</a>
+                <a {...props} className="text-display">{props.children}</a>
             </Link>
         );
     }
 
-    return <a target="_blank" rel="noopener noreferrer" {...props} />;
+    return <a target="_blank" rel="noopener noreferrer" className="text-display" {...props} />;
 };
 
 function RoundedImage(props: any) {
@@ -67,7 +67,8 @@ const MDXComponents = {
     ol: OL,
     hr: HR,
     blockquote: Quote,
-    pre: Pre
+    pre: Pre,
+    a: CustomLink
 
 };
 

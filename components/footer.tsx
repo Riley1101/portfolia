@@ -1,5 +1,4 @@
 import React from 'react';
-
 type Props = {};
 
 export default function Footer({ }: Props) {
@@ -13,10 +12,27 @@ export default function Footer({ }: Props) {
                 <li className='text-pale-100 cursor-pointer hover:text-white'>Snippets</li>
             </ul>
             <ul className='grid gap-2'>
-                <li className='text-pale-100 cursor-pointer hover:text-white'>Twitter</li>
-                <li className='text-pale-100 cursor-pointer hover:text-white'>Facebook</li>
-                <li className='text-pale-100 cursor-pointer hover:text-white'>Github</li>
-                <li className='text-pale-100 cursor-pointer hover:text-white'>Youtube</li>
+                <li className='text-pale-100 cursor-pointer hover:text-white'>
+                    <a href={'https://twitter.com/RileyEileen3'} target="_blank" rel="noreferrer">
+                        Twitter
+                    </a>
+                </li>
+                <li className='text-pale-100 cursor-pointer hover:text-white'>
+
+                    <a href={'https://www.facebook.com/riley.eileen.75/'} target="_blank" rel="noreferrer">
+                        Facebook
+                    </a>
+                </li>
+                <li className='text-pale-100 cursor-pointer hover:text-white'>
+                    <a href={'https://github.com/Riley1101/portfolia'} target="_blank" rel="noreferrer">
+                        Github
+                    </a>
+                </li>
+                <li className='text-pale-100 cursor-pointer hover:text-white'>
+                    <a href={'https://www.youtube.com/channel/UC_RfEQCC3gL2AzsFFAABikg'} target="_blank" rel="noreferrer">
+                        Facebook
+                    </a>
+                </li>
             </ul>
         </div>
 
