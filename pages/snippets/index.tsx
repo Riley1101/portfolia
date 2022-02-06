@@ -17,7 +17,7 @@ const SnippetsPage = ({ snippets }: Props) => {
             <Navigation />
             <div className='flexi-w min-h-[60vh] p-4 text-white'>
                 <h2 className='block text-2xl font-normal lg:text-4xl lg:font-bold lg:mb-2'>My Snippet Library</h2>
-                <p className='my-3 text-pale-100'>I do copy and paste.</p>
+                <p className='my-3 text-pale-100'>Heres are some of my easy setup personal snippet collection.</p>
                 <div className='w-full grid gap-2 mt-8 grid-cols-1 lg:grid-cols-2 '>
                     {
                         snippets && snippets.map((item) => <Snippet key={item._id} snippet={item} />)
