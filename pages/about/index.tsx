@@ -19,7 +19,7 @@ const About: NextPage = () => {
                 </div>
                 <p className='my-4 text-pale-100 '>
 
-                    Hey I’m Arkar Kaung Myat  an inspiring frontend developer.<br />
+                    Hey I’m Arkar Kaung Myat,  an inspiring frontend developer.<br />
                     Right now I’m working at <a target={"_blank"} rel="noopener noreferrer" href="https://www.facebook.com/pohmalcourierservice" className='text-display'>Pohmal Currier Service</a>  especially as an Android/iOS developer. <br />
                 </p>
                 <p className='mt-4 text-pale-100 '> I am available if you are looking for something special in </p>
