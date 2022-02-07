@@ -10,7 +10,7 @@ const Story: NextPage = () => {
         if (typeof window === "undefined") {
             return;
         }
-        const scroll = import("locomotive-scroll").then((LocomotiveScroll) => {
+        const scroll = require("locomotive-scroll").then((LocomotiveScroll: any) => {
             new LocomotiveScroll.default({
                 el: containerRef.current,
                 smooth: true
@@ -33,7 +33,7 @@ const Story: NextPage = () => {
 
                 </div>
                 <div className='grid gap-8 w-full lg:grid lg:grid-cols-2'>
-                    <p data-scroll data-scroll-speed="-1" className='text-lg leading-loose'>A simple scroll library used by developers at Locomotive. Built as a layer on top of ayamflow's virtual-scroll, it provides smooth scrolling with support for parallax effects, toggling classes, and triggering event listeners when elements are in the viewport. </p>
+                    <p data-scroll data-scroll-speed="-1" className='text-lg leading-loose'>A simple scroll library used by developers at Locomotive. Built as a layer on top of ayamflows virtual-scroll, it provides smooth scrolling with support for parallax effects, toggling classes, and triggering event listeners when elements are in the viewport. </p>
                     <ul data-scroll data-scroll-speed="1" className='block '>
                         <li className='mb-4 border-b pb-3 cursor-pointer hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l  hover:to-pink-600 hover:from-red-400  transition-transform lg:hover:translate-x-4 lg:hover:scale-[1.05]'><span>1.</span> Projects</li>
                         <li className='mb-4 border-b pb-3 cursor-pointer  hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-l  hover:to-pink-600 hover:from-red-400  transition-transform lg:hover:translate-x-4 lg:hover:scale-[1.05]'><span>2.</span> Experiences</li>
