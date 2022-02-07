@@ -2,7 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+html.has-scroll-smooth {
+    overflow: hidden;
+  }
 .flexi-w{
     @apply w-full md:w-[80%] md:mx-auto lg:w-[40%] lg:mx-auto ;
 }
