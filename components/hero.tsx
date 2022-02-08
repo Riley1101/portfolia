@@ -13,11 +13,9 @@ const Hero: React.FunctionComponent = () => {
                         who loves frontend technlogies,coding and designs.</p>
                 </div>
             </div>
-            <Link href='https://docs.google.com/document/d/12a-1QOBN-7CCbTBi4z3NuGXRg9Ihi0BXK3sDccfw4Vo/edit?usp=sharing'>
-                <a className={`text-sm`}>My Projects</a>
-            </Link>
+            <a target={'_blank'} href='https://read.cv/arkarkaungmyat' className={`text-md text-display`} rel="noreferrer">My Projects</a>
 
-        </main>
+        </main >
 
     )
 }
