@@ -18,7 +18,6 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ blogs, features }) => {
-  console.log(features)
   return (
     <div className='page-container overflow-hidden'>
       <Meta />

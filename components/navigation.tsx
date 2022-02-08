@@ -32,12 +32,12 @@ const Navigation: React.FunctionComponent = () => {
                             About
                         </Link>
                     </li>
-                    <li className={` ${router.asPath === '/story' && 'font-bold text-white'}`}>
+                    {/* <li className={` ${router.asPath === '/story' && 'font-bold text-white'}`}>
 
                         <Link href='/story'>
                             Story
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
                 <button className='relative w-10 aspect-square lg:hidden lg:invisible' onClick={() => setIsOpen(!isOpen)}>
                     <Image src='/static/menu.svg' alt='menu for navigation' layout='fill' />

@@ -6,7 +6,6 @@ import { useSession, signIn, signOut } from "next-auth/react"
 const Mail: React.FunctionComponent = () => {
     const [state, handleSubmit] = useForm('xpzbpjpj');
     const { data: session } = useSession()
-    console.log(session)
     return (
         <form className='text-white bg-slate-900 rounded-md p-4 grid gap-2' onSubmit={handleSubmit}>
             <h3 className='text-xl'>Here You can directly talk to me </h3>

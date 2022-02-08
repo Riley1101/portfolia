@@ -32,7 +32,7 @@ const About: NextPage = () => {
                 <p className='mt-2 text-pale-100 '>Also interested in teaching and sharing everything I have learnt. <br />
                     You can find me on <a className='text-display' target={"_blank"} rel="noopener noreferrer" href="https://www.youtube.com/channel/UC_RfEQCC3gL2AzsFFAABikg">Youtube</a>
                 </p>
-                <a target={"_blank"} rel="noopener noreferrer" href='https://docs.google.com/document/d/12a-1QOBN-7CCbTBi4z3NuGXRg9Ihi0BXK3sDccfw4Vo/edit?usp=sharing' className={`${styles.btn} my-8`}>Resume</a>
+                <a target={"_blank"} rel="noopener noreferrer" href='https://read.cv/arkarkaungmyat' className={`${styles.btn} my-8 `}>Resume</a>
 
             </div>
             <MailBox />
