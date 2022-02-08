@@ -28,7 +28,6 @@ const About: NextPage = () => {
                     <li>Frontend Technologies (CSS, React, NextJS, Design Systems, Component Kits, UI Animation and delightful interfaces)</li>
                     <li>Android / iOS (React Native) </li>
                 </ul>
-                <p className='mt-4 text-pale-100 '>Experiences of hobby dev of 1yrs + professional of 3yrs = <i className='text-display font-bold'>4yrs</i></p>
                 <p className='mt-2 text-pale-100 '>Also interested in teaching and sharing everything I have learnt. <br />
                     You can find me on <a className='text-display' target={"_blank"} rel="noopener noreferrer" href="https://www.youtube.com/channel/UC_RfEQCC3gL2AzsFFAABikg">Youtube</a>
                 </p>
