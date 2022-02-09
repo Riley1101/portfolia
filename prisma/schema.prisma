@@ -20,6 +20,7 @@ model Connections {
 
 model Remark {
   id          Int     @id @default(autoincrement())
+  name        String  @db.VarChar(255)
   email       String  @db.VarChar(255)
   text        String? @db.VarChar(255)
   createdAt   DateTime @default(now())
