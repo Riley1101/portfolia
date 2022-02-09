@@ -7,7 +7,6 @@ import Navigation from '@/components/navigation';
 import MailBox from '@/layouts/mail';
 import Footer from '@/components/footer';
 import styles from '@/styles/common/btn/index.module.css';
-import Link from 'next/link'
 const About: NextPage = () => {
     return (
         <div className='page-container'>
