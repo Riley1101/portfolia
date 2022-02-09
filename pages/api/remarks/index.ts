@@ -11,27 +11,24 @@ type Data = {
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
     const { method } = req;
     const session = await getSession({ req })
-    // if (!session) {
-    //     return res.status(401).json({ data: 'Unauthorized' })
-    // }
     switch (method) {
-        case "GET":
-            try {
-                const connections: Remark[] = await prisma.remark.findMany({
-                    orderBy: [
-                        {
-                            createdAt: 'desc',
-                        },
-                    ],
+        // case "GET":
+        //     try {
+        //         const connections: Remark[] = await prisma.remark.findMany({
+        //             orderBy: [
+        //                 {
+        //                     createdAt: 'desc',
+        //                 },
+        //             ],
 
-                })
-                res.status(200).json({
-                    data: connections,
-                });
-            } catch (e) {
-                console.error("Request error", e);
-            }
-            break;
+        //         })
+        //         res.status(200).json({
+        //             data: connections,
+        //         });
+        //     } catch (e) {
+        //         console.error("Request error", e);
+        //     }
+        //     break;
         case "POST":
             try {
                 const user = await prisma.remark.create({
