@@ -7,13 +7,20 @@ import { allSnippets } from '.contentlayer/data'
 import type { Snippets } from '.contentlayer/types';
 // components
 import Navigation from '@/components/navigation';
-
+import Meta from '@/components/blog/meta';
 interface Props {
     snippets: Snippets[],
 }
 const SnippetsPage = ({ snippets }: Props) => {
+    let meta = {
+        title: 'Inspiring / Snippets',
+        summary: 'Personal blog by @arkarkaungmyat',
+        slug: 'arkarkaungmyat.vercel.app/',
+        image: 'https://firebasestorage.googleapis.com/v0/b/arianagrande-a231e.appspot.com/o/Inspiring%20FRontend%20Developer(1).png?alt=media&token=d50ab1d9-782d-4457-8e63-2f952832f431',
+    }
     return (
         <div className='page-container'>
+            <Meta post={meta} />
             <Navigation />
             <div className='flexi-w min-h-[60vh] p-4 text-white'>
                 <h2 className='block text-2xl font-normal lg:text-4xl lg:font-bold lg:mb-2'>My Snippet Library</h2>

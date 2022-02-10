@@ -7,9 +7,17 @@ import Navigation from '@/components/navigation';
 import MailBox from '@/layouts/mail';
 import Footer from '@/components/footer';
 import styles from '@/styles/common/btn/index.module.css';
+import Meta from '@/components/blog/meta';
 const About: NextPage = () => {
+    let meta = {
+        title: 'Arkar Kaung Myat / About',
+        summary: 'Personal blog by @arkarkaungmyat',
+        slug: 'arkarkaungmyat.vercel.app/',
+        image: 'https://firebasestorage.googleapis.com/v0/b/arianagrande-a231e.appspot.com/o/Inspiring%20FRontend%20Developer(1).png?alt=media&token=d50ab1d9-782d-4457-8e63-2f952832f431',
+    }
     return (
         <div className='page-container'>
+            <Meta post={meta}></Meta>
             <Navigation />
             <div className='flexi-w min-h-screen p-4'>
                 <h2 className='text-white block text-2xl font-normal lg:text-4xl lg:font-bold '>About</h2 >
