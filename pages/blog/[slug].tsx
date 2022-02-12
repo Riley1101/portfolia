@@ -13,7 +13,9 @@ interface Props {
 
 
 const Blogs: NextPage<Props> = ({ post }) => {
-  const MDXComponent = useMDXComponent(post.body.code);
+  const MDXComponent = useMDXComponent(post?.body?.code);
+
+  if (!post) return <div>Translating .....</div>
   return (
     <BlogPost post={post}>
       <MDXComponent components={components} />
@@ -23,15 +25,20 @@ const Blogs: NextPage<Props> = ({ post }) => {
 
 export default Blogs;
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
+  let paths: any = []
+  allBlogs.map((p: { slug: any; }) => {
+    for (let i = 0; i < locales.length; i++) {
+      paths.push({ params: { slug: p.slug, locale: locales[i] } })
+    }
+  })
   return {
-    paths: allBlogs.map((p: { slug: any; }) => ({ params: { slug: p.slug } })),
-    fallback: false
+    paths: paths,
+    fallback: true
   };
 }
 
-export async function getStaticProps({ params }: any) {
-  const post = allBlogs.find((post: { slug: any; }) => post.slug === params.slug);
-
+export async function getStaticProps({ params, locale }: any) {
+  const post = allBlogs.find((post: { slug: any; }) => (post.slug === params.slug && post.locale === locale));
   return { props: { post } };
 }
