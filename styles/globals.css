@@ -37,6 +37,7 @@ html.has-scroll-smooth {
     transform-style: preserve-3d;
     transition: all 250ms ease-in-out;
     transform: scale3d(1, 1, 1) rotateX(-8deg) rotateY(-13deg) rotateZ(-6deg) translate3d(-6px, 0px, 0px) skew(0deg, 0deg);
+    @apply transform-none lg:-rotate-6;
 }
 .glass-alt{
     backdrop-filter: blur(25px) saturate(200%);
@@ -59,8 +60,8 @@ html.has-scroll-smooth {
 .glass:hover{
     background-color: rgba(17, 25, 40, 0.75);
     transform: none;
+
 }
-/* code blocks styles themes */
 
 /**
  * Dracula Theme originally by Zeno Rocha [@zenorocha]

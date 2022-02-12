@@ -29,8 +29,8 @@ const Home: NextPage<Props> = ({ blogs, features }) => {
     <div className='page-container overflow-hidden'>
       <Meta post={meta} />
       <Navigation />
-      <div className='absolute w-[250px] right-0 lg:w-[400px]  top-[10%] lg:right-20 aspect-square opacity-10 bg-no-repeat bg-hero-pattern ' ></div>
-      <div className=' top-[10%] right-20  md:w-[70%] md:mx-auto lg:absolute lg:w-[230px] xl:w-[350px]'>
+      <div className='absolute w-[250px] right-0 lg:w-[400px]  top-[10%] lg:right-20 aspect-square opacity-10 bg-no-repeat bg-hero-pattern' ></div>
+      <div className=' top-[10%] right-20  md:w-[80%] md:mx-auto lg:absolute lg:w-[230px] xl:w-[350px]'>
         <Hero />
       </div>
       <CaseStudies cases={blogs} title={'Latests'} />

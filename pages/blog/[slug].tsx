@@ -6,7 +6,6 @@ import { allBlogs } from '.contentlayer/data'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import components from '@/components/mdx'
 import BlogPost from '@/components/blog/BlogPost'
-
 interface Props {
   post: Blog
 }
@@ -25,7 +24,7 @@ const Blogs: NextPage<Props> = ({ post }) => {
 
 export default Blogs;
 
-export async function getStaticPaths({ locales }) {
+export async function getStaticPaths({ locales }: { locales: string[] }) {
   let paths: any = []
   allBlogs.map((p: { slug: any; }) => {
     for (let i = 0; i < locales.length; i++) {
@@ -38,7 +37,7 @@ export async function getStaticPaths({ locales }) {
   };
 }
 
-export async function getStaticProps({ params, locale }: any) {
-  const post = allBlogs.find((post: { slug: any; }) => (post.slug === params.slug && post.locale === locale));
+export async function getStaticProps({ params, locale }: { params: { slug: string }, locale: string }) {
+  const post = allBlogs.find((post: Blog) => (post.slug === params.slug && post.locale === locale));
   return { props: { post } };
 }

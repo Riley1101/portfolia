@@ -54,7 +54,7 @@ export default function Blogs({ posts: cases, pinned }: Props) {
         <Footer />
     </div >;
 }
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }: { locale: string }) {
     const posts = allBlogs.filter((item: Blog) => item.pinned === false && item.locale === locale);
     let pinned = allBlogs.filter((item: Blog) => item.pinned === true && item.locale === locale);
     return { props: { posts, pinned } };
