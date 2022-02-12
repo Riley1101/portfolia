@@ -1,6 +1,8 @@
 import React from 'react';
 import Navigation from '@/components/navigation';
+
 import { allBlogs } from '.contentlayer/data'
+
 import type { Blog } from '.contentlayer/types';
 import HCard from '@/components/hcard';
 import MailBox from '@/layouts/mail';
@@ -52,8 +54,8 @@ export default function Blogs({ posts: cases, pinned }: Props) {
         <Footer />
     </div >;
 }
-export async function getStaticProps() {
-    const posts = allBlogs.filter((item: Blog) => item.pinned === false);
-    let pinned = allBlogs.filter((item: Blog) => item.pinned === true);
+export async function getStaticProps({ locale }) {
+    const posts = allBlogs.filter((item: Blog) => item.pinned === false && item.locale === locale);
+    let pinned = allBlogs.filter((item: Blog) => item.pinned === true && item.locale === locale);
     return { props: { posts, pinned } };
 }
