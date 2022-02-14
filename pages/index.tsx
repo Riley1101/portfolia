@@ -43,8 +43,12 @@ const Home: NextPage<Props> = ({ blogs, features }) => {
 
 export default Home;
 
-export async function getStaticProps() {
-  const blogs = allBlogs.filter(item => item.pinned === false).slice(0, 3);
-  const features = allBlogs.filter(item => item.pinned === true).slice(0, 3);
+export async function getStaticProps({ locale }: { locale: string }) {
+  let tmp = allBlogs.sort((a, b) => {
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  })
+
+  let blogs = tmp.filter(item => item.pinned === false && item.locale === locale).slice(0, 3);
+  const features = tmp.filter(item => item.pinned === true && item.locale === locale).slice(0, 3);
   return { props: { blogs, features } };
 }
