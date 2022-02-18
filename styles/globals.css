@@ -72,15 +72,11 @@ html.has-scroll-smooth {
 
  code[class*="language-"],
  pre[class*="language-"] {
+
      color: #f8f8f2;
      background: none;
      text-shadow: 0 1px rgba(0, 0, 0, 0.3);
      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-     text-align: left;
-     white-space: pre;
-     word-spacing: normal;
-     word-break: normal;
-     word-wrap: normal;
      line-height: 1.5;
      -moz-tab-size: 4;
      -o-tab-size: 4;
@@ -90,7 +86,9 @@ html.has-scroll-smooth {
      -ms-hyphens: none;
      hyphens: none;
      overflow-x: scroll;
-     @apply  text-sm whitespace-pre-wrap p-4 lg:p-4 lg:text-base overflow-x-scroll max-w-full h-auto;
+
+     white-space: pre-wrap;
+    word-break: break-all;
  }
  
  /* Code blocks */
@@ -99,6 +97,8 @@ html.has-scroll-smooth {
      margin: .5em 0;
      overflow: auto;
      border-radius: 0.3em;
+
+ 
  }
  
  :not(pre) > code[class*="language-"],
@@ -110,7 +110,6 @@ html.has-scroll-smooth {
  :not(pre) > code[class*="language-"] {
      padding: .1em;
      border-radius: .3em;
-     white-space: normal;
  }
  
  .token.comment,
