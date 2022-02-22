@@ -21,13 +21,57 @@ html.has-scroll-smooth {
 .text-display {
     @apply  text-transparent bg-clip-text bg-gradient-to-l  to-pink-600 from-red-400;
 }
-
+.border-display{
+    background-image: linear-gradient(black, black), linear-gradient(to right, #EC4899, #F43F5E);
+    background-clip: content-box, border-box;
+    @apply p-[.3em];
+  
+}
 .bg-display{
     @apply bg-gradient-to-r to-pink-500 from-red-500 ;
 }
 .threeD{
     perspective: 1000px;
     perspective-origin: 50% 50%;
+}
+.react-transform{
+
+    top: 50%;
+    left: 10%;
+    transform:
+    perspective(800px)
+    rotateY(25deg) scale(0.9)
+    rotateX(10deg);
+    filter: blur(2px);
+    opacity: 0.5;
+    transition: 0.6s ease all;
+    
+}
+
+.react-transform:hover{
+    transform:
+    perspective(800px)
+    rotateY(-15deg)
+    translateY(-50px)
+    rotateX(10deg)
+    scale(1);
+    filter: blur(0);
+    opacity: 1;
+}
+
+@media screen and (max-width:600px){
+    .react-transform{
+        transform:
+        perspective(800px)
+        rotateY(-15deg)
+        rotateX(10deg)
+        scale(1);
+        filter: blur(0);
+        opacity: 1;
+        margin-bottom: 1em;
+    }
+    
+   
 }
 .glass{
     backdrop-filter: blur(25px) saturate(200%);
