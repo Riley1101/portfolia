@@ -1,27 +1,80 @@
-datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
-  referentialIntegrity = "prisma"
-}
-
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
 }
 
-
-model Connections {
-  id          Int     @id @default(autoincrement())
-  email       String  @db.VarChar(255)
-  text        String? @db.VarChar(255)
-  createdAt   DateTime @default(now())
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  referentialIntegrity = "prisma"
 }
 
 model Remark {
-  id          Int     @id @default(autoincrement())
-  name        String  @db.VarChar(255)
-  email       String  @db.VarChar(255)
-  text        String? @db.VarChar(255)
-  createdAt   DateTime @default(now())
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(255)
+  email     String   @db.VarChar(255)
+  text      String?  @db.VarChar(255)
+  createdAt DateTime @default(now())
+}
+
+model Blocks {
+  id     Int     @id @default(autoincrement())
+  slug   String? @unique
+  blocks Int
+}
+
+model f784850_f746_4fef_8a75_84bc50ee0000_20220222144628_del {
+  id   Int     @id @default(autoincrement())
+  slug String? @unique(map: "Blocks_slug_key")
+
+  @@map("_1f784850_f746_4fef_8a75_84bc50ee0000_20220222144628_del")
+}
+
+model a9699aa4_6f36_4353_aad1_af7d23090000_20220221160334_del {
+  id   Int     @id @default(autoincrement())
+  slug String? @db.VarChar(255)
+
+  @@map("_a9699aa4_6f36_4353_aad1_af7d23090000_20220221160334_del")
+}
+
+model dd873b81_829d_4811_92fd_b29626020000_20220221164918_del {
+  id   Int    @id @default(autoincrement())
+  slug String @unique(map: "Blocks_slug_key")
+
+  @@map("_dd873b81_829d_4811_92fd_b29626020000_20220221164918_del")
+}
+
+model dd873b81_829d_4811_92fd_b29626020001_20220221164921_del {
+  id    Int     @id @default(autoincrement())
+  name  String? @db.VarChar(255)
+  block Int
+
+  @@map("_dd873b81_829d_4811_92fd_b29626020001_20220221164921_del")
+}
+
+model vt_HOLD_12eb6c52b8aa437d9e0f95a5b4010000_20220223145459 {
+  id        Int      @id @default(autoincrement())
+  email     String   @db.VarChar(255)
+  text      String?  @db.VarChar(255)
+  createdAt DateTime @default(now())
+
+  @@map("_vt_HOLD_12eb6c52b8aa437d9e0f95a5b4010000_20220223145459")
+}
+
+model vt_HOLD_1f784850f7464fef8a7584bc50ee0001_20220223144626 {
+  id    Int     @id @default(autoincrement())
+  name  String? @unique(map: "Reader_name_key")
+  block Int
+
+  @@map("_vt_HOLD_1f784850f7464fef8a7584bc50ee0001_20220223144626")
+}
+
+model vt_HOLD_1f784850f7464fef8a7584bc50ee0002_20220223144627 {
+  A Int
+  B Int
+
+  @@unique([A, B], map: "_BlocksToReader_AB_unique")
+  @@index([B], map: "_BlocksToReader_B_index")
+  @@map("_vt_HOLD_1f784850f7464fef8a7584bc50ee0002_20220223144627")
 }

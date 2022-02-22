@@ -12,23 +12,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     const { method } = req;
     const session = await getSession({ req })
     switch (method) {
-        // case "GET":
-        //     try {
-        //         const connections: Remark[] = await prisma.remark.findMany({
-        //             orderBy: [
-        //                 {
-        //                     createdAt: 'desc',
-        //                 },
-        //             ],
+        case "GET":
+            try {
+                const connections: Remark[] = await prisma.remark.findMany({
+                    orderBy: [
+                        {
+                            createdAt: 'desc',
+                        },
+                    ],
 
-        //         })
-        //         res.status(200).json({
-        //             data: connections,
-        //         });
-        //     } catch (e) {
-        //         console.error("Request error", e);
-        //     }
-        //     break;
+                })
+                res.status(200).json({
+                    data: connections,
+                });
+            } catch (e) {
+                console.error("Request error", e);
+            }
+            break;
         case "POST":
             try {
                 const user = await prisma.remark.create({
@@ -50,7 +50,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
             break;
 
         default:
-            res.setHeader("Allow", ["GET"]);
+            res.setHeader("Allow", ["GET", "POST"]);
             res.status(405).end(`Method ${method} Not Allowed`);
             break;
     }
