@@ -33,17 +33,17 @@ const Navigation: React.FunctionComponent = () => {
                             About
                         </Link>
                     </li>
-
+                    <li className={` ${router.asPath === '/about' && 'font-bold text-white'} lg:mr-auto`}>
+                        <LocaleToggle />
+                    </li>
                 </ul>
                 <button className='relative w-10 aspect-square lg:hidden lg:invisible' onClick={() => setIsOpen(!isOpen)}>
                     <Image src='/static/menu.svg' alt='menu for navigation' layout='fill' />
                 </button>
 
             </nav>
-            <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />   <li className={` ${router.asPath === '/story' && 'font-bold text-white  items-center '}`}>
-                <LocaleToggle />
-
-            </li>
+            <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />
+            <LocaleToggle />
         </header>
 
     )
