@@ -42,7 +42,9 @@ const Navigation: React.FunctionComponent = () => {
                 </button>
 
             </nav>
-            <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />   <li className={` ${router.asPath === '/story' && 'font-bold text-white  items-center '}`}>
+                <LocaleToggle />
+            </li>
         </header>
 
     )
