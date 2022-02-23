@@ -33,9 +33,7 @@ const Navigation: React.FunctionComponent = () => {
                             About
                         </Link>
                     </li>
-                    <li className={` ${router.asPath === '/story' && 'font-bold text-white  items-center '}`}>
-                        <LocaleToggle />
-                    </li>
+
                 </ul>
                 <button className='relative w-10 aspect-square lg:hidden lg:invisible' onClick={() => setIsOpen(!isOpen)}>
                     <Image src='/static/menu.svg' alt='menu for navigation' layout='fill' />
@@ -44,6 +42,7 @@ const Navigation: React.FunctionComponent = () => {
             </nav>
             <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />   <li className={` ${router.asPath === '/story' && 'font-bold text-white  items-center '}`}>
                 <LocaleToggle />
+
             </li>
         </header>
 
