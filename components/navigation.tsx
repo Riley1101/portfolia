@@ -33,7 +33,7 @@ const Navigation: React.FunctionComponent = () => {
                             About
                         </Link>
                     </li>
-                    <li className={` ${router.asPath === '/about' && 'font-bold text-white'} lg:mr-auto`}>
+                    <li className={` ${router.asPath === '/about' && 'font-bold text-white'} lg:mr-auto md:hidden`}>
                         <LocaleToggle />
                     </li>
                 </ul>
