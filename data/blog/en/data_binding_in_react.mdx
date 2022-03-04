@@ -1,0 +1,339 @@
+---
+title: 'Data Binding in React'
+publishedAt: '2022-02-14'
+summary: 'So today I want to talk about what is composition and why composition patterns in React make react component system more powerful.'
+image: '/blog/composition_in_react/composition__lego__1.jpg'
+pinned : true
+locale: 'en'
+---
+
+
+## Data Binding in React
+
+It was 2018 ,I remember that at that time, I have been coding some Python codes especially django and I already did some projects. And at that time the only language I know is Python, started as a backend developer building apis with Django.
+And I know a little bit of HTML and CSS and I was not very good at it.Out of nowhere, let's just say I cannot keep up with the Zen of Python  and I feel like with all these templates,models and all that in Django,I am feeling the real pain in the a**.
+So I decided run away from python and asked my brother who is a really good programmer to help me.In short, he told me I should learn Javascript.
+
+I started to move on to Javascript from Python and I started loving it.Then I found React.And it is crazy to say that my journey to React's ecosystem was started with React Native.When I started introduced myself with React Native, me as a backend developer
+coming from Django, personally I  really enjoyed and amazed  how the data binding in React Native is easy.Believe it or not I code React Native for about 5 months without seeing [this](https://reactjs.org/) website. I felt so bad and ashmed every time I think about it.
+
+Me as a self-thougth developer with no CS background, the way I started into these programming technologies is pretty simple, I just go to Youtube.So I learnt React Native though it's documentation and tons of tutorials from Youtube, I didn't really understand how react reacts.
+But one thing suprises me, who previously worked with templates 
+
+>everytimes I change something the UI just changes 
+
+Data binding is the general technique of binding the data from any possible source together and synchronizing it with the UI.Before we talk anything about React, let's start with the venilla way.
+
+To sync our data with the UI, obviously we need to know if our data change somehow we first need to observe any changes in the data model.
+
+(OneWayImage)[]
+
+```Javascript
+
+class Binder {
+    constructor(value) {
+        this.observers = [];
+        this.value = value;
+    }
+    notify() {
+        this.observers.forEach(listener => listener(this.value));
+    }
+    listen(listener) {
+        this.observers.push(listener);
+    }
+    get value() {
+        return this.value;
+    }
+    set value(value) {
+        if (val !== this.value) {
+            this.value = value;
+            this.notify();
+        }
+    }
+}
+
+```
+
+In the above code, we have a simple Javascript class with some setters and getters.In the constructor we have an array of observers to detect
+any possible data changing methods or events in our data model in our case the value and we have a setter calling our observers to take action on any changes.
+
+
+```javascript
+    let myName = new Binder("Initial Name");
+    let dataUpdater = (newName) => {
+        // updater event to change the data model
+        console.log('Your coming new Name is ', newName)
+    };
+    myName.listen(dataUpdater);
+    myName.value = 'Arkar Kaung Myat';
+```
+
+So are basically calling the notify function whenever we got an update in our data source through event listeners.That is how I understand one way data binding works.
+Let's try with simple html doms.
+
+```html 
+    <div>
+        <label for="Number">Enter Number</label><br>
+        <input type="number" id="number" placeholder="Enter second Number">
+    </div>
+
+    <br>
+    <p>Number : </p>
+    <h1 id="result"></h1>
+```
+
+```javascript
+
+let number = document.querySelector('#number');
+let result = document.querySelector('#result');
+
+class Binder {
+    constructor(value) {
+        this.observers = [];
+        this.data = value;
+    }
+    notify() {
+        this.observers.forEach(listener => listener(this.data));
+    }
+    listen(listener) {
+        this.observers.push(listener);
+    }
+    get value() {
+        return this.data;
+    }
+    set value(value) {
+        if (value !== this.data) {
+            this.data = value;
+            this.notify();
+        }
+    }
+}
+
+let num = new Binder(number.value);
+
+let observer = (value) => {
+    result.innerText = value;
+}
+
+num.listen(observer);
+number.addEventListener('input', (e) => {
+    num.value = e.target.value;
+});
+
+```
+
+Well I think that's a bit self explanatory.
+
+### Binding data model with  multiple data input 
+
+The above example is pretty easy to understand and I think that explains pretty well on how you can work around one way data binding.
+So let's say we have multiple data input for our data model to rely on.Let say you want to update data input from two input form and update to the view.How do we create such a binding?
+
+```javascript
+
+class WithEffect extends Binder {
+    constructor(data,dependencies){
+        super(data());
+        const listener = () => {
+            this.data = data();
+            this.notify();
+        };
+    };
+
+    get value() {
+        return this.data;
+    };
+
+    set value(val) {
+        // just to show you
+        console.log(val, 'What do you expect ! is is read-only computed value');
+        throw 'is is read-only computed value';
+    }
+}
+
+```
+
+Lets see in action 
+
+```javascript
+
+const num1 = new Binder(100);
+const num2 = new Binder(900);
+
+let observer = () => {
+    return Number(num1.value) + Number(num2.value)
+}
+const full = new WithEffect(observer, [num1, num2]);
+console.log(full.value);
+
+// try full.value = 40000
+
+```
+
+Here is DOM in function
+
+```javascript
+
+const num1 = new Binder(number1.value);
+const num2 = new Binder(number2.value);
+
+let observer = () => {
+    result.innerText = `${Number(num1.value) + Number(num2.value)}`;
+    return Number(num1.value) + Number(num2.value);
+}
+
+const full = new WithEffect(observer, [num1, num2]);
+
+number1.addEventListener('input', () => {
+    num1.value = number1.value;
+});
+
+number2.addEventListener('input', () => {
+    num2.value = number2.value;
+});
+
+```
+
+> So as I understand, updaing on the UI is based on the data model.But updating the data model  is done explicitly
+> by some listener or observers through callbacks or events from some possible data source.In our case, the input.
+
+
+#### Two ways data binding 
+
+In the case of two ways, whenever we update the data model, we need to update the UI.And also the other way around.
+In case of chainging the UI we need to update the data model.
+
+(Two Way Image)[]
+
+
+```html
+    <div>
+        <label for="number1">Enter Number1</label><br>
+        <input onkeyup="update(event)" type="number" id="number1" placeholder="Enter second Number" data-binder="A">
+    </div>
+    <br>
+    <div>
+        <label for="number2">Enter Number2</label><br>
+        <input onkeyup="update(event)" type="number" id="number2" placeholder="Enter first Number " data-binder="A">
+    </div>
+```
+
+We got observer for each of the input in the above example.
+
+
+```
+let binded_inputs = document.querySelectorAll('[data-binder="number"]');
+
+function update(event) {
+    for (var i in binded_inputs) {
+        binded_inputs[i].value = event.currentTarget.value;
+    }
+}
+
+```
+
+
+### What about in React !
+
+
+In React, it is never really designed for two way data binding even though it can be implement (Two Way Data Binding Helpers)(https://reactjs.org/docs/two-way-binding-helpers.html)
+
+So lets take a look at some React code.
+
+```jsx
+   const [message, setMessage] = useState('Hello World');
+```
+
+So we got a data model or state for our view and we want to stay sync between our view and in this case our state.
+
+```jsx
+function App() {
+  const [message, setMessage] = useState('Hell`o World');
+
+  let handleChange = (e) => {
+    setMessage(e.target.value)
+  }
+  return (
+    <div className="App">
+      <input type="text" value={message} onChange={handleChange} />
+      <br>
+      <h1>{message}</h1>
+    </div>
+  );
+}
+
+```
+
+Everytime we type in our input we are calling the callback handler to update our day model.
+So react let us change the data model from the view or some data source but we cannot do it directly, but we can attach events or handlers
+to the view to observe the changes and update the model.
+
+Let's take a look at some React.
+
+```jsx 
+    let myApp = document.getElementById('root');
+    ReactDOM.render(<h1>Welcome to React</h1>, myApp);
+```
+
+Just basically rendering heading and lets put some data in it.
+
+```jsx
+let myApp = document.getElementById('root');
+let number = 0;
+
+let handleClick = () => {
+  number++;
+  console.log(number)
+};
+
+let content = (
+  <div>
+    <h1>Welcome to React</h1>
+    <p>Here is the number</p>
+    <h1>{number}</h1>
+
+    <br />
+    <button onClick={handleClick}>ADD</button>
+  </div>
+)
+ReactDOM.render(content, myApp);
+
+```
+()[Slackbitz demo]
+
+
+When you try this you can see in the console logging out the number but it is not updating the UI.
+We got data source and some data to show how do we bind them together ?
+
+So lets see 
+
+
+```jsx
+let myApp = document.getElementById('root');
+let number = 0;
+
+let handleClick = () => {
+  number++;
+  console.log(number)
+  renderContent()
+};
+
+let renderContent = () => {
+  let content = (
+    <div>
+      <h1>Welcome to React</h1>
+      <p>Here is the number</p>
+      <h1>{number}</h1>
+
+      <br />
+      <button onClick={handleClick}>ADD</button>
+    </div>
+  );
+  ReactDOM.render(content, myApp);
+};
+renderContent()
+```
+
+So what we do here is we put the content inside the renderContent funtion so basically
+everytimes we click the button we are calling the renderContent function and creating a new updated instance of our content.
+Click and inspect the our elements and you can see only the h1 is making the splash everytime we clicked throught the button.
