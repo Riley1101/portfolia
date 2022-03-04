@@ -26,6 +26,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
                         {
                             data: {
                                 slug: slug as string,
+                                blocks: 0
                             },
                         } as any
                     )

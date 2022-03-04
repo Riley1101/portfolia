@@ -3,7 +3,7 @@ title: 'On My Way to build mini CSS library with SASS'
 publishedAt: '2020-07-15'
 summary: ' I am a fan of tailwind CSS so this is the blog about me trying learn more about SCSS while generating some utility classes with SCSS'
 image: '/blog/scss/banner.jpg'
-pinned : true
+pinned : false
 locale : 'en'	
 ---
 
@@ -16,4 +16,260 @@ locale : 'en'
 />
 
 
-> Please just check out the article here as i am busy and still not got a chance to update the blog [here](https://dev.to/riley1101/on-my-way-to-generate-css-utils-with-sass--ghn)
+### Well I eventually fall in love 
+
+with SASS after I tried several projects with it .
+
+Also I am a fan of tailwind CSS so this is the blog about me trying learn more about SCSS while generating some utility classes with SCSS.
+
+There is gonna be several episodes though out this way.
+
+### So lets get started 
+
+my apology first for my writing skill cause we all have language barriers.English is my second language.
+
+## We all love [reloading](https://stackoverflow.com/questions/41428954/what-is-the-difference-between-hot-reloading-and-live-reloading-in-react-native)
+
+I thought that while building this thing , first thing comes to my mind is that would be nice if I don't have to refresh or reload manually every time I make changes to my files or compile my sass files.
+
+After a few google searches , I found of course tons of methods I can use to setup my development server.
+
+* [webpack](https://webpack.js.org)
+* [parcel](https://parceljs.org/)
+* [gulpjs] (https://gulpjs.com/)
+* and many more.
+
+## I found [Gulp] (https://gulpjs.com/) easy 
+
+No more chit chat dive into the code and I started with a blank HTML file and I called it index.
+
+### node modules !
+
+
+```shell
+npm init
+npm install gulp gulp-sass sass
+```
+
+I waited a few seconds and it all works out perfectly well.
+
+### gulp file ?
+
+I found out on the internet that I need to make a gulp file to tell gulp what I want !
+
+In this case , I need the ability to launch a local development server that reloads every times I press 
+**ctrl-s** on my browser and of course compile my SASS.
+
+Then I created a file called **gulpfile.js** in my project root which is basiclly a javascript and for some reasons they say I cannot [rename](https://stackoverflow.com/questions/34099103/run-gulp-with-an-arbitrary-gulpfile-name-not-gulpfile-js/34099104) it.
+
+```javascript
+const { src, dest, watch, series } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const browserSync = require('browser-sync').create();
+
+function buildScss() {
+    return src('./utils/**/*.scss')
+        .pipe(sass())
+        .pipe(dest('css'))
+        .pipe(browserSync.stream())
+}
+
+function watchTask() {
+    watch(['./utils/**/*.scss'], buildScss)
+    watch('./*.html').on('change', browserSync.reload)
+    browserSync.init({
+        server: './'
+    })
+}
+
+exports.default = series(buildScss, watchTask)
+
+```
+
+Lets break down a bit of this code 
+
+
+```javascript
+const { src, dest, watch, series } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const browserSync = require('browser-sync').create();
+```
+Of course a little bit of imports and 
+
+```javascript
+function buildScss() {
+    return src('./utils/**/*.scss')
+        .pipe(sass())
+        .pipe(dest('css'))
+        .pipe(browserSync.stream())
+}
+```
+
+This is the part responsible for compiling my SCSS files that I put them in one of my project folder called utils. 
+
+```javascript
+'./utils/**/*.scss'
+```
+
+double asterisks to make sure my SCSS files accessible in all sub folders inside ***utils*** and **.scss*** to make sure I include every SCSS files.
+
+### According to [docs](https://gulpjs.com/)
+
+> Using code over configuration, utilize all of  JavaScript to create your gulp file where tasks can be  written using your own code or chained single purpose plugins.
+
+I can chain my plugins or things I want to do .
+
+```javascript
+   return src(índex.scss)
+        .pipe(sass())
+        .pipe(dest('css'))
+        .pipe(browserSync.stream())
+```
+I put the input SCSS file and gently requested to output them in the folder called CSS and make sure its streaming !!
+
+```javascript 
+   function watchTask() {
+    watch(['./utils/**/*.scss'], buildScss)
+    watch('./*.html').on('change', browserSync.reload)
+    browserSync.init({
+        server: './'
+    })
+}
+
+```
+Compiling SCSS is now ok  and I also have to watch the HTML files to reload every I edit them also and later initialized the browserSync right at my project's root folder.
+
+Export the modules , build and watch straight in the [series](https://gulpjs.com/docs/en/api/series/#:~:text=series()-,series(),after%20another%2C%20in%20sequential%20order.).
+
+```javascript
+exports.default = series(buildScss, watchTask)
+```
+
+Later that I can finally start my development server which fit my needs  for the project.
+
+I prayed and typed in 
+```shell
+gulp
+```
+
+Oh well not bad it's happening.
+
+Till now I got an ideal that would be great if I save this as I SASS , gulp starter kit and I uploaded this on my GitHub with a branch and you can check out [here](https://github.com/Riley1101/scss_gulp_starter).
+
+
+## On my way to generate my utils
+
+
+After setup it's time for me to generate my very first utility classes.
+
+### Color utility classes 
+
+With no doubt, I created a file called **_variables.scss** in my utils folder  to store all my base variables like my base color palette, base padding and margin just so I can use them from my various SCSS modules.
+
+> Notice here I have to name my variable file start with underscore to tell SASS that I don't want to generate separate CSS file like variables.css in the output folder.
+
+Here comes my color palette that's I store from bootstrap .
+
+```sass
+   $clr-primary: hsl(211, 100%, 50%);
+   $clr-secondary:hsl(210, 8%, 46%);
+   $clr-success: hsl(133, 62%, 41%);
+   $clr-danger: hsl(354, 70%, 54%);
+   $clr-warning:hsl(45, 99%, 51%);
+   $clr-info: hsl(188, 78%, 40%);
+   $clr-light : hsl(220, 27%, 98%);
+   $clr-dark:hsl(213, 9%, 23%);
+   $clr-white:hsl(0, 0%, 100%);
+```
+
+I put them all in SCSS variables and thinking a way to transform them to utils classes like  **text-primary-100, text-danger-800** which basically like tailwindCSS.
+
+```sass
+$colors : (
+    "primary":$clr-primary,
+    "secondary":$clr-secondary,
+    "error":$clr-danger,
+    "warning":$clr-warning,
+    "info":$clr-info,
+    "light":$clr-light,
+    "dark":$clr-dark,
+    "white":$clr-white,
+
+    "black":hsl(0, 0%, 0%),
+    "red":hsl(0, 100%, 50%),
+    "blue":hsl(240, 100%, 50%),
+    "green":hsl(120, 100%, 25%),
+    "yellow":hsl(60, 100%, 50%),
+    "orange":hsl(39, 100%, 50%),
+    "purple":hsl(300, 100%, 25%),
+    "gray":hsl(0, 0%, 50%),
+);
+
+```
+
+Then I add more SCSS object in my variables to generate more color like tailwind.
+
+### _color.scss
+
+Created another file called _color.scss to do all the looping and generating process.
+
+```sass
+   @use 'variables' as *;
+
+   @each $key,$val in $colors {
+    .text-#{$key}{
+        color : $val
+    }
+    .bg-#{$key}{
+        background-color:$val
+    }
+
+    .text-hover-#{$key}{
+        &:hover{
+            color: $val;
+        }
+    }
+
+    @if($val != white ){
+        @for $i from 1 through 9{
+            .text-#{$key}-#{100 * $i}{
+                color: mix( white,  $val,  $i * 10);
+            }
+            .bg-#{$key}-#{100 * $i}{
+                background-color: mix( white,  $val,  $i * 10);
+            }
+            .text-hover-#{$key}-#{100 * $i}{
+                &:hover{
+                    color: mix( white,  $val,  $i * 10);
+                }
+            }
+           
+        }
+    }
+   
+}
+
+
+
+``` 
+
+To soften color like tailwind I can use SCSS's build in function like mix to mix with the color I want .
+
+```sass
+mix(first_clr,second_clr,%)
+```
+
+In my case , I want to play around with lightness so I mixed it up with color white and cool I got what I wanted !!!
+
+>I have to make some conditioning to make sure I don't have classes like text-white-200 that would be dumb right?
+
+Make sure you also check for black if you are playing with darkness 
+
+Pretty cool and I am loving the generated css popping up in my file.
+And I tried using the classes in my HTML.
+
+Thank you for your time just sharing my journey.
+
+### feel free to suggest.
+I am gonna try spacing utils soon.
+
