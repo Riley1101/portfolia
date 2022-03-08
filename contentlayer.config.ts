@@ -1,6 +1,5 @@
 import { defineDocumentType, makeSource, ComputedFields, } from 'contentlayer/source-files'
 
-import highlight from 'rehype-highlight'
 import readingTime from 'reading-time';
 import remarkGfm from 'remark-gfm';
 

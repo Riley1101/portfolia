@@ -17,6 +17,7 @@
     "axios": "^0.26.0",
     "babel-preset-es2015": "^6.24.1",
     "contentlayer": "^0.0.34",
+    "iframe-resizer-react": "^1.1.0",
     "locomotive-scroll": "^4.1.4",
     "lodash": "^4.17.21",
     "next": "12.0.8",

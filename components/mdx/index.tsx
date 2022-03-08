@@ -1,10 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ClassAttributes, AnchorHTMLAttributes, BlockquoteHTMLAttributes, ImgHTMLAttributes } from 'react';
-
-
-
-
 const CustomLink = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLAnchorElement> & AnchorHTMLAttributes<HTMLAnchorElement>) => {
     const href = props.href;
     const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
@@ -57,6 +53,8 @@ function Quote(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLElement> & B
 function Pre(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLPreElement>) {
     return <pre {...props} className='pre-code' />;
 }
+
+
 const MDXComponents = {
     Image: RoundedImage,
     h2: H2,
@@ -68,8 +66,7 @@ const MDXComponents = {
     hr: HR,
     blockquote: Quote,
     pre: Pre,
-    a: CustomLink
-
+    a: CustomLink,
 };
 
 export default MDXComponents;
