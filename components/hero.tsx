@@ -13,7 +13,7 @@ const Hero: React.FunctionComponent = () => {
                         who loves frontend technlogies,coding and designs.</p>
                 </div>
             </div>
-            <a target={'_blank'} href='https://read.cv/arkarkaungmyat' className={`text-md text-display`} rel="noreferrer">My Projects</a>
+            {/* <a target={'_blank'} href='https://read.cv/arkarkaungmyat' className={`text-md text-display`} rel="noreferrer">My Projects</a> */}
 
         </main >
 

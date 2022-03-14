@@ -25,7 +25,7 @@ function H2(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>
     return <h1 {...props} className='text-2xl text-white font-bold my-2 lg:text-2xl lg:my-4' />;
 }
 function H3(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>) {
-    return <h3 {...props} className='text-lg text-white font-bold my-2 lg:my-4' />;
+    return <h3 {...props} className='text-xl text-white font-bold my-2 lg:my-4' />;
 }
 function H4(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>) {
     return <h3 {...props} className='text-md text-white font-bold my-2 lg:my-4' />;
