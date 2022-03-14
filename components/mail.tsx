@@ -38,7 +38,7 @@ const Mail: React.FunctionComponent = () => {
 
     return (
         <form className='text-white bg-slate-900 rounded-md p-4 grid gap-2' onSubmit={onSubmit}>
-            <h3 className='text-xl'>Here You can directly talk to me </h3>
+            <p className='text-xl'>Here You can directly talk to me </p>
             <p className='text-pale-100 text-sm'>You can directly DMs me right here if you want to talk
                 about frontend, designs or stuffs.</p>
 

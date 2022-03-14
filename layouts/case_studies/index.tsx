@@ -12,7 +12,7 @@ interface Props {
 const CaseStudies: React.FunctionComponent<Props> = ({ cases, title }) => {
     return (
         <div className='flexi-w text-white p-4 pb-0 mx-auto cursor-pointer '>
-            <h2 className='block text-2xl font-normal lg:text-4xl lg:font-bold lg:mb-2'>{title}</h2 >
+            <p className='block text-2xl font-normal lg:text-4xl lg:font-bold lg:mb-2'>{title}</p >
             <div className='grid gap-5 py-4 lg:gap-8 lg:mt-2'>
                 {
                     cases && cases.map((item) => <HCard key={item._id} post={item} />)

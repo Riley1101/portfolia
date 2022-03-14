@@ -20,9 +20,9 @@ interface Props {
 const Home: NextPage<Props> = ({ blogs, features }) => {
 
   let meta = {
-    title: 'Inspiring Frontend Developer',
-    summary: 'Personal blog by @arkarkaungmyat',
-    slug: 'arkarkaungmyat.vercel.app/',
+    title: 'Personal Blog @ Arkar Kaung Myat',
+    summary: 'Here you checkout everything about me and my programming life',
+    slug: 'arkardev.space/',
     image: 'https://firebasestorage.googleapis.com/v0/b/arianagrande-a231e.appspot.com/o/Inspiring%20FRontend%20Developer(1).png?alt=media&token=d50ab1d9-782d-4457-8e63-2f952832f431',
   }
   return (
