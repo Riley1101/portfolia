@@ -43,17 +43,11 @@ export default function Footer({ }: Props) {
             <br className='cursor-pointer' />
 
             <a className='text-display' href={'https://nextjs.org/'} target="_blank" rel="noreferrer">
-                NEXT
+                Next.js
             </a>,
             <a className='text-display' href={'https://www.typescriptlang.org/'} target="_blank" rel="noreferrer">
-                TypeScript
-            </a>,
-            <a className='text-display' href={'https://planetscale.com/'} target="_blank" rel="noreferrer">
-                PlanetScale
-            </a>,
-            <a className='text-display' href={'https://prisma.io/'} target="_blank" rel="noreferrer">
-                Prisma
-            </a>,<br />
+                TypeScript and
+            </a>
             <a className='text-display' href={'https://github.com/contentlayerdev/contentlayer'} target="_blank" rel="noreferrer">
                 Contentlayer
             </a> <br className='md:hidden cursor-pointer'></br>

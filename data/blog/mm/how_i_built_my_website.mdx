@@ -1,0 +1,148 @@
+---
+title: 'How I built my personal blog with Next.js and MDX'
+publishedAt: '2022-03-14'
+summary: 'In this article, I am gonna be sharing how I built my personal blog with NextJS'
+image: '/blog/composition_in_react/composition__lego__1.jpg'
+pinned : false
+locale: 'mm'
+---
+
+import Frame from '@/components/iframe'
+
+> Burmese Translation is currently not available now as I am busy with other things.
+
+
+## How I built the website
+
+Since the last months, I haven't got a chance to update any content on my youtube channel and something comes to my mind that I can still blogs while doing my jobs or even
+gather what I have learned over the week and post a note about them.
+So first thing first, where do I write the blog. Dev.to, medium, or any other platform? What about if I code my website and share the journey along the way with others and document it?
+The features are pretty simple, a simple platform with some content and snippets of code perhaps.
+
+## Tech Stack 
+
+I love Next.js. And it has amazing static site generation features. Also since it is a blog post it gonna need to CURD some data such as comments, likes, etc. I am also pretty sure that I don't want to set up a 
+backend server for handling and storing my blogs information. So I just decided to go with Next.js serverless APIs.
+
+Planetscale is a serverless database platform to store my blog post's information such as comments, likes, etc. Also, I used Prisma to define my app data models. As for me a guy with a Django background I am so enjoying ORM and 
+also, I am gonna be coding with Typescript so everything goes just perfect in my opinion.
+
+## How do I write the contents?
+
+I have some experience working on some projects about content writing on the web. In some of my company's projects, I have used some rich text editors to write and parse the contents on the web.
+(eg:Quilljs,Jodit,CKEditor,etc).These editors were really amazing to leverage a better user experience but sometimes they come with their own tradeoffs. In this case, I realized that I am gonna be the only one who is gonna write and update the website. So
+I decided to use markdown for writing the contents for my website.
+
+---
+<Frame url='https://codepen.io/quill/embed/KzZqZx?default-tab=html%2Cresult' title='Quill Editor demo' />
+---
+
+## What is markdown ?
+
+Markdown is a lightweight markup language to format plain texts. One of the most obvious use case of markdown you can see is readme-files in GitHub repos.
+When you add some text-decoration to a text such as bold, italics, or underline you are basically formatting it. So markdown is a syntax or you can say some sets of rules to format how you want your texts to be. For example, on the web, we use hypertext markup language (HTML) to format our contents 
+on how we want our browser to show. When we visit a webpage our browser reads the HTML and applies the rules to the text. When it sees <i> this is some italic text</i> it understands everything between the tags should be italic. However, HTML is relatively difficult for a human to read with tags. Also, there
+can be a lot of HTML tags to tell the browser how we want our text to be formatted in their specific ways.
+[Markdown is meant to be easy to read / to write as is feasible.](https://daringfireball.net/projects/markdown/syntax#philosophy)  Markdown is created to make formatting texts be much more simpler and feasible than HTML because the tags can be quite difficult for a human to read and understand. Also, they are not very 
+user friendly for people who do not have a lot of experience reading it.
+You can check out [Markdown Syntax Guide](https://daringfireball.net/projects/markdown/syntax) here.
+
+Hey, we are gonna be building a component-based react application. As we know we are gonna be using tons of JSX for our website and one great thing is we can use markdown in our JSX components. Luckily as we are using Next.js, it automatically supports us to use markdowns in our application. We can use MDX for not only writing contents
+in our application, we can even use our JSX components inside the markdown file thanks to MDX.
+
+### What is mdx ?
+
+[MDX](https://mdxjs.com/) is a better version of vanilla markdown but we can import and use our interactive react components inside the markdown file.
+
+Here are some of the demos from MDXjs.
+
+```javascript
+import {Chart} from './snowfall.js'
+export const year = 2018
+
+# Last year’s snowfall
+
+In {year}, the snowfall was above average.
+It was followed by a warm spring which caused
+flood conditions in many of the nearby rivers.
+
+<Chart year={year} color="#fcb32c" />
+
+```
+
+The code gets compiled to javascript and you can basically use in any framework that supports JSX.
+
+### How do I use MDX with my Next.js application?
+
+Now that I am clear about what writing method I am gonna use, it's time to decide how!
+
+### Contentlayer 
+
+Basically, contentlayer can be used to turn any MDX files that I am gonna blog into data making it super easy to import the markdown. It is currently in the Alpha stage but
+it is amazingly cool. It takes data sources from any local contents or any headless cms (eg. JSON, MDX) and transforms them into data files in JSON, and even generates typescript types as we defined.
+So in my case with Next.js, isn't that cool that I can use static site generation from next.js and use contentlayer data to generate static pages. Well that is the power of dynamic with the speed of static.
+You can check out the full blog on how I use contentlayer in my blog later on. I am gonna try blogging as much as I can later.
+
+## What about backend?
+
+I love Next.js and one of the main features of Next.js that excite me is its serverless APIs.In Next.js you can build your own API within the Next.js application. In Next.js everything you put inside *pages/api* folder will be treated
+as an API endpoint instead of a webpage. They are also serverside bundles and they won't increase on your client-side bundle. 
+Once you create a Next.js application using create-next-app, you can already see an API folder created by create-next-app. Like so try requesting the URL and you can see the JSON response.
+
+```javascript
+
+export default function handler(req, res) {
+  res.status(200).json({ name: 'John Doe' })
+}
+
+```
+This is really great for me as I don't want to put my own backend server for handling my blog post's information. So I just gonna write some API endpoints for authentications or anything else I need inside my Next.js application.
+
+### What about database?
+
+I also gonna have to save some data on my website so I need a database. So do I set up my own database server on the digital ocean?
+
+### Prisma
+
+Prisma is an open-source ORM to manage and interact with a database. In Prisma, you can define how you want your data model to be in its own Prisma schema and you can use the Prisma migration tool to change your database.
+
+Check out below
+
+```javascript 
+    model Article {
+        id        Int     @id @default(autoincrement())
+        title     String
+        content   String?
+        published Boolean @default(false)
+    }
+```
+
+Imagine in my personal blog, in this case, I can declare how I want my data model to be and all I have to do is migrate and it's done. It also has great modern developer toolings providing better developer experiences.
+To query data from my database, you can use Prisma client.In Prisma,it's automatically generate types for your data models so when you query your data using Prisma client, you can leverage
+the power of typescript to avoid mistakes and faster developer experiences.
+Check out detail about Prisma client here, [Prisma Client](https://www.prisma.io/client)
+
+
+```typescript
+
+const allArticles: Article[] = await prisma.article.findMany()
+
+```
+
+Also, Prisma officially supports an easier way to work with Next.js.You can use the Prisma client to query your data from your Next.js application. It May be from your Next pages or Next serverless API, so in my case, I feel like this is
+the perfect choice for me to work with. I can use any rendering method I want from Next.js and it works perfectly well with the Prisma client.
+Personally, as a developer coming from Django, I find myself pretty happy with how all these things work out. It has something called Prisma studio that allows you to manage your data updates with a cool GUI.
+
+
+I am gonna try to find more time to write details on everything I know about Prisma later on this blog so stay tuned !!.
+Check out how you can set up your Next.js application with Prisma [ here ](https://www.prisma.io/nextjs)
+
+#### Planetscale
+
+Now that I have my ORM, I still need a database for my Prisma schemas to work with. I decided to try planetscale again. I already did couple of projects using the planetscale database and I am loving it.
+Planetscale is a MySQL-compatible, serverless platform that allows you to manage and ship your databases faster without breaking anything. It also provides great developer toolings for better developer experiences.
+And one thing that is really cool is that it works like a GitHub of databases. You can create multiple database branches, manage them branch them anything you want. It is really great that you can always do any test or changes
+to your table without even touching the production database.Just like GitHub you can create pull requests and merge them later.
+You can check out your database schema in their dashboard. It also comes with its own console to work with any schema changes you want.
+One of the things is that it works so well with Prisma. You can migrate your database changes with Prisma schema and it will automatically update your database.
+[ Planetscale ](https://planetscale.com/)

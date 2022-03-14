@@ -55,7 +55,10 @@ export default function Blogs({ posts: cases, pinned }: Props) {
     </div >;
 }
 export async function getStaticProps({ locale }: { locale: string }) {
-    const posts = allBlogs.filter((item: Blog) => item.pinned === false && item.locale === locale);
-    let pinned = allBlogs.filter((item: Blog) => item.pinned === true && item.locale === locale);
+    let tmp = allBlogs.sort((a, b) => {
+        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    })
+    const posts = tmp.filter((item: Blog) => item.pinned === false && item.locale === locale);
+    let pinned = tmp.filter((item: Blog) => item.pinned === true && item.locale === locale);
     return { props: { posts, pinned } };
 }
