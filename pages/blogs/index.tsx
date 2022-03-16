@@ -4,6 +4,7 @@ import Navigation from '@/components/navigation';
 import { allBlogs } from '.contentlayer/data'
 
 import type { Blog } from '.contentlayer/types';
+import NewsLetter from '@/components/newsletter';
 import HCard from '@/components/hcard';
 import MailBox from '@/layouts/mail';
 import Footer from '@/components/footer';
@@ -50,7 +51,7 @@ export default function Blogs({ posts: cases, pinned }: Props) {
             </div>
 
         </div>
-        <MailBox />
+        <NewsLetter />
         <Footer />
     </div >;
 }

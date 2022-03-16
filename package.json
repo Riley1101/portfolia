@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "@formspree/react": "^2.2.4",
+    "@mailchimp/mailchimp_marketing": "^3.0.74",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^2.0.0-rc.2",
     "@next/mdx": "^12.0.8",
     "@prisma/client": "^3.8.1",
+    "@types/mailchimp__mailchimp_marketing": "^3.0.4",
     "axios": "^0.26.0",
     "babel-preset-es2015": "^6.24.1",
     "contentlayer": "^0.0.34",
