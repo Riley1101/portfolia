@@ -12,6 +12,8 @@ import Footer from '@/components/footer';
 import { allBlogs } from '.contentlayer/data'
 import type { Blog } from '.contentlayer/types'
 import Meta from '@/components/blog/meta';
+import NewsLetter from '@/components/newsletter';
+
 interface Props {
   blogs: Blog[],
   features: Blog[]
@@ -35,7 +37,8 @@ const Home: NextPage<Props> = ({ blogs, features }) => {
       </div>
       <CaseStudies cases={blogs} title={'Latests'} />
       <Features features={features} />
-      <MailBox />
+      {/* <MailBox /> */}
+      <NewsLetter />
       <Footer />
     </div>
   )
