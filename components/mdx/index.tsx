@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ClassAttributes, AnchorHTMLAttributes, BlockquoteHTMLAttributes, ImgHTMLAttributes } from 'react';
+import { ClassAttributes, AnchorHTMLAttributes, BlockquoteHTMLAttributes } from 'react';
 const CustomLink = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLAnchorElement> & AnchorHTMLAttributes<HTMLAnchorElement>) => {
     const href = props.href;
     const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
@@ -19,17 +19,21 @@ const CustomLink = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLAnchorE
 function RoundedImage(props: any) {
     return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
-
+function H1(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>) {
+    return <h1 {...props} className='text-3xl text-white font-bold my-2 lg:text-2xl lg:my-4' />;
+}
 
 function H2(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>) {
-    return <h1 {...props} className='text-2xl text-white font-bold my-2 lg:text-2xl lg:my-4' />;
+    return <h2 {...props} className='text-2xl text-white font-bold my-2 lg:text-2xl lg:my-4' />;
 }
 function H3(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>) {
     return <h3 {...props} className='text-xl text-white font-bold my-2 lg:my-4' />;
 }
 function H4(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>) {
-    return <h3 {...props} className='text-md text-white font-bold my-2 lg:my-4' />;
+    return <h4 {...props} className='text-md text-white font-bold my-2 lg:my-4' />;
 }
+
+
 
 let P = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLParagraphElement>) => <p {...props} className='leading-loose text-read-100 text-[1.1rem] lg:text-[1.25rem]' />;
 
@@ -57,6 +61,7 @@ function Pre(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLPreElement>) {
 
 const MDXComponents = {
     Image: RoundedImage,
+    h1: H1,
     h2: H2,
     h3: H3,
     h4: H4,

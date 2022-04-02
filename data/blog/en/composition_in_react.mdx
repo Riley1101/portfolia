@@ -16,7 +16,7 @@ locale: 'en'
   priority
 />
 
----
+
 
 When I started learning React. One of the main features in React that excited me is that it is a component-based!.
 So today I want to talk about what is composition and why composition patterns in React make react component system more powerful.
@@ -45,7 +45,7 @@ Consider this example !
 Imagine you are building the above navigation. The header has a logo and some navigation links to navigate around.
 So basically there are logo and navigation components inside our header component.
 
----
+
 
 ```jsx
 
@@ -72,7 +72,7 @@ empty in specific cases.
 What that means is that some component cannot always know their children 
 So how do we get the flexibility for our so-called reusable component? 
 
----
+
 
 
 ### Containment in Recuse
@@ -80,7 +80,7 @@ So how do we get the flexibility for our so-called reusable component?
 In React, we have special **children** props to help us solve this problem.
 The idea is instead of creating hard-coded dependencies inside our component what if we can somehow dynamically pass what is gonna be inside our component's output.
 
----
+
 
 ```jsx title="app.js"
 
@@ -175,7 +175,7 @@ During our previous example what if your product manager says
 
 In React, this is also achieved by composition, where a more “specific” component renders a more “generic” one and configures it with props:
 
----
+
 
 ```jsx title="app.js"
 
@@ -217,7 +217,7 @@ function App() {
 };
 
 ```
----
+
 
 That's great! The more I read about react the more I fall in love with it!
 
@@ -237,7 +237,7 @@ Let's say you are writing a form validator for your app!
 When filling out a form you want to make sure your users fill up some of the essential fields. You want to have a distinctive validation between 
 essential ones and non-essential ones. If one field is essential in the form, we would want a special function to check whether it's empty or not in our validator.
 
----
+
 
 ```js
 class Validator {
@@ -272,7 +272,7 @@ class Validator {
 
 ```
 
----
+
 
 
 Here we have a validation class for our form validation library which we gonna look upon the form data we provide. If anything in the form is missing, 
@@ -281,7 +281,7 @@ into our validator class's data property.
 
 So how do we validate the form data?
 
----
+
 
 ```js
 class Validator {
@@ -298,12 +298,12 @@ class Validator {
 
 
 ```
----
+
 
 We add a decorate method to our validator class which takes a name as an argument.Now that we have a method to add decorators(**our dynamic form field that we want to validate**) 
 we can loop through our decoratorsList and call each decorator's validate method to finally all the validations.
 
----
+
 
 ```js
 class Validator {
@@ -326,7 +326,7 @@ class Validator {
 
 
 ```
----
+
 
 ```js
 class Validator {
@@ -341,10 +341,10 @@ validator.decorate('hasName');
 validator.validate({});
 console.log(validator.error);
 ```
---- 
+ 
 Our finalized code gonna be like 
 
----
+
 
 ```js
 class Validator {
@@ -402,7 +402,7 @@ validator.validate(formData);
 console.log(validator.data)
 console.log(validator.error);
 ```
----
+
 As you can see we don't have any error on not putting the age in our form data because we haven't decorated the age decorator to our validator yet.
 Try replacing an empty object in form data and you should see some results !!!
 
@@ -414,7 +414,7 @@ Try replacing an empty object in form data and you should see some results !!!
 HOC is usually a function that takes a component and returns a decorated or enhanced version of it.
 In our previous example, we said we need a banner with a special case for a free t-shirt.
 
----
+
 
 ```jsx
 
@@ -439,7 +439,7 @@ In our previous example, we said we need a banner with a special case for a free
     let SpecializedBanner = decoratedComponent(Banner);
 
 ```
----
+
 
 The first thing that the decoratedComponent does is render the original component that we passed in our decoratedComponent function and 
 then we can do special decorations and modifications by wrapping or enhancing it.
@@ -449,7 +449,7 @@ then we can do special decorations and modifications by wrapping or enhancing it
 Render props are basically a function inside a render method.
 Check out the code below!
 
----
+
 
 ```jsx
 
@@ -488,11 +488,11 @@ export default function App() {
 };
 
 ```
----
+
 
 The App component has every data and logic. And the TodoList has no idea about what our todo may look like and it is just an encapsulation of our HTML markup.
 
----
+
 
 ```jsx
 
@@ -510,6 +510,6 @@ let App = ()=>{
 }
 
 ```
----
+
 
 And There we go ! 

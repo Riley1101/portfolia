@@ -1,0 +1,98 @@
+---
+title: 'NextAuth with Next.js'
+publishedAt: '2022-02-14'
+summary: 'Here is simple code snippet for using NextAuth '
+locale: 'mm'
+---
+
+## Using NextAuth with Next.js
+
+
+```javascript
+
+// Github as a login provider
+
+import NextAuth from "next-auth"
+import GithubProvider from "next-auth/providers/github"
+
+export default NextAuth({
+    // Configure one or more authentication providers
+    providers: [
+        GithubProvider({
+            clientId: process.env.GITHUB_ID,
+            clientSecret: process.env.GITHUB_SECRET,
+        }),
+    ],
+
+    secret: process.env.SECRET,
+})
+
+```
+
+
+```javascript
+
+// NextAuth with Credentials
+
+import axios from 'axios'
+import NextAuth from 'next-auth'
+import Credentials from 'next-auth/providers/credentials'
+
+const providers = [
+    Credentials({
+        name: 'Credentials',
+        authorize: async (credentials) => {
+            try {
+                let user = {
+                    identifier: credentials.username,
+                    password: credentials.password
+                }
+                let { data } = await axios.post(`external login api`, user)
+                if (data) {
+                    return data
+                } else {
+                    return null
+                }
+            }
+            catch (e) {
+                return null;
+            }
+        },
+    },
+
+    )
+]
+
+const callbacks = {
+    async jwt({ token, user, }) {
+        const isSignIn = user ? true : false;
+        if (isSignIn) {
+            token.jwt = user.jwt;
+            token.id = user.user.id;
+            token.name = user.user.username;
+            token.email = user.user.email;
+        }
+        return token;
+    },
+    session: async (session) => {
+        return session;
+    },
+    redirect: async () => {
+        return `login success redirect url`;;
+    },
+}
+
+const options = {
+    providers,
+    callbacks,
+    pages: {
+        error: 'login failed redirect url',
+    },
+    secret: process.env.SECRET,
+
+}
+
+let authNext = (req, res) => NextAuth(req, res, options)
+export default authNext;
+
+```

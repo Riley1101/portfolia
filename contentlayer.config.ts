@@ -45,6 +45,7 @@ export const Snippets = defineDocumentType(() => ({
         title: { type: 'string', required: true },
         summary: { type: 'string', required: true },
         publishedAt: { type: 'string', required: true },
+        locale: { type: 'string', default: 'en' },
     },
     computedFields
 }))
