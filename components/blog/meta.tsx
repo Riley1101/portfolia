@@ -5,7 +5,7 @@ let metaDetaults = {
     title: 'Arkar Kaung Myat',
     summary: 'Personal blog by Arkar Kaung Myat',
     slug: 'arkardev.space/',
-    image: 'https://firebasestorage.googleapis.com/v0/b/arianagrande-a231e.appspot.com/o/Inspiring%20FRontend%20Developer(1).png?alt=media&token=d50ab1d9-782d-4457-8e63-2f952832f431',
+    image: '/static/sharing.png',
     type: 'Blog',
     publishedAt: '2020-01-01T00:00:00.000Z',
     pinned: false,

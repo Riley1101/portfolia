@@ -1,79 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
 html.has-scroll-smooth {
     overflow: hidden;
-  }
-.flexi-w{
-    @apply w-full md:w-[80%] md:mx-auto lg:w-[40%] lg:mx-auto ;
+}
+
+.flexi-w {
+    @apply md:w-[80%] md:mx-auto lg:w-[40%] lg:mx-auto;
 }
 
 .page-container {
-    @apply leading-relaxed bg-primary-100 p-2 grid gap-4 box-border lg:gap-3 font-display;
+    @apply leading-relaxed bg-primary-100 p-2 grid box-border lg:gap-3 font-display;
 }
 
 
 .pre-code {
-    @apply  text-sm whitespace-pre-wrap p-4 border border-gray-700 rounded-lg lg:p-4 lg:text-base overflow-x-auto max-w-full h-auto my-4; 
+    @apply text-sm whitespace-pre-wrap border border-gray-700 rounded-lg lg:p-4 lg:text-base overflow-x-auto max-w-full h-auto my-4;
 }
 
 .text-display {
-    @apply  text-transparent bg-clip-text bg-gradient-to-l  to-pink-600 from-red-400;
+    @apply text-transparent bg-clip-text bg-gradient-to-l to-pink-600 from-red-400;
 }
-.border-display{
+
+.border-display {
     background-image: linear-gradient(black, black), linear-gradient(to right, #EC4899, #F43F5E);
     background-clip: content-box, border-box;
     @apply p-[.3em];
-  
+
 }
-.bg-display{
-    @apply bg-gradient-to-r to-pink-500 from-red-500 ;
+
+.bg-display {
+    @apply bg-gradient-to-r to-pink-500 from-red-500;
 }
-.threeD{
+
+.threeD {
     perspective: 1000px;
     perspective-origin: 50% 50%;
 }
-.react-transform{
+
+.react-transform {
 
     top: 50%;
     left: 10%;
     transform:
-    perspective(800px)
-    rotateY(25deg) scale(0.9)
-    rotateX(10deg);
+        perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
     filter: blur(2px);
     opacity: 0.5;
     transition: 0.6s ease all;
-    
+
 }
 
-.react-transform:hover{
+.react-transform:hover {
     transform:
-    perspective(800px)
-    rotateY(-15deg)
-    translateY(-50px)
-    rotateX(10deg)
-    scale(1);
+        perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg) scale(1);
     filter: blur(0);
     opacity: 1;
 }
 
-@media screen and (max-width:600px){
-    .react-transform{
+@media screen and (max-width:600px) {
+    .react-transform {
         transform:
-        perspective(800px)
-        rotateY(-15deg)
-        rotateX(10deg)
-        scale(1);
+            perspective(800px) rotateY(-15deg) rotateX(10deg) scale(1);
         filter: blur(0);
         opacity: 1;
         margin-bottom: 1em;
     }
-    
-   
+
+
 }
-.glass{
+
+.glass {
     backdrop-filter: blur(25px) saturate(200%);
     -webkit-backdrop-filter: blur(25px) saturate(200%);
     border-radius: 12px;
@@ -83,7 +82,8 @@ html.has-scroll-smooth {
     transform: scale3d(1, 1, 1) rotateX(-8deg) rotateY(-13deg) rotateZ(-6deg) translate3d(-6px, 0px, 0px) skew(0deg, 0deg);
     @apply transform-none lg:-rotate-6;
 }
-.glass-alt{
+
+.glass-alt {
     backdrop-filter: blur(25px) saturate(200%);
     -webkit-backdrop-filter: blur(25px) saturate(200%);
     border-radius: 12px;
@@ -93,7 +93,7 @@ html.has-scroll-smooth {
     transform: scale3d(1, 1, 1) rotateX(-8deg) rotateY(-13deg) rotateZ(6deg) translate3d(-6px, 0px, 0px) skew(0deg, 0deg);
 }
 
-.glass-bg{
+.glass-bg {
     backdrop-filter: blur(25px) saturate(200%);
     -webkit-backdrop-filter: blur(25px) saturate(200%);
     border-radius: 12px;
@@ -101,7 +101,7 @@ html.has-scroll-smooth {
     background-color: rgba(17, 25, 40, 0.75);
 }
 
-.glass:hover{
+.glass:hover {
     background-color: rgba(17, 25, 40, 0.75);
     transform: none;
 
@@ -115,116 +115,116 @@ html.has-scroll-smooth {
  * Ported for PrismJS by Albert Vallverdu [@byverdu]
  */
 
- code[class*="language-"],
- pre[class*="language-"] {
-     color: #f8f8f2;
-     background: none;
-     text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-     line-height: 1.5;
-     -moz-tab-size: 4;
-     -o-tab-size: 4;
-     tab-size: 4;
-     -webkit-hyphens: none;
-     -moz-hyphens: none;
-     -ms-hyphens: none;
-     hyphens: none;
-     overflow-x: scroll;
-     
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #f8f8f2;
+    background: none;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    overflow-x: scroll;
+
     white-space: pre-wrap;
     word-break: break-all;
- }
- 
- /* Code blocks */
- pre[class*="language-"] {
-     padding: 1em;
-     margin: .5em 0;
-     overflow: auto;
-     border-radius: 0.3em;
- }
- 
- :not(pre) > code[class*="language-"],
- pre[class*="language-"] {
-     background: #282a36;
- }
- 
- /* Inline code */
- :not(pre) > code[class*="language-"] {
-     padding: .1em;
-     border-radius: .3em;
- }
- 
- .token.comment,
- .token.prolog,
- .token.doctype,
- .token.cdata {
-     color: #6272a4;
- }
- 
- .token.punctuation {
-     color: #f8f8f2;
- }
- 
- .namespace {
-     opacity: .7;
- }
- 
- .token.property,
- .token.tag,
- .token.constant,
- .token.symbol,
- .token.deleted {
-     color: #ff79c6;
- }
- 
- .token.boolean,
- .token.number {
-     color: #bd93f9;
- }
- 
- .token.selector,
- .token.attr-name,
- .token.string,
- .token.char,
- .token.builtin,
- .token.inserted {
-     color: #50fa7b;
- }
- 
- .token.operator,
- .token.entity,
- .token.url,
- .language-css .token.string,
- .style .token.string,
- .token.variable {
-     color: #f8f8f2;
- }
- 
- .token.atrule,
- .token.attr-value,
- .token.function,
- .token.class-name {
-     color: #f1fa8c;
- }
- 
- .token.keyword {
-     color: #8be9fd;
- }
- 
- .token.regex,
- .token.important {
-     color: #ffb86c;
- }
- 
- .token.important,
- .token.bold {
-     font-weight: bold;
- }
- 
- .token.italic {
-     font-style: italic;
- }
- 
- .token.entity {
-     cursor: help;
- }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    border-radius: 0.3em;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+    background: #282a36;
+}
+
+/* Inline code */
+:not(pre)>code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6272a4;
+}
+
+.token.punctuation {
+    color: #f8f8f2;
+}
+
+.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #ff79c6;
+}
+
+.token.boolean,
+.token.number {
+    color: #bd93f9;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #50fa7b;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+    color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+    color: #f1fa8c;
+}
+
+.token.keyword {
+    color: #8be9fd;
+}
+
+.token.regex,
+.token.important {
+    color: #ffb86c;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
