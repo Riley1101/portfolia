@@ -9,8 +9,8 @@ interface Props {
 const Frame: React.FunctionComponent<Props> = ({ url, title }) => {
     const iframeRef = React.useRef(null)
     return (
-        <div className='rounded-md shadow-md w-full my-12'>
-            <p className='block text-pale-100 text-md mb-1'>{title}</p>
+        <div className='rounded-md shadow-md w-full '>
+            <p className='block text-pale-100 text-xl mb-1'>{title}</p>
             <IframeResizer
                 forwardRef={iframeRef}
                 heightCalculationMethod="lowestElement"
