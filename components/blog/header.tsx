@@ -10,7 +10,7 @@ export default function Header({ post }: Props) {
         <div className='flex text-white justify-between items-center'>
             <div className='flex gap-4'>
                 <div className='w-12 aspect-square relative'>
-                    <Image src="/static/profile.jpg" alt="header" layout='fill' className='rounded-full' />
+                    <Image src="/static/profile.jpg" alt="header" layout='fill' objectFit='cover' className='rounded-full' />
                 </div>
                 <span className='text-pale-100 text-sm'>Arkar Kaung Myat <br /> {post.publishedAt}</span>
             </div>

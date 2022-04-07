@@ -6,7 +6,6 @@ import { allSnippets } from '.contentlayer/data'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import components from '@/components/mdx'
 import SnippetPost from '@/components/snippet/snippetBlog'
-
 interface Props {
     snippet: Snippets
 }
