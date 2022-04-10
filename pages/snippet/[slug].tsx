@@ -12,7 +12,7 @@ interface Props {
 
 
 const Blogs: NextPage<Props> = ({ snippet }) => {
-    const MDXComponent = useMDXComponent(snippet.body.code);
+    const MDXComponent: any = useMDXComponent(snippet.body.code);
     return (
         <SnippetPost snippet={snippet}>
             <MDXComponent components={components} />
