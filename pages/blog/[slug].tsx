@@ -12,7 +12,7 @@ interface Props {
 
 
 const Blogs: NextPage<Props> = ({ post }) => {
-  const MDXComponent = useMDXComponent(post?.body?.code);
+  const MDXComponent: any = useMDXComponent(post?.body?.code);
 
   if (!post) return <div>Translating .....</div>
   return (
