@@ -5,7 +5,7 @@ import { SessionProvider } from "next-auth/react"
 import { QueryClientProvider, } from 'react-query'
 import queryClient from '@/queries/client';
 import useAnalytics from '@/libs/useAnalytics'
-function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: any) {
   useAnalytics();
   return (
     <SessionProvider session={session}>
