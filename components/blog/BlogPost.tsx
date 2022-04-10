@@ -7,7 +7,6 @@ import LoveReact from '@/components/lovereact';
 import type { Blog } from '.contentlayer/types'
 import { Blocks } from '@prisma/client'
 import { useBlockQuery } from '@/queries/blockreact';
-import Frame from '@/components/iframe';
 type Props = {
     children: JSX.Element,
     post: Blog
@@ -28,7 +27,6 @@ export default function BlogPost({ children, post }: Props) {
             <Navigation />
             <Header post={post}></Header>
             <article className='flexi-w p-4'>
-
                 {children}
             </article>
             {

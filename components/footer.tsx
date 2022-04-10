@@ -43,10 +43,10 @@ export default function Footer({ }: Props) {
             <br className='cursor-pointer' />
 
             <a className='text-display' href={'https://nextjs.org/'} target="_blank" rel="noreferrer">
-                Next.js
-            </a>,
+                Next.js,
+            </a>
             <a className='text-display' href={'https://www.typescriptlang.org/'} target="_blank" rel="noreferrer">
-                TypeScript and
+                TypeScript and <span> </span>
             </a>
             <a className='text-display' href={'https://github.com/contentlayerdev/contentlayer'} target="_blank" rel="noreferrer">
                 Contentlayer

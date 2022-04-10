@@ -34,11 +34,11 @@ function H4(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>
 let P = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLParagraphElement>) => <p {...props} className='leading-loose text-read-100 text-[1.1rem] lg:text-[1.25rem]' />;
 
 function UL(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLUListElement>) {
-    return <ul {...props} className='text-white my-2 lg:my-4 list-disc px-4' />;
+    return <ul {...props} className='text-white my-2 lg:my-4 list-disc px-4 pl-12' />;
 }
 
 function OL(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLOListElement>) {
-    return <ol {...props} className='text-white my-2 lg:my-4 list-decimal px-4' />;
+    return <ol {...props} className='text-white my-2 lg:my-4 list-decimal px-4 pl-12' />;
 }
 
 function HR(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHRElement>) {

@@ -10,7 +10,7 @@ interface Props {
 const Drawer: React.FunctionComponent<Props> = ({ isOpen, setIsOpen }) => {
     const router = useRouter();
     if (!isOpen) return null
-    return (<div className='w-full h-screen glass-bg fixed p-8 top-0 left-0 z-50 lg:z-0'>
+    return (<div className='w-full h-full glass-bg fixed p-8 top-0 left-0 z-50 lg:z-0'>
         <div className='w-full flex text-white justify-end'>
             <Image alt='Menu Icon' src={'/static/close.svg'} width='32' height={'32'} onClick={() => setIsOpen(!isOpen)}></Image>
         </div>
