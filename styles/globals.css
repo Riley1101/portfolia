@@ -3,9 +3,12 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 
-
+html{
+    @apply bg-primary-100;
+}
 html.has-scroll-smooth {
     overflow: hidden;
+    
 }
 
 .flexi-w {
@@ -131,6 +134,7 @@ pre[class*="language-"] {
     hyphens: none;
     overflow-x: scroll;
 
+    
     white-space: pre-wrap;
     word-break: break-all;
 }
@@ -141,6 +145,7 @@ pre[class*="language-"] {
     margin: .5em 0;
     overflow: auto;
     border-radius: 0.3em;
+    
 }
 
 :not(pre)>code[class*="language-"],
