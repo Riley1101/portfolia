@@ -1,41 +1,37 @@
-import React from 'react';
 import type { Blog } from '.contentlayer/types';
-
+import type { NextRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import React from 'react';
 interface Props {
     posts: Blog[],
-    pinned: Blog[],
-    keyword: string
+    keyword: string,
+    category: string
 }
 
 let useBlogs = (data: Props): {
     posts: Blog[],
-    pinned: Blog[],
 } => {
-
+    const router: NextRouter = useRouter();
     let [posts, setPosts] = React.useState(data.posts);
-    let [pinned, setPinned] = React.useState(data.pinned);
-
     React.useEffect(() => {
-        if (data.keyword !== '') {
-            // filter by keyword
-            let filteredPost = data.posts.filter(post => {
-                return post.title.toLowerCase().includes(data.keyword.toLowerCase());
-            });
-            setPosts(filteredPost);
-            let filteredPinned = data.pinned.filter(post => {
-                return post.title.toLowerCase().includes(data.keyword.toLowerCase());
-            });
-            setPinned(filteredPinned);
+        let filteredPost: Blog[];
+        if (data.category === 'All') {
+            filteredPost = data.posts.filter((post: Blog) => {
+                return post.title.toLowerCase().includes(data.keyword.toLowerCase()) || post.summary.toLowerCase().includes(data.keyword.toLowerCase())
+            })
+        } else {
+            let category: any = data.category
+            filteredPost = data.posts.filter(post => post.categories && post.categories.includes(category));
         }
-
-    }, [data.keyword, data.pinned, data.posts])
-
-
-
-
+        if (data.keyword !== '') {
+            filteredPost = filteredPost.filter(post => {
+                return post.title.toLowerCase().includes(data.keyword.toLowerCase()) || post.summary.toLowerCase().includes(data.keyword.toLowerCase());
+            });
+        }
+        setPosts(filteredPost);
+    }, [data.keyword, posts, data.category, data.posts])
     return {
         posts: posts,
-        pinned: pinned
     };
 }
 

@@ -1,5 +1,4 @@
-import { defineDocumentType, makeSource, ComputedFields, } from 'contentlayer/source-files'
-
+import { defineDocumentType, makeSource, ComputedFields, defineNestedType } from 'contentlayer/source-files'
 import readingTime from 'reading-time';
 import remarkGfm from 'remark-gfm';
 
@@ -20,6 +19,13 @@ const computedFields: ComputedFields = {
     }
 };
 
+const Category = defineNestedType(() => ({
+    name: 'Category',
+    fields: {
+        name: { type: 'string', required: true },
+    },
+}))
+
 export const Blog = defineDocumentType(() => (
     {
         name: 'Blog',
@@ -32,6 +38,10 @@ export const Blog = defineDocumentType(() => (
             publishedAt: { type: 'string', required: true },
             pinned: { type: 'boolean', default: false },
             locale: { type: 'string', default: 'en' },
+            categories: {
+                type: 'list',
+                of: Category,
+            },
         },
         computedFields
     }
