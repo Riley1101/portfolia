@@ -4,13 +4,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 
 html{
-    @apply bg-primary-100;
+    @apply bg-primary-100 scroll-smooth;
 }
 html.has-scroll-smooth {
     overflow: hidden;
     
 }
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
 
+.scrollbar-none {
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
 .flexi-w {
     @apply md:w-[80%] md:mx-auto lg:w-[40%] lg:mx-auto;
 }
