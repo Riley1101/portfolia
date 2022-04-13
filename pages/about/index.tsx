@@ -10,8 +10,8 @@ import styles from '@/styles/common/btn/index.module.css';
 import Meta from '@/components/blog/meta';
 const About: NextPage = () => {
     let meta = {
-        title: 'Arkar Kaung Myat / About',
-        summary: 'Personal blog by @arkarkaungmyat',
+        title: 'Arkar Kaung Myat',
+        summary: 'Everything about me',
         slug: 'arkardev.space/',
         image: '/static/sharing.png',
     }
@@ -26,7 +26,7 @@ const About: NextPage = () => {
                 </div>
                 <p className='my-4 text-pale-100 '>
 
-                    Hey I’m Arkar Kaung Myat,  an inspiring frontend developer.<br />
+                    Hey I’m <h1 className='inline'>Arkar Kaung Myat</h1> ,  an inspiring frontend developer.<br />
                     {/* Right now I’m working at <a target={"_blank"} rel="noopener noreferrer" href="https://www.facebook.com/pohmalcourierservice" className='text-display'>Pohmal Currier Service</a>  especially as an Android/iOS developer. <br /> */}
                 </p>
                 <p className='mt-4 text-pale-100 '> I am available if you are looking for something special in </p>
