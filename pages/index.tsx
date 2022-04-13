@@ -21,7 +21,7 @@ interface Props {
 
 const Home: NextPage<Props> = ({ blogs, features }) => {
   let meta = {
-    title: 'Personal Blog @ Arkar Kaung Myat',
+    title: 'Arkar Kaung Myat',
     summary: 'Here you checkout everything about me and my programming life',
     slug: 'arkardev.space/',
     image: '/static/sharing.png',
