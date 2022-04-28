@@ -12,14 +12,14 @@ categories:
 
 import Frame from '@/components/iframe'
 
-## How I built the website
+### How I built the website
 
 Since the last months, I haven't got a chance to update any content on my youtube channel and something comes to my mind that I can still blogs while doing my jobs or even
 gather what I have learned over the week and post a note about them.
 So first thing first, where do I write the blog. Dev.to, medium, or any other platform? What about if I code my website and share the journey along the way with others and document it?
 The features are pretty simple, a simple platform with some content and snippets of code perhaps.
 
-## Tech Stack 
+### Tech Stack 
 
 I love Next.js. And it has amazing static site generation features. Also since it is a blog post it gonna need to CURD some data such as comments, likes, etc. I am also pretty sure that I don't want to set up a 
 backend server for handling and storing my blogs information. So I just decided to go with Next.js serverless APIs.
@@ -27,7 +27,7 @@ backend server for handling and storing my blogs information. So I just decided 
 Planetscale is a serverless database platform to store my blog post's information such as comments, likes, etc. Also, I used Prisma to define my app data models. As for me a guy with a Django background I am so enjoying ORM and 
 also, I am gonna be coding with Typescript so everything goes just perfect in my opinion.
 
-## How do I write the contents?
+### How do I write the contents?
 
 I have some experience working on some projects about content writing on the web. In some of my company's projects, I have used some rich text editors to write and parse the contents on the web.
 (eg:Quilljs,Jodit,CKEditor,etc).These editors were really amazing to leverage a better user experience but sometimes they come with their own tradeoffs. In this case, I realized that I am gonna be the only one who is gonna write and update the website. So
@@ -37,7 +37,7 @@ I decided to use markdown for writing the contents for my website.
 <Frame url='https://codepen.io/quill/embed/KzZqZx?default-tab=html%2Cresult' title='Quill Editor demo' />
 
 
-## What is markdown ?
+### What is markdown ?
 
 Markdown is a lightweight markup language to format plain texts. One of the most obvious use case of markdown you can see is readme-files in GitHub repos.
 When you add some text-decoration to a text such as bold, italics, or underline you are basically formatting it. So markdown is a syntax or you can say some sets of rules to format how you want your texts to be. For example, on the web, we use hypertext markup language (HTML) to format our contents 
@@ -84,7 +84,7 @@ it is amazingly cool. It takes data sources from any local contents or any headl
 So in my case with Next.js, isn't that cool that I can use static site generation from next.js and use contentlayer data to generate static pages. Well that is the power of dynamic with the speed of static.
 You can check out the full blog on how I use contentlayer in my blog later on. I am gonna try blogging as much as I can later.
 
-## What about backend?
+### What about backend?
 
 I love Next.js and one of the main features of Next.js that excite me is its serverless APIs.In Next.js you can build your own API within the Next.js application. In Next.js everything you put inside *pages/api* folder will be treated
 as an API endpoint instead of a webpage. They are also serverside bundles and they won't increase on your client-side bundle. 
