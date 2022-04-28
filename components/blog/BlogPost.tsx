@@ -26,11 +26,10 @@ export default function BlogPost({ children, post }: Props) {
             <Meta post={post} />
             <Navigation />
             <Header post={post}></Header>
-            <article className='flexi-w p-4'>
+            <article className='flexi-w p-4 prose prose-xl prose-pre:text-white prose-p:text-read-100  text-read-100 leading-relaxed prose-strong:text-white prose-strong:italic prose-headings:text-white   '>
                 {children}
             </article>
             {
-
                 block && <LoveReact block={block} />
             }
 

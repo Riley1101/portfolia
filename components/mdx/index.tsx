@@ -22,36 +22,36 @@ function RoundedImage(props: any) {
 
 
 function H2(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>) {
-    return <h1 {...props} className='text-2xl text-white font-bold my-2 lg:text-2xl lg:my-4' />;
+    return <h1 {...props} />;
 }
 function H3(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>) {
-    return <h3 {...props} className='text-xl text-white font-bold my-2 lg:my-4' />;
+    return <h3 {...props} />;
 }
 function H4(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement>) {
-    return <h3 {...props} className='text-md text-white font-bold my-2 lg:my-4' />;
+    return <h3 {...props} />;
 }
 
-let P = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLParagraphElement>) => <p {...props} className='leading-loose text-read-100 text-[1.1rem] lg:text-[1.25rem]' />;
+let P = (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLParagraphElement>) => <p {...props} />;
 
 function UL(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLUListElement>) {
-    return <ul {...props} className='text-white my-2 lg:my-4 list-disc px-4 pl-12' />;
+    return <ul {...props} />;
 }
 
 function OL(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLOListElement>) {
-    return <ol {...props} className='text-white my-2 lg:my-4 list-decimal px-4 pl-12' />;
+    return <ol {...props} />;
 }
 
 function HR(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHRElement>) {
-    return <hr {...props} className='my-3 block invisible lg:my-3' />;
+    return <hr {...props} />;
 }
 
 function Quote(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLElement> & BlockquoteHTMLAttributes<HTMLElement>) {
-    return <blockquote  {...props} className='block pl-5 py-1 border-l-[4px] my-8 lg:py-2' />;
+    return <blockquote  {...props} />;
 }
 
 
 function Pre(props: JSX.IntrinsicAttributes & ClassAttributes<HTMLPreElement>) {
-    return <pre {...props} className='pre-code' />;
+    return <pre {...props} className='pre-code ' />;
 }
 
 
