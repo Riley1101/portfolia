@@ -1,0 +1,338 @@
+---
+title: 'React Alert System using useReducer and Context API ?'
+publishedAt: '2022-05-14'
+summary: ' In this article, we gonna talk about how we can build a simple alert system with React and useReducer and Context API.'
+image: '/blog/alert_system/alert_cover.png'
+pinned: false
+locale: 'en' 
+categories:
+  - React
+---
+
+import Frame from '@/components/iframe'
+
+
+After building multiple management applications and a dashboard with React. I found that every time the team needs a reusable notification system 
+we relied on [React Alert](https://www.npmjs.com/package/react-alert) and the library did an amazing job of creating a notification system.
+
+But in the article, I want to talk a little more about React useReducer hook and how we can build a reusable alert system with React without using any
+state management systems or libraries.
+
+### What is useReducer? 
+
+Use Reducer is one of the addition shipped with React 16.8 and it is a great alternative to other opinionated options 
+such as [Redux](https://redux.js.org/), [Recoil](https://recoiljs.org/) or [MobX](https://mobx.js.org/).
+
+
+### useState vs useReducer
+
+useState is the most powerful hook in React in managing your state, but sometimes when building complex applications in which multiple states rely on each other or you have to update and manage multiple states at the same time, useReducer is the best option.
+Why? well, have you ever faced some situations like this in your project?
+
+```javascript
+
+    let filterResult = (e)=>{
+        setValue(e)
+        setSomething(e)
+        setSomeState(e)
+        setSomeMore(e)
+        setManyMore(e)
+    }
+
+```
+There are about 5 states in this example. But imagine when you have a lot of states and you need to update them all at the same time. That just becomes messy and hard to organize. Imagine you are 
+writing a dashboard application with lots of states that would be more painful and hard to maintain.
+
+OR, sometimes 
+
+```javascript 
+
+let [data,setData] = useState({})
+
+let handleUpdate = (newData)=>{
+    setData(state => { 
+        ...state, 
+    name : 'New Name',
+    age ; 21
+    })
+}
+```
+
+So for the above solution, you may say you can probably use an object but for every update, you will have to all the spread operators to maintain all the remaining states. 
+
+OR sometimes 
+
+```javascript
+
+    const [count, setCount] = useState(0);
+
+    const handleIncrease = () => {
+      setCount(count => count + 1);
+    };
+
+    const handleDecrease = () => {
+      setCount(count => count - 1);
+    };
+
+  ```
+  Nothing wrong with the above code but useReducer can help you organize in a more sophisticated manner.
+
+  ### useReducer
+
+  So let's take a look at what useReducer can help and how it can be used in better state management in React. 
+  To talk about useReducer, let's talk a look at some of its termonologies and its basic ideas. As I mentioned earlier useReducer is similar to Redux so,
+  for those of you who are not familiar with Redux, here are some base building blocks you may need to know.
+
+  1. *State* - The global object for all your application data.
+  2. *Reducer* - Just pure functions that take the previous state and an action, and return the next state. 
+  3. *An Action* - Just an object which tells the reducer how to update the state accordingly, together with a payload which is a new value for state or updated Data
+  4  *Dispatch* - A function that takes an action and sends it to the reducer just so it can update the state accordingly.
+
+  Here is the basic workflow.
+
+<Image
+  alt={`React composition component`}
+  src={`/blog/alert_system/reducer.png`}
+  width={1501 / 2}
+  height={712 / 2}
+  objectFit="cover"
+  priority
+/>
+
+
+  ```javascript
+
+  const initialState = { count: 0 };
+  
+  // use Reducer Hook
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  // use Reducer
+
+  function reducer(state, action) {
+    switch (action.type) {
+      case "increment":
+        return { count: state.count + 1 };
+      case "decrement":
+        return { count: state.count - 1 };
+      default:
+        throw new Error();
+    }
+  }
+
+  // jsx 
+
+  function Counter() {
+    const [state, dispatch] = useReducer(reducer, initialState);
+    return (
+      <>
+        Count: {state.count}
+        <button onClick={() => dispatch({ type: "increment" })}>+</button>
+        <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+      </>
+    );
+  }
+
+  ```
+
+  useReducer accepts a reducer function which is a normal javascript function that returns the updated state. And an initial state which is the initial state
+  of your component. And useReducer returns the current state to use in the components and a dispatch function which to update the state accordingly with the action provided.
+
+  As you can see the reducer, which accepts the state object and action object to tell the reducer how to update the state. And finally, as you can see in the jsx
+  we just passed an object to the dispatch function which includes the type of the action for the reducer to follow.
+
+So let's talk more about Context API in React, and then we gonna build our alert system with useReducer.
+
+### What is Context? 
+
+Context is a way to share data between components without having to pass props down manually. You can use context to pass down data to any child component without having to pass down props
+manually.
+To use context, you create a context object using createContext provided by React.
+
+```javascript
+import { createContext } from 'react';
+const MyContext = createContext('Default Value');
+
+```
+
+createContext accepts one optional argument: the default value.
+To use context value across your application, you need to wrap your component in a Context Provider.
+
+```javascript
+
+function Main() {
+  const value = 'My Context Value'; // data to use across the app
+  return (
+    <Context.Provider value={value}>
+      <App />
+    </Context.Provider>
+  );
+}
+
+```
+
+And to use context in the child components you just use the useContext hook provided by React.
+
+```javascript
+import { useContext } from 'react';
+
+function MyChildComponent() {
+  const value = useContext(Context);
+  return <span>{value}</span>;
+}
+
+// or you can use it with Consumer Object
+
+function MyComponent() {
+  return (
+    <Context.Consumer>
+      {value => <span>{value}</span>}
+    </Context.Consumer>
+  );
+}
+
+```
+
+Here is a sample of how you can pass login data for the entire app.
+
+```javascript
+
+const UserProvider = ({ children }) => {
+  const [name, setName] = useState("John Doe");
+  const [age, setAge] = useState(1);
+  const happyBirthday = () => setAge(age + 1);
+  return (
+    <UserContext.Provider value={{ name, age, happyBirthday }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+
+```
+
+### Creating an alert system 
+
+So the goal is to build a reusable alert system throughout the entire app.
+
+First, start with the Context to store all the alert data.
+
+```javascript
+
+import { createContext } from 'react';
+
+// Context for storing alert states and dispatch handler ;
+const AlertContext = createContext();
+
+```
+
+And here is what our alert provider looks like.
+
+
+```javascript
+const AlertProvider = (props) => {
+    // default state for dispatch
+    let defaultValue = []
+    const [state, dispatch] = useReducer(alertReducer, defaultValue);
+    return (
+        <AlertContext.Provider value={{ state, dispatch }}>
+            {props.children}                                                  // for the main component
+            {createPortal(<AlertContainer alerts={state} />, document.body)}  // portal for our alert componnents
+        </AlertContext.Provider>
+    );
+}
+
+```
+As you can see we used createPortal provided by React to attach our alert popups to attach to the document body.
+And within the alertReducer.
+
+```javascript
+
+import { v4 as uuidv4 } from 'uuid';
+
+const alertReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'ADD':
+            return [
+                ...state, {
+                    id: uuidv4(),
+                    type: action.type,
+                    alerttype: action.alerttype,
+                    content: {
+                        title: action.content.title,
+                        message: action.content.message,
+                        link: action.content.link
+                    },
+                    duration: action.duration ? action.duration : 3000
+                }
+            ]
+        case 'REMOVE':
+            // Dispatch method for closing alert by their specific ids
+            return state.filter(alert => alert.id !== action.alert)
+        case 'CLEAR':
+            // Close all alerts 
+            return []
+        default:
+            return state;
+    }
+};
+
+
+```
+
+We have ADD, REMOVE and CLEAR actions type to add remove and remove all of our alert components.
+
+And for AlertContainer I just used the position absolute and z index.
+
+```javascript
+
+// alert container have a alert props which receiver data from parent component or 
+// you can directly receiver value from the Context API, in our case AlertContext
+export default function AlertContainer({alert}) {
+
+    // css in js for further customization for alert position 
+    let Position = {
+        position: 'fixed',
+        top: '1em',
+        right: '.5em',
+        zIndex: 1000,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '.5rem',
+    }
+
+    return (
+        <div role='alertdialog' className={Position}>
+            {
+                alerts.map(alert => <CustomAlert alert={alert} key={alert.id} />)
+            }
+        </div>
+    );
+}
+
+
+```
+As for the CustomAlert component you can use your favorite component from design libraries or your custom component.
+
+So later if I want to use my alert system all I have to do is just wrap my AlertProvider to the app.
+
+```javascript
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(
+  <React.StrictMode>
+      <AlertProvider>
+        <App />
+      </AlertProvider>
+  </React.StrictMode>
+);
+```
+
+Here is how the demo would look like
+
+Demo : [Link](https://react-alert-with-context.vercel.app/)
+
+<Frame url='https://react-alert-with-context.vercel.app/' title='Alert Demo' />
+
+
+
+And you can check out the source code in the Github repo [here](https://github.com/Riley1101/react-alert-with-context) .
