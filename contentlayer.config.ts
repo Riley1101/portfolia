@@ -2,7 +2,6 @@ import { defineDocumentType, makeSource, ComputedFields, defineNestedType } from
 import readingTime from 'reading-time';
 import remarkGfm from 'remark-gfm';
 
-import rehypeCodeTitles from 'rehype-code-titles';
 import rehypePrism from 'rehype-prism-plus';
 
 
@@ -65,7 +64,6 @@ export default makeSource({
     mdx: {
         remarkPlugins: [remarkGfm],
         rehypePlugins: [
-            rehypeCodeTitles,
             rehypePrism,
         ]
     }

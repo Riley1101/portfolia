@@ -35,7 +35,6 @@
     "react-query": "^3.34.16",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-code-titles": "^1.0.3",
     "rehype-highlight": "^5.0.2",
     "rehype-prism-plus": "^1.3.1",
     "rehype-slug": "^5.0.1",
