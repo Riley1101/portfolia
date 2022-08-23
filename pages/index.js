@@ -48,7 +48,7 @@ export default function Home({ posts, snippets, videos }) {
     if (!first) {
       setTimeout(() => {
         onDrawerOpen();
-      }, 2000);
+      }, 5000);
       localStorage.setItem("firstVisitCheck", true);
     }
   }, []);
