@@ -1,0 +1,17 @@
+[
+  {
+    "id": "2",
+    "title": "About",
+    "slug": "about"
+  },
+  {
+    "id": "3",
+    "title": "Snippets",
+    "slug": "snippets"
+  },
+  {
+    "id": "4",
+    "title": "Books",
+    "slug": "books"
+  }
+]

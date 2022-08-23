@@ -1,0 +1,46 @@
+{
+  "name": "arkardev-beta",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@algolia/autocomplete-js": "^1.7.1",
+    "@algolia/autocomplete-plugin-query-suggestions": "^1.7.1",
+    "@algolia/autocomplete-plugin-recent-searches": "^1.7.1",
+    "@algolia/autocomplete-theme-classic": "^1.7.1",
+    "@apollo/client": "^3.6.9",
+    "@chakra-ui/icons": "^2.0.6",
+    "@chakra-ui/react": "^2.2.6",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "algoliasearch": "^4.14.2",
+    "chakra-ui-markdown-renderer": "^4.1.0",
+    "dateformat": "^5.0.3",
+    "framer-motion": "^7.0.0",
+    "graphql": "^16.5.0",
+    "highlight.js": "^11.6.0",
+    "next": "12.2.4",
+    "nprogress": "^0.2.0",
+    "prismjs": "^1.28.0",
+    "qs": "^6.11.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hotkeys-hook": "^3.4.7",
+    "react-icons": "^4.4.0",
+    "react-instantsearch-dom": "^6.31.1",
+    "react-instantsearch-hooks-web": "^6.31.1",
+    "react-markdown": "^8.0.3",
+    "reading-time": "^1.5.0",
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "devDependencies": {
+    "@types/nprogress": "^0.2.0",
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.4"
+  }
+}
