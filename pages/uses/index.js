@@ -100,9 +100,17 @@ export default function About() {
       link: "https://www.jetbrains.com/pycharm/",
     },
   ];
+
+  let meta = {
+    title: "Uses — An Inspiring Developer, travelling in CS",
+    description:
+      "Some of the tools for my daily coding, development and productivity.",
+    url: "https://arkardev.space/uses",
+    image: "/static/general/meta.png",
+  };
   return (
     <MainContainer>
-      <Meta />
+      <Meta meta={meta} />
       <VStack alignItems={"flex-start"} spacing=".2em" mt="8" mb="0" p="4">
         <Heading as="h2" fontSize={["2xl", "4xl"]}>
           Software development tools .
