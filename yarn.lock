@@ -828,6 +828,11 @@
   dependencies:
     "@chakra-ui/utils" "2.0.6"
 
+"@corex/deepmerge@^4.0.29":
+  version "4.0.29"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-4.0.29.tgz#af9debf07d7f6b0d2a9d04a266abf2c1418ed2f6"
+  integrity sha512-q/yVUnqckA8Do+EvAfpy7RLdumnBy9ZsducMUtZTvpdbJC7azEf1hGtnYYxm0QfphYxjwggv6XtH64prvS1W+A==
+
 "@ctrl/tinycolor@^3.4.0":
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-3.4.1.tgz#75b4c27948c81e88ccd3a8902047bcd797f38d32"
@@ -2927,6 +2932,14 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
+
+next-sitemap@^3.1.21:
+  version "3.1.21"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.21.tgz#aa543acd59f15f7c1f11d5855a84adb9a4bddeb6"
+  integrity sha512-8upGCtI91FvjNBpeKDZzrzRBlY4BH6qjG7dMe89sdBzJ9B++PVLTzRPlpLHJYOEPukBROsxi2zVuAvePBtsrdw==
+  dependencies:
+    "@corex/deepmerge" "^4.0.29"
+    minimist "^1.2.6"
 
 next@12.2.4:
   version "12.2.4"
