@@ -1,13 +1,10 @@
 import {
-  Grid,
-  Box,
-  GridItem,
-  Text,
-  HStack,
   Badge,
-  VStack,
   Flex,
+  HStack,
+  Text,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
 const Card = ({ data }) => {

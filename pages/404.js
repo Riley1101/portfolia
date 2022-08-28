@@ -1,5 +1,4 @@
 import MainContainer from "@/layouts/container";
-import { Button } from "@chakra-ui/react";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 

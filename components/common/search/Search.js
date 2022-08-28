@@ -1,22 +1,5 @@
-import React from "react";
-import {
-  Box,
-  Heading,
-  HStack,
-  IconButton,
-  Kbd,
-  Text,
-  Modal,
-  ModalBody,
-  InputGroup,
-  Input,
-  InputRightElement,
-  ModalOverlay,
-  ModalContent,
-  useColorMode,
-  useDisclosure,
-} from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { connectSearchBox } from "react-instantsearch-dom";
 function Search({ refine }) {
   return (

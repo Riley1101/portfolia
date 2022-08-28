@@ -1,20 +1,15 @@
-import MainContainer from "@/layouts/container";
 import Meta from "@/components/common/meta";
-import Image from "next/image";
+import MainContainer from "@/layouts/container";
 import {
   Box,
   Heading,
-  VStack,
-  Text,
-  HStack,
-  useColorModeValue,
-  Button,
-  Stack,
   Link,
-  AspectRatio,
-  Grid,
+  Stack,
+  Text,
+  useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+import Image from "next/image";
 export default function About() {
   let cardBg = useColorModeValue("blue.50", "gray.900");
   const title = useColorModeValue("gray.700", "gray.200");

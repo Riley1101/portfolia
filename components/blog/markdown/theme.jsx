@@ -1,28 +1,69 @@
 import {
-  Text,
-  OrderedList,
-  useColorModeValue,
-  Image,
   Box,
+  Button,
   Code,
+  Image,
+  OrderedList,
+  Text,
   UnorderedList,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import hljs from "highlight.js";
+import useClipboard from "react-use-clipboard";
+
+import React from "react";
+const PreBlock = ({ children, className }) => {
+  return <pre className={className}>{children}</pre>;
+};
+const CodeBlock = ({ children, ...props }) => {
+  const [isCopied, setCopied] = useClipboard(children);
+
+  React.useEffect(() => {
+    hljs.initHighlighting();
+  }, []);
+  return (
+    <Box position="relative">
+      <Button
+        onClick={() => {
+          setCopied(children);
+        }}
+        aria-label="Copy"
+        size="xs"
+        position={["absolute", "absolute"]}
+        colorScheme="blue"
+        zIndex="10"
+        right={"1.5em"}
+        top={"1.5em"}
+      >
+        {isCopied ? "Copied" : "Copy"}
+      </Button>
+      <Code
+        className={props.className}
+        colorScheme={"dark"}
+        borderRadius={"2em"}
+        transition="all 250ms ease"
+        display="block"
+        my="1.5em"
+        _hover={{
+          borderRadius: "1em",
+        }}
+        style={{
+          paddingInline: "2em",
+        }}
+      >
+        {children}
+      </Code>
+    </Box>
+  );
+};
 const useMarkdownTheme = () => {
   const pColor = useColorModeValue("gray.600", "gray.400");
-  const codeBg = useColorModeValue("#171a23", "#171a23");
   const quoteColor = useColorModeValue("rgba(0,0,0,0.5)", "white");
-  let codeStyle = {
-    overflow: "hidden",
-    overflowX: "auto",
-    color: "white",
-    padding: "1em",
-    borderRadius: "2em",
-    paddingInline: "2.5em",
-    marginBlock: "1.5em",
-    backgroundColor: codeBg,
-  };
+
   const markdownTheme = {
+    pre: (props) => {
+      return <PreBlock {...props} />;
+    },
     h1: (props) => {
       const { children } = props;
       return (
@@ -85,27 +126,10 @@ const useMarkdownTheme = () => {
         </Text>
       );
     },
-    pre: (props) => {
-      const { children } = props;
-      return (
-        <pre className={props.className} style={codeStyle}>
-          {children}
-        </pre>
-      );
-    },
+
     code: (props) => {
       const { children } = props;
-      return (
-        <Code
-          w="full"
-          bg="facebook"
-          colorScheme="twitter"
-          className={props.className}
-          style={{ fontSize: "1em" }}
-        >
-          {children}
-        </Code>
-      );
+      return <CodeBlock className={props.className}>{children}</CodeBlock>;
     },
     img: (props) => {
       return (
@@ -119,8 +143,8 @@ const useMarkdownTheme = () => {
           width={["100%", "auto"]}
           objectFit="contain"
           height={["100%", "auto"]}
+          maxH={["auto", "350px"]}
           my="8"
-          mx="auto"
           alt={""}
           layout="fill"
         />

@@ -1,7 +1,4 @@
 import {
-  Grid,
-  Box,
-  GridItem,
   Text,
   HStack,
   Badge,

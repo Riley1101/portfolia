@@ -1,8 +1,13 @@
-import { FaTwitter, FaLinkedin, FaFacebook } from "react-icons/fa";
-import SocialButton from "@/components/common/socialButton";
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+} from "react-share";
 import {
   Stack,
   HStack,
+  IconButton,
   Box,
   Heading,
   useColorModeValue,
@@ -10,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import dateFormat from "dateformat";
 import readingTime from "reading-time";
+import { RWebShare } from "react-web-share";
 const Meta = ({ data }) => {
   let bg = useColorModeValue("gray.800", "gray.800");
   return (
@@ -45,16 +51,40 @@ const Meta = ({ data }) => {
           <Text>-</Text>
           <Text>{readingTime(data.content).text}</Text>
         </HStack>
-        <Stack direction={"row"} spacing={6}>
-          <SocialButton label={"Twitter"} href={"#"}>
-            <FaTwitter style={{ color: "#1a202c" }} />
-          </SocialButton>
-          <SocialButton label={"LinkedIn"} href={"#"}>
-            <FaLinkedin style={{ color: "#1a202c" }} />
-          </SocialButton>
-          <SocialButton label={"Instagram"} href={"#"}>
+        <Stack direction={"row"} spacing={6} display={["block", "none"]}>
+          <RWebShare
+            data={{
+              text: "Like humans, flamingos make friends for life",
+              url: "https://on.natgeo.com/2zHaNup",
+              title: "Flamingos",
+            }}
+            onClick={() => console.log("shared successfully!")}
+          >
             <FaFacebook color="red.500" style={{ color: "#1a202c" }} />
-          </SocialButton>
+          </RWebShare>
+        </Stack>
+        <Stack direction={"row"} spacing={4} display={["none", "block"]}>
+          <FacebookShareButton url={`https://arkardev.space/blog/${data.slug}`}>
+            <IconButton
+              size={"sm"}
+              background="transparent"
+              icon={<FaFacebook style={{ color: "#1a202c" }} />}
+            />
+          </FacebookShareButton>
+          <LinkedinShareButton url={`https://arkardev.space/blog/${data.slug}`}>
+            <IconButton
+              size={"sm"}
+              background="transparent"
+              icon={<FaLinkedin style={{ color: "#1a202c" }} />}
+            />
+          </LinkedinShareButton>
+          <TwitterShareButton url={`https://arkardev.space/blog/${data.slug}`}>
+            <IconButton
+              size={"sm"}
+              background="transparent"
+              icon={<FaTwitter style={{ color: "#1a202c" }} />}
+            />
+          </TwitterShareButton>
         </Stack>
       </Box>
     </Box>

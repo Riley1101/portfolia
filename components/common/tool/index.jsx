@@ -1,16 +1,12 @@
 import {
-  Grid,
-  Box,
-  GridItem,
-  Text,
-  HStack,
-  Tooltip,
   AspectRatio,
-  Badge,
-  VStack,
-  IconButton,
+  Box,
   Flex,
+  IconButton,
+  Text,
+  Tooltip,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { MdOpenInNew } from "react-icons/md";

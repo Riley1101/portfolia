@@ -2,7 +2,6 @@ import {
   Box,
   Container,
   Stack,
-  Text,
   VisuallyHidden,
   chakra,
   useColorModeValue,

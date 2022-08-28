@@ -1,24 +1,7 @@
-import { Kbd } from "@chakra-ui/react";
-import { Text, InputGroup, Input, InputRightElement } from "@chakra-ui/react";
 import "@algolia/autocomplete-theme-classic";
-import { SearchIcon } from "@chakra-ui/icons";
-import { connectSearchBox } from "instantsearch.js/es/connectors";
-const Search = connectSearchBox(({ refine }) => {
-  return (
-    <InputGroup w="full">
-      <Input
-        placeholder="Search"
-        onChange={(e) => refine(e.currentTarget.value)}
-        type="search"
-      />
-      <InputRightElement>
-        <SearchIcon />
-      </InputRightElement>
-    </InputGroup>
-  );
-});
+import { Kbd, Text } from "@chakra-ui/react";
 
-function NavigationModal({ isOpen, onOpen, onClose }) {
+function NavigationModal({ onOpen }) {
   return (
     <>
       <Text as="span" cursor={"pointer"} onClick={onOpen}>

@@ -8,7 +8,6 @@ import {
   Skeleton,
   Text,
 } from "@chakra-ui/react";
-import BlogCard from "@/components/common/card";
 import BookmarkCard from "@/components/common/bookmarkCard";
 import { HiOutlineCode } from "react-icons/hi";
 import { gql } from "@apollo/client";

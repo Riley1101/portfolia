@@ -1,11 +1,10 @@
 import {
-  IconButton,
   Box,
+  IconButton,
   Text,
-  VStack,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import { SearchIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import { BsArrow90DegLeft } from "react-icons/bs";
 function Hits({ items, source }) {

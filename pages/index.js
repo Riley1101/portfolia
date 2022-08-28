@@ -51,7 +51,7 @@ export default function Home({ posts, snippets, videos }) {
       }, 5000);
       localStorage.setItem("firstVisitCheck", true);
     }
-  }, []);
+  }, [onDrawerOpen]);
   const shadow = useColorModeValue("sm", "none");
   return (
     <MainContainer>

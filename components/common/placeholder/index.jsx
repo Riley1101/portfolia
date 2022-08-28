@@ -1,15 +1,5 @@
-import {
-  Grid,
-  Box,
-  GridItem,
-  Text,
-  HStack,
-  Badge,
-  VStack,
-  Flex,
-  useColorModeValue,
-} from "@chakra-ui/react";
-const Card = ({ data }) => {
+import { Flex, useColorModeValue } from "@chakra-ui/react";
+const Card = () => {
   const bg = useColorModeValue("#eff2f9", "gray.900");
   return (
     <Flex

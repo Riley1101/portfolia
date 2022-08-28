@@ -37,12 +37,21 @@
     "react-instantsearch-dom": "^6.31.1",
     "react-instantsearch-hooks-web": "^6.31.1",
     "react-markdown": "^8.0.3",
+    "react-share": "^4.4.0",
+    "react-use-clipboard": "^1.0.8",
+    "react-web-share": "^1.1.6",
     "reading-time": "^1.5.0",
-    "resize-observer-polyfill": "^1.5.1"
+    "resize-observer-polyfill": "^1.5.1",
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^12.2.5",
     "@types/nprogress": "^0.2.0",
-    "eslint": "8.21.0",
-    "eslint-config-next": "12.2.4"
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "12.2.4",
+    "eslint-plugin-react": "^7.31.0",
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }

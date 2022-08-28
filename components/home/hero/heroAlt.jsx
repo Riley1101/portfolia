@@ -2,8 +2,6 @@ import {
   Box,
   Heading,
   Stack,
-  Show,
-  VStack,
   Text,
   HStack,
   useColorModeValue,

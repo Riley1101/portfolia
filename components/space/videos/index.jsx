@@ -10,7 +10,6 @@ import {
 import VideoCard from "@/components/common/video";
 import { RiVideoLine } from "react-icons/ri";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import server from "@/utils/server";
 const Videos = () => {
   const [videos, setVideos] = useState([]);

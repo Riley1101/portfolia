@@ -1,24 +1,13 @@
 import {
-  IconButton,
   Box,
+  IconButton,
   Text,
-  VStack,
-  ListItem,
-  List,
-  ListIcon,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import { SearchIcon, ExternalLinkIcon, AttachmentIcon } from "@chakra-ui/icons";
-import { BsArrow90DegLeft } from "react-icons/bs";
-import { BiGlobe } from "react-icons/bi";
-import {
-  FaTwitter,
-  FaYoutube,
-  FaInstagram,
-  FaGithub,
-  FaFacebook,
-} from "react-icons/fa";
 import Link from "next/link";
+import { BsArrow90DegLeft } from "react-icons/bs";
+import { FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
 function Suggestion() {
   let border = useColorModeValue("gray.100", "gray.600");
   let iconButton = useColorModeValue("gray.900", "gray.200");

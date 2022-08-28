@@ -1,27 +1,22 @@
+import AutoComplete from "@/components/common/search/AutoComplete";
 import "@algolia/autocomplete-theme-classic/dist/theme.css";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
   Heading,
-  Tooltip,
   HStack,
   IconButton,
-  Drawer,
-  DrawerBody,
-  DrawerContent,
-  Kbd,
-  Text,
   Modal,
   ModalBody,
-  ModalOverlay,
   ModalContent,
+  ModalOverlay,
+  Tooltip,
   useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { ImCommand } from "react-icons/im";
-import AutoComplete from "@/components/common/search/AutoComplete";
 import { useHotkeys } from "react-hotkeys-hook";
+import { ImCommand } from "react-icons/im";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -43,6 +38,7 @@ const Header = () => {
           ArkarDev
         </Heading>
       </Link>
+
       <Modal isOpen={isOpen} onClose={onClose} size={["xs", "lg"]}>
         <ModalOverlay />
         <ModalContent maxH={"400px"} overflowY="auto">

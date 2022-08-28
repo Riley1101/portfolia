@@ -1,17 +1,13 @@
 import {
+  AspectRatio,
   Box,
-  Heading,
-  Stack,
-  Show,
-  VStack,
-  Text,
-  HStack,
-  useColorModeValue,
   Button,
   Grid,
   GridItem,
-  IconButton,
-  AspectRatio,
+  Heading,
+  Text,
+  useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";

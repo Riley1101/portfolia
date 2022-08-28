@@ -9,8 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { FiPlayCircle } from "react-icons/fi";
 const Video = ({ video }) => {
-  console.log(video);
-  const bg = useColorModeValue("#eff2f9", "gray.900");
   const text = useColorModeValue("#eff2f9", "#eff2f9");
   let image =
     video?.snippet?.thumbnails?.standard?.url || "/static/general/snippet.jpg";

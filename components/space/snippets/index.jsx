@@ -1,4 +1,3 @@
-import BlogCard from "@/components/common/card";
 import SnippetCard from "@/components/common/snippetCard";
 import useSpaceQuery from "@/components/space/query";
 import { gql } from "@apollo/client";

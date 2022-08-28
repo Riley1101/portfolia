@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["eslint:recommended", "next"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": 0
+  },
+  "globals": {
+    "React": "writable"
+  }
 }

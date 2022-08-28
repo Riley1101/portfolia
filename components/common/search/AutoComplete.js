@@ -1,11 +1,11 @@
-import React from "react";
-import searchClient from "@/utils/search/client";
-import { createQuerySuggestionsPlugin } from "@algolia/autocomplete-plugin-query-suggestions";
-import { Box, InputGroup, Input, InputRightElement } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import { createAutocomplete } from "@algolia/autocomplete-core";
-import { getAlgoliaResults } from "@algolia/autocomplete-preset-algolia";
 import Suggession from "@/components/common/search/Suggesstion";
+import searchClient from "@/utils/search/client";
+import { createAutocomplete } from "@algolia/autocomplete-core";
+import { createQuerySuggestionsPlugin } from "@algolia/autocomplete-plugin-query-suggestions";
+import { getAlgoliaResults } from "@algolia/autocomplete-preset-algolia";
+import { SearchIcon } from "@chakra-ui/icons";
+import { Box, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import React from "react";
 
 import Hints from "@/components/common/search/hint";
 function Autocomplete() {

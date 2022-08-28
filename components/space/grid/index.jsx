@@ -1,10 +1,8 @@
-import { Grid, Box, Heading, GridItem, VStack } from "@chakra-ui/react";
-import BlogCard from "@/components/common/card";
-import VideoCard from "@/components/common/video";
 import Blogs from "@/components/space/blog";
 import Snippets from "@/components/space/snippets";
 import Tools from "@/components/space/tools";
 import Videos from "@/components/space/videos";
+import { Box } from "@chakra-ui/react";
 const SpaceGrid = () => {
   return (
     <Box p="4">
