@@ -49,6 +49,13 @@ const nextConfig = {
       },
     ];
   },
+  compiler: {
+    removeConsole: true,
+  },
+  experimental: {
+    runtime: "nodejs",
+    serverComponents: true,
+  },
 };
 
 module.exports = nextConfig;

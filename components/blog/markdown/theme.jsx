@@ -19,7 +19,7 @@ const CodeBlock = ({ children, ...props }) => {
   const [isCopied, setCopied] = useClipboard(children);
 
   React.useEffect(() => {
-    hljs.initHighlighting();
+    hljs.highlightAll();
   }, []);
   return (
     <Box position="relative">
