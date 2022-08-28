@@ -8,18 +8,23 @@ import {
   UnorderedList,
   useColorModeValue,
 } from "@chakra-ui/react";
-import hljs from "highlight.js";
 import useClipboard from "react-use-clipboard";
-
+const prism = require("prismjs");
 import React from "react";
+require("prismjs/components/prism-javascript");
+
+require("prismjs/components/prism-css");
+
+require("prismjs/components/prism-jsx");
+
 const PreBlock = ({ children, className }) => {
-  return <pre className={className}>{children}</pre>;
+  return <pre className={`${className}`}>{children}</pre>;
 };
 const CodeBlock = ({ children, ...props }) => {
   const [isCopied, setCopied] = useClipboard(children);
 
   React.useEffect(() => {
-    hljs.highlightAll();
+    prism.highlightAll();
   }, []);
   return (
     <Box position="relative">
@@ -40,15 +45,16 @@ const CodeBlock = ({ children, ...props }) => {
       <Code
         className={props.className}
         colorScheme={"dark"}
-        borderRadius={"2em"}
         transition="all 250ms ease"
         display="block"
         my="1.5em"
         _hover={{
-          borderRadius: "1em",
+          borderRadius: "2em",
         }}
         style={{
-          paddingInline: "2em",
+          padding: "2em",
+          whiteSpace: "pre-wrap",
+          // borderRadius:'2em'
         }}
       >
         {children}
