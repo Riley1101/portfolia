@@ -15,7 +15,7 @@ import useSpaceQuery from "@/components/space/query";
 const Blogs = () => {
   const BLOG_QUERY = gql`
     query BlogQuery($limit: Int!) {
-      posts(last: $limit) {
+      posts(first: $limit, orderBy: publishedAt_DESC) {
         id
         slug
         categories {
