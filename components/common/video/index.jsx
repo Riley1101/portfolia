@@ -22,6 +22,7 @@ const Video = ({ video }) => {
       position={"relative"}
       backgroundImage={`url("${image}")`}
       backgroundSize={"110%"}
+      minH={["200px", "auto"]}
       backgroundPosition={"center"}
     >
       <Box
