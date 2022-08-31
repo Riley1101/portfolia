@@ -5,9 +5,12 @@ import {
   Image,
   OrderedList,
   Text,
+  Link,
   UnorderedList,
   useColorModeValue,
 } from "@chakra-ui/react";
+
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import useClipboard from "react-use-clipboard";
 const prism = require("prismjs");
 import React from "react";
@@ -67,6 +70,21 @@ const useMarkdownTheme = () => {
   const quoteColor = useColorModeValue("rgba(0,0,0,0.5)", "white");
 
   const markdownTheme = {
+    a: (props) => {
+      const { children } = props;
+      return (
+        <Link
+          {...props}
+          _hover={{
+            color: "blue.500",
+          }}
+          isExternal
+          colorScheme="blue"
+        >
+          {children} <ExternalLinkIcon mx="2px" />
+        </Link>
+      );
+    },
     pre: (props) => {
       return <PreBlock {...props} />;
     },
@@ -140,6 +158,7 @@ const useMarkdownTheme = () => {
     img: (props) => {
       return (
         <Image
+          mx="auto"
           borderRadius="3em"
           _hover={{
             borderRadius: "1.5em",

@@ -18,8 +18,8 @@ import {
 
 import { useEffect } from "react";
 const HOME_QUERY = gql`
-  query MyQuery {
-    posts(last: 3) {
+  query HomeQuery {
+    posts(first: 3, orderBy: publishedAt_DESC) {
       id
       publishedAt
       slug
@@ -28,7 +28,7 @@ const HOME_QUERY = gql`
       content
       description
     }
-    snippets: snippets(last: 6) {
+    snippets: snippets(first: 6, orderBy: updatedAt_DESC) {
       id
       slug
       title
