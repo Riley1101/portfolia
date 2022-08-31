@@ -54,9 +54,9 @@ const Meta = ({ data }) => {
         <Stack direction={"row"} spacing={6} display={["block", "none"]}>
           <RWebShare
             data={{
-              text: "Like humans, flamingos make friends for life",
-              url: "https://on.natgeo.com/2zHaNup",
-              title: "Flamingos",
+              text: data?.description,
+              url: "https://arkardev.space/blog/${data.slug}",
+              title: data?.title,
             }}
             onClick={() => console.log("shared successfully!")}
           >
