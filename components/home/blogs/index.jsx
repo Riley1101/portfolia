@@ -32,13 +32,13 @@ const Blogs = ({ posts }) => {
               _hover={{
                 borderRadius: "1.5em",
               }}
+              borderRadius={"3em"}
               alignItems={"flex-start"}
               bg={cardBg}
               cursor={"pointer"}
               w="full"
               p="8"
               px="9"
-              borderRadius={"3em"}
               spacing=".3em"
             >
               <Text fontSize="xl" fontWeight="semibold">

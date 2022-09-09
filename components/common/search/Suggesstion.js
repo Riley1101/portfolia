@@ -13,8 +13,8 @@ function Suggestion() {
   let iconButton = useColorModeValue("gray.900", "gray.200");
   let nav = [
     {
-      name: "Space",
-      slug: "space",
+      name: "Blogs",
+      slug: "blogs",
       icon: <BsArrow90DegLeft color={iconButton} />,
     },
     {
@@ -26,6 +26,11 @@ function Suggestion() {
       name: "Books",
       icon: <BsArrow90DegLeft color={iconButton} />,
       slug: "books",
+    },
+    {
+      name: "Space",
+      slug: "space",
+      icon: <BsArrow90DegLeft color={iconButton} />,
     },
     {
       name: "About",

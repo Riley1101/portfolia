@@ -9,8 +9,9 @@ import {
 import Link from "next/link";
 const Card = ({ data }) => {
   const bg = useColorModeValue("#eff2f9", "gray.900");
+  // const hoverBg = useColorModeValue("blue.400", "blue.700");
   return (
-    <Link href={`/blog/${data.slug}`}>
+    <Link href={`/blog/${data?.slug}`}>
       <Flex
         w="full"
         backgroundColor={bg}
