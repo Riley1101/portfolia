@@ -3,6 +3,8 @@ import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import Mouse from "@/utils/mouse";
 import SmoothScroll from "@/utils/smoothScroll";
+
+import Analytics from "@/utils/analytics";
 const MainContainer = ({ children }) => {
   return (
     <SmoothScroll>
@@ -12,6 +14,7 @@ const MainContainer = ({ children }) => {
         lineHeight="1.7"
         fontFamily={"'Roboto', sans-serif"}
       >
+        <Analytics />
         <Header />
         {children}
         <Footer />
