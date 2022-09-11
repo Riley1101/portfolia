@@ -1,17 +1,4 @@
-import {
-  Box,
-  Button,
-  Grid,
-  GridItem,
-  Heading,
-  Skeleton,
-  Text,
-  useColorModeValue,
-  Flex,
-  SkeletonCircle,
-  SkeletonText,
-  VStack,
-} from "@chakra-ui/react";
+import { Grid, Skeleton, useColorModeValue, VStack } from "@chakra-ui/react";
 const Card = () => {
   const bg = useColorModeValue("#eff2f9", "gray.900");
   return (
