@@ -12,6 +12,7 @@ import {
 import { FaRegNewspaper } from "react-icons/fa";
 import { gql } from "@apollo/client";
 import useSpaceQuery from "@/components/space/query";
+import PlaceHolderGrid from "@/components/common/placeholder";
 const Blogs = () => {
   const BLOG_QUERY = gql`
     query BlogQuery($limit: Int!) {
@@ -28,6 +29,7 @@ const Blogs = () => {
     }
   `;
   const { data, loading, loadMore } = useSpaceQuery(BLOG_QUERY, 5);
+  if (loading) return <PlaceHolderGrid />;
   return (
     <Box my="8">
       <VStack alignItems={"flex-start"} spacing=".2em" my="7">
@@ -38,6 +40,7 @@ const Blogs = () => {
           A little bit of here and there.
         </Text>
       </VStack>
+
       <Grid
         templateColumns={["1fr", "repeat(6, 1fr)"]}
         gap={4}
@@ -63,6 +66,7 @@ const Blogs = () => {
           </GridItem>
         ))}
       </Grid>
+
       <Box w="full" mt="7" display={"flex"} justifyContent="flex-end">
         <Button
           isLoading={loading}

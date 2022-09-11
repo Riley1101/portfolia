@@ -12,6 +12,7 @@ import BookmarkCard from "@/components/common/bookmarkCard";
 import { HiOutlineCode } from "react-icons/hi";
 import { gql } from "@apollo/client";
 import useSpaceQuery from "@/components/space/query";
+import PlaceHolderGrid from "@/components/common/placeholder";
 const Tools = () => {
   const TOOL_QUERY = gql`
     query TOOL_QUERY($limit: Int) {
@@ -29,6 +30,7 @@ const Tools = () => {
     }
   `;
   const { data, loading, loadMore } = useSpaceQuery(TOOL_QUERY, 5);
+  if (loading) return <PlaceHolderGrid />;
   return (
     <Box my="8">
       <VStack alignItems={"flex-start"} spacing=".2em" my="7">

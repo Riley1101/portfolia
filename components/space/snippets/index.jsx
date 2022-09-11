@@ -12,6 +12,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { HiOutlineCode } from "react-icons/hi";
+import PlaceHolderGrid from "@/components/common/placeholder";
+
 const Snippets = () => {
   const SNIPPET_QUERY = gql`
     query Snippet_Query($limit: Int) {
@@ -29,6 +31,8 @@ const Snippets = () => {
     }
   `;
   const { data, loading, loadMore } = useSpaceQuery(SNIPPET_QUERY, 5);
+  if (loading) return <PlaceHolderGrid />;
+
   return (
     <Box my="8">
       <VStack alignItems={"flex-start"} spacing=".2em" my="7">
