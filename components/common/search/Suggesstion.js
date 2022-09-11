@@ -18,6 +18,11 @@ function Suggestion() {
       icon: <BsArrow90DegLeft color={iconButton} />,
     },
     {
+      name: "Space",
+      slug: "space",
+      icon: <BsArrow90DegLeft color={iconButton} />,
+    },
+    {
       name: "Uses",
       slug: "uses",
       icon: <BsArrow90DegLeft color={iconButton} />,
@@ -27,16 +32,12 @@ function Suggestion() {
       icon: <BsArrow90DegLeft color={iconButton} />,
       slug: "books",
     },
-    {
-      name: "Space",
-      slug: "space",
-      icon: <BsArrow90DegLeft color={iconButton} />,
-    },
-    {
-      name: "About",
-      slug: "about",
-      icon: <BsArrow90DegLeft color={iconButton} />,
-    },
+
+    // {
+    //   name: "About",
+    //   slug: "about",
+    //   icon: <BsArrow90DegLeft color={iconButton} />,
+    // },
   ];
   const social = [
     {

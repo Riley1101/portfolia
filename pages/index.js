@@ -7,16 +7,7 @@ import MainContainer from "@/layouts/container";
 import client from "@/utils/query/client";
 import server from "@/utils/server";
 import { gql } from "@apollo/client";
-import {
-  Drawer,
-  DrawerBody,
-  DrawerContent,
-  Text,
-  useDisclosure,
-  useColorModeValue,
-} from "@chakra-ui/react";
 
-import { useEffect } from "react";
 const HOME_QUERY = gql`
   query HomeQuery {
     posts(first: 3, orderBy: publishedAt_DESC) {
@@ -38,33 +29,8 @@ const HOME_QUERY = gql`
 `;
 
 export default function Home({ posts, snippets, videos }) {
-  const {
-    isOpen: drawer,
-    onOpen: onDrawerOpen,
-    onClose: onDrawerClose,
-  } = useDisclosure();
-  useEffect(() => {
-    let first = localStorage.getItem("firstVisitCheck");
-    if (!first) {
-      setTimeout(() => {
-        onDrawerOpen();
-      }, 5000);
-      localStorage.setItem("firstVisitCheck", true);
-    }
-  }, [onDrawerOpen]);
-  const shadow = useColorModeValue("sm", "none");
   return (
     <MainContainer>
-      <Drawer placement={"top"} onClose={onDrawerClose} isOpen={drawer}>
-        <DrawerContent shadow={shadow}>
-          <DrawerBody>
-            <Text textAlign={"center"} fontSize="xs">
-              Thank you for visiting.Website is still in beta and some of the
-              pages are still developing.
-            </Text>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
       <Meta />
       <Hero />
       <Blogs posts={posts} />

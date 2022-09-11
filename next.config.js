@@ -50,7 +50,7 @@ const nextConfig = {
     ];
   },
   compiler: {
-    removeConsole: true,
+    removeConsole: false,
   },
   experimental: {
     runtime: "nodejs",
