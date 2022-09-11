@@ -8,6 +8,12 @@ import client from "@/utils/query/client";
 import server from "@/utils/server";
 import { gql } from "@apollo/client";
 
+function calculate(){
+  const a = 10
+  let b = 10 
+  let sum = a + b
+  return 'result'
+}
 const HOME_QUERY = gql`
   query HomeQuery {
     posts(first: 3, orderBy: publishedAt_DESC) {

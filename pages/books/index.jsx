@@ -75,7 +75,7 @@ const doneData = [
     title: "Computer science distilled",
     description:
       "A walkthrough of computer science concepts you must know. Designed for readers who don't care for academic formalities ",
-    image: "/static/books/csdistilled.jpg ",
+    image: "/static/books/csdistilled.jpg",
   },
   {
     id: 2,
