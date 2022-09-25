@@ -1,19 +1,25 @@
 import Meta from "@/components/common/meta";
-import Blogs from "@/components/home/blogs";
-import Hero from "@/components/home/hero";
-import Snippets from "@/components/home/snippets";
-import Video from "@/components/home/videos";
+// import Blogs from "@/components/home/blogs";
+// import Hero from "@/components/home/hero";
+// import Snippets from "@/components/home/snippets";
+// import Video from "@/components/home/videos";
 import MainContainer from "@/layouts/container";
 import client from "@/utils/query/client";
 import server from "@/utils/server";
 import { gql } from "@apollo/client";
-
-function calculate(){
-  const a = 10
-  let b = 10 
-  let sum = a + b
-  return 'result'
-}
+import dynamic from "next/dynamic";
+const Hero = dynamic(() => import("@/components/home/hero"), {
+  suspense: true,
+});
+const Blogs = dynamic(() => import("@/components/home/blogs"), {
+  suspense: true,
+});
+const Snippets = dynamic(() => import("@/components/home/snippets"), {
+  suspense: true,
+});
+const Video = dynamic(() => import("@/components/home/videos"), {
+  suspense: true,
+});
 const HOME_QUERY = gql`
   query HomeQuery {
     posts(first: 3, orderBy: publishedAt_DESC) {
