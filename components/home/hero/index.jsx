@@ -6,6 +6,7 @@ import {
   HStack,
   Stack,
   Text,
+  Tooltip,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
@@ -73,8 +74,7 @@ const Hero = () => {
           fontSize={"xl"}
           pb="2"
         >
-          I’m an inspiring full-stack engineer, a designer, and a content
-          creator. I do{" "}
+          I’m an inspiring full-stack engineer. I do{" "}
           <Text cursor={"pointer"} as="u" color={twitter}>
             Web development
           </Text>{" "}
@@ -139,31 +139,38 @@ const Hero = () => {
           </a>
         </HStack>
       </VStack>
-      <Box
-        sx={style}
-        transition={"all 250ms ease"}
-        _hover={{
-          borderRadius: "20%",
-          transform: "rotate(0deg)",
-        }}
-        transform="rotate(5deg)"
-        border={"1px"}
-        borderColor={useColorModeValue("gray.100", "gray.800")}
-        borderRadius={"35%"}
-        background={useColorModeValue("transparent", "gray.900")}
-        w={["250px", "350px"]}
-        h={["250px", "350px"]}
-        position="relative"
-        overflow={"hidden"}
-        cursor="pointer"
+      <Tooltip
+        hasArrow
+        placement="top"
+        label="Digital Art by amazing artist Yee Chun Kyaw"
+        aria-label="Digital Art by amazing artist Yee Chun Kyaw"
       >
-        <Image
-          layout="fill"
-          objectFit="cover"
-          alt="My Photo"
-          src="/static/general/avatar.png"
-        />
-      </Box>
+        <Box
+          sx={style}
+          transition={"all 250ms ease"}
+          _hover={{
+            borderRadius: "20%",
+            transform: "rotate(0deg)",
+          }}
+          transform="rotate(5deg)"
+          border={"1px"}
+          borderColor={useColorModeValue("gray.100", "gray.800")}
+          borderRadius={"35%"}
+          background={useColorModeValue("transparent", "gray.900")}
+          w={["250px", "350px"]}
+          h={["250px", "350px"]}
+          position="relative"
+          overflow={"hidden"}
+          cursor="pointer"
+        >
+          <Image
+            layout="fill"
+            objectFit="cover"
+            alt="My Photo"
+            src="/static/general/avatar.png"
+          />
+        </Box>
+      </Tooltip>
     </Stack>
   );
 };
