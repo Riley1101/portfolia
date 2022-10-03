@@ -7,7 +7,6 @@ import {
 import {
   Stack,
   HStack,
-  IconButton,
   Box,
   Heading,
   useColorModeValue,
@@ -63,27 +62,15 @@ const Meta = ({ data }) => {
             <FaFacebook color="red.500" style={{ color: "#1a202c" }} />
           </RWebShare>
         </Stack>
-        <Stack direction={"row"} spacing={4} display={["none", "block"]}>
+        <Stack direction={"row"} spacing={4} display={["none", "block"]} mt="4">
           <FacebookShareButton url={`https://arkardev.space/blog/${data.slug}`}>
-            <IconButton
-              size={"sm"}
-              background="transparent"
-              icon={<FaFacebook style={{ color: "#1a202c" }} />}
-            />
+            <FaFacebook style={{ color: "#1a202c" }} />
           </FacebookShareButton>
           <LinkedinShareButton url={`https://arkardev.space/blog/${data.slug}`}>
-            <IconButton
-              size={"sm"}
-              background="transparent"
-              icon={<FaLinkedin style={{ color: "#1a202c" }} />}
-            />
+            <FaLinkedin style={{ color: "#1a202c" }} />
           </LinkedinShareButton>
           <TwitterShareButton url={`https://arkardev.space/blog/${data.slug}`}>
-            <IconButton
-              size={"sm"}
-              background="transparent"
-              icon={<FaTwitter style={{ color: "#1a202c" }} />}
-            />
+            <FaTwitter style={{ color: "#1a202c" }} />
           </TwitterShareButton>
         </Stack>
       </Box>

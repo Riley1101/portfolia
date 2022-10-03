@@ -6,6 +6,7 @@ import useNProgress from "@/utils/nProgress";
 import client from "@/utils/query/client";
 import "dracula-prism/dist/css/dracula-prism.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import "katex/dist/katex.min.css";
 function MyApp({ Component, pageProps }) {
   useNProgress();
 

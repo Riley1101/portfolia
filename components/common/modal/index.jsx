@@ -4,7 +4,7 @@ import { Kbd, Text } from "@chakra-ui/react";
 function NavigationModal({ onOpen }) {
   return (
     <>
-      <Text as="span" cursor={"pointer"} onClick={onOpen}>
+      <Text cursor={"pointer"} onClick={onOpen}>
         <Kbd>ctrl </Kbd> + <Kbd>K</Kbd>
       </Text>
     </>

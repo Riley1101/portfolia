@@ -9,7 +9,7 @@ import {
   UnorderedList,
   useColorModeValue,
 } from "@chakra-ui/react";
-
+import katex from "katex";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import useClipboard from "react-use-clipboard";
 const prism = require("prismjs");
@@ -23,45 +23,80 @@ require("prismjs/components/prism-jsx");
 const PreBlock = ({ children, className }) => {
   return <pre className={`${className}`}>{children}</pre>;
 };
+
+const MathBlock = ({ symbol }) => {
+  const renderMath = (sym) =>
+    katex.renderToString(sym, {
+      throwOnError: false,
+    });
+  const color = useColorModeValue("#222", "#fff");
+  return (
+    <Box position="relative" my="1.5em">
+      {symbol.map((sym, index) => (
+        <Code
+          display={"block"}
+          transition="all 250ms ease"
+          w="full"
+          p={"2em"}
+          colorScheme="blackAlpha"
+          key={index}
+          color={color}
+          _hover={{
+            borderRadius: "2em",
+          }}
+          dangerouslySetInnerHTML={{ __html: renderMath(sym) }}
+        ></Code>
+      ))}
+    </Box>
+  );
+};
 const CodeBlock = ({ children, ...props }) => {
   const [isCopied, setCopied] = useClipboard(children);
 
   React.useEffect(() => {
-    prism.highlightAll();
+    if (typeof window !== "undefined") {
+      prism.highlightAll();
+    }
   }, []);
   return (
     <Box position="relative">
-      <Button
-        onClick={() => {
-          setCopied(children);
-        }}
-        aria-label="Copy"
-        size="xs"
-        position={["absolute", "absolute"]}
-        colorScheme="blue"
-        zIndex="10"
-        right={"1.5em"}
-        top={"1.5em"}
-      >
-        {isCopied ? "Copied" : "Copy"}
-      </Button>
-      <Code
-        className={props.className}
-        colorScheme={"dark"}
-        transition="all 250ms ease"
-        display="block"
-        my="1.5em"
-        _hover={{
-          borderRadius: "2em",
-        }}
-        style={{
-          padding: "2em",
-          whiteSpace: "pre-wrap",
-          // borderRadius:'2em'
-        }}
-      >
-        {children}
-      </Code>
+      {props.className === "language-math" ? (
+        <MathBlock symbol={children} />
+      ) : (
+        <>
+          <Button
+            onClick={() => {
+              setCopied(children);
+            }}
+            aria-label="Copy"
+            size="xs"
+            position={["absolute", "absolute"]}
+            colorScheme="blue"
+            zIndex="10"
+            right={"1.5em"}
+            top={"1.5em"}
+          >
+            {isCopied ? "Copied" : "Copy"}
+          </Button>
+          <Code
+            className={props.className}
+            colorScheme={"dark"}
+            transition="all 250ms ease"
+            display="block"
+            my="1.5em"
+            _hover={{
+              borderRadius: "2em",
+            }}
+            style={{
+              padding: "2em",
+              whiteSpace: "pre-wrap",
+              // borderRadius:'2em'
+            }}
+          >
+            {children[0]}
+          </Code>
+        </>
+      )}
     </Box>
   );
 };
@@ -107,7 +142,7 @@ const useMarkdownTheme = () => {
       const { children } = props;
       return (
         <Text
-          as="h1"
+          as="h2"
           fontWeight={"bold"}
           color={pColor}
           fontSize="4xl"
@@ -121,7 +156,7 @@ const useMarkdownTheme = () => {
     h3: (props) => {
       const { children } = props;
       return (
-        <Text as="h1" fontWeight={"bold"} fontSize="3xl" my="2" mt="8">
+        <Text as="h3" fontWeight={"bold"} fontSize="3xl" my="2" mt="8">
           {children}
         </Text>
       );
@@ -129,7 +164,7 @@ const useMarkdownTheme = () => {
     h4: (props) => {
       const { children } = props;
       return (
-        <Text as="h1" fontWeight={"bold"} fontSize="2xl" my="2" mt="8">
+        <Text as="h4" fontWeight={"bold"} fontSize="2xl" my="2" mt="8">
           {children}
         </Text>
       );
@@ -137,7 +172,7 @@ const useMarkdownTheme = () => {
     h5: (props) => {
       const { children } = props;
       return (
-        <Text as="h1" fontWeight={"bold"} fontSize="xl" my="2" mt="8">
+        <Text as="h5" fontWeight={"bold"} fontSize="xl" my="2" mt="8">
           {children}
         </Text>
       );
@@ -145,7 +180,7 @@ const useMarkdownTheme = () => {
     p: (props) => {
       const { children } = props;
       return (
-        <Text as="p" color={pColor} mb="4">
+        <Text as="p" color={pColor} mb="4" fontSize={"1.2rem"}>
           {children}
         </Text>
       );
