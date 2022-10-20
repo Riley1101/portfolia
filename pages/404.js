@@ -3,6 +3,7 @@ import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 
 const NotFound = () => {
+  // function to generate random numbers
   return (
     <MainContainer>
       <Box w="100%" h="90vh" display="grid" placeItems="center">

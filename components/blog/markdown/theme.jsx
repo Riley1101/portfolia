@@ -5,6 +5,7 @@ import {
   Image,
   OrderedList,
   Text,
+  Highlight,
   Link,
   UnorderedList,
   useColorModeValue,
@@ -17,30 +18,31 @@ import React from "react";
 require("prismjs/components/prism-javascript");
 
 require("prismjs/components/prism-css");
-
 require("prismjs/components/prism-jsx");
-
-const PreBlock = ({ children, className }) => {
-  return <pre className={`${className}`}>{children}</pre>;
+require("prismjs/components/prism-python");
+const renderMath = (sym) =>
+  katex.renderToString(sym, {
+    throwOnError: false,
+  });
+const PreBlock = ({ children }) => {
+  return <pre className={`${children?.props?.className}`}>{children}</pre>;
 };
 
 const MathBlock = ({ symbol }) => {
-  const renderMath = (sym) =>
-    katex.renderToString(sym, {
-      throwOnError: false,
-    });
   const color = useColorModeValue("#222", "#fff");
   return (
-    <Box position="relative" my="1.5em">
+    <Box position="relative" my="1.5em" display={"block"}>
       {symbol.map((sym, index) => (
         <Code
           display={"block"}
           transition="all 250ms ease"
-          w="full"
+          w="auto"
           p={"2em"}
+          fontSize={"1.2rem"}
           colorScheme="blackAlpha"
           key={index}
           color={color}
+          lineHeight={2.5}
           _hover={{
             borderRadius: "2em",
           }}
@@ -59,9 +61,9 @@ const CodeBlock = ({ children, ...props }) => {
     }
   }, []);
   return (
-    <Box position="relative">
-      {props.className === "language-math" ? (
-        <MathBlock symbol={children} />
+    <Box position="relative" display={"inline"}>
+      {props.className.includes("math") ? (
+        <MathBlock symbol={children} className={props.className} />
       ) : (
         <>
           <Button
@@ -238,7 +240,42 @@ const useMarkdownTheme = () => {
         </UnorderedList>
       );
     },
+    em: (props) => {
+      return (
+        <Highlight
+          styles={{
+            fontSize: "1rem",
+            px: "1",
+            py: "1",
+            bg: "cyan.100",
+          }}
+          // {...props}
+          color={pColor}
+          query={props.children[0]}
+        >
+          {props?.children[0]}
+        </Highlight>
+      );
+    },
+    strong: ({ children }) => {
+      return (
+        <>
+          {children.map((sym) => (
+            <Text
+              key={sym}
+              as={"span"}
+              color="black"
+              mx="1"
+              px="1"
+              fontSize="1rem"
+              dangerouslySetInnerHTML={{ __html: renderMath(sym) }}
+            ></Text>
+          ))}
+        </>
+      );
+    },
   };
+
   return {
     theme: markdownTheme,
   };
