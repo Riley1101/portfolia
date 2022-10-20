@@ -5,7 +5,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 // 2. Add your color mode config
 const config = {
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: false,
   fonts: {
     heading: `Inter, sans-serif`,

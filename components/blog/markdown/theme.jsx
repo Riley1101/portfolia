@@ -5,7 +5,6 @@ import {
   Image,
   OrderedList,
   Text,
-  Highlight,
   Link,
   UnorderedList,
   useColorModeValue,
@@ -62,7 +61,7 @@ const CodeBlock = ({ children, ...props }) => {
   }, []);
   return (
     <Box position="relative" display={"inline"}>
-      {props.className.includes("math") ? (
+      {props?.className?.includes("math") ? (
         <MathBlock symbol={children} className={props.className} />
       ) : (
         <>
@@ -241,21 +240,7 @@ const useMarkdownTheme = () => {
       );
     },
     em: (props) => {
-      return (
-        <Highlight
-          styles={{
-            fontSize: "1rem",
-            px: "1",
-            py: "1",
-            bg: "cyan.100",
-          }}
-          // {...props}
-          color={pColor}
-          query={props.children[0]}
-        >
-          {props?.children[0]}
-        </Highlight>
-      );
+      return <Text as="u">{props.children ? props?.children[0] : ""}</Text>;
     },
     strong: ({ children }) => {
       return (
