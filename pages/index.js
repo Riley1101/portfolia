@@ -1,8 +1,4 @@
 import Meta from "@/components/common/meta";
-// import Blogs from "@/components/home/blogs";
-// import Hero from "@/components/home/hero";
-// import Snippets from "@/components/home/snippets";
-// import Video from "@/components/home/videos";
 import MainContainer from "@/layouts/container";
 import client from "@/utils/query/client";
 import server from "@/utils/server";

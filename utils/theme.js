@@ -11,6 +11,7 @@ const config = {
     heading: `Inter, sans-serif`,
     body: `Inter, sans-serif`,
   },
+
 };
 
 // 3. extend the theme

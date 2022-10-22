@@ -27,7 +27,7 @@ const Mouse = () => {
   }, []);
   return (
     <div
-      className={`${styles.cursor} ${click && styles.expand} z-[9999]`}
+      className={`${styles.cursor} ${click && styles.expand} z-[9999] `}
       ref={mouse}
     ></div>
   );

@@ -82,61 +82,52 @@ const Hero = () => {
           computer science and design.
         </Text>
         <HStack>
-          <a
-            target={"_blank"}
-            rel="noreferrer"
+          <Button
+            as={"a"}
             href="https://arkardev.space/github"
+            size={"md"}
+            target="_blank"
+            rightIcon={<ExternalLinkIcon />}
+            variant="outline"
+            border={"none"}
+            color={github}
+            _hover={{
+              textDecoration: "underline",
+              background: bg,
+            }}
           >
-            <Button
-              size={"md"}
-              rightIcon={<ExternalLinkIcon />}
-              variant="outline"
-              border={"none"}
-              color={github}
-              _hover={{
-                textDecoration: "underline",
-                background: bg,
-              }}
-            >
-              Github
-            </Button>
-          </a>
-          <a
-            target={"_blank"}
-            rel="noreferrer"
+            Github
+          </Button>
+
+          <Button
+            as={"a"}
             href="https://arkardev.space/twitter"
+            rightIcon={<ExternalLinkIcon />}
+            variant="outline"
+            border={"none"}
+            color={twitter}
+            _hover={{
+              textDecoration: "underline",
+              background: bg,
+            }}
           >
-            <Button
-              rightIcon={<ExternalLinkIcon />}
-              variant="outline"
-              border={"none"}
-              color={twitter}
-              _hover={{
-                textDecoration: "underline",
-                background: bg,
-              }}
-            >
-              Twitter
-            </Button>
-          </a>
-          <a
-            target={"_blank"}
-            rel="noreferrer"
+            Twitter
+          </Button>
+
+          <Button
+            as="a"
             href="https://arkardev.space/linkedin"
+            rightIcon={<ExternalLinkIcon />}
+            variant="outline"
+            border={"none"}
+            color={linkedIn}
+            _hover={{
+              textDecoration: "underline",
+              background: bg,
+            }}
           >
-            <Button
-              rightIcon={<ExternalLinkIcon />}
-              variant="outline"
-              border={"none"}
-              color={linkedIn}
-              _hover={{
-                textDecoration: "underline",
-                background: bg,
-              }}
-            >
-              LinkedIn
-            </Button>
-          </a>
+            LinkedIn
+          </Button>
         </HStack>
       </VStack>
       <Tooltip

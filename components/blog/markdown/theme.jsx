@@ -15,7 +15,6 @@ import useClipboard from "react-use-clipboard";
 const prism = require("prismjs");
 import React from "react";
 require("prismjs/components/prism-javascript");
-
 require("prismjs/components/prism-css");
 require("prismjs/components/prism-jsx");
 require("prismjs/components/prism-python");
@@ -24,47 +23,67 @@ const renderMath = (sym) =>
     throwOnError: false,
   });
 const PreBlock = ({ children }) => {
-  return <pre className={`${children?.props?.className}`}>{children}</pre>;
+  return <>{children}</>;
 };
-
-const MathBlock = ({ symbol }) => {
+const Strong = ({ children }) => {
   const color = useColorModeValue("#222", "#fff");
   return (
-    <Box position="relative" my="1.5em" display={"block"}>
-      {symbol.map((sym, index) => (
-        <Code
-          display={"block"}
-          transition="all 250ms ease"
-          w="auto"
-          p={"2em"}
-          fontSize={"1.2rem"}
-          colorScheme="blackAlpha"
-          key={index}
+    <>
+      {children.map((sym) => (
+        <Text
+          key={sym}
+          as={"span"}
           color={color}
-          lineHeight={2.5}
-          _hover={{
-            borderRadius: "2em",
-          }}
+          mx="1"
+          px="1"
+          fontSize="1rem"
           dangerouslySetInnerHTML={{ __html: renderMath(sym) }}
-        ></Code>
+        ></Text>
       ))}
+    </>
+  );
+};
+const MathBlock = ({ symbol }) => {
+  const color = useColorModeValue("#fff", "#fff");
+  return (
+    <Box position="relative" my="4" w="full" borderRadius='5px' _hover={{borderRadius:'2em'}} transition='all 250ms ease' overflow='hidden' >
+      <pre style={{ overflowX: "scroll", background: "#1D1D26", }}>
+        {symbol.map((sym, index) => (
+          <Code
+            transition="all 250ms ease"
+            w="auto"
+            p={"2em"}
+            bg="#1d1d26"
+            fontSize={"1.1rem"}
+            key={index}
+            color={color}
+            lineHeight={"4rem"}
+            dangerouslySetInnerHTML={{ __html: renderMath(sym) }}
+          ></Code>
+        ))}
+      </pre>
     </Box>
   );
 };
 const CodeBlock = ({ children, ...props }) => {
   const [isCopied, setCopied] = useClipboard(children);
-
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       prism.highlightAll();
     }
   }, []);
   return (
-    <Box position="relative" display={"inline"}>
+    <Box position="relative" overflow={"hidden"} my="4">
       {props?.className?.includes("math") ? (
         <MathBlock symbol={children} className={props.className} />
       ) : (
-        <>
+        <Box
+          p="4"
+          bg="#282a36"
+          borderRadius={"5px"}
+          transition="250ms ease"
+          _hover={{ borderRadius: "2em" }}
+        >
           <Button
             onClick={() => {
               setCopied(children);
@@ -79,24 +98,16 @@ const CodeBlock = ({ children, ...props }) => {
           >
             {isCopied ? "Copied" : "Copy"}
           </Button>
-          <Code
-            className={props.className}
-            colorScheme={"dark"}
-            transition="all 250ms ease"
-            display="block"
-            my="1.5em"
-            _hover={{
-              borderRadius: "2em",
-            }}
-            style={{
-              padding: "2em",
-              whiteSpace: "pre-wrap",
-              // borderRadius:'2em'
-            }}
-          >
-            {children[0]}
-          </Code>
-        </>
+          <pre className={props.className}>
+            <Code
+              colorScheme={"dark"}
+              transition="all 250ms ease"
+              display="block"
+            >
+              {children[0]}
+            </Code>
+          </pre>
+        </Box>
       )}
     </Box>
   );
@@ -195,9 +206,9 @@ const useMarkdownTheme = () => {
       return (
         <Image
           mx="auto"
-          borderRadius="3em"
+          borderRadius="5px"
           _hover={{
-            borderRadius: "1.5em",
+            borderRadius: "2em",
           }}
           transition="all 250ms ease"
           {...props}
@@ -242,23 +253,7 @@ const useMarkdownTheme = () => {
     em: (props) => {
       return <Text as="u">{props.children ? props?.children[0] : ""}</Text>;
     },
-    strong: ({ children }) => {
-      return (
-        <>
-          {children.map((sym) => (
-            <Text
-              key={sym}
-              as={"span"}
-              color="black"
-              mx="1"
-              px="1"
-              fontSize="1rem"
-              dangerouslySetInnerHTML={{ __html: renderMath(sym) }}
-            ></Text>
-          ))}
-        </>
-      );
-    },
+    strong: (props) => <Strong {...props} />,
   };
 
   return {
