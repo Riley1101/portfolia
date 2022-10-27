@@ -7,13 +7,15 @@ import client from "@/utils/query/client";
 import "dracula-prism/dist/css/dracula-prism.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "katex/dist/katex.min.css";
+import { Analytics } from "@vercel/analytics/react";
+
 function MyApp({ Component, pageProps }) {
   useNProgress();
-
   return (
     <ApolloProvider client={client}>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
+        <Analytics />
       </ChakraProvider>
     </ApolloProvider>
   );
