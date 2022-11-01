@@ -5,7 +5,7 @@ import Meta from "@/components/common/meta";
 import client from "@/utils/query/client";
 import BlogContent from "@/components/blog/markdown";
 const BlogDetail = ({ data }) => {
-  let defaultMeta = {
+  let meta = {
     title: data.title,
     description: data.description,
     url: `https://${process.env.NEXT_PUBLIC_DOMAIN}/blog/${data.slug}`,
@@ -13,7 +13,7 @@ const BlogDetail = ({ data }) => {
   };
   return (
     <MainContainer>
-      <Meta meta={defaultMeta} />
+      <Meta meta={meta} />
       <Banner data={data} />
       <BlogContent data={data} />
     </MainContainer>
