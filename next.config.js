@@ -56,9 +56,6 @@ const nextConfig = {
   compiler: {
     removeConsole: false,
   },
-  experimental: {
-    serverComponents: true,
-  },
 };
 
 // module.exports = nextConfig;

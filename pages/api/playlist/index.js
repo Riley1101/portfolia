@@ -37,3 +37,6 @@ export default async function handler(req, res) {
 //   --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
 //   --header 'Accept: application/json' \
 //   --compressed
+export const config = {
+  runtime: "nodejs",
+};
