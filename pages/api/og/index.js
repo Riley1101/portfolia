@@ -11,7 +11,7 @@ export default function handler(req) {
     const hasTitle = searchParams.has("title");
     const hasDescription = searchParams.has("description");
     const hasTag = searchParams.has("tag");
-    const tags = hasTag ? searchParams.get("tag").split(",") : [""];
+    const tags = hasTag ? searchParams.get("tags").split(",") : ["Welcome"];
     const title = hasTitle
       ? searchParams.get("title")?.slice(0, 100)
       : "Arkar Kaung Myat — An Inspiring Developer, travelling in CS 🚀";
