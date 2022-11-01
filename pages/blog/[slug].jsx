@@ -12,7 +12,6 @@ const BlogDetail = ({ data }) => {
     image: data.coverImage.url,
     tags: data.categories.map((item) => item.name),
   };
-  console.log(data);
   return (
     <MainContainer>
       <Meta meta={meta} />

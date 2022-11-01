@@ -10,7 +10,7 @@ export default function handler(req) {
     // ?title=<title>
     const hasTitle = searchParams.has("title");
     const hasDescription = searchParams.has("description");
-    const hasTag = searchParams.has("tag");
+    const hasTag = searchParams.has("tags");
     const tags = hasTag ? searchParams.get("tags").split(",") : ["Welcome"];
     const title = hasTitle
       ? searchParams.get("title")?.slice(0, 100)
