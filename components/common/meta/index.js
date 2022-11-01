@@ -20,7 +20,9 @@ const Meta = ({ meta = defaultMeta }) => {
       <meta property="og:description" content={meta.description} />
       <meta
         property="og:image"
-        content={`https://arkardev.space/api/og?title=${meta.title}&description=${meta.description}`}
+        content={`https://arkardev.space/api/og?title=${
+          meta.title
+        }&description=${meta.description}&tags=${meta.tags.join(",")}`}
       />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={meta.url} />
