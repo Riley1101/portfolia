@@ -57,7 +57,6 @@ const nextConfig = {
     removeConsole: false,
   },
   experimental: {
-    runtime: "nodejs",
     serverComponents: true,
   },
 };

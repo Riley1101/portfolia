@@ -25,7 +25,10 @@ const Meta = ({ meta = defaultMeta }) => {
       <meta property="twitter:url" content={meta.url} />
       <meta property="twitter:title" content={meta.title} />
       <meta property="twitter:description" content={meta.description} />
-      <meta property="twitter:image" content={meta.image}></meta>
+      <meta
+        property="twitter:image"
+        content={`https://arkardev.space/api/og?title=${meta.title}&description=${meta.description}`}
+      ></meta>
     </Head>
   );
 };
