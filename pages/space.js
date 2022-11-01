@@ -7,6 +7,7 @@ let defaultMeta = {
   description: "Explore - General space in my blog.",
   url: "https://arkardev.space/space",
   image: "/static/general/meta.png",
+  tags: ["Explore", "Space"],
 };
 const Space = () => {
   return (

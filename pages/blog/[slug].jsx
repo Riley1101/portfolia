@@ -10,7 +10,9 @@ const BlogDetail = ({ data }) => {
     description: data.description,
     url: `https://${process.env.NEXT_PUBLIC_DOMAIN}/blog/${data.slug}`,
     image: data.coverImage.url,
+    tags: data.categories.map((item) => item.name),
   };
+  console.log(data);
   return (
     <MainContainer>
       <Meta meta={meta} />

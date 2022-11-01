@@ -19,6 +19,7 @@ let meta = {
     "An inspiring developer who loves computer science, frontend technlogies,coding and designs.",
   url: "https://arkardev.space/",
   image: "/static/general/meta.png",
+  tags: ["Blogs", "Thoughts"],
 };
 
 const Blogs = ({ data }) => {

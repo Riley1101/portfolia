@@ -102,6 +102,7 @@ export default function About() {
       "Some of the tools for my daily coding, development and productivity.",
     url: "https://arkardev.space/uses",
     image: "/static/general/meta.png",
+    tags: ["Tools", "Weapons"],
   };
   return (
     <MainContainer>

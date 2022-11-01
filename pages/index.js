@@ -36,10 +36,19 @@ const HOME_QUERY = gql`
   }
 `;
 
+let defaultMeta = {
+  title: "Arkar Kaung Myat — An Inspiring Developer, travelling in CS",
+  description:
+    "An inspiring developer who loves computer science, frontend technlogies,coding and designs.",
+  url: "https://arkardev.space/",
+  tags: ["Welcome", "Home"],
+  image: "/static/general/meta.png",
+};
 export default function Home({ posts, snippets, videos }) {
   return (
     <MainContainer>
-      <Meta />
+      <Meta meta={defaultMeta} />
+
       <Hero />
       <Blogs posts={posts} />
       <Snippets snippets={snippets} />

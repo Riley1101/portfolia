@@ -22,6 +22,7 @@ let meta = {
     "A collection of interesting books that I read or look forward to reading them.",
   url: "https://arkardev.space/",
   image: "/static/general/meta.png",
+  tags: ["Books", "Articles"],
 };
 
 const currentData = [

@@ -2,9 +2,6 @@
 import { ImageResponse } from "@vercel/og";
 
 // eslint-disable-next-line @next/next/no-img-element
-export const config = {
-  runtime: "experimental-edge",
-};
 
 export default function handler(req) {
   try {
@@ -104,3 +101,6 @@ export default function handler(req) {
     });
   }
 }
+export const config = {
+  runtime: "experimental-edge",
+};

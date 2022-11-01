@@ -10,6 +10,7 @@ const BlogDetail = ({ data }) => {
     description: data.description,
     url: `${process.env.NEXT_PUBLIC_DOMAIN}/snippet/${data.slug}`,
     image: "/static/general/snippet.jpg",
+    tags: data.categories.map((item) => item.name),
   };
   return (
     <MainContainer>

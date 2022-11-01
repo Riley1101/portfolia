@@ -6,6 +6,7 @@ let defaultMeta = {
     "An inspiring developer who loves computer science, frontend technlogies,coding and designs.",
   url: "https://arkardev.space/",
   image: "/static/general/meta.png",
+  tags: ["Welcome", "Home"],
 };
 const Meta = ({ meta = defaultMeta }) => {
   return (
@@ -27,7 +28,9 @@ const Meta = ({ meta = defaultMeta }) => {
       <meta property="twitter:description" content={meta.description} />
       <meta
         property="twitter:image"
-        content={`https://arkardev.space/api/og?title=${meta.title}&description=${meta.description}`}
+        content={`https://arkardev.space/api/og?title=${
+          meta.title
+        }&description=${meta.description}&tags=${meta.tags.join(",")}`}
       ></meta>
     </Head>
   );
