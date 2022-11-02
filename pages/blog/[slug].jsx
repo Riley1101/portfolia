@@ -39,7 +39,7 @@ const POST_DETAIL_QUERY = gql`
       content
       toc
       slug
-      publishedAt
+      createdAt
       coverImage {
         url
       }

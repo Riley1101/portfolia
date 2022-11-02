@@ -16,7 +16,7 @@ import PlaceHolderGrid from "@/components/common/placeholder";
 const Blogs = () => {
   const BLOG_QUERY = gql`
     query BlogQuery($limit: Int!) {
-      posts(first: $limit, orderBy: publishedAt_DESC) {
+      posts(first: $limit, orderBy: createdAt_DESC) {
         id
         slug
         categories {

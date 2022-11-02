@@ -18,9 +18,9 @@ const Video = dynamic(() => import("@/components/home/videos"), {
 });
 const HOME_QUERY = gql`
   query HomeQuery {
-    posts(first: 3, orderBy: publishedAt_DESC) {
+    posts(first: 3, orderBy: createdAt_DESC) {
       id
-      publishedAt
+      createdAt
       slug
       title
       date

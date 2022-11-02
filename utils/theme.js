@@ -11,10 +11,20 @@ const config = {
     heading: `Inter, sans-serif`,
     body: `Inter, sans-serif`,
   },
-
 };
 
+const extras = {
+  colors: {
+    brand: {
+      500: "#1D1D1D",
+      400: "#404040",
+      300: "#6A6A6A",
+      200: "#D9D9D9",
+      100: "#fdfdfd",
+    },
+  },
+};
 // 3. extend the theme
-const theme = extendTheme({ config });
+const theme = extendTheme({ config, ...extras });
 
 export default theme;

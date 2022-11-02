@@ -8,6 +8,7 @@ import {
   Link,
   UnorderedList,
   useColorModeValue,
+  ListItem,
 } from "@chakra-ui/react";
 import katex from "katex";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
@@ -46,8 +47,16 @@ const Strong = ({ children }) => {
 const MathBlock = ({ symbol }) => {
   const color = useColorModeValue("#fff", "#fff");
   return (
-    <Box position="relative" my="4" w="full" borderRadius='5px' _hover={{borderRadius:'2em'}} transition='all 250ms ease' overflow='hidden' >
-      <pre style={{ overflowX: "scroll", background: "#1D1D26", }}>
+    <Box
+      position="relative"
+      my="4"
+      w="full"
+      borderRadius="5px"
+      _hover={{ borderRadius: "2em" }}
+      transition="all 250ms ease"
+      overflow="hidden"
+    >
+      <pre style={{ overflowX: "scroll", background: "#1D1D26" }}>
         {symbol.map((sym, index) => (
           <Code
             transition="all 250ms ease"
@@ -73,7 +82,7 @@ const CodeBlock = ({ children, ...props }) => {
     }
   }, []);
   return (
-    <Box position="relative" overflow={"hidden"} my="4">
+    <Box position="relative" overflow={"hidden"} my="8">
       {props?.className?.includes("math") ? (
         <MathBlock symbol={children} className={props.className} />
       ) : (
@@ -140,6 +149,7 @@ const useMarkdownTheme = () => {
       return (
         <Text
           as="h1"
+          id={children}
           fontWeight={"bold"}
           color={pColor}
           fontSize="5xl"
@@ -155,6 +165,7 @@ const useMarkdownTheme = () => {
       return (
         <Text
           as="h2"
+          id={children}
           fontWeight={"bold"}
           color={pColor}
           fontSize="4xl"
@@ -168,7 +179,14 @@ const useMarkdownTheme = () => {
     h3: (props) => {
       const { children } = props;
       return (
-        <Text as="h3" fontWeight={"bold"} fontSize="3xl" my="2" mt="8">
+        <Text
+          as="h3"
+          id={children}
+          fontWeight={"bold"}
+          fontSize="3xl"
+          my="2"
+          mt="8"
+        >
           {children}
         </Text>
       );
@@ -176,7 +194,14 @@ const useMarkdownTheme = () => {
     h4: (props) => {
       const { children } = props;
       return (
-        <Text as="h4" fontWeight={"bold"} fontSize="2xl" my="2" mt="8">
+        <Text
+          as="h4"
+          id={children}
+          fontWeight={"bold"}
+          fontSize="2xl"
+          my="2"
+          mt="8"
+        >
           {children}
         </Text>
       );
@@ -184,7 +209,14 @@ const useMarkdownTheme = () => {
     h5: (props) => {
       const { children } = props;
       return (
-        <Text as="h5" fontWeight={"bold"} fontSize="xl" my="2" mt="8">
+        <Text
+          as="h5"
+          id={children}
+          fontWeight={"bold"}
+          fontSize="xl"
+          my="2"
+          mt="8"
+        >
           {children}
         </Text>
       );
@@ -238,14 +270,14 @@ const useMarkdownTheme = () => {
     },
     ol: (props) => {
       return (
-        <OrderedList my="2" color={pColor} pl="4" {...props}>
+        <OrderedList my="2" color={pColor} pl="4">
           {props.children}
         </OrderedList>
       );
     },
     ul: (props) => {
       return (
-        <UnorderedList my="2" color={pColor} pl="4" {...props}>
+        <UnorderedList my="2" color={pColor} pl="4">
           {props.children}
         </UnorderedList>
       );
@@ -261,4 +293,28 @@ const useMarkdownTheme = () => {
   };
 };
 
+export const useTOCTheme = () => {
+  const pColor = useColorModeValue("gray.600", "gray.400");
+
+  return {
+    li: (props) => {
+      const { children } = props;
+      return <ListItem>{children}</ListItem>;
+    },
+    ol: (props) => {
+      return (
+        <OrderedList my="2" color={pColor} pl="4">
+          {props.children}
+        </OrderedList>
+      );
+    },
+    ul: (props) => {
+      return (
+        <UnorderedList my="2" color={pColor} pl="4">
+          {props.children}
+        </UnorderedList>
+      );
+    },
+  };
+};
 export default useMarkdownTheme;

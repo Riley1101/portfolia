@@ -75,7 +75,7 @@ const HeroAlt = () => {
         _hover={{
           borderRadius: "2em",
         }}
-        backgroundColor="gray.200"
+        backgroundColor="gray.300"
         borderRadius={"4em"}
         w={["200px", "300px"]}
         h={["200px", "300px"]}

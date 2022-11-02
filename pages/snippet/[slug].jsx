@@ -39,7 +39,7 @@ const SNIPPET_DETAIL = gql`
       description
       content
       slug
-      publishedAt
+      createdAt
       categories {
         name
         id

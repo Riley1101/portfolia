@@ -83,9 +83,9 @@ export default Blogs;
 export async function getStaticProps() {
   const ALL_POSTS = gql`
     query GET_ALL_POSTS {
-      posts(orderBy: publishedAt_DESC) {
+      posts(orderBy: createdAt_DESC) {
         id
-        publishedAt
+        createdAt
         slug
         title
         date

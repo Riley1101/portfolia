@@ -24,7 +24,8 @@ const Meta = ({ data }) => {
         display="flex"
         flexDir="column"
         gap="4"
-        backgroundImage="url('/static/general/background.jpg')"
+        border={"1px"}
+        borderColor={"brand.200"}
         backgroundSize="cover"
         transition="all 250ms ease"
         cursor="pointer"
@@ -46,7 +47,7 @@ const Meta = ({ data }) => {
           {data?.description}
         </Text>
         <HStack fontSize={"sm"} color="gray.800">
-          <Text>{dateFormat(data?.publishedAt, "mediumDate")}</Text>
+          <Text>{dateFormat(data?.createdAt, "mediumDate")}</Text>
           <Text>-</Text>
           <Text>{readingTime(data.content).text}</Text>
         </HStack>

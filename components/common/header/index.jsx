@@ -55,11 +55,11 @@ const Header = () => {
           </IconButton>
         </Tooltip>
 
-        <IconButton
+        {/* <IconButton
           onClick={toggleColorMode}
           aria-label="Menu"
           icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-        />
+        /> */}
       </HStack>
     </Box>
   );

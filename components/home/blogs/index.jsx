@@ -47,7 +47,7 @@ const Blogs = ({ posts }) => {
               <HStack fontSize={"sm"} color="gray.500">
                 <Text>{readingTime(ele.content).text}</Text>
                 <Text>-</Text>
-                <Text>{dateFormat(ele.publishedAt, "mediumDate")}</Text>
+                <Text>{dateFormat(ele.createdAt, "mediumDate")}</Text>
               </HStack>
               <Text>{ele.description}</Text>
             </VStack>
@@ -55,7 +55,7 @@ const Blogs = ({ posts }) => {
         ))}
       </VStack>
       <Box w="full" mt="7" display={"flex"} justifyContent="flex-end">
-        <Link href={"/space"}>
+        <Link href={"/blogs"}>
           <Button
             transition={"all 250ms ease"}
             rounded={"1em"}

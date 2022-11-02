@@ -138,6 +138,7 @@ const Hero = () => {
       >
         <Box
           sx={style}
+          role="group"
           transition={"all 250ms ease"}
           _hover={{
             borderRadius: "20%",
@@ -145,15 +146,24 @@ const Hero = () => {
           }}
           transform="rotate(5deg)"
           border={"1px"}
-          borderColor={useColorModeValue("gray.100", "gray.800")}
+          borderColor={useColorModeValue("gray.200", "gray.800")}
           borderRadius={"35%"}
           background={useColorModeValue("transparent", "gray.900")}
           w={["250px", "350px"]}
           h={["250px", "350px"]}
           position="relative"
           overflow={"hidden"}
+          display="grid"
+          placeItems={"center"}
           cursor="pointer"
         >
+          <Box
+            position={"absolute"}
+            transition="all 350ms ease"
+            bgGradient="radial(rgba(157, 214, 235,.4),#fff)"
+            w={["350px", "350px"]}
+            h={["350px", "350px"]}
+          ></Box>
           <Image
             layout="fill"
             objectFit="cover"

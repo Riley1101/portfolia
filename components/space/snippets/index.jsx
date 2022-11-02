@@ -24,7 +24,7 @@ const Snippets = () => {
           id
           name
         }
-        publishedAt
+        createdAt
         slug
         title
       }
