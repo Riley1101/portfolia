@@ -16,7 +16,7 @@ import dateFormat from "dateformat";
 import readingTime from "reading-time";
 import { RWebShare } from "react-web-share";
 const Meta = ({ data }) => {
-  let bg = useColorModeValue("gray.800", "gray.800");
+  const bg = useColorModeValue("gray.800", "gray.800");
   return (
     <Box p="4">
       <Box

@@ -9,7 +9,7 @@ const SmoothScroll = ({ children }) => {
   const [pageHeight, setPageHeight] = useState(0);
 
   const resizePageHeight = useCallback((entries) => {
-    for (let entry of entries) {
+    for (const entry of entries) {
       setPageHeight(entry.contentRect.height);
     }
   }, []);

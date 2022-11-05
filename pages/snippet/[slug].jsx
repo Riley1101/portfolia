@@ -5,7 +5,7 @@ import client from "@/utils/query/client";
 import BlogContent from "@/components/blog/markdown";
 import Meta from "@/components/common/meta";
 const BlogDetail = ({ data }) => {
-  let defaultMeta = {
+  const defaultMeta = {
     title: data.title,
     description: data.description,
     url: `${process.env.NEXT_PUBLIC_DOMAIN}/snippet/${data.slug}`,
@@ -75,7 +75,7 @@ export async function getStaticPaths() {
   });
 
   return {
-    paths: paths,
+    paths,
     fallback: false,
   };
 }

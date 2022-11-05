@@ -16,7 +16,7 @@ const AllQueires = gql`
 `;
 
 export default async function handler(req, res) {
-  let {
+  const {
     data: { posts, snippets },
   } = await client.query({
     query: AllQueires,

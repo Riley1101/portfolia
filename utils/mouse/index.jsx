@@ -4,13 +4,13 @@ const Mouse = () => {
   const mouse = useRef(null);
   const [click, setClick] = useState(false);
   let cursor;
-  let handleMouseMove = (e) => {
+  const handleMouseMove = (e) => {
     cursor.setAttribute(
       "style",
-      "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
+      `top : ${e.pageY - 10}px; left:${e.pageX - 10}px;`
     );
   };
-  let handleMouseClick = () => {
+  const handleMouseClick = () => {
     setClick(true);
     setTimeout(() => {
       setClick(false);

@@ -3,7 +3,7 @@
 export default async function handler(req, res) {
   let { query } = req;
   let response;
-  let key = process.env.NEXT_PUBLIC_YOUTUBE;
+  const key = process.env.NEXT_PUBLIC_YOUTUBE;
   if (query.id) {
     response = await fetch(
       `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&part=id&key=${key}&id=${query.id}`,
@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       .then((res) => res.json())
       .then((res) => res);
   } else {
-    let limit = query.limit || 2;
+    const limit = query.limit || 2;
     response = await fetch(
       `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&part=id&channelId=UC_RfEQCC3gL2AzsFFAABikg&maxResults=${limit}&key=${key}`,
       {

@@ -13,8 +13,8 @@ import Link from "next/link";
 import { FiTerminal } from "react-icons/fi";
 import { HiOutlineCode } from "react-icons/hi";
 const Snippets = ({ snippets }) => {
-  let cardBg = useColorModeValue("blue.50", "gray.900");
-  let iconColor = useColorModeValue("#fff", "gray.800");
+  const cardBg = useColorModeValue("blue.50", "gray.900");
+  const iconColor = useColorModeValue("#fff", "gray.800");
   return (
     <Box p="4" alignItems={"flex-start"} my="8">
       <VStack alignItems={"flex-start"} spacing=".2em" my="7">

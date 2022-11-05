@@ -11,10 +11,10 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 export default function About() {
-  let cardBg = useColorModeValue("blue.50", "gray.900");
+  const cardBg = useColorModeValue("blue.50", "gray.900");
   const title = useColorModeValue("gray.700", "gray.200");
 
-  let codingTools = [
+  const codingTools = [
     {
       id: 1,
       title: "Visual Studio Code",
@@ -46,7 +46,7 @@ export default function About() {
       link: "https://docs.microsoft.com/en-us/windows/wsl/install",
     },
   ];
-  let secondaryTools = [
+  const secondaryTools = [
     {
       id: 1,
       title: "Figma",
@@ -96,7 +96,7 @@ export default function About() {
     },
   ];
 
-  let meta = {
+  const meta = {
     title: "Uses — An Inspiring Developer, travelling in CS",
     description:
       "Some of the tools for my daily coding, development and productivity.",

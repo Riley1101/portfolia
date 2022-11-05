@@ -6,7 +6,7 @@ const useSpaceQuery = (QUERY, lim = 5) => {
 
   const { loading, error, data } = useQuery(QUERY, {
     variables: {
-      limit: limit,
+      limit,
     },
   });
   const loadMore = () => {

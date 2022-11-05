@@ -16,7 +16,7 @@ import {
   Input,
   CircularProgress,
 } from "@chakra-ui/react";
-let meta = {
+const meta = {
   title: "Books | Arkar Kaung Myat — An Inspiring Developer, travelling in CS",
   description:
     "A collection of interesting books that I read or look forward to reading them.",

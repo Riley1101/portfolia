@@ -10,7 +10,7 @@ import {
 import { FiPlayCircle } from "react-icons/fi";
 const Video = ({ video }) => {
   const text = useColorModeValue("#eff2f9", "#eff2f9");
-  let image =
+  const image =
     video?.snippet?.thumbnails?.standard?.url || "/static/general/snippet.jpg";
   return (
     <Flex

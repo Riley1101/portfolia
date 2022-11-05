@@ -2,7 +2,7 @@ import SpaceGrid from "@/components/space/grid";
 import MainContainer from "@/layouts/container";
 import Meta from "@/components/common/meta";
 
-let defaultMeta = {
+const defaultMeta = {
   title: "Space — An Inspiring Developer, travelling in CS",
   description: "Explore - General space in my blog.",
   url: "https://arkardev.space/space",

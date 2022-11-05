@@ -24,7 +24,7 @@ const renderMath = (sym) =>
     throwOnError: false,
   });
 const PreBlock = ({ children }) => {
-  return <>{children}</>;
+  return children;
 };
 const Strong = ({ children }) => {
   const color = useColorModeValue("#222", "#fff");

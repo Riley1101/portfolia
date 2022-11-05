@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { gql } from "@apollo/client";
 import BlogCard from "@/components/common/card";
-let meta = {
+const meta = {
   title: "Blogs | Arkar Kaung Myat — An Inspiring Developer, travelling in CS",
   description:
     "An inspiring developer who loves computer science, frontend technlogies,coding and designs.",
