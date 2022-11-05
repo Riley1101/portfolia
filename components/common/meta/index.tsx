@@ -1,5 +1,11 @@
 import Head from "next/head";
-
+interface MetaTypes {
+  title: string;
+  description: string;
+  url: string;
+  tags: string[];
+  image?: string;
+}
 let defaultMeta = {
   title: "Arkar Kaung Myat — An Inspiring Developer, travelling in CS",
   description:
@@ -8,7 +14,7 @@ let defaultMeta = {
   image: "/static/general/meta.png",
   tags: ["Welcome", "Home"],
 };
-const Meta = ({ meta = defaultMeta }) => {
+const Meta = ({ meta = defaultMeta }: { meta: MetaTypes }) => {
   return (
     <Head>
       <title>{meta.title}</title>

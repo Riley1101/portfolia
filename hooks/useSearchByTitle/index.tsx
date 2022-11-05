@@ -1,6 +1,14 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
+import type { Post } from "@/types/index";
 
-const useSearchByTitle = (items) => {
+const useSearchByTitle = (
+  items: Post[]
+): {
+  data: Post[];
+  keyword: string;
+  // eslint-disable-next-line no-unused-vars
+  setKeyword: (keyword: string) => void;
+} => {
   const [data, setData] = useState(items);
   const [keyword, setKeyword] = useState("");
 

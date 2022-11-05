@@ -32,11 +32,7 @@ export default async function handler(req, res) {
     });
   }
 }
-// curl \
-//   'https://youtube.googleapis.com/youtube/v3/playlists?part=contentDetails&part=player&part=status&part=player&part=id&part=snippet&id=PLJznl3g92X7PHrcXpGHt3syk3AguFswZ6&id=PLJznl3g92X7PHrcXpGHt3syk3AguFswZ6&maxResults=20&key=[YOUR_API_KEY]' \
-//   --header 'Authorization: Bearer [YOUR_ACCESS_TOKEN]' \
-//   --header 'Accept: application/json' \
-//   --compressed
+
 export const config = {
   runtime: "nodejs",
 };

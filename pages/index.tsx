@@ -3,19 +3,11 @@ import MainContainer from "@/layouts/container";
 import client from "@/utils/query/client";
 import server from "@/utils/server";
 import { gql } from "@apollo/client";
-import dynamic from "next/dynamic";
-const Hero = dynamic(() => import("@/components/home/hero"), {
-  suspense: true,
-});
-const Blogs = dynamic(() => import("@/components/home/blogs"), {
-  suspense: true,
-});
-const Snippets = dynamic(() => import("@/components/home/snippets"), {
-  suspense: true,
-});
-const Video = dynamic(() => import("@/components/home/videos"), {
-  suspense: true,
-});
+import Blogs from "@/components/home/blogs";
+import Hero from "@/components/home/hero";
+import Video from "@/components/home/videos";
+import Snippets from "@/components/home/snippets";
+import type { Post, Snippet, PageQuery, VideoAPIType } from "@/types/index";
 const HOME_QUERY = gql`
   query HomeQuery {
     posts(first: 3, orderBy: createdAt_DESC) {
@@ -44,11 +36,16 @@ let defaultMeta = {
   tags: ["Welcome", "Home"],
   image: "/static/general/meta.png",
 };
-export default function Home({ posts, snippets, videos }) {
+interface HomeProps {
+  posts: Post[];
+  snippets: Snippet[];
+  videos: VideoAPIType;
+}
+export default function Home(props: HomeProps) {
+  const { posts, snippets, videos } = props;
   return (
     <MainContainer>
       <Meta meta={defaultMeta} />
-
       <Hero />
       <Blogs posts={posts} />
       <Snippets snippets={snippets} />
@@ -56,15 +53,20 @@ export default function Home({ posts, snippets, videos }) {
     </MainContainer>
   );
 }
+
 export async function getStaticProps() {
-  const { data } = await client.query({
+  const {
+    data,
+  }: PageQuery<{
+    posts: Post[];
+    snippets: Snippet[];
+  }> = await client.query({
     query: HOME_QUERY,
   });
   let url = `${server}/api/playlist/PLJznl3g92X7P4T3S2lLW8Ws43KfjPCmYs`;
   let response = await fetch(url)
     .then((res) => res.json())
     .then((res) => res);
-
   return {
     props: {
       videos: response,

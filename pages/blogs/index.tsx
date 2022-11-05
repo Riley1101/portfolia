@@ -1,7 +1,3 @@
-import MainContainer from "@/layouts/container";
-import Meta from "@/components/common/meta";
-import client from "@/utils/query/client";
-import useSearchByTitle from "@/hooks/useSearchByTitle";
 import {
   Box,
   Grid,
@@ -12,7 +8,13 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { gql } from "@apollo/client";
+import MainContainer from "@/layouts/container";
+import Meta from "@/components/common/meta";
+import client from "@/utils/query/client";
+import useSearchByTitle from "@/hooks/useSearchByTitle";
 import BlogCard from "@/components/common/card";
+import type { PageQuery, Post } from "@/types/index";
+
 let meta = {
   title: "Blogs | Arkar Kaung Myat — An Inspiring Developer, travelling in CS",
   description:
@@ -21,10 +23,15 @@ let meta = {
   image: "/static/general/meta.png",
   tags: ["Blogs", "Thoughts"],
 };
+interface PageProps {
+  data: {
+    posts: Post[];
+  };
+}
 
-const Blogs = ({ data }) => {
+const Blogs = ({ data }: PageProps) => {
   const { keyword, setKeyword, data: posts } = useSearchByTitle(data.posts);
-  let structure = (index) => (index <= 1 ? 3 : 2);
+  let structure = (index: number) => (index <= 1 ? 3 : 2);
   return (
     <MainContainer>
       <Meta meta={meta}></Meta>
@@ -98,7 +105,11 @@ export async function getStaticProps() {
       }
     }
   `;
-  const { data } = await client.query({
+  const {
+    data,
+  }: PageQuery<{
+    posts: Post[];
+  }> = await client.query({
     query: ALL_POSTS,
   });
   return {
