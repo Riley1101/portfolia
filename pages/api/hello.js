@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default function handler(req, res) {
-  res.status(200).json({ name: 'Hello from the other side' })
+  res.status(200).json({ name: "Hello from the other side" });
 }
