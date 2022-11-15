@@ -28,7 +28,7 @@ const meta = {
 const currentData = [
   {
     id: 1,
-    progress: 20,
+    progress: 30,
     title: "The art of computer programming",
     description:
       "All about Algorithms, Mathematical Preliminaries, rich exercices and explaination on information structures. ",
@@ -36,7 +36,7 @@ const currentData = [
   },
   {
     id: 2,
-    progress: 30,
+    progress: 60,
     title: "AI and machine learning for coders",
     description:
       "Introducing hello world of ML with tensorflow, extensive practices and explinations on neural networks with python",
@@ -44,7 +44,7 @@ const currentData = [
   },
   {
     id: 3,
-    progress: 60,
+    progress: 70,
     title: "Never grow up",
     description:
       " Chan's life story from childhood years at the China Drama Academy, his big breaks in Hong Kong and Hollywood and honorary Academy Award for his lifetime achievement ",
@@ -55,10 +55,10 @@ const wishData = [
   {
     id: 1,
     progress: 0,
-    title: "Cracking the coding interview",
+    title: "Good Math",
     description:
-      "Cracking the Coding Interview: 189 Programming Questions and Solutions is a book by Gayle Laakmann McDowell about coding interviews. ",
-    image: "/static/books/cracking_code.jpg",
+      " A Geek's Guide to the Beauty of Numbers, Logic, and Computation (Pragmatic Programmers).",
+    image: "/static/books/math.jpg",
   },
   {
     id: 2,
