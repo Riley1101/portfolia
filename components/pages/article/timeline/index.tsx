@@ -7,16 +7,17 @@ let query = `
   title,
   'slug':slug.current,
   releasedAt,
-  description
+  description,
+  'mainImage':mainImage.asset->{url}.url,
+  'categories':categories[]->title,
   }
 `;
 export default async function ArticleTimeLine() {
   const data: ArticlCardType[] = await client.fetch(query);
-
   return (
     <div className="flex flex-col my-6 ">
-      <div className="relative flex flex-col gap-4 pb-4 border-r-2 border-gray-800 ">
-        <div className="absolute top-0 right-0 w-4 h-4 translate-x-[55%] bg-gray-800 rounded-full"></div>
+      <div className="relative flex flex-col gap-4 pb-4 border-r border-gray-800 ">
+        <div className="absolute top-0 right-0 w-3 h-3 translate-x-[55%] bg-gray-800 rounded-full"></div>
         <span className="px-4 font-bold text-right text-theme-accent">
           January
         </span>
@@ -28,6 +29,7 @@ export default async function ArticleTimeLine() {
               description={article.description}
               slug={article.slug}
               releasedAt={article.releasedAt}
+              categories={article.categories}
             />
           );
         })}

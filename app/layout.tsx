@@ -1,8 +1,9 @@
 import "./globals.css";
-import Link from "next/link";
+import "dracula-prism/dist/css/dracula-prism.min.css";
 import NavAside from "@/components/common/nav-aside";
 import RightAside from "@/components/common/right-aside";
 import Header from "@/components/common/header";
+
 export default function RootLayout({
   children,
 }: {

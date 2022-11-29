@@ -2,7 +2,7 @@ import Link from "next/link";
 import dateformat from "dateformat";
 import type { ArticlCardType } from "types/articles";
 
-export default function ArticleCard({
+export default function HomeBlogCard({
   title,
   description,
   slug,
@@ -12,7 +12,7 @@ export default function ArticleCard({
   return (
     <Link
       href={`/articles/${slug}`}
-      className="p-4 transition-all duration-500 rounded-md cursor-pointer hover:bg-gradient-to-r hover:from-theme-primary-opaque "
+      className="p-4 transition-all duration-500 rounded-md cursor-pointer bg-theme-accent-opaque hover:bg-gradient-to-r hover:from-theme-primary-opaque "
     >
       <h2 className="text-lg font-bold text-white">{title}</h2>
       <div className="flex justify-between">

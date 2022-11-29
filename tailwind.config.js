@@ -18,9 +18,13 @@ module.exports = {
         "theme-primary": "#f056c8",
         "theme-primary-opaque": "#f056c71a",
         "theme-accent": "#88ced3",
+        "theme-accent-opaque": "#88ced309",
         "theme-body": "#cbd5e1",
       },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/typography"),
+  ],
 };

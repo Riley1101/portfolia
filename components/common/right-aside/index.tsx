@@ -1,10 +1,10 @@
 const RightAside = () => {
   return (
     <aside className="mt-[5em] hidden  lg:flex flex-col ">
-      <div>
+      {/* <div>
         <h3>Subscribe</h3>
         <p>Subscribe to my newsletter</p>
-      </div>
+      </div> */}
     </aside>
   );
 };

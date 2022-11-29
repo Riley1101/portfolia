@@ -12,3 +12,8 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+code[class*="language-"],
+pre[class*="language-"] {
+  background-color: transparent !important;
+}
