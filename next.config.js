@@ -6,6 +6,10 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
+  typescript: {
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
 };
 
 module.exports = nextConfig;
