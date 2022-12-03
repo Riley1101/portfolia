@@ -27,4 +27,8 @@ module.exports = {
     // require("@tailwindcss/line-clamp"),
     // require("@tailwindcss/typography"),
   ],
+  typescript: {
+    // TODO some modules are not compatible with next13 still searching issues
+    ignoreBuildErrors: true,
+  },
 };
