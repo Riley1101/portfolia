@@ -1,5 +1,4 @@
 // TODO check type
-import "katex/dist/katex.min.css";
 import { BlockMath } from "react-katex";
 
 function KatexBlock(props: any) {
