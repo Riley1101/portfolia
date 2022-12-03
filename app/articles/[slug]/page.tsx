@@ -1,8 +1,9 @@
 import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
-import type { GetServerSidePropsContext } from "next";
 import type { ArticleDetailType } from "types/articles";
 import PortableBody from "@/components/common/portable";
+import type { DetailPageParamTypes } from "types";
+
 const query = `
 *[_type == "article" && slug.current == $slug][0]{
   title,
@@ -14,7 +15,7 @@ const query = `
   body,
 }`;
 
-async function ArticleDetailPage(props: GetServerSidePropsContext) {
+async function ArticleDetailPage(props: DetailPageParamTypes) {
   const { params } = props;
   const data: ArticleDetailType = await client.fetch(query, {
     slug: params?.slug,
@@ -26,8 +27,11 @@ async function ArticleDetailPage(props: GetServerSidePropsContext) {
         description={data.description}
         categories={data.categories}
         mainImage={data.mainImage}
+        releasedAt={data.releasedAt}
       />
-      <PortableBody value={data.body} />
+      <div className="relative overflow-hidden">
+        <PortableBody value={data.body} />
+      </div>
     </div>
   );
 }

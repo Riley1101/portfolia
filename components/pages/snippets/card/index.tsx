@@ -2,17 +2,16 @@ import Link from "next/link";
 import dateformat from "dateformat";
 import type { ArticlCardType } from "types/articles";
 
-export default function ArticleCard({
+export default function SnippetCard({
   title,
-  description,
   slug,
   releasedAt,
   categories,
 }: ArticlCardType) {
   return (
     <Link
-      href={`/articles/${slug}`}
-      className="p-4 transition-all duration-500 rounded-md cursor-pointer hover:bg-gradient-to-r hover:from-theme-primary-opaque "
+      href={`/snippets/${slug}`}
+      className="p-4 transition-all duration-500 border rounded-md cursor-pointer hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque"
     >
       <h2 className="text-lg font-bold text-white">{title}</h2>
       <div className="flex justify-between">
@@ -24,15 +23,11 @@ export default function ArticleCard({
             {categories.map((category) => (
               <div key={category}>
                 <span className="text-sm ">{category}</span>
-                <span className="text-theme-accent"> / </span>
+                <span className="text-theme-accent"> /</span>
               </div>
             ))}
           </div>
         )}
-      </div>
-      <p className="my-2">{description}</p>
-      <div>
-        <p className="text-sm text-gray-400">Read more</p>
       </div>
     </Link>
   );
