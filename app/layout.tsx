@@ -1,7 +1,7 @@
 import "./globals.css";
 
-import "katex/dist/katex.min.css";
-import "dracula-prism/dist/css/dracula-prism.min.css";
+// import "katex/dist/katex.min.css";
+// import "dracula-prism/dist/css/dracula-prism.min.css";
 import NavAside from "@/components/common/nav-aside";
 import RightAside from "@/components/common/right-aside";
 import Header from "@/components/common/header";
