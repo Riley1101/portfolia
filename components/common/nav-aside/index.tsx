@@ -1,4 +1,6 @@
+"use client";
 import NavIconLink from "../link";
+import { useState } from "react";
 import {
   HomeIcon,
   UserIcon,
@@ -85,6 +87,7 @@ function NavASide() {
         placeholder="Search"
         className="px-4 py-2 bg-transparent border border-gray-800 rounded-md outline-none placeholder:text-theme-accent"
       />
+      {/* <CommandMenu visible={visible} toggle={toggle} /> */}
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-3">
           {navs.map((nav) => (

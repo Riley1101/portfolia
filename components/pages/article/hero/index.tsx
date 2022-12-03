@@ -1,8 +1,11 @@
+import dateFormat from "dateformat";
+
 type Props = {
   title: string;
   description: string;
   categories: string[];
   mainImage: string;
+  releasedAt: string;
 };
 
 function Hero(props: Props) {
@@ -13,7 +16,7 @@ function Hero(props: Props) {
       </h1>
       <div className="flex items-center justify-between">
         <span className="block my-4 text-theme-accent">
-          Jan 8, 2022 <span>▲</span> 5 min read
+          {dateFormat(props.releasedAt, "mediumDate")}
         </span>
         <span className="block text-sm font-bold text-theme-primary">
           Arkar Kaung Myat

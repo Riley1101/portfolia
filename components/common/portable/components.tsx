@@ -4,10 +4,14 @@ import CodeBlock from "./code";
 import KatexBlock from "./katex";
 import NextImage from "./image";
 import BlockQuote from "./blockquote";
+import { InlineMath } from "react-katex";
 import { LinkIcon } from "@heroicons/react/20/solid";
 
 const components: PortableTextComponents = {
   marks: {
+    latex: ({ children }: any) => (
+      <InlineMath className="mx-2">{children[0]}</InlineMath>
+    ),
     em: ({ children }) => (
       <em className="font-semibold text-theme-accent">{children}</em>
     ),

@@ -1,10 +1,11 @@
 import Hero from "@/components/pages/hero";
+import SnippetTimeLine from "@/components/pages/snippets/timeline";
 
 const hero = {
   title: "Snippets",
   subtitle: " Code Snippets",
   description:
-    "Here's a collection of articles I've written for the Gatsby Blog and various other online publications, including; Contentful, Storybook, Netlify, Smashing Magazine and CSS Tricks.",
+    "Some of the code snippets that I came across in my explore or the internet !",
 };
 
 function ArticlePage() {
@@ -15,6 +16,8 @@ function ArticlePage() {
         description={hero.description}
         subtitle={hero.subtitle}
       />
+      <h2 className="text-xl font-bold">Browse </h2>
+      <SnippetTimeLine />
     </div>
   );
 }

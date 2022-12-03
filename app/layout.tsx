@@ -17,9 +17,9 @@ export default function RootLayout({
         <div className="grid w-full max-h-screen overflow-hidden font-mono grid-rows-dashboard bg-theme-bg ">
           <Header />
 
-          <div className="grid grid-cols-1 lg:grid-cols-dashboard w-full lg:w-[70%] mx-auto text-theme-body row-start-2">
+          <div className="grid grid-cols-1 lg:grid-cols-dashboard w-full lg:w-[70%] mx-auto text-theme-body row-start-2 overflow-hidden">
             <NavAside />
-            <main className="h-screen overflow-y-scroll lg:p-6 p-4 pt-[6em] scrollbar-hide lg:pt-[6em] ">
+            <main className="h-screen overflow-y-scroll lg:p-6 p-4 pt-[6em] scrollbar-hide lg:pt-[6em] overflow-hidden ">
               <div>{children}</div>
             </main>
             <RightAside />

@@ -5,6 +5,7 @@ interface ArticlCardType {
   slug: string;
   releasedAt: string;
   categories?: string[];
+  mainImage?: any;
 }
 
 interface ArticleDetailType {
@@ -16,4 +17,31 @@ interface ArticleDetailType {
   body: any;
   mainImage: string;
 }
-export type { ArticlCardType, ArticleDetailType };
+
+interface SnippetCardType {
+  title: string;
+  description: string;
+  slug: string;
+  releasedAt: string;
+  categories?: string[];
+  mainImage?: any;
+}
+
+interface SnippetDetailType {
+  title: string;
+  description: string;
+  slug: string;
+  releasedAt: string;
+  categories: string[];
+  snippet: {
+    language: string;
+    code: string;
+  };
+  mainImage: string;
+}
+export type {
+  ArticlCardType,
+  ArticleDetailType,
+  SnippetDetailType,
+  SnippetCardType,
+};
