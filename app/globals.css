@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -14,4 +14,4 @@
 code[class*="language-"],
 pre[class*="language-"] {
   background-color: transparent !important;
-} */
+}
