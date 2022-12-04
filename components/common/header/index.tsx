@@ -9,8 +9,8 @@ const Header = () => {
         ArkarDev
       </Link>
 
-      <button className="text-theme-body cursor-pointer bg-opacity-10 border-gray-800 border hover:bg-theme-primary hover:bg-opacity-5 p-2 rounded-md  ">
-        <Bars2Icon className="h-6 w-6" />
+      <button className="hidden p-2 border border-gray-800 rounded-md cursor-pointer text-theme-body md:block bg-opacity-10 hover:bg-theme-primary hover:bg-opacity-5 ">
+        <Bars2Icon className="w-6 h-6" />
       </button>
     </header>
   );
