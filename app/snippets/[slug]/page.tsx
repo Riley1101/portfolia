@@ -2,7 +2,7 @@ import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
 import type { DetailPageParamTypes } from "types";
 import type { SnippetDetailType } from "types/articles";
-import CodeBlock from "@/components/common/portable/code";
+import CodeBlock from "@/components/pages/snippets/codeblock";
 
 const query = `
 *[_type == "snippet" && slug.current == $slug][0]{
