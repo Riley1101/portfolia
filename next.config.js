@@ -3,6 +3,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+
   images: {
     domains: ["cdn.sanity.io", "arkardev.space"],
   },
@@ -11,5 +12,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 };
+
 
 module.exports = nextConfig;

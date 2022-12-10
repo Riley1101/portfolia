@@ -6,8 +6,6 @@ import { ImageResponse } from "@vercel/og";
 export default function handler(req) {
   try {
     const { searchParams } = new URL(req.url);
-
-    // ?title=<title>
     const hasTitle = searchParams.has("title");
     const hasDescription = searchParams.has("description");
     const hasTag = searchParams.has("tags");

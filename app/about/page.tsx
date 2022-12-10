@@ -15,6 +15,15 @@ function AboutPage() {
         description={hero.description}
         subtitle={hero.subtitle}
       />
+
+      <p>More about me</p>
+      <p>lorem ipsum</p>
+      <p>
+        <a href='lorem'>Read more</a>
+        <p>
+            
+        </p>
+      </p>
     </div>
   );
 }

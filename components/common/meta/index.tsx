@@ -13,7 +13,7 @@ const Meta = ({ meta }: any) => {
       <meta property="og:description" content={meta.description} />
       <meta
         property="og:image"
-        content={`${process.env.NEXT_PUBLIC_DOMAIN}/api/og?title=${
+        content={`${process.env.NEXT_PUBLIC_BETA_DOMAIN}/api/og?title=${
           meta.title
         }&description=${meta.description}&tags=${meta.tags.join(",")}`}
       />
@@ -23,7 +23,7 @@ const Meta = ({ meta }: any) => {
       <meta property="twitter:description" content={meta.description} />
       <meta
         property="twitter:image"
-        content={`${process.env.NEXT_PUBLIC_DOMAIN}/api/og?title=${
+        content={`${process.env.NEXT_PUBLIC_BETA_DOMAIN}/api/og?title=${
           meta.title
         }&description=${meta.description}&tags=${meta.tags.join(",")}`}
       ></meta>
