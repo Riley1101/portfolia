@@ -3,7 +3,6 @@ type Props = {
   subtitle: string;
   description: string;
 };
-
 function Hero(props: Props) {
   return (
     <div className="pb-4">

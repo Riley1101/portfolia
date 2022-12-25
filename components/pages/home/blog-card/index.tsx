@@ -27,7 +27,7 @@ export default function HomeBlogCard({
               {categories.map((category) => (
                 <div key={category}>
                   <span className="text-sm ">{category}</span>
-                  <span className="text-theme-accent">/</span>
+                  <span className="text-theme-accent"> / </span>
                 </div>
               ))}
             </div>

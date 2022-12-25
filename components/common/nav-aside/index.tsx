@@ -1,6 +1,5 @@
 "use client";
 import NavIconLink from "../link";
-import { useState } from "react";
 import {
   HomeIcon,
   UserIcon,
@@ -12,14 +11,14 @@ import {
 
 import { Twitter, Github, LinkedIn } from "@/components/common/icons";
 
-type Nav = {
+export type Nav = {
   id: number;
   name: string;
   href: string;
   icon: React.ReactElement;
 };
 
-const navs: Nav[] = [
+export const navs: Nav[] = [
   {
     id: 0,
     name: "Home",
@@ -53,12 +52,12 @@ const navs: Nav[] = [
   {
     id: 5,
     name: "Videos",
-    href: "/",
+    href: "/videos",
     icon: <PlayIcon className="w-5 h-5 " />,
   },
 ];
 
-const social: Nav[] = [
+export const social: Nav[] = [
   {
     id: 0,
     name: "LinkedIn",
