@@ -28,6 +28,7 @@ export default async function Home() {
         <p>I now work at ...</p>
       </div>
       <LatestPostHome />
+      <LatestPostHome />
     </div>
   );
 }

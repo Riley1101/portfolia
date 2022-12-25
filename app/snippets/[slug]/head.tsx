@@ -10,6 +10,7 @@ export default async function Head(props: any) {
   'slug':slug.current,
   description,
   'categories':categories[]->title,
+  'mainImage':mainImage.asset->{url}.url
 }`;
 
   const data: ArticleDetailType = await client.fetch(query, {
@@ -21,6 +22,7 @@ export default async function Head(props: any) {
     description: data.description,
     url: `https://arkardev.space/articles/${data.slug}`,
     tags: data.categories || [],
+    mainImage: data.mainImage,
   };
   return (
     <head>
