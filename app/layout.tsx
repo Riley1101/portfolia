@@ -1,5 +1,4 @@
 import "./globals.css";
-
 import "katex/dist/katex.min.css";
 import "dracula-prism/dist/css/dracula-prism.min.css";
 

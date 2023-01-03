@@ -1,6 +1,8 @@
 import Hero from "@/components/pages/hero";
 import SnippetTimeLine from "@/components/pages/snippets/timeline";
 
+import client from "@/utils/client";
+import type { ArticlCardType } from "types/articles";
 const hero = {
   title: "Snippets",
   subtitle: " Code Snippets",
@@ -8,7 +10,18 @@ const hero = {
     "Some of the code snippets that I came across in my explore or the internet !",
 };
 
-function ArticlePage() {
+async function ArticlePage() {
+  let query = `
+*[_type=='snippet'] | order(releasedAt desc)  {
+  title,
+  'slug':slug.current,
+  'categories':categories[]->title,
+  description,
+  releasedAt
+}
+`;
+
+  const raw_data: ArticlCardType[] = await client.fetch(query);
   return (
     <div>
       <Hero
@@ -16,8 +29,7 @@ function ArticlePage() {
         description={hero.description}
         subtitle={hero.subtitle}
       />
-      <h2 className="text-xl font-bold">Browse </h2>
-      <SnippetTimeLine />
+      <SnippetTimeLine data={raw_data} />
     </div>
   );
 }

@@ -19,6 +19,7 @@ async function ArticleTimeLine() {
   const data: ArticlCardType[] = await client.fetch(query);
   const groupedData = groupByMonth(data);
   const keys = Object.keys(groupedData) as Months[];
+  //   fetch data from json placeholder
 
   return (
     <div className="flex flex-col my-6 ">
