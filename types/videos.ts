@@ -5,3 +5,13 @@ export interface VideoCardType {
   preview: string;
   href: string;
 }
+
+export interface VideoAPIType {
+  kind: string;
+  etag: string;
+  pageInfo: {
+    totalResults: number;
+    resultsPerPage: number;
+  };
+  items: any[];
+}

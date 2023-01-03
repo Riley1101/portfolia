@@ -10,7 +10,7 @@ const nextConfig = {
   },
   rewrites: () => [STUDIO_REWRITE],
   images: {
-    domains: ["cdn.sanity.io", "arkardev.space"],
+    domains: ["cdn.sanity.io", "arkardev.space", "i.ytimg.com"],
   },
   typescript: {
     // !! WARN !!

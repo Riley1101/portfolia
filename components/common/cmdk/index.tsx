@@ -1,42 +1,134 @@
-import { Command } from "cmdk";
-import React from "react";
-
+"use client";
+import "react-cmdk/dist/cmdk.css";
+import CommandPalette, {
+  filterItems,
+  getItemIndex,
+  useHandleOpenCommandPalette,
+} from "react-cmdk";
+import { useState, useEffect } from "react";
+import {
+  HomeIcon,
+  UserIcon,
+  PencilIcon,
+  CodeBracketIcon,
+  PlayIcon,
+} from "@heroicons/react/20/solid";
+import { ArrowUturnDownIcon } from "@heroicons/react/20/solid";
 interface Props {
-  toggle(): void;
-  visible: boolean;
+  open: boolean;
+  setOpen: any;
 }
-const CommandMenu = ({ toggle, visible }: Props) => {
-  React.useEffect(() => {
-    const down = (e: any) => {
-      if (e.key === "k" && e.metaKey) {
-        toggle();
-      }
-    };
 
-    document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
-  }, [toggle]);
+const CommandMenu = ({ open, setOpen }: Props) => {
+  const [page, setPage] = useState<"root" | "projects">("root");
+  const [search, setSearch] = useState("");
+  useHandleOpenCommandPalette(setOpen);
+  const filteredItems = filterItems(
+    [
+      {
+        heading: "Articles",
+        id: "articles",
+        items: [
+          {
+            id: "developer-settings",
+            children: "Developer settings",
+            icon: PencilIcon,
+            href: "#",
+          },
+        ],
+      },
+      {
+        heading: "Navigation",
+        id: "home",
+        items: [
+          {
+            id: "home",
+            children: "Home",
+            icon: HomeIcon,
+            href: "/",
+          },
+          {
+            id: "about",
+            children: "About",
+            icon: UserIcon,
+            href: "/about",
+          },
+          {
+            id: "articles",
+            children: "Articles",
+            icon: PencilIcon,
+            href: "/articles",
+          },
+          {
+            id: "snippets",
+            children: "Snippets",
+            icon: CodeBracketIcon,
+            href: "/snippets",
+          },
+          {
+            id: "videos",
+            children: "Videos",
+            icon: PlayIcon,
+            href: "/videos",
+          },
+        ],
+      },
+    ],
+    search
+  );
+  // useEffect(() => {
+  //   function handleKeyDown(e: KeyboardEvent) {
+  //     if (e.metaKey && e.key === "y") {
+  //       e.preventDefault();
+  //       e.stopPropagation();
 
+  //       setOpen((currentValue: boolean) => {
+  //         return !currentValue;
+  //       });
+  //     }
+  //   }
+
+  //   document.addEventListener("keydown", handleKeyDown);
+
+  //   return () => {
+  //     document.removeEventListener("keydown", handleKeyDown);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    console.log(search);
+  }, [search]);
   return (
-    <Command.Dialog
-      open={visible}
-      onOpenChange={toggle}
-      label="Global Command Menu"
+    <CommandPalette
+      onChangeSearch={setSearch}
+      onChangeOpen={setOpen}
+      search={search}
+      isOpen={open}
+      page={page}
     >
-      <Command.Input />
-      <Command.List>
-        <Command.Empty>No results found.</Command.Empty>
+      <CommandPalette.Page id="root">
+        {filteredItems.length ? (
+          filteredItems.map((list) => (
+            <CommandPalette.List key={list.id} heading={list.heading}>
+              {list.items.map(({ id, ...rest }) => (
+                <CommandPalette.ListItem
+                  key={id}
+                  index={getItemIndex(filteredItems, id)}
+                  {...rest}
+                />
+              ))}
+            </CommandPalette.List>
+          ))
+        ) : (
+          <CommandPalette.FreeSearchAction />
+        )}
+      </CommandPalette.Page>
 
-        <Command.Group heading="Letters">
-          <Command.Item>a</Command.Item>
-          <Command.Item>b</Command.Item>
-          <Command.Separator />
-          <Command.Item>c</Command.Item>
-        </Command.Group>
-
-        <Command.Item>Apple</Command.Item>
-      </Command.List>
-    </Command.Dialog>
+      <CommandPalette.Page id="projects">
+        {/* Projects page */}
+      </CommandPalette.Page>
+    </CommandPalette>
   );
 };
+
 export default CommandMenu;
