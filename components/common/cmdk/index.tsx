@@ -11,6 +11,7 @@ import React from "react";
 import { getAlgoliaResults } from "@algolia/autocomplete-preset-algolia";
 import { createAutocomplete } from "@algolia/autocomplete-core";
 import { useHotkeys } from "react-hotkeys-hook";
+
 const CommandMenu = () => {
   const [open, setOpen] = React.useState(false);
   const [autocompleteState, setAutocompleteState] = React.useState({});
