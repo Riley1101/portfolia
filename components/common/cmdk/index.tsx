@@ -1,134 +1,207 @@
+// @ts-nocheck
 "use client";
-import "react-cmdk/dist/cmdk.css";
-import CommandPalette, {
-  filterItems,
-  getItemIndex,
-  useHandleOpenCommandPalette,
-} from "react-cmdk";
-import { useState, useEffect } from "react";
 import {
-  HomeIcon,
-  UserIcon,
-  PencilIcon,
-  CodeBracketIcon,
-  PlayIcon,
+  MagnifyingGlassIcon,
+  ArrowUturnLeftIcon,
 } from "@heroicons/react/20/solid";
-import { ArrowUturnDownIcon } from "@heroicons/react/20/solid";
-interface Props {
-  open: boolean;
-  setOpen: any;
-}
-
-const CommandMenu = ({ open, setOpen }: Props) => {
-  const [page, setPage] = useState<"root" | "projects">("root");
-  const [search, setSearch] = useState("");
-  useHandleOpenCommandPalette(setOpen);
-  const filteredItems = filterItems(
-    [
-      {
-        heading: "Articles",
-        id: "articles",
-        items: [
-          {
-            id: "developer-settings",
-            children: "Developer settings",
-            icon: PencilIcon,
-            href: "#",
-          },
-        ],
-      },
-      {
-        heading: "Navigation",
-        id: "home",
-        items: [
-          {
-            id: "home",
-            children: "Home",
-            icon: HomeIcon,
-            href: "/",
-          },
-          {
-            id: "about",
-            children: "About",
-            icon: UserIcon,
-            href: "/about",
-          },
-          {
-            id: "articles",
-            children: "Articles",
-            icon: PencilIcon,
-            href: "/articles",
-          },
-          {
-            id: "snippets",
-            children: "Snippets",
-            icon: CodeBracketIcon,
-            href: "/snippets",
-          },
-          {
-            id: "videos",
-            children: "Videos",
-            icon: PlayIcon,
-            href: "/videos",
-          },
-        ],
-      },
-    ],
-    search
+import Link from "next/link";
+import searchClient from "@/utils/search-client";
+import { social } from "../nav-aside";
+import React from "react";
+import { getAlgoliaResults } from "@algolia/autocomplete-preset-algolia";
+import { createAutocomplete } from "@algolia/autocomplete-core";
+import { useHotkeys } from "react-hotkeys-hook";
+const CommandMenu = () => {
+  const [open, setOpen] = React.useState(false);
+  const [autocompleteState, setAutocompleteState] = React.useState({});
+  const autocomplete = React.useMemo(
+    () =>
+      createAutocomplete({
+        onStateChange({ state }) {
+          // (2) Synchronize the Autocomplete state with the React state.
+          setAutocompleteState(state);
+        },
+        getSources() {
+          return [
+            // (3) Use an Algolia index source.
+            // {
+            //   sourceId: "goto",
+            //   getItemInputValue({ item }) {
+            //     return item.query;
+            //   },
+            //   getItems({ query }) {
+            //     return getAlgoliaResults({
+            //       searchClient,
+            //       queries: [
+            //         {
+            //           indexName: "navigation",
+            //           query,
+            //         },
+            //       ],
+            //     });
+            //   },
+            //   getItemUrl({ item }) {
+            //     return item.url;
+            //   },
+            // },
+            {
+              sourceId: "blog",
+              getItemInputValue({ item }) {
+                return item.query;
+              },
+              getItems({ query }) {
+                return getAlgoliaResults({
+                  searchClient,
+                  queries: [
+                    {
+                      indexName: "blogs",
+                      query,
+                    },
+                  ],
+                });
+              },
+              getItemUrl({ item }) {
+                return item.url;
+              },
+            },
+            {
+              sourceId: "snippet",
+              getItemInputValue({ item }) {
+                return item.query;
+              },
+              getItems({ query }) {
+                return getAlgoliaResults({
+                  searchClient,
+                  queries: [
+                    {
+                      indexName: "snippets",
+                      query,
+                    },
+                  ],
+                });
+              },
+              getItemUrl({ item }) {
+                return item.url;
+              },
+            },
+            // {
+            //   sourceId: "bookmarks",
+            //   getItemInputValue({ item }) {
+            //     return item.query;
+            //   },
+            //   getItems({ query }) {
+            //     return getAlgoliaResults({
+            //       searchClient,
+            //       queries: [
+            //         {
+            //           indexName: "bookmarks",
+            //           query,
+            //         },
+            //       ],
+            //     });
+            //   },
+            //   getItemUrl({ item }) {
+            //     return item.url;
+            //   },
+            // },
+          ];
+        },
+      }),
+    []
   );
-  // useEffect(() => {
-  //   function handleKeyDown(e: KeyboardEvent) {
-  //     if (e.metaKey && e.key === "y") {
-  //       e.preventDefault();
-  //       e.stopPropagation();
-
-  //       setOpen((currentValue: boolean) => {
-  //         return !currentValue;
-  //       });
-  //     }
-  //   }
-
-  //   document.addEventListener("keydown", handleKeyDown);
-
-  //   return () => {
-  //     document.removeEventListener("keydown", handleKeyDown);
-  //   };
-  // }, []);
-
-  useEffect(() => {
-    console.log(search);
-  }, [search]);
-  return (
-    <CommandPalette
-      onChangeSearch={setSearch}
-      onChangeOpen={setOpen}
-      search={search}
-      isOpen={open}
-      page={page}
-    >
-      <CommandPalette.Page id="root">
-        {filteredItems.length ? (
-          filteredItems.map((list) => (
-            <CommandPalette.List key={list.id} heading={list.heading}>
-              {list.items.map(({ id, ...rest }) => (
-                <CommandPalette.ListItem
-                  key={id}
-                  index={getItemIndex(filteredItems, id)}
-                  {...rest}
-                />
-              ))}
-            </CommandPalette.List>
-          ))
-        ) : (
-          <CommandPalette.FreeSearchAction />
-        )}
-      </CommandPalette.Page>
-
-      <CommandPalette.Page id="projects">
-        {/* Projects page */}
-      </CommandPalette.Page>
-    </CommandPalette>
+  useHotkeys(
+    "ctrl+/",
+    () => {
+      setOpen((prev) => !prev);
+    },
+    { preventDefault: true }
   );
+  if (open) {
+    return (
+      <div className="fixed top-0 left-0 grid w-full h-screen isolate z-[999] text-theme-accent place-items-center backdrop-filter backdrop-blur-lg">
+        <div
+          {...autocomplete.getRootProps({})}
+          className="relative gradient-box rounded-lg  bg-theme-bg  lg:w-[600px] min-h-[400px] md:w-[600px] w-[300px]  px-4 "
+        >
+          <div className="flex items-center px-4 mt-4 border-b rounded-md border-opacity-30 group border-theme-accent hover:from-theme-accent-opaque bg-gradient-to-l">
+            <MagnifyingGlassIcon className="w-6 h-6 group-focus-within:text-theme-accent group" />
+            {/* @ts-ignore */}
+            <input
+              // @ts-ignore
+              spellCheck={false}
+              // @ts-ignore
+              type="text"
+              // @ts-ignore
+              {...autocomplete.getInputProps({})}
+              id="algolia_search"
+              placeholder="Search "
+              className="w-full px-4 py-3 bg-transparent rounded-md outline-none group text-bg-theme-accent "
+            />
+          </div>
+          <div className="flex flex-col gap-4 py-4 max-h-[350px] overflow-y-scroll hide-scrollbar">
+            {autocompleteState.isOpen &&
+              autocompleteState.collections.map((collection) => {
+                const { source, items } = collection;
+                if (items.length > 0) {
+                  return (
+                    <div key={source.sourceId}>
+                      <span className="text-sm capitalize text-theme-primary">
+                        {source.sourceId}
+                      </span>
+                      <div className="flex flex-col gap-3 mt-2">
+                        {items.map((itm) => {
+                          let obj = {
+                            snippet: `/snippets/${itm.slug}`,
+                            blog: `/articles/${itm.slug}`,
+                            goto: `${itm.slug}`,
+                            bookmarks: `${itm.link}`,
+                          };
+                          let url = obj[source.sourceId];
+
+                          return (
+                            <Link
+                              href={url}
+                              onClick={() => {
+                                setOpen(false);
+                              }}
+                              key={itm.id}
+                              className="flex items-center gap-4 px-2 py-3 border-b border-r border-gray-800 rounded-md group hover:bg-gradient-to-l hover:from-theme-accent-opaque"
+                            >
+                              <ArrowUturnLeftIcon className="w-4 h-4 rotate-180 group-hover:text-theme-primary group" />
+                              <span className="text-theme-body">
+                                {itm.title}
+                              </span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                } else <></>;
+              })}
+
+            <div>
+              <span className="text-sm text-theme-primary">Connect me</span>
+              <div className="flex flex-col gap-3 mt-2">
+                {social.map((nav) => (
+                  <Link
+                    key={nav.id}
+                    target="_blank"
+                    href={nav.href}
+                    className="flex items-center gap-4 px-2 py-3 border-b border-r border-gray-800 rounded-md group hover:bg-gradient-to-l hover:from-theme-accent-opaque"
+                  >
+                    <div className="text-white group-hover:text-theme-accent">
+                      {nav.icon}
+                    </div>
+                    <span className="text-theme-body">{nav.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  } else return null;
 };
-
 export default CommandMenu;

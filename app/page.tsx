@@ -1,6 +1,6 @@
 import Hero from "@/components/pages/hero";
 import LatestPostHome from "@/components/pages/home/latest-blogs";
-
+import Autocomplete from "@/components/common/autocomplete";
 const hero = {
   title: "Home",
   subtitle: "Arkar Kaung Myat",
@@ -28,7 +28,6 @@ export default async function Home() {
         <p>I now work at ...</p>
       </div>
       <LatestPostHome />
-      {/* <LatestPostHome /> */}
     </div>
   );
 }
