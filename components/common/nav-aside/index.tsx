@@ -8,9 +8,9 @@ import {
   CodeBracketIcon,
   PlayIcon,
 } from "@heroicons/react/20/solid";
-import Autocomplete from "../autocomplete";
-import { KBarProvider } from "kbar";
+import Autocomplete from "@/components/common/autocomplete";
 import { Twitter, Github, LinkedIn } from "@/components/common/icons";
+import CommandMenu from "../cmdk";
 export type Nav = {
   id: number;
   name: string;
@@ -77,55 +77,35 @@ export const social: Nav[] = [
     icon: <Twitter className="w-5 h-5 " />,
   },
 ];
-const actions = [
-  {
-    id: "blog",
-    name: "Blog",
-    shortcut: ["b"],
-    keywords: "writing words",
-    perform: () => (window.location.pathname = "blog"),
-  },
-  {
-    id: "contact",
-    name: "Contact",
-    shortcut: ["c"],
-    keywords: "email",
-    perform: () => (window.location.pathname = "contact"),
-  },
-];
-
 function NavASide() {
   const [open, setOpen] = React.useState(false);
   return (
-    <KBarProvider actions={actions}>
-      <aside className="hidden pointer-events-none lg:pointer-events-auto lg:flex flex-col border-r border-gray-800 gap-4 pr-4 pt-6 mt-[5em] ">
-        <input
-          type="text"
-          placeholder="Search"
-          onClick={() => setOpen(!open)}
-          onChange={(e) => setOpen(true)}
-          className="px-4 py-2 bg-transparent border border-gray-800 rounded-md outline-none placeholder:text-theme-accent"
-        />
-        {/* <Autocomplete /> */}
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-3">
-            {navs.map((nav) => (
-              <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
-                {nav.name}
-              </NavIconLink>
-            ))}
-          </div>
-          <hr className="border border-gray-800 cursor-pointer" />
-          <div className="flex flex-col gap-3 ">
-            {social.map((nav) => (
-              <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
-                {nav.name}
-              </NavIconLink>
-            ))}
-          </div>
+    <aside className="hidden pointer-events-none lg:pointer-events-auto lg:flex flex-col border-r border-gray-800 gap-4 pr-4 pt-6 mt-[5em] ">
+      <input
+        type="text"
+        placeholder="Search"
+        onClick={() => setOpen(!open)}
+        onChange={(e) => setOpen(true)}
+        className="px-4 py-2 bg-transparent border border-gray-800 rounded-md outline-none placeholder:text-theme-accent"
+      />
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-3">
+          {navs.map((nav) => (
+            <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
+              {nav.name}
+            </NavIconLink>
+          ))}
         </div>
-      </aside>
-    </KBarProvider>
+        <hr className="border border-gray-800 cursor-pointer" />
+        <div className="flex flex-col gap-3 ">
+          {social.map((nav) => (
+            <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
+              {nav.name}
+            </NavIconLink>
+          ))}
+        </div>
+      </div>
+    </aside>
   );
 }
 export default NavASide;
