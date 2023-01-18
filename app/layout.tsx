@@ -6,7 +6,7 @@ import NavAside from "@/components/common/nav-aside";
 import RightAside from "@/components/common/right-aside";
 import Header from "@/components/common/header";
 import CommandMenu from "@/components/common/cmdk";
-
+import React from "react";
 export default function RootLayout({
   children,
 }: {

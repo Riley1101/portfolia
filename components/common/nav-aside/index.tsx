@@ -8,9 +8,9 @@ import {
   CodeBracketIcon,
   PlayIcon,
 } from "@heroicons/react/20/solid";
-import Autocomplete from "@/components/common/autocomplete";
 import { Twitter, Github, LinkedIn } from "@/components/common/icons";
-import CommandMenu from "../cmdk";
+import { useHotkeys } from "react-hotkeys-hook";
+
 export type Nav = {
   id: number;
   name: string;
@@ -78,15 +78,12 @@ export const social: Nav[] = [
   },
 ];
 function NavASide() {
-  const [open, setOpen] = React.useState(false);
   return (
     <aside className="hidden pointer-events-none lg:pointer-events-auto lg:flex flex-col border-r border-gray-800 gap-4 pr-4 pt-6 mt-[5em] ">
       <input
         type="text"
-        placeholder="Search"
-        onClick={() => setOpen(!open)}
-        onChange={(e) => setOpen(true)}
-        className="px-4 py-2 bg-transparent border border-gray-800 rounded-md outline-none placeholder:text-theme-accent"
+        placeholder=" Ctrl + / "
+        className="px-4 py-2 bg-transparent border border-gray-800 rounded-md outline-none pointer-events-none placeholder:text-theme-accent"
       />
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-3">
