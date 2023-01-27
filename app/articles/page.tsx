@@ -12,11 +12,11 @@ const hero = {
 function ArticlePage() {
   return (
     <div>
-      {/* <Hero
+      <Hero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
-      /> */}
+      />
 
       <ArticleTimeLine />
     </div>

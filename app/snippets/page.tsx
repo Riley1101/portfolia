@@ -26,11 +26,11 @@ async function ArticlePage() {
   const raw_data: ArticlCardType[] = await client.fetch(query);
   return (
     <div>
-      {/* <Hero
+      <Hero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
-      /> */}
+      />
       <SnippetTimeLine data={raw_data} />
     </div>
   );
