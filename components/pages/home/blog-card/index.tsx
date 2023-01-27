@@ -14,7 +14,7 @@ export default function HomeBlogCard({
   return (
     <Link
       href={`/articles/${slug}`}
-      className="flex items-center gap-4 p-4 transition-all duration-500 rounded-md cursor-pointer bg-theme-accent-opaque hover:bg-gradient-to-r hover:from-theme-primary-opaque "
+      className="flex flex-col items-center gap-4 p-4 transition-all duration-500 rounded-md cursor-pointer md:flex-row bg-theme-accent-opaque hover:bg-gradient-to-r hover:from-theme-primary-opaque "
     >
       <div className="basis-[70%]">
         <h2 className="text-lg font-bold text-white">{title}</h2>
@@ -35,13 +35,13 @@ export default function HomeBlogCard({
         </div>
         <p className="my-2 line-clamp-2">{description}</p>
       </div>
-      <div className="justify-end ml-auto">
+      <div className="justify-end w-full ml-auto md:w-auto">
         <Image
           src={mainImage}
           alt={title}
           width={180}
           height={80}
-          className="rounded-md"
+          className="w-full rounded-md"
         ></Image>
       </div>
     </Link>

@@ -9,8 +9,8 @@ export default async function Head() {
     tags: ["Welcome", "Home"],
   };
   return (
-    <head>
+    <>
       <Meta meta={defaultMeta} />
-    </head>
+    </>
   );
 }

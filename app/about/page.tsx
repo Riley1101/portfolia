@@ -1,4 +1,3 @@
-export const revalidate = 60;
 import Hero from "@/components/pages/hero";
 import Image from "next/image";
 const hero = {
@@ -10,7 +9,7 @@ const hero = {
 
 function AboutPage() {
   return (
-    <div className="w-[80%]">
+    <div className="w-full md:w-[80%]">
       <Hero
         title={hero.title}
         description={hero.description}
