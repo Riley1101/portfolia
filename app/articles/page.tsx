@@ -1,3 +1,4 @@
+export const revalidate = 60;
 import Hero from "@/components/pages/hero";
 import ArticleTimeLine from "@/components/pages/article/timeline";
 

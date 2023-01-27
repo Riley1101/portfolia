@@ -9,8 +9,7 @@ import {
   PlayIcon,
 } from "@heroicons/react/20/solid";
 import { Twitter, Github, LinkedIn } from "@/components/common/icons";
-import { useHotkeys } from "react-hotkeys-hook";
-
+import CommandMenu from "@/components/common/cmdk";
 export type Nav = {
   id: number;
   name: string;
@@ -43,12 +42,7 @@ export const navs: Nav[] = [
     href: "/snippets",
     icon: <CodeBracketIcon className="w-5 h-5 " />,
   },
-  // {
-  //   id: 4,
-  //   name: "Books",
-  //   href: "/",
-  //   icon: <BookOpenIcon className="w-5 h-5 " />,
-  // },
+
   {
     id: 5,
     name: "Videos",
@@ -61,42 +55,43 @@ export const social: Nav[] = [
   {
     id: 0,
     name: "LinkedIn",
-    href: "/linkedIn",
+    href: "https://www.linkedin.com/in/arkar-kaung-myat",
     icon: <LinkedIn className="w-5 h-5 " />,
   },
   {
     id: 1,
     name: "Github",
-    href: "/github",
+    href: "https://github.com/Riley1101",
     icon: <Github className="w-5 h-5 " />,
   },
   {
     id: 2,
     name: "Twitter",
-    href: "/twitter",
+    href: "https://twitter.com/arkardev",
     icon: <Twitter className="w-5 h-5 " />,
   },
 ];
 function NavASide() {
   return (
-    <aside className="hidden pointer-events-none lg:pointer-events-auto lg:flex flex-col border-r border-gray-800 gap-4 pr-4 pt-6 mt-[5em] ">
-      <input
-        type="text"
-        placeholder=" Ctrl + / "
-        className="px-4 py-2 bg-transparent border border-gray-800 rounded-md outline-none pointer-events-none placeholder:text-theme-accent"
-      />
-      <div className="flex flex-col gap-8">
-        <div className="flex flex-col gap-3">
+    <aside className="hidden col-start-1 pointer-events-none  lg:pointer-events-auto lg:flex flex-col gap-4  pt-6 mt-[5em] ">
+      <div className="flex flex-col gap-4 p-4 mt-4 border border-gray-800 rounded-md">
+        <CommandMenu />
+        <div className="flex flex-col gap-4 ">
           {navs.map((nav) => (
             <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
               {nav.name}
             </NavIconLink>
           ))}
         </div>
-        <hr className="border border-gray-800 cursor-pointer" />
-        <div className="flex flex-col gap-3 ">
+        <hr className="h-[1px] border-gray-800 cursor-pointer" />
+        <div className="flex flex-col gap-4 mt-4">
           {social.map((nav) => (
-            <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
+            <NavIconLink
+              target="_blank"
+              key={nav.id}
+              href={nav.href}
+              icon={nav.icon}
+            >
               {nav.name}
             </NavIconLink>
           ))}

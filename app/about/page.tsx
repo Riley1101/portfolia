@@ -1,5 +1,6 @@
+export const revalidate = 60;
 import Hero from "@/components/pages/hero";
-import React from "react";
+import Image from "next/image";
 const hero = {
   title: "About",
   subtitle: "More about Me",
@@ -9,22 +10,35 @@ const hero = {
 
 function AboutPage() {
   return (
-    <div>
+    <div className="w-[80%]">
       <Hero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
       />
-      <div className="flex flex-col gap-4 mb-4">
+      <Image
+        src="/images/profile.jpeg"
+        alt="My profile"
+        className="object-cover w-full mx-auto my-4 rounded-lg aspect-video"
+        width={800}
+        height={600}
+      />
+
+      <div className="flex flex-col gap-6 mb-4 ">
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus
-          facere, magni praesentium in eaque minima quis fugiat deleniti rem
-          autem!
+          I am a web developer with a passion for building robots. I have 4
+          years of experience in web development. I have been working on web
+          development projects for the past few years.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam officiis
-          reiciendis sapiente culpa quod, rem quis porro tempora consequatur
-          earum.
+          My true passion lies in creating robots and automating tasks. I am
+          currently balancing my love for web development and robotics by
+          incorporating my robotics knowledge into my web development projects.
+        </p>
+        <p>
+          I am always eager to learn new technologies and stay up-to-date with
+          industry trends to provide the best solutions for my clients and build
+          innovative robots.
         </p>
         <p>
           I now work at
