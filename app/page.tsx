@@ -1,6 +1,7 @@
+export const revalidate = 60;
+
 import Hero from "@/components/pages/hero";
 import LatestPostHome from "@/components/pages/home/latest-blogs";
-import Autocomplete from "@/components/common/autocomplete";
 const hero = {
   title: "Home",
   subtitle: "Arkar Kaung Myat",
@@ -17,15 +18,17 @@ export default async function Home() {
         subtitle={hero.subtitle}
       ></Hero>
       <div className="flex flex-col gap-4">
-        <p>Hello 👋</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias,
-          similique, dicta libero tempore voluptatem animi fugit dolorem
-          voluptates laboriosam illo sint cum est eveniet eius assumenda
-          sapiente, quisquam nihil adipisci?
+          I now work at
+          <a
+            href="https://otterdev.io"
+            rel="noreferrer"
+            target={"_blank"}
+            className="pl-4 cursor-pointer text-theme-primary"
+          >
+            Otterdev.io
+          </a>
         </p>
-
-        <p>I now work at ...</p>
       </div>
       <LatestPostHome />
     </div>
