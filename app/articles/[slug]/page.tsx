@@ -1,3 +1,4 @@
+export const revalidate = 60;
 import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
 import type { ArticleDetailType } from "types/articles";

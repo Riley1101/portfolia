@@ -26,10 +26,10 @@ async function ArticleTimeLine() {
       {keys.map((month) => (
         <div
           key={month}
-          className="relative flex flex-col gap-4 pb-4 border-r border-gray-800 "
+          className="relative flex flex-col gap-6 pb-6 border-r border-gray-800 "
         >
           <div className="absolute top-0 right-0 w-3 h-3 translate-x-[55%] bg-gray-800 rounded-full"></div>
-          <span className="px-4 font-bold text-right text-theme-accent">
+          <span className="px-4 text-sm font-bold text-right text-theme-accent">
             {month}
           </span>
           {groupedData[month].map((article, index) => {
