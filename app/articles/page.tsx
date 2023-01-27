@@ -1,4 +1,3 @@
-export const revalidate = 60;
 import Hero from "@/components/pages/hero";
 import ArticleTimeLine from "@/components/pages/article/timeline";
 
@@ -12,11 +11,11 @@ const hero = {
 function ArticlePage() {
   return (
     <div>
-      <Hero
+      {/* <Hero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
-      />
+      /> */}
 
       <ArticleTimeLine />
     </div>

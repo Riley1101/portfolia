@@ -1,4 +1,3 @@
-export const revalidate = 60;
 import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
 import type { DetailPageParamTypes } from "types";
@@ -22,6 +21,7 @@ async function SnippetDetailPage(props: DetailPageParamTypes) {
   const data: SnippetDetailType = await client.fetch(query, {
     slug: params?.slug,
   });
+  if (data === null) return <div>404</div>;
   return (
     <div>
       <Hero

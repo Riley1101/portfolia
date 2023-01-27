@@ -1,5 +1,3 @@
-export const revalidate = 60;
-
 import Hero from "@/components/pages/hero";
 import SnippetTimeLine from "@/components/pages/snippets/timeline";
 
@@ -26,11 +24,11 @@ async function ArticlePage() {
   const raw_data: ArticlCardType[] = await client.fetch(query);
   return (
     <div>
-      <Hero
+      {/* <Hero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
-      />
+      /> */}
       <SnippetTimeLine data={raw_data} />
     </div>
   );
