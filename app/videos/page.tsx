@@ -1,4 +1,5 @@
-import React from "react";
+export const revalidate = 60;
+
 import Hero from "@/components/pages/hero";
 import VideoTimeLine from "@/components/pages/videos/video-list";
 

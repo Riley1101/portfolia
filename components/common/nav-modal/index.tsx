@@ -1,5 +1,6 @@
 import NavIconLink from "../link";
 import { Bars2Icon } from "@heroicons/react/20/solid";
+
 import { navs, social } from "../nav-aside";
 type Props = {
   visible: boolean;

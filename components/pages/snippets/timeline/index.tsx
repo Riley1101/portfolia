@@ -1,6 +1,5 @@
 "use client";
 import SnippetCard from "../card";
-import asyncComponent from "@/utils/async-component";
 import useSearchByTitle from "@/utils/search-by-title";
 import { CommandLineIcon } from "@heroicons/react/24/outline";
 import { ArticlCardType } from "types/articles";
@@ -22,7 +21,7 @@ function SnippetTimeLine({ data }: Props) {
           className="w-full px-4 py-2 bg-transparent rounded-md outline-none text-bg-theme-accent"
         />
       </div>
-      <div className="relative flex flex-col gap-1 pb-4 ">
+      <div className="relative flex flex-col gap-4 pb-4 ">
         {filteredData.map((article, index) => {
           return (
             <SnippetCard
