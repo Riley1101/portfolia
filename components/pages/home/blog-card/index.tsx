@@ -33,13 +33,13 @@ export default function HomeBlogCard({
             </div>
           )}
         </div>
-        <p className="my-2 line-clamp-2">{description}</p>
+        <p className="my-2 text-sm line-clamp-2">{description}</p>
       </div>
       <div className="justify-end w-full ml-auto md:w-auto">
         <Image
           src={mainImage}
           alt={title}
-          width={180}
+          width={150}
           height={80}
           className="w-full rounded-md"
         ></Image>
