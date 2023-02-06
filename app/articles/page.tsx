@@ -6,7 +6,7 @@ const hero = {
   title: "Article",
   subtitle: "Published Articles",
   description:
-    "Here's a collection of articles I've written for the Gatsby Blog and various other online publications, including; Contentful, Storybook, Netlify, Smashing Magazine and CSS Tricks.",
+    "Here is where you'll find a wealth of information on Next.js, React, JavaScript, and web development. Whether you're just getting started in web development or looking to deepen your knowledge and skills, this page has something for you. ",
 };
 
 function ArticlePage() {

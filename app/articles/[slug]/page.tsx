@@ -31,7 +31,7 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
         mainImage={data.mainImage}
         releasedAt={data.releasedAt}
       />
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden ">
         <PortableBody value={data.body} />
       </div>
     </div>

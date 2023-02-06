@@ -1,3 +1,11 @@
+interface MetaProps {
+  title: string;
+  description: string;
+  url: string;
+  mainImage?: string;
+  tags?: string[];
+}
+
 const Meta = ({ meta }: any) => {
   return (
     <>
