@@ -6,6 +6,7 @@ export default async function Head() {
     description:
       "An inspiring developer who loves computer science, frontend technlogies,coding and designs.",
     url: "https://arkardev.space/",
+    mainImage: "/images/profile.jpeg",
     tags: ["Welcome", "Home"],
   };
   return (

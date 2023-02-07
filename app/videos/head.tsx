@@ -7,6 +7,7 @@ export default async function Head() {
       "Videos and tutorials I did on youtube. All about web development, programming and design",
     url: "https://arkardev.space/videos",
     tags: ["Videos", "Tuts"],
+    mainImage: "/images/videos.png",
   };
   return (
     <head>

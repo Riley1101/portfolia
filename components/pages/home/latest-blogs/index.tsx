@@ -7,7 +7,7 @@ import asyncComponent from "@/utils/async-component";
 interface Props {
   posts: ArticlCardType[];
 }
-const query = `{"posts":*[_type == "article"] [0..2]{
+const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..2]  {
   title,
   'slug':slug.current,
   releasedAt,
