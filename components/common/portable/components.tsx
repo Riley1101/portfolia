@@ -6,6 +6,7 @@ import NextImage from "./image";
 import BlockQuote from "./blockquote";
 import { InlineMath } from "react-katex";
 import { LinkIcon } from "@heroicons/react/20/solid";
+import { Embed } from "./Embeded";
 
 const components: PortableTextComponents = {
   marks: {
@@ -34,6 +35,7 @@ const components: PortableTextComponents = {
     code: CodeBlock,
     image: NextImage,
     latex: KatexBlock,
+    youtube: Embed,
   },
   block: {
     h1: ({ children }) => (

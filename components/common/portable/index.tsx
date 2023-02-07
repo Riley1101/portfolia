@@ -18,6 +18,7 @@ export default function PortableBody({ value }: Props) {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
+  console.log(value);
   return (
     <div>
       <PortableText value={value} components={components} />
