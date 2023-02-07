@@ -19,7 +19,7 @@ async function ArticleTimeLine() {
   //   fetch data from json placeholder
   return (
     <div className="flex flex-col my-6 ">
-      <div className="relative flex flex-col gap-6 pb-6 border-r border-gray-800 ">
+      <div className="relative flex flex-col gap-6 pb-6 ">
         {data.map((article, index) => {
           return (
             <ArticleCard

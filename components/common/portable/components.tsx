@@ -62,8 +62,12 @@ const components: PortableTextComponents = {
     blockquote: BlockQuote,
   },
   list: {
-    bullet: ({ children }) => <ul className="ml-8 list-disc">{children}</ul>,
-    number: ({ children }) => <ol className="ml-8 list-decimal">{children}</ol>,
+    bullet: ({ children }) => (
+      <ul className="ml-12 space-y-2 list-disc">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="ml-12 space-y-2 list-decimal">{children}</ol>
+    ),
   },
 };
 export default components;

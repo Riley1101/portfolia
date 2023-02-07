@@ -40,8 +40,8 @@ export default function HomeBlogCard({
           src={mainImage}
           alt={title}
           width={150}
-          height={80}
-          className="w-full rounded-md"
+          height={150}
+          className="w-full md:w-[150px] min-h-[100px] object-cover rounded-md max-h-[170px]"
         ></Image>
       </div>
     </Link>
