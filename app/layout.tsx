@@ -6,6 +6,7 @@ import NavAside from "@/components/common/nav-aside";
 import RightAside from "@/components/common/right-aside";
 import Header from "@/components/common/header";
 import React from "react";
+import { AnalyticsWrapper } from "@/components/common/analytics";
 export default function RootLayout({
   children,
 }: {
@@ -26,6 +27,7 @@ export default function RootLayout({
             <RightAside />
           </div>
         </div>
+        <AnalyticsWrapper />
       </body>
     </html>
   );
