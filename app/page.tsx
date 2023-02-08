@@ -3,6 +3,7 @@ export const revalidate = 60;
 import Hero from "@/components/pages/hero";
 import LatestPostHome from "@/components/pages/home/latest-blogs";
 import { BurmaSocial } from "@/components/pages/home/burma-social";
+import LatestSnippets from "@/components/pages/home/latest-snippets";
 const hero = {
   title: "Home",
   subtitle: "Arkar Kaung Myat",
@@ -33,6 +34,7 @@ export default async function Home() {
       </div>
       <BurmaSocial />
       <LatestPostHome />
+      <LatestSnippets></LatestSnippets>
     </div>
   );
 }
