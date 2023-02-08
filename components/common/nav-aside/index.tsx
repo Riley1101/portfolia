@@ -77,7 +77,7 @@ export const social: Nav[] = [
   },
   {
     id: 3,
-    name: "Mastaodon",
+    name: "Mastadon",
     href: "https://burma.social/@arkardev",
     icon: <Mastaodon className="w-5 h-5 " />,
   },
