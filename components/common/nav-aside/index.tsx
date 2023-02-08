@@ -8,7 +8,12 @@ import {
   CodeBracketIcon,
   PlayIcon,
 } from "@heroicons/react/20/solid";
-import { Twitter, Github, LinkedIn } from "@/components/common/icons";
+import {
+  Twitter,
+  Github,
+  LinkedIn,
+  Mastaodon,
+} from "@/components/common/icons";
 import CommandMenu from "@/components/common/cmdk";
 export type Nav = {
   id: number;
@@ -69,6 +74,12 @@ export const social: Nav[] = [
     name: "Twitter",
     href: "https://twitter.com/arkardev",
     icon: <Twitter className="w-5 h-5 " />,
+  },
+  {
+    id: 3,
+    name: "Mastaodon",
+    href: "https://burma.social/@arkardev",
+    icon: <Mastaodon className="w-5 h-5 " />,
   },
 ];
 function NavASide() {
