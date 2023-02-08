@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["cdn.sanity.io", "arkardev.space", "i.ytimg.com"],
+    domains: ["cdn.sanity.io", "arkardev.space", "i.ytimg.com", "burma.social"],
   },
 
   typescript: {

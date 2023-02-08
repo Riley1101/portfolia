@@ -79,3 +79,19 @@ pre[class*="language-"] {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* html renderer reset */
+
+.html-renderer {
+  word-wrap: break-word;
+  font-size: 14px;
+}
+
+.html-renderer a {
+  text-decoration: underline;
+}
+
+.html-renderer img {
+  max-width: 100%;
+  border-radius: 5px;
+}
