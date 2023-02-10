@@ -21,7 +21,10 @@ export default function RootLayout({
           <Header />
           <div className="  row-start-2 md:row-start-1 col-start-2 grid grid-cols-1 lg:grid-cols-[230px_auto] xl:grid-cols-[230px_auto] md:grid-cols-[15%_auto] w-full   text-theme-body  overflow-hidden">
             <NavAside />
-            <main className="h-screen col-start-2 pt-[6em] p-4  overflow-hidden overflow-y-scroll lg:p-12 lg:pt-[6em]">
+            <main
+              id="main"
+              className="h-screen col-start-2 pt-[6em] p-4  overflow-hidden overflow-y-scroll lg:p-12 lg:pt-[6em]"
+            >
               <div>{children}</div>
             </main>
           </div>
