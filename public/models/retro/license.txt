@@ -1,0 +1,11 @@
+Model Information:
+* title:	Retro computer
+* source:	https://sketchfab.com/3d-models/retro-computer-f844c0357d284fd8baa1435e9ff31bb2
+* author:	Urpo (https://sketchfab.com/Urpo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Retro computer" (https://sketchfab.com/3d-models/retro-computer-f844c0357d284fd8baa1435e9ff31bb2) by Urpo (https://sketchfab.com/Urpo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
