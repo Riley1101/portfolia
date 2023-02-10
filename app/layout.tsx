@@ -17,15 +17,18 @@ export default function RootLayout({
       <head />
       <body>
         {/* ! TODO  */}
-        <div className="grid w-full max-h-screen overflow-hidden font-mono grid-rows-dashboard bg-theme-bg ">
+        <div className="grid  w-full max-h-screen  grid-cols-1 gird-rows-2  md:grid-cols-[15%_auto_20%] overflow-hidden font-mono  bg-theme-bg ">
           <Header />
-          <div className=" grid grid-cols-1 lg:grid-cols-[230px_auto_100px] xl:grid-cols-[230px_auto_200px] md:grid-cols-[15%_auto_15%] w-full lg:w-[70%] mx-auto text-theme-body row-start-2 overflow-hidden">
+          <div className="  row-start-2 md:row-start-1 col-start-2 grid grid-cols-1 lg:grid-cols-[230px_auto] xl:grid-cols-[230px_auto] md:grid-cols-[15%_auto] w-full   text-theme-body  overflow-hidden">
             <NavAside />
-            <main className=" col-start-2 h-screen overflow-y-scroll lg:p-12 p-4 pt-[6em] lg:pt-[6em] overflow-hidden ">
+            <main
+              id="main"
+              className="h-screen col-start-2 pt-[6em] p-4  overflow-hidden overflow-y-scroll lg:p-12 lg:pt-[6em]"
+            >
               <div>{children}</div>
             </main>
-            <RightAside />
           </div>
+          <RightAside />
         </div>
         <AnalyticsWrapper />
       </body>
