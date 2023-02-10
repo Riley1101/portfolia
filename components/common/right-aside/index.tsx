@@ -6,7 +6,7 @@ const ComputerModel = dynamic(() => import("@/components/common/model"), {
 });
 const RightAside = () => {
   return (
-    <aside className="w-full h-full flex flex-col  col-start-1  md:col-start-3 mt-[2em] p-4">
+    <aside className="w-full h-full hidden pointer-events-none md:flex flex-col  col-start-1  md:col-start-3 mt-[2em] p-4">
       <ComputerModel />
     </aside>
   );

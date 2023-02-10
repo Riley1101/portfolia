@@ -19,7 +19,7 @@ const ComputerModel = (props: Props) => {
   const control: any = useRef();
   useObjectMovement(object, primaryLight, accentLight);
   return (
-    <div className="w-full mt-auto border border-theme-accent-opaque aspect-square">
+    <div className="w-full mt-auto aspect-square">
       <Canvas
         className=""
         camera={{
@@ -49,7 +49,7 @@ const ComputerModel = (props: Props) => {
           children-0-castShadow
         />
 
-        <OrbitControls ref={control} />
+        <OrbitControls ref={control} minZoom={1} maxZoom={4} />
       </Canvas>
     </div>
   );
