@@ -17,7 +17,7 @@ export default function RootLayout({
       <head />
       <body>
         {/* ! TODO  */}
-        <div className="grid  w-full max-h-screen  grid-cols-1 gird-rows-2  md:grid-cols-[15%_auto_20%] overflow-hidden font-mono  bg-theme-bg ">
+        <div className="grid  w-full max-h-screen  grid-cols-1 gird-rows-2  md:grid-cols-[5%_auto_20%]  lg:grid-cols-[15%_auto_20%] overflow-hidden font-mono  bg-theme-bg ">
           <Header />
           <div className="  row-start-2 md:row-start-1 col-start-2 grid grid-cols-1 lg:grid-cols-[230px_auto] xl:grid-cols-[230px_auto] md:grid-cols-[15%_auto] w-full   text-theme-body  overflow-hidden">
             <NavAside />
