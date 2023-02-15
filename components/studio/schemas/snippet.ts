@@ -7,6 +7,14 @@ export default defineType({
 
   fields: [
     defineField({
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
