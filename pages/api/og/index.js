@@ -42,7 +42,7 @@ export default function handler(req) {
             }}
           ></div>
           <img
-            src="https://beta.arkardev.space/static/general/avatar.png"
+            src="https://beta.arkar.space/static/general/avatar.png"
             alt="Profile"
             width={120}
             style={{
