@@ -85,7 +85,7 @@ export const social: Nav[] = [
 function NavASide() {
   return (
     <aside className="z-[20]  flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex ">
-        <CommandMenu />
+      <CommandMenu />
       <div className="flex flex-col gap-4 p-4 border rounded-md glass-box">
         <div className="flex flex-col gap-4 ">
           {navs.map((nav) => (
