@@ -35,10 +35,10 @@ export default function GradientMesh() {
         // style={{
         //   backgroundPosition: `${x}%`,
         // }}
-        className=" w-[250px]   aspect-square rounded-full top-[20%] left-[20%] absolute  gradient-one transition-all"
+        className=" pointer-events-none w-[150px] md:w-[250px]   aspect-square rounded-full top-[20%] left-[20%] absolute  gradient-one "
       ></div>
 
-      <div className=" w-[320px]  aspect-square top-[40%] left-[15%] absolute rounded-full gradient-two"></div>
+      <div className="pointer-events-none w-[220px] md:w-[320px]  aspect-square top-[40%] left-[15%] absolute rounded-full gradient-two"></div>
     </>
   );
 }

@@ -20,16 +20,17 @@ export default function RootLayout({
         {/* ! TODO  */}
         <div className="grid w-full max-h-screen  grid-cols-1 gird-rows-2  md:grid-cols-[5%_auto_20%]  lg:grid-cols-[15%_auto_20%] overflow-hidden font-mono  bg-theme-bg ">
           <Header />
-          <GradientMesh />
           <div className=" row-start-2 md:row-start-1 col-start-2 grid grid-cols-1 lg:grid-cols-[230px_auto] xl:grid-cols-[230px_auto] md:grid-cols-[15%_auto] w-full   text-theme-body  overflow-hidden">
             <NavAside />
             <main
               id="main"
-              className="h-screen col-start-2 pt-[6em] p-4  overflow-hidden overflow-y-scroll lg:p-12 lg:pt-[6em]"
+              className="h-screen z-[10] col-start-2 pt-[6em] p-4  overflow-hidden overflow-y-scroll lg:p-12 lg:pt-[6em]"
             >
               <div>{children}</div>
             </main>
           </div>
+
+          <GradientMesh />
           <RightAside />
         </div>
         <AnalyticsWrapper />
