@@ -1,27 +1,27 @@
 "use client";
 import { useRef, useEffect } from "react";
 import React from "react";
-const useMousePosition = () => {
-  const [mousePosition, setMousePosition] = React.useState<any>({
-    x: null,
-    y: null,
-  });
-  React.useEffect(() => {
-    const updateMousePosition = (ev: any) => {
-      if(typeof window === "undefined") return;
-      // transfrom the x and y value to between 0 and 100
-      let postitionX = (ev.clientX / window.innerWidth) * 100;
-      let postitionY = (ev.clientY / window.innerHeight) * 100;
+// const useMousePosition = () => {
+//   const [mousePosition, setMousePosition] = React.useState<any>({
+//     x: null,
+//     y: null,
+//   });
+//   React.useEffect(() => {
+//     const updateMousePosition = (ev: any) => {
+//       if(typeof window === "undefined") return;
+//       // transfrom the x and y value to between 0 and 100
+//       let postitionX = (ev.clientX / window.innerWidth) * 100;
+//       let postitionY = (ev.clientY / window.innerHeight) * 100;
 
-      setMousePosition({ x: postitionX, y: postitionY });
-    };
-    window.addEventListener("mousemove", updateMousePosition);
-    return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
-    };
-  }, []);
-  return mousePosition;
-};
+//       setMousePosition({ x: postitionX, y: postitionY });
+//     };
+//     window.addEventListener("mousemove", updateMousePosition);
+//     return () => {
+//       window.removeEventListener("mousemove", updateMousePosition);
+//     };
+//   }, []);
+//   return mousePosition;
+// };
 
 export default function GradientMesh() {
   const ref = useRef<HTMLDivElement>(null);
