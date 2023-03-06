@@ -5,7 +5,7 @@ export default async function Head() {
     title: "About | Arkar Kaung Myat",
     description:
       "An inspiring developer who loves computer science, frontend technlogies,coding and designs.",
-    url: "https://arkardev.space/",
+    url: "https://arkar.space/",
     mainImage: "/images/profile.jpeg",
     tags: ["Welcome", "Home"],
   };

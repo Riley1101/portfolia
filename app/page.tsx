@@ -6,7 +6,7 @@ import { BurmaSocial } from "@/components/pages/home/burma-social";
 import LatestSnippets from "@/components/pages/home/latest-snippets";
 const hero = {
   title: "Home",
-  subtitle: "Arkar Kaung Myat",
+  subtitle: "I am Arkar 🦦",
   description:
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
