@@ -84,9 +84,9 @@ export const social: Nav[] = [
 ];
 function NavASide() {
   return (
-    <aside className="flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex ">
-      <div className="flex flex-col gap-4 p-4 border border-gray-800 rounded-md">
+    <aside className="z-[20]  flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex ">
         <CommandMenu />
+      <div className="flex flex-col gap-4 p-4 border rounded-md glass-box">
         <div className="flex flex-col gap-4 ">
           {navs.map((nav) => (
             <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>

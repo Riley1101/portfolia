@@ -20,7 +20,7 @@ export default async function Head(props: any) {
   const meta = {
     title: `${data?.title} | Arkar Kaung Myat `,
     description: data?.description,
-    url: `https://arkardev.space/articles/${data?.slug}`,
+    url: `https://arkar.space/articles/${data?.slug}`,
     tags: data?.categories || [],
     mainImage: data?.mainImage,
   };
