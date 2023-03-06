@@ -5,7 +5,7 @@ export default async function Head() {
     title: "Videos | Arkar Kaung Myat ",
     description:
       "Videos and tutorials I did on youtube. All about web development, programming and design",
-    url: "https://arkardev.space/videos",
+    url: "https://arkar.space/videos",
     tags: ["Videos", "Tuts"],
     mainImage: "/images/videos.png",
   };
