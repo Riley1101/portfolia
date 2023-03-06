@@ -45,10 +45,7 @@ function getMouseDegrees(x: number, y: number, degreeLimit: number) {
   return { x: dx, y: dy };
 }
 
-export const useObjectMovement = (
-  object: MutableRefObject<PrimitiveProps>,
-
-) => {
+export const useObjectMovement = (object: MutableRefObject<PrimitiveProps>) => {
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
     x: 0,
     y: 0,
