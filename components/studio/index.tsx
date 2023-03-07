@@ -5,7 +5,7 @@ import studioConfig from "./sanity.config";
 
 const StudioCompo = () => {
   return (
-    <div className="absolute top-0 left-0 w-full h-screen z-[200]">
+    <div className="w-full h-full ">
       <Studio config={studioConfig} />
     </div>
   );
