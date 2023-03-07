@@ -1,30 +1,46 @@
+import { NextSeo } from "next-seo";
 interface MetaProps {
   title: string;
   description: string;
   url: string;
   mainImage?: string;
   tags?: string[];
+  isBlogPost?: boolean;
 }
 
-const Meta = ({ meta }: any) => {
+const Meta = ({ meta }: { meta: MetaProps }) => {
+  const blogMeta =()=> meta.isBlogPost &&  {
+    datePublished:"2015-02-05T08:00:00+08:00",
+      dateModified:"2015-02-05T09:00:00+08:00",
+      authorName:"Kali Skye",
+      publisherName:"Kali Skye",
+      publisherLogo:"https://www.example.com/photos/logo.jpg",
+      description:"This is a mighty good description of this article.",
+      isAccessibleForFree:true,
+  }
   return (
     <>
-      <meta charSet="UTF-8" />
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>{meta.title}</title>
-      <meta name="title" content={meta.title} />
-      <meta name="description" content={meta.description} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={meta.url} />
-      <meta property="og:title" content={meta.title} />
-      <meta property="og:description" content={meta.description} />
-      <meta property="og:image" content={meta.mainImage} />
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={meta.url} />
-      <meta property="twitter:title" content={meta.title} />
-      <meta property="twitter:description" content={meta.description} />
-      <meta property="twitter:image" content={meta.mainImage} />
+      <NextSeo
+        {...blogMeta()}
+        useAppDir={true}
+        title={meta.title}
+        description={meta.description}
+        openGraph={{
+          title: meta.title,
+          description: meta.description,
+          url: meta.url,
+          type: meta.isBlogPost ? "article" : "website",
+
+          images: [
+            {
+              url: meta.mainImage as string,
+              width: 850,
+              height: 650,
+              alt: meta.title,
+            },
+          ],
+        }}
+      />
     </>
   );
 };

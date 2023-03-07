@@ -4,6 +4,7 @@ import client from "@/utils/client";
 import type { DetailPageParamTypes } from "types";
 import type { SnippetDetailType } from "types/articles";
 import CodeBlock from "@/components/pages/snippets/codeblock";
+import ArticleJson from "@/components/common/article-json";
 
 const query = `
 *[_type == "snippet" && slug.current == $slug][0]{
@@ -34,6 +35,20 @@ async function SnippetDetailPage(props: DetailPageParamTypes) {
       />
       <CodeBlock
         value={{ code: data.snippet.code, language: data.snippet.language }}
+      />
+      <ArticleJson
+        meta={{
+          useAppDir: true,
+          url: `https://arkar.space/snippets/${data.slug}`,
+          title: data.title,
+          images: data.mainImage,
+          datePublished: data.releasedAt,
+          dateModified: data.releasedAt,
+          authorName: "Arkar Kaung Myat",
+          publisherName: "Arkar Kaung Myat",
+          publisherLogo: "/profile.jpg",
+          description: data.description,
+        }}
       />
     </div>
   );
