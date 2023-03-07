@@ -1,5 +1,4 @@
 "use client";
-// import SanityStudio from "@/components/studio";
 import dynamic from "next/dynamic";
 const SanityStudio = dynamic(() => import("@/components/studio"), {
   ssr: false,
