@@ -5,15 +5,15 @@ Welcome to my personal blog project built with Next.js! This project is a platfo
 URL: https://www.arkar.space
 
 ## Technologies Used
+
 This project was built using the following technologies:
 
-Next.js 
+Next.js
 React
 Sanity
 TailwindCSS
 Features
 The blog includes the following features:
-
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.

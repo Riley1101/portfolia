@@ -11,4 +11,3 @@ function StudioPage() {
   );
 }
 export default StudioPage;
-

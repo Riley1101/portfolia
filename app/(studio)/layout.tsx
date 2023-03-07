@@ -1,4 +1,4 @@
-import "./global.css"
+import "./global.css";
 import React from "react";
 export default function RootLayout({
   children,
@@ -10,7 +10,7 @@ export default function RootLayout({
       <head />
       <body>
         <div className="grid w-full h-screen">
-              <div>{children}</div>
+          <div>{children}</div>
         </div>
       </body>
     </html>
