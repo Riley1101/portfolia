@@ -5,6 +5,7 @@ import { visionTool } from "@sanity/vision";
 import { codeInput } from "@sanity/code-input";
 import { latexInput } from "sanity-plugin-latex-input";
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
+import { contentGraphView } from "sanity-plugin-graph-view";
 
 const SANITY_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "";
 const SANITY_DATASET_ID = process.env.NEXT_PUBLIC_SANITY_DATASET || "";
@@ -18,6 +19,7 @@ export default defineConfig({
   plugins: [
     deskTool(),
     visionTool(),
+    contentGraphView({}),
     codeInput(),
     latexInput(),
     unsplashImageAsset(),
