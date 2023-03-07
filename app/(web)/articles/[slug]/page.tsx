@@ -4,7 +4,7 @@ import client from "@/utils/client";
 import type { ArticleDetailType } from "types/articles";
 import PortableBody from "@/components/common/portable";
 import type { DetailPageParamTypes } from "types";
-
+import ArticleJson from "@/components/common/article-json";
 const query = `
 *[_type == "article" && slug.current == $slug][0]{
   title,
@@ -34,6 +34,20 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
       <div className="relative overflow-hidden ">
         <PortableBody value={data.body} />
       </div>
+      <ArticleJson
+        meta={{
+          useAppDir: true,
+          url: `https://arkar.space/articles/${data.slug}`,
+          title: data.title,
+          images: data.mainImage,
+          datePublished: data.releasedAt,
+          dateModified: data.releasedAt,
+          authorName: "Arkar Kaung Myat",
+          publisherName: "Arkar Kaung Myat",
+          publisherLogo: "/profile.jpg",
+          description: data.description,
+        }}
+      />
     </div>
   );
 }

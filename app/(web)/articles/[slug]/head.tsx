@@ -24,6 +24,7 @@ export default async function Head(props: any) {
     url: `https://arkar.space/articles/${data?.slug}`,
     tags: data?.categories || [],
     mainImage: data?.mainImage,
+    isBlogPost : true 
   };
   return (
     <head>
