@@ -21,7 +21,7 @@ const SocialCard = ({ post }: { post: MastodonPost }) => {
           <Image
             placeholder="blur"
             blurDataURL={rgbDataURL(2, 129, 210)}
-            className="object-cover w-full aspect-video max-h-[130px] rounded-md"
+            className="object-contain w-full aspect-video max-h-[130px] rounded-md"
             width={130}
             height={130}
             src={media.preview_url}
