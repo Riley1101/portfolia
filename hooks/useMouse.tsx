@@ -1,7 +1,7 @@
 import { PrimitiveProps } from "@react-three/fiber";
 import { useEffect, useState, MutableRefObject } from "react";
 import { DirectionalLight } from "three";
-
+// ! WIP
 function getMouseDegrees(x: number, y: number, degreeLimit: number) {
   let dx = 0,
     dy = 0,
@@ -45,38 +45,61 @@ function getMouseDegrees(x: number, y: number, degreeLimit: number) {
   return { x: dx, y: dy };
 }
 
-export const useObjectMovement = (object: MutableRefObject<PrimitiveProps>) => {
-  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
-    x: 0,
-    y: 0,
-  });
+export const useObjectMovement = (
+  object: MutableRefObject<PrimitiveProps>,
+  primaryLight: MutableRefObject<DirectionalLight>,
+  accentLight: MutableRefObject<DirectionalLight>,
+) => {
+  // const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
+  //   x: 0,
+  //   y: 0,
+  // });
 
   const rotateModel = (evt: MouseEvent) => {
-    const { x, y } = mousePosition;
+    const { x, y } = {
+      x: 0,
+      y: 0,
+    };
     const { x: dx, y: dy } = getMouseDegrees(evt.clientX, evt.clientY, 10);
     if (object.current === undefined) return;
     if (x !== dx || y !== dy) {
-      setMousePosition({ x: dx, y: dy });
       object.current.rotation.y = -(dx * Math.PI) / 180;
       object.current.rotation.x = -(dy * Math.PI) / 180;
     }
   };
 
-  let onScroll = (e: WheelEvent) => {
-    console.log(e);
-  };
+  // let onScroll = (e: WheelEvent) => {
+  //   // rotate the lights around the model
+  //   if (primaryLight.current === undefined) return;
+  //   if (accentLight.current === undefined) return;
+
+  //   // keep the value between -10 and 10 
+  //   // const rotationX = Math.min(Math.max(primaryLight.current.position.x + e.deltaY * 0.01, -10), 10);
+  //   // const rotationZ = Math.min(Math.max(primaryLight.current.position.z + e.deltaY * 0.01, -10), 10);
+
+  //   const rotationX = Math.sin (Date.now() / 1000) * 20;
+  //   const rotationZ = Math.cos (Date.now() / 1000) * 10;
+  //   console.log(rotationX, rotationZ)
+
+  //   primaryLight.current.position.x = rotationX;
+  //   // primaryLight.current.position.z = rotationZ;
+  //   accentLight.current.position.x = rotationX;
+  //   // accentLight.current.position.z = rotationZ;
+     
+  // };
 
   useEffect(() => {
     // if (typeof window !== "undefined") {
     //   document.querySelector("#main").addEventListener("scroll", onScroll);
     // }
+    
     window.addEventListener("mousemove", rotateModel);
-    window.addEventListener("wheel", onScroll);
+    // window.addEventListener("wheel", onScroll);
     return () => {
       window.removeEventListener("mousemove", rotateModel);
-      window.removeEventListener("wheel", onScroll);
+      // window.removeEventListener("wheel", onScroll);
       //   document.querySelector("#main")?.removeEventListener("scroll", onScroll);
     };
   }, []);
-  return { mousePosition, rotateModel };
+  return { rotateModel };
 };

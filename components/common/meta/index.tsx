@@ -20,6 +20,8 @@ const Meta = ({ meta }: { meta: MetaProps }) => {
   }
   return (
     <>
+    {/* meta viewport tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <NextSeo
         {...blogMeta()}
         useAppDir={true}
