@@ -1,13 +1,13 @@
 "use client";
-import { Canvas, PrimitiveProps, useLoader} from "@react-three/fiber";
+import { Canvas, PrimitiveProps, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls,useProgress } from "@react-three/drei";
-import { MutableRefObject,  useRef } from "react";
+import { OrbitControls, useProgress } from "@react-three/drei";
+import { MutableRefObject, useRef } from "react";
 import { useObjectMovement } from "hooks/useMouse";
 import { DirectionalLight } from "three";
 const ComputerModel = () => {
   // change  gltf file to url
-  useLoader.preload(GLTFLoader, '/models/retro.glb' /* extensions */)
+  useLoader.preload(GLTFLoader, "/models/retro.glb" /* extensions */);
   const gltf = useLoader(GLTFLoader, "/models/retro.glb");
   const object: MutableRefObject<PrimitiveProps> =
     useRef() as MutableRefObject<PrimitiveProps>;
@@ -16,18 +16,17 @@ const ComputerModel = () => {
   const accentLight: MutableRefObject<DirectionalLight> =
     useRef<DirectionalLight>() as MutableRefObject<DirectionalLight>;
   const control: any = useRef();
-  useObjectMovement(object,primaryLight,accentLight);
+  useObjectMovement(object, primaryLight, accentLight);
   return (
     <div className="w-full mt-auto aspect-square">
       <Canvas
-
         camera={{
           position: [50, 50, 110],
         }}
       >
         <directionalLight
           color={"#88ced3"}
-          position={[-20,0,10]}
+          position={[-20, 0, 10]}
           intensity={1}
           castShadow
           ref={primaryLight}
@@ -35,7 +34,7 @@ const ComputerModel = () => {
         <directionalLight
           color={"#f056c8"}
           intensity={1}
-          position={[20, 0,10]}
+          position={[20, 0, 10]}
           castShadow
           ref={accentLight}
         />

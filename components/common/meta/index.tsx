@@ -13,12 +13,12 @@ const Meta = ({ meta }: { meta: MetaProps }) => {
     meta.isBlogPost && {
       authorName: "Arkar Kaung Myat",
       publisherName: "Arkar Kaung Myat",
-      description:meta.description,
+      description: meta.description,
       isAccessibleForFree: true,
     };
   return (
     <>
-    {/* meta viewport tags */}
+      {/* meta viewport tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <NextSeo
         {...blogMeta()}
