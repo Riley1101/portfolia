@@ -12,9 +12,9 @@ const hero = {
   description:
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
-export const metadata : Metadata = {
-  title: 'Home | Arkar Kaung Myat',
-}
+export const metadata: Metadata = {
+  title: "Home | Arkar Kaung Myat",
+};
 
 export default async function Home() {
   return (

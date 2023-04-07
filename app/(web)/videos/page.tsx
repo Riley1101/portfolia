@@ -9,11 +9,20 @@ const hero = {
   description: "My playlists on Youtube",
 };
 
-export const metadata : Metadata = {
-  title:  "Videos",
-  openGraph: getOpenGraph("/images/videos.png","Videos | " + metaData.title, metaData.description, new URL("/videos", metaData.url)),
-  twitter:getTwitterCard("/images/videos.png","Videos | " + metaData.title, metaData.description),
-}
+export const metadata: Metadata = {
+  title: "Videos",
+  openGraph: getOpenGraph(
+    "/images/videos.png",
+    "Videos | " + metaData.title,
+    metaData.description,
+    new URL("/videos", metaData.url)
+  ),
+  twitter: getTwitterCard(
+    "/images/videos.png",
+    "Videos | " + metaData.title,
+    metaData.description
+  ),
+};
 function VideoPage() {
   return (
     <div>

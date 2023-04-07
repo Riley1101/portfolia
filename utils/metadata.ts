@@ -1,4 +1,3 @@
-
 export const metaData = {
   title: "Arkar Kaung Myat",
   siteName: "ArkarDev",
@@ -8,10 +7,14 @@ export const metaData = {
   keywords: ["Next.js", "React", "JavaScript", "ArkarDev", "Arkar Kaung Myat"],
 };
 
-
-export const getOpenGraph = (image: string,title: string,description:string,url:URL) => ({
+export const getOpenGraph = (
+  image: string,
+  title: string,
+  description: string,
+  url: URL
+) => ({
   title: title,
-  description:description,
+  description: description,
   url: url,
   siteName: "ArkarDev",
   images: [
@@ -25,12 +28,16 @@ export const getOpenGraph = (image: string,title: string,description:string,url:
   type: "website",
 });
 
-export const getTwitterCard = (image: string,title:string,description:string) => ( {
-    card: 'summary_large_image',
-    title: title,
-    description:description,
-    siteId: '1127263021007396864',
-    creator: '@arkardev',
-    creatorId: '1127263021007396864',
-    images: [image],
-  })
+export const getTwitterCard = (
+  image: string,
+  title: string,
+  description: string
+) => ({
+  card: "summary_large_image",
+  title: title,
+  description: description,
+  siteId: "1127263021007396864",
+  creator: "@arkardev",
+  creatorId: "1127263021007396864",
+  images: [image],
+});
