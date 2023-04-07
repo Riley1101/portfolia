@@ -1,7 +1,5 @@
-import React from "react";
 import VideoCard from "@/components/pages/videos/video-card";
-import type { VideoCardType, VideoAPIType } from "types/videos";
-import { VideoCameraIcon } from "@heroicons/react/24/outline";
+import type {  VideoAPIType } from "types/videos";
 import asyncComponent from "@/utils/async-component";
 
 const VideoTimeLine = async () => {

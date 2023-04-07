@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { getImageDimensions } from "@sanity/asset-utils";
 import urlBuilder from "@sanity/image-url";
 import client from "@/utils/client";
 // TODO check type

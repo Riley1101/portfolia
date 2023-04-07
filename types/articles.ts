@@ -1,4 +1,3 @@
-import type { PortableTextBlockComponent } from "@portabletext/react";
 interface ArticlCardType {
   title: string;
   description: string;
