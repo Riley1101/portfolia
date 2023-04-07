@@ -34,7 +34,6 @@ export async function generateMetadata({
     slug: params?.slug,
   });
 
-  
   return {
     title: data?.title,
     description: data?.description,

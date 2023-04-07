@@ -11,11 +11,20 @@ const hero = {
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
 
-export const metadata : Metadata = {
-  title:  "About",
-  openGraph: getOpenGraph("/images/arkar.png", "About | " + metaData.title, metaData.description, new URL("/about", metaData.url)),
-  twitter:getTwitterCard("/images/arkar.png", "About | " + metaData.title, metaData.description),
-}
+export const metadata: Metadata = {
+  title: "About",
+  openGraph: getOpenGraph(
+    "/images/arkar.png",
+    "About | " + metaData.title,
+    metaData.description,
+    new URL("/about", metaData.url)
+  ),
+  twitter: getTwitterCard(
+    "/images/arkar.png",
+    "About | " + metaData.title,
+    metaData.description
+  ),
+};
 
 function AboutPage() {
   return (

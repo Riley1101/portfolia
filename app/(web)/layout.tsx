@@ -46,8 +46,17 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  openGraph: getOpenGraph("/images/arkar.png", metaData.title, metaData.description, metaData.url),
-  twitter:getTwitterCard("/images/arkar.png", metaData.title, metaData.description),
+  openGraph: getOpenGraph(
+    "/images/arkar.png",
+    metaData.title,
+    metaData.description,
+    metaData.url
+  ),
+  twitter: getTwitterCard(
+    "/images/arkar.png",
+    metaData.title,
+    metaData.description
+  ),
 };
 
 export default function RootLayout({

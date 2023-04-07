@@ -45,7 +45,7 @@ function getMouseDegrees(x: number, y: number, degreeLimit: number) {
 }
 
 export const useObjectMovement = (
-  object: MutableRefObject<PrimitiveProps>,
+  object: MutableRefObject<PrimitiveProps>
   // primaryLight: MutableRefObject<DirectionalLight>,
   // accentLight: MutableRefObject<DirectionalLight>
 ) => {
