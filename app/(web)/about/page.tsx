@@ -1,12 +1,21 @@
 export const revalidate = 60;
 import Hero from "@/components/pages/hero";
 import Image from "next/image";
+import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
+import type { Metadata } from "next";
+
 const hero = {
   title: "About",
   subtitle: "More about Me",
   description:
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
+
+export const metadata : Metadata = {
+  title:  "About",
+  openGraph: getOpenGraph("/images/arkar.png", "About | " + metaData.title, metaData.description, new URL("/about", metaData.url)),
+  twitter:getTwitterCard("/images/arkar.png", "About | " + metaData.title, metaData.description),
+}
 
 function AboutPage() {
   return (
