@@ -13,9 +13,6 @@ dependencies:
   '@heroicons/react':
     specifier: ^2.0.17
     version: 2.0.17(react@18.2.0)
-  '@next/font':
-    specifier: ^13.3.0
-    version: 13.3.0
   '@portabletext/react':
     specifier: ^2.0.2
     version: 2.0.2(react@18.2.0)
@@ -79,6 +76,9 @@ dependencies:
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.21)
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   cmdk:
     specifier: ^0.1.22
     version: 0.1.22(@types/react@18.0.27)(react-dom@18.2.0)(react@18.2.0)
@@ -165,12 +165,12 @@ dependencies:
     version: 4.9.4
 
 devDependencies:
-  '@tailwindcss/line-clamp':
-    specifier: ^0.4.4
-    version: 0.4.4(tailwindcss@3.3.1)
   '@tweakpane/core':
     specifier: ^1.1.6
     version: 1.1.6
+  '@types/classnames':
+    specifier: ^2.3.1
+    version: 2.3.1
   '@types/dat.gui':
     specifier: ^0.7.9
     version: 0.7.9
@@ -1526,10 +1526,6 @@ packages:
       glob: 7.1.7
     dev: false
 
-  /@next/font@13.3.0:
-    resolution: {integrity: sha512-xUv7VRUA2Zr6n/KJDILyv7/zGy9xKUsyQURaQqYr7lVxn0REScazwyZQzhSm+DnJoUyo+9DcFs2J3WsZXHUvQw==}
-    dev: false
-
   /@next/swc-darwin-arm64@13.3.0:
     resolution: {integrity: sha512-DmIQCNq6JtccLPPBzf0dgh2vzMWt5wjxbP71pCi5EWpWYE3MsP6FcRXi4MlAmFNDQOfcFXR2r7kBeG1LpZUh1w==}
     engines: {node: '>= 10'}
@@ -2643,14 +2639,6 @@ packages:
     dependencies:
       tslib: 2.5.0
 
-  /@tailwindcss/line-clamp@0.4.4(tailwindcss@3.3.1):
-    resolution: {integrity: sha512-5U6SY5z8N42VtrCrKlsTAA35gy2VSyYtHWCsg1H87NU1SXnEfekTVlrga9fzUDrrHcGi2Lb5KenUWb4lRQT5/g==}
-    peerDependencies:
-      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
-    dependencies:
-      tailwindcss: 3.3.1(postcss@8.4.21)
-    dev: true
-
   /@tailwindcss/typography@0.5.9(tailwindcss@3.3.1):
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
     peerDependencies:
@@ -2699,6 +2687,13 @@ packages:
     dependencies:
       algoliasearch: 4.17.0
     dev: false
+
+  /@types/classnames@2.3.1:
+    resolution: {integrity: sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A==}
+    deprecated: This is a stub types definition. classnames provides its own type definitions, so you do not need this installed.
+    dependencies:
+      classnames: 2.3.2
+    dev: true
 
   /@types/dat.gui@0.7.9:
     resolution: {integrity: sha512-UiqZasQIask5cUwWOO6BgOjP1dNj9ChYtmeAb4WTKs5IJ7ha3ATRTeXY7/TzlmEZznh40lS6Ov5BdNA+tU+fWQ==}
@@ -3943,7 +3938,6 @@ packages:
 
   /classnames@2.3.2:
     resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
-    dev: false
 
   /clean-css@5.3.2:
     resolution: {integrity: sha512-JVJbM+f3d3Q704rF4bqQ5UUyTtuJ0JRKNbTKVEeujCCBoMdkEi+V+e8oktO9qGQNSvHrFTM6JZRXrUvGR1czww==}

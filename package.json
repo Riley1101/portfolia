@@ -34,6 +34,7 @@
     "@vercel/og": "^0.0.27",
     "algoliasearch": "^4.17.0",
     "autoprefixer": "^10.4.14",
+    "classnames": "^2.3.2",
     "cmdk": "^0.1.22",
     "dateformat": "^5.0.3",
     "dracula-prism": "^2.1.13",
@@ -65,6 +66,7 @@
   },
   "devDependencies": {
     "@tweakpane/core": "^1.1.6",
+    "@types/classnames": "^2.3.1",
     "@types/dat.gui": "^0.7.9",
     "@types/dateformat": "^5.0.0",
     "@types/html-to-text": "^9.0.0",

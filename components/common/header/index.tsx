@@ -3,7 +3,6 @@ import NavModal from "@/components/common/nav-modal";
 import React from "react";
 import Link from "next/link";
 import { Bars2Icon } from "@heroicons/react/20/solid";
-import CommandMenu from "@/components/common/cmdk";
 const Header = () => {
   let [visible, setVisible] = React.useState(false);
   const toggle = () => {

@@ -71,7 +71,7 @@ export default function RootLayout({
           </div>
 
           <GradientMesh />
-          {/* <RightAside /> */}
+          <RightAside />
         </div>
         <AnalyticsWrapper />
       </body>

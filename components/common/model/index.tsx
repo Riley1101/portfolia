@@ -1,7 +1,7 @@
 "use client";
 import { Canvas, PrimitiveProps, useLoader} from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls,useProgress } from "@react-three/drei";
+import { OrbitControls} from "@react-three/drei";
 import { MutableRefObject,  useRef } from "react";
 import { useObjectMovement } from "hooks/useMouse";
 import { DirectionalLight } from "three";
@@ -16,7 +16,7 @@ const ComputerModel = () => {
   const accentLight: MutableRefObject<DirectionalLight> =
     useRef<DirectionalLight>() as MutableRefObject<DirectionalLight>;
   const control: any = useRef();
-  useObjectMovement(object,primaryLight,accentLight);
+  useObjectMovement(object);
   return (
     <div className="w-full mt-auto aspect-square">
       <Canvas
