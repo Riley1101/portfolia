@@ -8,11 +8,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body>
-        <div className="grid w-full h-screen overflow-hidden">
-          <div>{children}</div>
-        </div>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

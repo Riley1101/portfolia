@@ -3,11 +3,7 @@
 import { Studio } from "sanity";
 import studioConfig from "./sanity.config";
 
-const StudioCompo = () => {
-  return (
-    <div className="w-full h-full ">
-      <Studio config={studioConfig} />
-    </div>
-  );
+const StudioComponent = () => {
+  return <Studio config={studioConfig} />;
 };
-export default StudioCompo;
+export default StudioComponent;

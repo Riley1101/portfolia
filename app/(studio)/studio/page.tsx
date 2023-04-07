@@ -5,7 +5,7 @@ const SanityStudio = dynamic(() => import("@/components/studio"), {
 });
 function StudioPage() {
   return (
-    <div className="w-full h-full ">
+    <div className="grid w-full h-screen overflow-hidden overscroll-none ">
       <SanityStudio />
     </div>
   );
