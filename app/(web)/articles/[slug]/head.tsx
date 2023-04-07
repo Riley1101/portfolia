@@ -10,7 +10,6 @@ export default async function Head(props: any) {
   'slug':slug.current,
   description,
   'categories':categories[]->title,
-
   'mainImage':mainImage.asset->{url}.url
 }`;
 
@@ -24,7 +23,7 @@ export default async function Head(props: any) {
     url: `https://arkar.space/articles/${data?.slug}`,
     tags: data?.categories || [],
     mainImage: data?.mainImage,
-    isBlogPost : true 
+    isBlogPost: true,
   };
   return (
     <head>

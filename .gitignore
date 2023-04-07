@@ -4,7 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
-
+next-env
+.env 
+.env.local
 .env
 # testing
 /coverage

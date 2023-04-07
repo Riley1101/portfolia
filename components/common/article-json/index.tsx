@@ -1,6 +1,6 @@
 import React from "react";
 import { ArticleJsonLd } from "next-seo";
-import Script from 'next/script'
+import Script from "next/script";
 type Props = {
   useAppDir?: boolean;
   url: string;
@@ -27,9 +27,8 @@ const ArticleJson = ({ meta }: { meta: Props }) => {
         authorName={[
           {
             name: "Arkar Kaung Myat",
-            url: 'https://arkar.space',
+            url: "https://arkar.space",
           },
-        
         ]}
         publisherName="Arkar Kaung Myat"
         description={meta.description}
