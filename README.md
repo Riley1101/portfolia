@@ -1,4 +1,4 @@
-# Personal Blog with Next.js
+# My Personal Blog with Next.js
 
 Welcome to my personal blog project built with Next.js! This project is a platform for sharing my thoughts, ideas and experiences with others. In this README, you'll find information about the project and how to set it up on your own machine.
 
@@ -10,10 +10,7 @@ This project was built using the following technologies:
 
 Next.js
 React
-Sanity
 TailwindCSS
-Features
-The blog includes the following features:
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
