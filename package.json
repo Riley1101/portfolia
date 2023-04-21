@@ -13,6 +13,8 @@
     "@algolia/autocomplete-plugin-query-suggestions": "^1.8.3",
     "@algolia/autocomplete-preset-algolia": "^1.8.3",
     "@heroicons/react": "^2.0.17",
+    "@liveblocks/client": "^1.0.2",
+    "@liveblocks/react": "^1.0.2",
     "@portabletext/react": "^2.0.2",
     "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-popover": "^1.0.5",
