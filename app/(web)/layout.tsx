@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
     googleBot: {
