@@ -13,6 +13,12 @@ dependencies:
   '@heroicons/react':
     specifier: ^2.0.17
     version: 2.0.17(react@18.2.0)
+  '@liveblocks/client':
+    specifier: ^1.0.2
+    version: 1.0.2
+  '@liveblocks/react':
+    specifier: ^1.0.2
+    version: 1.0.2(react@18.2.0)
   '@portabletext/react':
     specifier: ^2.0.2
     version: 2.0.2(react@18.2.0)
@@ -1490,6 +1496,27 @@ packages:
     dependencies:
       '@lezer/highlight': 1.1.4
       '@lezer/lr': 1.3.3
+    dev: false
+
+  /@liveblocks/client@1.0.2:
+    resolution: {integrity: sha512-sTXIe7nzEKOwPjSvX9T0qKfnz6iLqcEYHHWrdQqtFjkYsQ/fnM6dEXNYfafQInoBMBiKFpdDNoulYwKMJ8ybtQ==}
+    dependencies:
+      '@liveblocks/core': 1.0.2
+    dev: false
+
+  /@liveblocks/core@1.0.2:
+    resolution: {integrity: sha512-xZlklLGSulQ5ub0ppPu6NM7Sq9XK7EydEWP4UNosG7OqNaHwjZ8oGhjbDxYZqPzh8sPJYM5Tp9B85JbWsk687Q==}
+    dev: false
+
+  /@liveblocks/react@1.0.2(react@18.2.0):
+    resolution: {integrity: sha512-j8xvJdT4e1p5bTNO+cZgKK4KE78oWREbDGDgeCw94SPwLl4pDMHXtQz+Jf+073Zir1FnSA0a0GJJafUwdvbmPg==}
+    peerDependencies:
+      react: ^16.14.0 || ^17 || ^18
+    dependencies:
+      '@liveblocks/client': 1.0.2
+      '@liveblocks/core': 1.0.2
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
   /@motionone/animation@10.15.1:

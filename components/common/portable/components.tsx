@@ -59,7 +59,7 @@ const components: PortableTextComponents = {
       </h4>
     ),
     normal: ({ children }) => (
-      <p className="my-4 text-base leading-loose text-theme-body">{children}</p>
+      <p className="my-4 text-lg leading-loose text-theme-body">{children}</p>
     ),
     blockquote: BlockQuote,
   },

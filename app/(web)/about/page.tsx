@@ -1,12 +1,13 @@
 export const revalidate = 60;
 import Hero from "@/components/pages/hero";
 import Image from "next/image";
+import { Chart } from "@/components/common/wakatime/Chart";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import type { Metadata } from "next";
 
 const hero = {
   title: "About",
-  subtitle: "More about Me",
+  subtitle: "Arkar Kaung Myat",
   description:
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
@@ -27,11 +28,11 @@ function AboutPage() {
       />
 
       <div className="flex flex-col gap-6 mb-4 ">
-        <p className="leading-[2.5]">
+        <p className="leading-[2.5] text-lg">
           <Image
             src="/images/profile.jpg"
             alt="My profile"
-            className="object-cover float-left  w-[200px] rounded-full aspect-square m-8"
+            className="object-cover float-none md:float-left  w-[200px] rounded-full aspect-square m-8"
             width={800}
             height={600}
           />
@@ -57,6 +58,7 @@ function AboutPage() {
           </a>
         </p>
       </div>
+      <Chart/>
     </div>
   );
 }
