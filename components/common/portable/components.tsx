@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { toUrl } from "@/utils/to-url";
 import { PortableTextComponents } from "@portabletext/react";
 import CodeBlock from "./code";
 import KatexBlock from "./katex";
@@ -39,27 +40,27 @@ const components: PortableTextComponents = {
   },
   block: {
     h1: ({ children }) => (
-      <h1 className="mt-10 text-3xl font-bold text-theme-primary">
-        # {children}
+      <h1 className="mt-10 text-4xl font-bold text-theme-primary" id={toUrl(children)}>
+            {children}
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="mt-10 mb-4 text-2xl font-bold text-theme-primary">
-        # {children}
+      <h2 className="mt-10 mb-4 text-3xl font-bold text-theme-primary" id={toUrl(children)}>
+            {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mt-10 mb-4 text-xl font-bold text-theme-primary">
+      <h3 className="mt-10 mb-4 text-2xl font-bold text-theme-primary">
         # {children}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="mt-10 mb-4 text-lg font-bold text-theme-primary">
+      <h4 className="mt-10 mb-4 text-xl font-bold text-theme-primary">
         # {children}
       </h4>
     ),
     normal: ({ children }) => (
-      <p className="my-4 text-base leading-loose text-theme-body">{children}</p>
+      <p className="my-4 text-lg leading-loose text-theme-body">{children}</p>
     ),
     blockquote: BlockQuote,
   },

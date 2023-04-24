@@ -19,8 +19,6 @@ export default function PortableBody({ value }: Props) {
     Prism.highlightAll();
   }, []);
   return (
-    <div>
-      <PortableText value={value} components={components} />
-    </div>
+        <PortableText value={value} components={components} />
   );
 }

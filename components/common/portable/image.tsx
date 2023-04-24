@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { getImageDimensions } from "@sanity/asset-utils";
 import urlBuilder from "@sanity/image-url";
 import client from "@/utils/client";
 // TODO check type
@@ -9,10 +8,9 @@ function NextImage(props: any) {
   return (
     <Image
       src={url}
-      className={"mx-auto rounded-md my-8"}
-      width={600}
-      height={250}
-      //   placeholder="blur"
+      className={"mx-auto rounded-md my-8 w-full lg:max-h-[300px]"}
+      width={500}
+      height={350}
       alt={alt}
     ></Image>
   );
