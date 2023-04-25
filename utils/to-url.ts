@@ -4,5 +4,5 @@ export const toUrl = (path: string[] | React.ReactNode) => {
         // replace all spaces with dashes
         route = route.replace(/\s+/g, '-').toLowerCase()
         return route
-    }else ""
+    }else return ""
 }
