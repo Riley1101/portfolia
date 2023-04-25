@@ -11,7 +11,7 @@ type Props = {
 function Hero(props: Props) {
   return (
     <div className="py-8">
-      <h1 className="text-3xl font-bold text-white lg:text-5xl">
+      <h1 className="text-3xl leading-[1.2] lg:leading-[1.1] font-bold text-white lg:text-5xl">
         {props.title}
       </h1>
       <div className="flex items-center justify-between">
@@ -33,7 +33,7 @@ function Hero(props: Props) {
             </span>
           ))}
       </div>
-      <p className="leading-loose text-md text-theme-body">
+      <p className="leading-loose text-base text-theme-body">
         {props.description}
       </p>
  

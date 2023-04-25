@@ -10,7 +10,8 @@ export default function NavModal({ visible, toggle }: Props) {
   if (visible)
     return (
       <div>
-        <div className="fixed top-0 right-0 z-50 flex flex-col w-[70%]  h-screen text-white bg-theme-bg  ">
+        <div className="fixed top-0 right-0 z-50 flex flex-col w-[70%]
+        h-screen text-white bg-clip-padding bg-[#131127]">
           <div className="flex flex-col justify-end gap-8 p-4 my-auto">
             <button
               onClick={() => toggle()}

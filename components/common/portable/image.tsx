@@ -8,10 +8,9 @@ function NextImage(props: any) {
   return (
     <Image
       src={url}
-      className={"mx-auto rounded-md my-8"}
+      className={"mx-auto rounded-md my-8 w-full overflow-hidden aspect-video "}
       width={600}
-      height={250}
-      //   placeholder="blur"
+      height={550}
       alt={alt}
     ></Image>
   );

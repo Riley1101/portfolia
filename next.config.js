@@ -11,7 +11,7 @@ const nextConfig = {
     // Dangerously allow production builds to successfully complete even if
     // your project has type errors.
     // !! WARN !!
-    // WIP : Dont do as i do
+    // WIP : testing server components
     ignoreBuildErrors: true,
   },
 };

@@ -21,6 +21,9 @@ module.exports = {
         "theme-accent-opaque": "#88ced309",
         "theme-body": "#cbd5e1",
       },
+      fontFamily:{
+        "theme" : ["Inter", "sans-serif"]
+      }
     },
   },
   plugins: [

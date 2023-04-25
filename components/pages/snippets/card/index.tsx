@@ -13,9 +13,9 @@ export default function SnippetCard({
       href={`/snippets/${slug}`}
       className="p-4 transition-all duration-500 border rounded-md cursor-pointer hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque"
     >
-      <h2 className="text-lg font-bold text-white">{title}</h2>
+      <h2 className="text-lg text-white font-semibold mb-2">{title}</h2>
       <div className="flex justify-between">
-        <span className="block my-1 text-sm font-bold text-theme-primary">
+        <span className="block my-1 text-sm  text-theme-primary">
           {dateformat(releasedAt, "mediumDate")}
         </span>
         {categories && (
