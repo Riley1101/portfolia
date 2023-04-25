@@ -1,5 +1,4 @@
 import Link from "next/link";
-import HomeBlogCard from "@/components/pages/home/blog-card";
 import client from "@/utils/client";
 import type { ArticlCardType } from "types/articles";
 import SnippetCard from "../../snippets/card";

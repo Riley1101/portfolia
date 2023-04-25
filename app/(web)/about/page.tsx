@@ -1,12 +1,22 @@
 export const revalidate = 60;
 import Hero from "@/components/pages/hero";
 import Image from "next/image";
+import { Chart } from "@/components/common/wakatime/Chart";
+import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
+import type { Metadata } from "next";
+
 const hero = {
   title: "About",
-  subtitle: "More about Me",
+  subtitle: "Arkar Kaung Myat",
   description:
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
+
+export const metadata : Metadata = {
+  title:  "About",
+  openGraph: getOpenGraph("/images/arkar.png", "About | " + metaData.title, metaData.description, new URL("/about", metaData.url)),
+  twitter:getTwitterCard("/images/arkar.png", "About | " + metaData.title, metaData.description),
+}
 
 function AboutPage() {
   return (
@@ -17,12 +27,12 @@ function AboutPage() {
         subtitle={hero.subtitle}
       />
 
-      <div className="flex flex-col gap-6 mb-4  ">
+      <div className="flex flex-col gap-6 mb-4 ">
         <p className="leading-[2.5] text-gray-200 text-lg">
           <Image
             src="/images/profile.jpg"
             alt="My profile"
-            className="object-cover float-left  w-[200px] rounded-full aspect-square m-8"
+            className="object-cover float-none md:float-left  w-[200px] rounded-full aspect-square m-8"
             width={800}
             height={600}
           />
@@ -48,6 +58,7 @@ function AboutPage() {
           </a>
         </p>
       </div>
+      <Chart/>
     </div>
   );
 }

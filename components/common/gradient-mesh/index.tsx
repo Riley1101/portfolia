@@ -1,9 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
-import React from "react";
-
 export default function GradientMesh() {
-
   return (
     <>
       <div

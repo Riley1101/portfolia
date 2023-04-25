@@ -1,6 +1,5 @@
 import { PrimitiveProps } from "@react-three/fiber";
-import { useEffect, useState, MutableRefObject } from "react";
-import { DirectionalLight } from "three";
+import { useEffect, MutableRefObject } from "react";
 // ! WIP
 function getMouseDegrees(x: number, y: number, degreeLimit: number) {
   let dx = 0,
@@ -47,8 +46,8 @@ function getMouseDegrees(x: number, y: number, degreeLimit: number) {
 
 export const useObjectMovement = (
   object: MutableRefObject<PrimitiveProps>,
-  primaryLight: MutableRefObject<DirectionalLight>,
-  accentLight: MutableRefObject<DirectionalLight>,
+  // primaryLight: MutableRefObject<DirectionalLight>,
+  // accentLight: MutableRefObject<DirectionalLight>
 ) => {
   // const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
   //   x: 0,
@@ -73,7 +72,7 @@ export const useObjectMovement = (
   //   if (primaryLight.current === undefined) return;
   //   if (accentLight.current === undefined) return;
 
-  //   // keep the value between -10 and 10 
+  //   // keep the value between -10 and 10
   //   // const rotationX = Math.min(Math.max(primaryLight.current.position.x + e.deltaY * 0.01, -10), 10);
   //   // const rotationZ = Math.min(Math.max(primaryLight.current.position.z + e.deltaY * 0.01, -10), 10);
 
@@ -85,14 +84,14 @@ export const useObjectMovement = (
   //   // primaryLight.current.position.z = rotationZ;
   //   accentLight.current.position.x = rotationX;
   //   // accentLight.current.position.z = rotationZ;
-     
+
   // };
 
   useEffect(() => {
     // if (typeof window !== "undefined") {
     //   document.querySelector("#main").addEventListener("scroll", onScroll);
     // }
-    
+
     window.addEventListener("mousemove", rotateModel);
     // window.addEventListener("wheel", onScroll);
     return () => {

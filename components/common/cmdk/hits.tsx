@@ -1,4 +1,4 @@
-// ./components/Search/CustomHits.js
+// @ts-nocheck
 import { connectStateResults } from "react-instantsearch-dom";
 import Link from "next/link";
 import React from "react";
@@ -10,7 +10,6 @@ import searchClient from "@/utils/search-client";
 function Hits({ searchState, searchResults }: any) {
   const [autocompleteState, setAutocompleteState] = React.useState({});
   const validQuery = searchState.query?.length >= 3;
-  // @ts-ignore
   const autocomplete = React.useMemo(
     () =>
       createAutocomplete({

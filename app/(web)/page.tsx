@@ -4,12 +4,17 @@ import Hero from "@/components/pages/hero";
 import LatestPostHome from "@/components/pages/home/latest-blogs";
 import { BurmaSocial } from "@/components/pages/home/burma-social";
 import LatestSnippets from "@/components/pages/home/latest-snippets";
+import type { Metadata } from "next";
+
 const hero = {
   title: "Home",
-  subtitle: "I am Arkar Dev",
+  subtitle: "Arkar Dev",
   description:
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
+export const metadata : Metadata = {
+  title: 'Arkar Kaung Myat',
+}
 
 export default async function Home() {
   return (
@@ -32,7 +37,9 @@ export default async function Home() {
           </a>
         </p>
       </div>
-      <BurmaSocial />
+      <div className="flex gap-2 max-w-[300px]">
+         <BurmaSocial />
+      </div>
       <LatestPostHome />
       <LatestSnippets></LatestSnippets>
     </div>

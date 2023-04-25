@@ -37,7 +37,7 @@ const BurmaSocial = asyncComponent(async () => {
   const posts = await getPosts();
   return (
     <div className="py-6 pt-8">
-      <div className="p-4 bg-theme-accent-opaque w-full md:w-[80%] lg:w-[70%] xl:w-[50%] lg:max-w-[350px] border border-theme-primary-opaque rounded-md">
+      <div className="lg:w-[90%]  p-4 bg-theme-accent-opaque w-full border border-theme-primary-opaque rounded-md">
         <div className="flex items-center gap-4 ">
           <Image
             className="border-2 rounded-full w-[45px] h-[45px] cursor-pointer aspect-video border-theme-primary-opaque hover:border-theme-primary"
