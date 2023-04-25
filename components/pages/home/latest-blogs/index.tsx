@@ -25,7 +25,7 @@ async function LatestPostHome() {
         <h3 className="mt-12 text-xl font-bold text-theme-primary">
           LATEST POST
         </h3>
-        <p className="my-2 ">
+        <p className="my-2 text-md">
           Here&rsquo;s the latest posts I&rsquo;ve written and published here on
           my site.
         </p>

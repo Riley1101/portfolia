@@ -33,7 +33,7 @@ function Hero(props: Props) {
             </span>
           ))}
       </div>
-      <p className="leading-loose text-md text-theme-body">
+      <p className="leading-loose text-base text-theme-body">
         {props.description}
       </p>
  

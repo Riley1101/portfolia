@@ -9,7 +9,7 @@ const hero = {
 
 function VideoPage() {
   return (
-    <div>
+    <div className="w-full md:w-[70%]">
       <Hero
         title={hero.title}
         description={hero.description}

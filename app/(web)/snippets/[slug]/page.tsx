@@ -25,7 +25,7 @@ async function SnippetDetailPage(props: DetailPageParamTypes) {
   });
   if (data === null) return <div>404</div>;
   return (
-    <div>
+    <div className="w-full lg:w-[60%] " >
       <Hero
         title={data.title}
         description={data.description}

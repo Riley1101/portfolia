@@ -6,14 +6,14 @@ import { BurmaSocial } from "@/components/pages/home/burma-social";
 import LatestSnippets from "@/components/pages/home/latest-snippets";
 const hero = {
   title: "Home",
-  subtitle: "I am Arkar 🦦",
+  subtitle: "I am Arkar Dev",
   description:
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
 
 export default async function Home() {
   return (
-    <div>
+    <div className="w-full lg:w-[60%] " >
       <Hero
         title={hero.title}
         description={hero.description}

@@ -38,7 +38,7 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
         <div className="col-starts-2 order-1 lg:order-2">
             <TableOfContents value={data.body} />
         </div>
-        <div className="col-starts-1 order-2 lg:order-1 ">
+        <div className="col-starts-1 order-2 lg:order-1">
             <PortableBody value={data.body} />
         </div>
       </div>

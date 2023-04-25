@@ -10,15 +10,15 @@ const hero = {
 
 function AboutPage() {
   return (
-    <div className="w-full ">
+    <div className="w-full lg:w-[60%] " >
       <Hero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
       />
 
-      <div className="flex flex-col gap-6 mb-4 ">
-        <p className="leading-[2.5]">
+      <div className="flex flex-col gap-6 mb-4  ">
+        <p className="leading-[2.5] text-gray-200 text-lg">
           <Image
             src="/images/profile.jpg"
             alt="My profile"

@@ -14,7 +14,7 @@ export default function ArticleCard({
       href={`/articles/${slug}`}
       className="p-4 transition-all duration-500 rounded-md cursor-pointer hover:bg-gradient-to-r hover:from-theme-primary-opaque "
     >
-      <h2 className="text-lg font-bold text-white">{title}</h2>
+      <h2 className="text-lg mb-2 font-bold text-white">{title}</h2>
       <div className="flex justify-between">
         <span className="block my-1 text-sm font-bold text-theme-primary">
           {dateformat(releasedAt, "mediumDate")}
@@ -30,9 +30,9 @@ export default function ArticleCard({
           </div>
         )}
       </div>
-      <p className="my-2">{description}</p>
+      <p className="my-2 text-gray-400">{description}</p>
       <div>
-        <p className="text-sm text-gray-400">Read more</p>
+        <p className="text-sm text-theme-accent">Read more</p>
       </div>
     </Link>
   );

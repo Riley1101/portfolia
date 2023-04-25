@@ -14,15 +14,17 @@ export default function HomeBlogCard({
   return (
     <Link
       href={`/articles/${slug}`}
-      className="flex flex-col items-center gap-4 p-4 transition-all duration-500 rounded-md cursor-pointer md:flex-row bg-theme-accent-opaque hover:bg-gradient-to-r hover:from-theme-primary-opaque "
+      className="flex flex-col items-center gap-4 p-4 transition-all duration-500 rounded-md
+      cursor-pointer md:flex-row bg-theme-accent-opaque hover:bg-gradient-to-r hover:from-theme-primary-opaque "
     >
       <div className="basis-[70%]">
-        <h2 className="text-lg font-bold text-white">{title}</h2>
-        <div className="flex justify-between">
-          <span className="block my-1 text-sm font-bold text-theme-primary">
+        <h2 className="text-lg tefont-semi xt-white mb-2 leading-relaxed font-semibold">{title}</h2>
+        <p className="my-2 text-base line-clamp-2 text-gray-400">{description}</p>
+        <div className="flex justify-between items-center gap-4">
+          <span className="block my-1 text-sm text-theme-primary">
             {dateformat(releasedAt, "mediumDate")}
           </span>
-          {categories && (
+          {categories  && (
             <div className="flex items-center gap-2 ">
               {categories.map((category) => (
                 <div key={category}>
@@ -33,7 +35,6 @@ export default function HomeBlogCard({
             </div>
           )}
         </div>
-        <p className="my-2 text-sm line-clamp-2">{description}</p>
       </div>
       <div className="justify-end w-full ml-auto md:w-auto">
         <Image
@@ -41,7 +42,7 @@ export default function HomeBlogCard({
           alt={title}
           width={150}
           height={150}
-          className="w-full md:w-[150px] min-h-[100px] object-cover rounded-md max-h-[170px]"
+          className="w-full md:w-[150px] min-h-[100px] aspect-video object-cover rounded-md max-h-[170px]"
         ></Image>
       </div>
     </Link>
