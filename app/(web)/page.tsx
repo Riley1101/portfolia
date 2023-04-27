@@ -12,13 +12,13 @@ const hero = {
   description:
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
-export const metadata : Metadata = {
-  title: 'Arkar Kaung Myat',
-}
+export const metadata: Metadata = {
+  title: "Arkar Kaung Myat",
+};
 
 export default async function Home() {
   return (
-    <div className="w-full lg:w-[60%] " >
+    <div className="w-full lg:w-[60%] ">
       <Hero
         title={hero.title}
         description={hero.description}
@@ -38,7 +38,7 @@ export default async function Home() {
         </p>
       </div>
       <div className="flex gap-2 max-w-[300px]">
-         <BurmaSocial />
+        <BurmaSocial />
       </div>
       <LatestPostHome />
       <LatestSnippets></LatestSnippets>
