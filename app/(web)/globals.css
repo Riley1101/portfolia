@@ -92,6 +92,7 @@ pre[class*="language-"] {
 
 .html-renderer a {
   text-decoration: underline;
+  line-height:1.5;
 }
 
 .html-renderer img {

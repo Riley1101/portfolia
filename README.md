@@ -1,4 +1,4 @@
-# My Personal Blog with Next.js
+# My Personal Blog with Next.js and Server Components
 
 Welcome to my personal blog project built with Next.js! This project is a platform for sharing my thoughts, ideas and experiences with others. In this README, you'll find information about the project and how to set it up on your own machine.
 
