@@ -9,11 +9,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<PublicEventData | NotFound>
 ) {
-  const name = req.query.username as string;
-
   try {
     const data: PublicEventData = await octokit.request(
-      `GET /users/${name}/events/public`,
+      `GET /users/Riley1101/events/public`,
       {
         username: "Riley1101",
         headers: {

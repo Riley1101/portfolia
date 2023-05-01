@@ -108,7 +108,7 @@ export interface PushEvent {
   payload: PushEventPayLoad;
 }
 
-interface PullRequestEvent {
+export interface PullRequestEvent {
   id: string;
   type: "PullRequestEvent";
   actor: Actor;

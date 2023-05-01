@@ -36,7 +36,6 @@ const SocialCard = ({ post }: { post: MastodonPost }) => {
 const BurmaSocial = asyncComponent(async () => {
   const posts = await getPosts();
   return (
-    <div className="py-6 pt-8">
       <div className="lg:w-[90%]  p-4 bg-theme-accent-opaque w-full border border-theme-primary-opaque rounded-md">
         <div className="flex items-center gap-4 ">
           <Image
@@ -73,7 +72,6 @@ const BurmaSocial = asyncComponent(async () => {
           })}
         </div>
       </div>
-    </div>
   );
 });
 
