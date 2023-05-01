@@ -12,7 +12,7 @@ const nextConfig = {
     // your project has type errors.
     // !! WARN !!
     // WIP : testing server components
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
 };
 
