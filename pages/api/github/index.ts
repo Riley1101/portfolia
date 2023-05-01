@@ -6,7 +6,7 @@ interface NotFound {
 }
 
 export default async function handler(
-  req: NextApiRequest,
+  _: NextApiRequest,
   res: NextApiResponse<PublicEventData | NotFound>
 ) {
   try {
