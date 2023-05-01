@@ -113,10 +113,32 @@ export interface PullRequestEvent {
   type: "PullRequestEvent";
   actor: Actor;
   payload: PullRequestEventPayload;
+  repo : Repo;
   created_at: string;
 }
 
-type PublicEvent = PushEvent | CreateEvent | WatchEvent | PullRequestEvent;
+export interface Forkee {
+    id: number;
+    node_id: string;
+    name : string;
+    git_url: string;
+    homepage: string;
+}
+
+export interface ForkEventPayload {
+    forkee : Forkee;
+}
+
+export interface ForkEvent{
+    id: string;
+    type: "ForkEvent";
+    actor: Actor;
+    repo: Repo;
+    payload: ForkEventPayload;
+    created_at:string;
+}
+
+type PublicEvent = PushEvent | CreateEvent | WatchEvent | PullRequestEvent | ForkEvent;
 
 export interface PublicEventData {
   status: number;

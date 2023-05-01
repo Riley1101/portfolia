@@ -4,6 +4,7 @@ import { getGithubFeed } from "@/utils/github-feed";
 import { Github } from "@/components/common/icons";
 import type {
   PushEvent,
+  ForkEvent,
   PullRequestEvent,
   WatchEvent,
   CreateEvent,
@@ -78,21 +79,56 @@ function CreateEventCard(data: CreateEvent) {
   );
 }
 
-function PullRequestCard(data: PullRequestEvent) {
-  const { created_at, payload } = data;
+function ForkEventCard(data: ForkEvent) {
+  const { created_at, repo } = data;
   return (
-    <div>
-      <a target={"_blank"} rel="noreferrer">
-        <div className="flex flex-col gap-2 p-2 border rounded-md cursor-pointer cusor-pointer hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
-          <p className="text-sm text-theme-accent">
-            {dateFormat(created_at, "mmm dd yyyy HH:MM")}
-          </p>
-        </div>
-      </a>
+    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
+      <span className="text-sm text-theme-accent">
+        {dateFormat(created_at, "mmm dd yyyy HH:MM")}
+      </span>
+      <div>
+        <p className="text-sm cursor-pointer">
+          Forked {" "}
+          <a
+            href={"https://github.com/" + repo.name}
+            target="_blank"
+            className="text-theme-accent"
+          >
+            {repo.name} {" "}
+          </a>
+          from main
+        </p>
+      </div>
     </div>
   );
 }
 
+function PullRequestCard(data: PullRequestEvent) {
+  const { created_at,repo,payload,type} = data;
+  return (
+    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
+      <span className="text-sm text-theme-accent">
+        {dateFormat(created_at, "mmm dd yyyy HH:MM")}
+      </span>
+      <div className="flex flex-col">
+        <p className="mb-1 text-sm cursor-pointer">
+        Event : {" "}{type}
+        </p>
+        <p className="text-sm cursor-pointer">
+        Repo : {" "}
+          <a
+            href={"https://github.com/" + repo.name}
+            target="_blank"
+            className="hover:text-theme-accent"
+          >
+            {repo.name}
+          </a>
+        </p>
+       
+      </div>
+    </div>
+  );
+}
 function PushEventCard(data: PushEvent) {
   const { created_at, repo, payload } = data;
   return (
@@ -120,7 +156,7 @@ function PushEventCard(data: PushEvent) {
 }
 
 const GithubFeed = asyncComponent(async () => {
-  const { data, status } = await getGithubFeed();
+  const { data} = await getGithubFeed();
   return (
     <div className="lg:w-[90%]  p-4 bg-theme-accent-opaque w-full border border-theme-primary-opaque rounded-md">
       <div className="flex items-center gap-4 ">
@@ -140,12 +176,12 @@ const GithubFeed = asyncComponent(async () => {
           >
             Riley1101
           </a>
-          <span className="text-sm text-gray-500">@Riley1101</span>
+          <span className="text-sm text-gray-500">@Github</span>
         </div>
       </div>
       <div className="flex items-center gap-2 my-4 mt-6 text-sm font-bold">
         <Github
-          className="w-[20px] aspect-square"
+          className="w-[20px] aspect-square text-theme-primary"
         ></Github>
         Recent Events
       </div>
@@ -158,8 +194,12 @@ const GithubFeed = asyncComponent(async () => {
               return (
                 <CreateEventCard key={item.id} {...item}></CreateEventCard>
               );
+            case "ForkEvent":
+              return <ForkEventCard key={item.id} {...item}></ForkEventCard>;
             case "WatchEvent":
               return <WatchEventCard key={item.id} {...item}></WatchEventCard>;
+            case "PullRequestEvent":
+              return <PullRequestCard key={item.id} {...item}></PullRequestCard>;
             default:
               return <></>;
           }

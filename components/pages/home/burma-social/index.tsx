@@ -15,7 +15,7 @@ const SocialCard = ({ post }: { post: MastodonPost }) => {
         <p className="text-sm text-theme-accent">
           {dateFormat(created_at, "mmm dd yyyy HH:MM")}
         </p>
-        <div className="html-renderer">{convert(content)}</div>
+        <div className="html-renderer text-gray-500">{convert(content)}</div>
 
         {media && (
           <Image
