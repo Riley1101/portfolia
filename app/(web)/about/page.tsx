@@ -1,9 +1,9 @@
 export const revalidate = 60;
+
+import Image from "next/image";
+import Hero from "@/components/pages/hero";
 import { GithubFeed } from "@/components/pages/home/github";
 import { BurmaSocial } from "@/components/pages/home/burma-social";
-import Hero from "@/components/pages/hero";
-import Image from "next/image";
-import { Chart } from "@/components/common/wakatime/Chart";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import type { Metadata } from "next";
 
@@ -64,7 +64,6 @@ function AboutPage() {
         <GithubFeed />
         <BurmaSocial />
       </div>
-      <Chart/>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { getGithubFeed } from "@/utils/github-feed";
 import { Github } from "@/components/common/icons";
+
 import type {
   PushEvent,
   ForkEvent,
@@ -9,6 +10,7 @@ import type {
   WatchEvent,
   CreateEvent,
 } from "@/types/github";
+
 import dateFormat from "dateformat";
 import asyncComponent from "@/utils/async-component";
 
@@ -152,8 +154,8 @@ function PushEventCard(data: PushEvent) {
   );
 }
 
-const GithubFeed = asyncComponent(async () => {
-  const data  = await getGithubFeed();
+export const GithubFeed = asyncComponent(async () => {
+  const data = await getGithubFeed();
   return (
     <div className="lg:w-[90%]  p-4 bg-theme-accent-opaque w-full border border-theme-primary-opaque rounded-md">
       <div className="flex items-center gap-4 ">
@@ -205,5 +207,3 @@ const GithubFeed = asyncComponent(async () => {
     </div>
   );
 });
-
-export { GithubFeed };
