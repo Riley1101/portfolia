@@ -3,7 +3,7 @@ import { Canvas, PrimitiveProps, useLoader} from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls} from "@react-three/drei";
 import { MutableRefObject,  useRef } from "react";
-import { useObjectMovement } from "hooks/useMouse";
+import { useObjectMovement } from "@/hooks/useMouse";
 import { DirectionalLight } from "three";
 const ComputerModel = () => {
   // change  gltf file to url

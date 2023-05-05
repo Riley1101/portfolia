@@ -1,8 +1,8 @@
 export const revalidate = 60;
 import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
-import type { DetailPageParamTypes } from "types";
-import type { SnippetDetailType } from "types/articles";
+import type { DetailPageParamTypes } from "@/types";
+import type { SnippetDetailType } from "@/types/articles";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import CodeBlock from "@/components/pages/snippets/codeblock";
 

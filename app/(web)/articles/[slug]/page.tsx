@@ -1,10 +1,10 @@
 export const revalidate = 60;
 import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
-import type { ArticleDetailType } from "types/articles";
+import type { ArticleDetailType } from "@/types/articles";
 import PortableBody from "@/components/common/portable";
 import TableOfContents from "@/components/common/toc";
-import type { DetailPageParamTypes } from "types";
+import type { DetailPageParamTypes } from "@/types";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 
 const query = `

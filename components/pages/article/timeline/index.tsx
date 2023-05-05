@@ -1,6 +1,6 @@
 import ArticleCard from "../card";
 import client from "@/utils/client";
-import type { ArticlCardType } from "types/articles";
+import type { ArticlCardType } from "@/types/articles";
 import asyncComponent from "@/utils/async-component";
 
 let query = `
@@ -16,7 +16,6 @@ let query = `
 
 async function ArticleTimeLine() {
   const data: ArticlCardType[] = await client.fetch(query);
-  //   fetch data from json placeholder
   return (
     <div className="flex flex-col my-6 ">
       <div className="relative flex flex-col gap-4  6pb-6 ">

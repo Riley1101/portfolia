@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .glass-box {
-  @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.1];
+    @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.1];
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

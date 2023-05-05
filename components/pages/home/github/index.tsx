@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { getGithubFeed } from "@/utils/github-feed";
 import { Github } from "@/components/common/icons";
+
 import type {
   PushEvent,
   ForkEvent,
@@ -9,11 +10,12 @@ import type {
   WatchEvent,
   CreateEvent,
 } from "@/types/github";
+
 import dateFormat from "dateformat";
 import asyncComponent from "@/utils/async-component";
 
 function WatchEventCard(data: WatchEvent) {
-  const { created_at, payload, repo, type } = data;
+  const { created_at, payload, repo } = data;
   return (
     <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
       <span className="text-sm text-theme-accent">
@@ -88,13 +90,13 @@ function ForkEventCard(data: ForkEvent) {
       </span>
       <div>
         <p className="text-sm cursor-pointer">
-          Forked {" "}
+          Forked{" "}
           <a
             href={"https://github.com/" + repo.name}
             target="_blank"
             className="text-theme-accent"
           >
-            {repo.name} {" "}
+            {repo.name}{" "}
           </a>
           from main
         </p>
@@ -104,18 +106,16 @@ function ForkEventCard(data: ForkEvent) {
 }
 
 function PullRequestCard(data: PullRequestEvent) {
-  const { created_at,repo,payload,type} = data;
+  const { created_at, repo, type } = data;
   return (
     <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
       <span className="text-sm text-theme-accent">
         {dateFormat(created_at, "mmm dd yyyy HH:MM")}
       </span>
       <div className="flex flex-col">
-        <p className="mb-1 text-sm cursor-pointer">
-        Event : {" "}{type}
-        </p>
+        <p className="mb-1 text-sm cursor-pointer">Event : {type}</p>
         <p className="text-sm cursor-pointer">
-        Repo : {" "}
+          Repo :{" "}
           <a
             href={"https://github.com/" + repo.name}
             target="_blank"
@@ -124,7 +124,6 @@ function PullRequestCard(data: PullRequestEvent) {
             {repo.name}
           </a>
         </p>
-       
       </div>
     </div>
   );
@@ -155,8 +154,8 @@ function PushEventCard(data: PushEvent) {
   );
 }
 
-const GithubFeed = asyncComponent(async () => {
-  const { data} = await getGithubFeed();
+export const GithubFeed = asyncComponent(async () => {
+  const data = await getGithubFeed();
   return (
     <div className="lg:w-[90%]  p-4 bg-theme-accent-opaque w-full border border-theme-primary-opaque rounded-md">
       <div className="flex items-center gap-4 ">
@@ -180,9 +179,7 @@ const GithubFeed = asyncComponent(async () => {
         </div>
       </div>
       <div className="flex items-center gap-2 my-4 mt-6 text-sm font-bold">
-        <Github
-          className="w-[20px] aspect-square text-theme-primary"
-        ></Github>
+        <Github className="w-[20px] aspect-square text-theme-primary"></Github>
         Recent Events
       </div>
       <div className="flex flex-col gap-4 max-h-[300px] overflow-auto pr-1">
@@ -199,7 +196,9 @@ const GithubFeed = asyncComponent(async () => {
             case "WatchEvent":
               return <WatchEventCard key={item.id} {...item}></WatchEventCard>;
             case "PullRequestEvent":
-              return <PullRequestCard key={item.id} {...item}></PullRequestCard>;
+              return (
+                <PullRequestCard key={item.id} {...item}></PullRequestCard>
+              );
             default:
               return <></>;
           }
@@ -208,5 +207,3 @@ const GithubFeed = asyncComponent(async () => {
     </div>
   );
 });
-
-export { GithubFeed };

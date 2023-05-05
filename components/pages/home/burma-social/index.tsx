@@ -6,7 +6,7 @@ import { rgbDataURL } from "@/utils/image-blur";
 import { convert } from "html-to-text";
 import asyncComponent from "@/utils/async-component";
 
-const SocialCard = ({ post }: { post: MastodonPost }) => {
+export const SocialCard = ({ post }: { post: MastodonPost }) => {
   const { content, created_at, media_attachments, url } = post;
   const media = media_attachments[0] || null;
   return (
@@ -33,7 +33,7 @@ const SocialCard = ({ post }: { post: MastodonPost }) => {
   );
 };
 
-const BurmaSocial = asyncComponent(async () => {
+export const BurmaSocial = asyncComponent(async () => {
   const posts = await getPosts();
   return (
       <div className="lg:w-[90%]  p-4 bg-theme-accent-opaque w-full border border-theme-primary-opaque rounded-md">
@@ -75,4 +75,3 @@ const BurmaSocial = asyncComponent(async () => {
   );
 });
 
-export { BurmaSocial };

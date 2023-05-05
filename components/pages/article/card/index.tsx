@@ -1,6 +1,6 @@
 import Link from "next/link";
 import dateformat from "dateformat";
-import type { ArticlCardType } from "types/articles";
+import type { ArticlCardType } from "@/types/articles";
 
 export default function ArticleCard({
   title,

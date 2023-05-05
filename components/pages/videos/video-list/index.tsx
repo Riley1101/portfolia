@@ -1,5 +1,5 @@
 import VideoCard from "@/components/pages/videos/video-card";
-import type {  VideoAPIType } from "types/videos";
+import type {  VideoAPIType } from "@/types/videos";
 import asyncComponent from "@/utils/async-component";
 
 const VideoTimeLine = async () => {

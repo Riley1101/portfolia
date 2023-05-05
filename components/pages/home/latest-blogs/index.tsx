@@ -1,7 +1,7 @@
 import Link from "next/link";
 import HomeBlogCard from "@/components/pages/home/blog-card";
 import client from "@/utils/client";
-import type { ArticlCardType } from "types/articles";
+import type { ArticlCardType } from "@/types/articles";
 import { PencilIcon } from "@heroicons/react/20/solid";
 import asyncComponent from "@/utils/async-component";
 interface Props {

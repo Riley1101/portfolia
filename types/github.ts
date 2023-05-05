@@ -140,8 +140,4 @@ export interface ForkEvent{
 
 type PublicEvent = PushEvent | CreateEvent | WatchEvent | PullRequestEvent | ForkEvent;
 
-export interface PublicEventData {
-  status: number;
-  data: PublicEvent[];
-  url: string;
-}
+export type PublicEventData = PublicEvent[];
