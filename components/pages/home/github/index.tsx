@@ -153,7 +153,7 @@ function PushEventCard(data: PushEvent) {
 }
 
 const GithubFeed = asyncComponent(async () => {
-  const { data } = await getGithubFeed();
+  const data  = await getGithubFeed();
   return (
     <div className="lg:w-[90%]  p-4 bg-theme-accent-opaque w-full border border-theme-primary-opaque rounded-md">
       <div className="flex items-center gap-4 ">

@@ -1,4 +1,6 @@
 export const revalidate = 60;
+import { GithubFeed } from "@/components/pages/home/github";
+import { BurmaSocial } from "@/components/pages/home/burma-social";
 import Hero from "@/components/pages/hero";
 import Image from "next/image";
 import { Chart } from "@/components/common/wakatime/Chart";
@@ -20,7 +22,7 @@ export const metadata : Metadata = {
 
 function AboutPage() {
   return (
-    <div className="w-full lg:w-[60%] " >
+    <div className="w-full lg:w-[60%]" >
       <Hero
         title={hero.title}
         description={hero.description}
@@ -57,6 +59,10 @@ function AboutPage() {
             Otterdev.io
           </a>
         </p>
+      </div>
+      <div className="py-4 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-2">
+        <GithubFeed />
+        <BurmaSocial />
       </div>
       <Chart/>
     </div>

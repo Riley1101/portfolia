@@ -1,9 +1,6 @@
 export const revalidate = 60;
-
 import Hero from "@/components/pages/hero";
 import LatestPostHome from "@/components/pages/home/latest-blogs";
-import { BurmaSocial } from "@/components/pages/home/burma-social";
-import { GithubFeed } from "@/components/pages/home/github";
 import LatestSnippets from "@/components/pages/home/latest-snippets";
 import type { Metadata } from "next";
 
@@ -37,10 +34,6 @@ export default async function Home() {
             Otterdev.io
           </a>
         </p>
-      </div>
-      <div className="py-4 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-2">
-        <GithubFeed />
-        <BurmaSocial />
       </div>
       <LatestPostHome />
       <LatestSnippets></LatestSnippets>

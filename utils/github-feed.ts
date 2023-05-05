@@ -1,15 +1,17 @@
-import type {PublicEventData} from "@/types/github";
-import { octokit } from "@/utils/octokit";
+import type { PublicEventData } from "@/types/github";
+const headers = {
+  Accept: "application/vnd.github.v3+json",
+  Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+  "X-GitHub-Api-Version": "2022-11-28",
+};
 
-export async function getGithubFeed() : Promise<PublicEventData>{
-    const data: PublicEventData = await octokit.request(
-      `GET /users/Riley1101/events/public`,
-      {
-        username: "Riley1101",
-        headers: {
-          "X-GitHub-Api-Version": "2022-11-28",
-        },
-      }
-    );
-    return data;
+async function getGithubFeed(
+): Promise<PublicEventData> {
+  return await fetch(
+    `https://api.github.com/users/Riley1101/events/public`,
+    {
+      headers,
+    }
+  ).then((response) => response.json());
 }
+export { getGithubFeed };
