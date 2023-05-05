@@ -2,8 +2,6 @@ export const revalidate = 60;
 
 import Image from "next/image";
 import Hero from "@/components/pages/hero";
-import { GithubFeed } from "@/components/pages/home/github";
-import { BurmaSocial } from "@/components/pages/home/burma-social";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import type { Metadata } from "next";
 
@@ -59,10 +57,6 @@ function AboutPage() {
             Otterdev.io
           </a>
         </p>
-      </div>
-      <div className="py-4 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-2">
-        <GithubFeed />
-        <BurmaSocial />
       </div>
     </div>
   );
