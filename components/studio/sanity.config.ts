@@ -6,6 +6,7 @@ import { codeInput } from "@sanity/code-input";
 import { latexInput } from "sanity-plugin-latex-input";
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
 import { contentGraphView } from "sanity-plugin-graph-view";
+import { table } from '@sanity/table';
 
 const SANITY_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "";
 const SANITY_DATASET_ID = process.env.NEXT_PUBLIC_SANITY_DATASET || "";
@@ -23,6 +24,7 @@ export default defineConfig({
     codeInput(),
     latexInput(),
     unsplashImageAsset(),
+    table()
   ],
   schema: {
     types: schemaTypes,
