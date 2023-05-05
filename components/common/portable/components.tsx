@@ -8,6 +8,7 @@ import BlockQuote from "./blockquote";
 import { InlineMath } from "react-katex";
 import { LinkIcon } from "@heroicons/react/20/solid";
 import { Embed } from "./Embeded";
+import { TableBlock } from "./table";
 
 const components: PortableTextComponents = {
   marks: {
@@ -37,6 +38,7 @@ const components: PortableTextComponents = {
     image: NextImage,
     latex: KatexBlock,
     youtube: Embed,
+    table : TableBlock,
   },
   block: {
     h1: ({ children }) => (
