@@ -67,26 +67,6 @@ export const useObjectMovement = (
     }
   };
 
-  // let onScroll = (e: WheelEvent) => {
-  //   // rotate the lights around the model
-  //   if (primaryLight.current === undefined) return;
-  //   if (accentLight.current === undefined) return;
-
-  //   // keep the value between -10 and 10
-  //   // const rotationX = Math.min(Math.max(primaryLight.current.position.x + e.deltaY * 0.01, -10), 10);
-  //   // const rotationZ = Math.min(Math.max(primaryLight.current.position.z + e.deltaY * 0.01, -10), 10);
-
-  //   const rotationX = Math.sin (Date.now() / 1000) * 20;
-  //   const rotationZ = Math.cos (Date.now() / 1000) * 10;
-  //   console.log(rotationX, rotationZ)
-
-  //   primaryLight.current.position.x = rotationX;
-  //   // primaryLight.current.position.z = rotationZ;
-  //   accentLight.current.position.x = rotationX;
-  //   // accentLight.current.position.z = rotationZ;
-
-  // };
-
   useEffect(() => {
     // if (typeof window !== "undefined") {
     //   document.querySelector("#main").addEventListener("scroll", onScroll);
