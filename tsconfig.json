@@ -23,12 +23,8 @@
     "noUnusedParameters": true,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
-    "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/utils/*": ["utils/*"],
-      "@/types/*": ["types/*"],
-      "@/hooks/*": ["hooks/*"]
+      "@/*": ["./*"]
     },
     "plugins": [
       {

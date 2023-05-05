@@ -2,7 +2,7 @@
 import SnippetCard from "../card";
 import useSearchByTitle from "@/utils/search-by-title";
 import { CommandLineIcon } from "@heroicons/react/24/outline";
-import { ArticlCardType } from "types/articles";
+import { ArticlCardType } from "@/types/articles";
 
 interface Props {
   data: ArticlCardType[];

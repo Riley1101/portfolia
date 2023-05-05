@@ -4,7 +4,7 @@ import Hero from "@/components/pages/hero";
 import SnippetTimeLine from "@/components/pages/snippets/timeline";
 import { Metadata } from "next";
 import client from "@/utils/client";
-import type { ArticlCardType } from "types/articles";
+import type { ArticlCardType } from "@/types/articles";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 
 const hero = {

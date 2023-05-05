@@ -1,6 +1,6 @@
 import ArticleCard from "../card";
 import client from "@/utils/client";
-import type { ArticlCardType } from "types/articles";
+import type { ArticlCardType } from "@/types/articles";
 import asyncComponent from "@/utils/async-component";
 
 let query = `

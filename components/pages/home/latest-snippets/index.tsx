@@ -1,6 +1,6 @@
 import Link from "next/link";
 import client from "@/utils/client";
-import type { ArticlCardType } from "types/articles";
+import type { ArticlCardType } from "@/types/articles";
 import SnippetCard from "../../snippets/card";
 import { CommandLineIcon } from "@heroicons/react/24/outline";
 import asyncComponent from "@/utils/async-component";
