@@ -7,7 +7,7 @@ function NextImage(props: any) {
   return (
     <Image
       src={url}
-      className={"mx-auto rounded-md my-8 w-full overflow-hidden aspect-video "}
+      className={"mx-auto rounded-md my-8 w-full overflow-hidden "}
       width={600}
       height={550}
       alt={alt}
