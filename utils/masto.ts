@@ -31,7 +31,10 @@ async function getPosts(): Promise<MastodonPost[]> {
     api_url: "https://burma.social/api/v1", // optional, defaults to https://mastodon.social/api/v1/
   });
   return M.get(`/accounts/${accountId}/statuses?limit=5`, {}).then(
-    (res: any) => res.data
+    (res: any) => {
+      console.log(res.data);
+      return res.data;
+    }
   );
 }
 export { getPosts };
