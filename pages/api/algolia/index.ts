@@ -1,5 +1,4 @@
 import sanityClient from "@/utils/client";
-import searchClient from "@/utils/search-client";
 import { NextApiRequest, NextApiResponse } from "next";
 interface Snippet {
   slug: string;
@@ -31,7 +30,6 @@ const QUERY = `{
        _createdAt, _updatedAt },
 }`;
 
-const ALGOLIA_INDEX = process.env.ALGOLIA_INDEX as string;
 const ALGOLIA_SECRET = process.env.ALGOLIA_INDEX as string;
 export default async function handler(
   req: NextApiRequest,
@@ -41,7 +39,6 @@ export default async function handler(
   if (algoliaHeader !== ALGOLIA_SECRET) {
     res.status(404);
   }
-  const index = searchClient.initIndex("portfolia");
   const { snippets, articles }: Data = await sanityClient.fetch(QUERY);
   res.status(200).json({ articles, snippets });
 }
