@@ -1,9 +1,10 @@
 export default function BlockQuote(props: any) {
   return (
-    <blockquote className="block p-8 pl-8 my-8 text-xl italic font-semibold rounded-md bg-gradient-to-l from-theme-accent-opaque">
+    <blockquote className="p-4 transition-all duration-500 border rounded-md 
+    my-6 bg-gradient-to-r text-lg from-theme-accent-opaque border-theme-accent-opaque">
       <svg
         aria-hidden="true"
-        className="w-6 h-6 mb-4 text-theme-accent"
+        className="w-6 h-6  text-theme-accent"
         viewBox="0 0 24 27"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
