@@ -12,8 +12,7 @@ import { getAlgoliaResults } from "@algolia/autocomplete-preset-algolia";
 import { createAutocomplete } from "@algolia/autocomplete-core";
 import { useHotkeys } from "react-hotkeys-hook";
 
-const CommandMenu = () => {
-  const [open, setOpen] = React.useState(false);
+const CommandMenu = () => { const [open, setOpen] = React.useState(false);
   const [autocompleteState, setAutocompleteState] = React.useState({});
   const inputRef = React.useRef<HTMLInputElement>(null);
   const autocomplete = React.useMemo(
@@ -25,29 +24,8 @@ const CommandMenu = () => {
         },
         getSources() {
           return [
-            // (3) Use an Algolia index source.
-            // {
-            //   sourceId: "goto",
-            //   getItemInputValue({ item }) {
-            //     return item.query;
-            //   },
-            //   getItems({ query }) {
-            //     return getAlgoliaResults({
-            //       searchClient,
-            //       queries: [
-            //         {
-            //           indexName: "navigation",
-            //           query,
-            //         },
-            //       ],
-            //     });
-            //   },
-            //   getItemUrl({ item }) {
-            //     return item.url;
-            //   },
-            // },
             {
-              sourceId: "blog",
+              sourceId: "articles",
               getItemInputValue({ item }) {
                 return item.query;
               },
@@ -56,7 +34,7 @@ const CommandMenu = () => {
                   searchClient,
                   queries: [
                     {
-                      indexName: "blogs",
+                      indexName: "articles",
                       query,
                     },
                   ],
@@ -67,7 +45,7 @@ const CommandMenu = () => {
               },
             },
             {
-              sourceId: "snippet",
+              sourceId: "snippets",
               getItemInputValue({ item }) {
                 return item.query;
               },
@@ -86,31 +64,13 @@ const CommandMenu = () => {
                 return item.url;
               },
             },
-            // {
-            //   sourceId: "bookmarks",
-            //   getItemInputValue({ item }) {
-            //     return item.query;
-            //   },
-            //   getItems({ query }) {
-            //     return getAlgoliaResults({
-            //       searchClient,
-            //       queries: [
-            //         {
-            //           indexName: "bookmarks",
-            //           query,
-            //         },
-            //       ],
-            //     });
-            //   },
-            //   getItemUrl({ item }) {
-            //     return item.url;
-            //   },
-            // },
+           
           ];
         },
       }),
     []
   );
+
   useHotkeys(
     "ctrl+/",
     () => {
@@ -118,11 +78,13 @@ const CommandMenu = () => {
     },
     { preventDefault: true }
   );
+
   useEffect(() => {
     if (open) {
       inputRef.current?.focus();
     }
   }, [open]);
+
   return (
     <>
       {open && (
@@ -168,13 +130,10 @@ const CommandMenu = () => {
                         <div className="flex flex-col gap-3 mt-2">
                           {items.map((itm) => {
                             let obj = {
-                              snippet: `/snippets/${itm.slug}`,
-                              blog: `/articles/${itm.slug}`,
-                              goto: `${itm.slug}`,
-                              bookmarks: `${itm.link}`,
+                              snippets: `/snippets/${itm.slug}`,
+                              articles: `/articles/${itm.slug}`,
                             };
                             let url = obj[source.sourceId];
-
                             return (
                               <Link
                                 href={url}
