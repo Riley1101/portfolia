@@ -9,9 +9,18 @@ type Props = {
 export default function NavModal({ visible, toggle }: Props) {
   if (visible)
     return (
-      <div>
-        <div className="fixed top-0 right-0 z-50 flex flex-col w-[70%]
-        h-screen text-white bg-clip-padding bg-[#131127]">
+      <div
+        className="fixed top-0 right-0 z-[999] flex w-full h-screen  backdrop-filter backdrop-blur-[20px] bg-gray-900/20"
+        onClick={() => toggle()}
+      >
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            toggle();
+          }}
+          className="flex flex-col ml-auto w-[70%]
+       text-white bg-[#131127]"
+        >
           <div className="flex flex-col justify-end gap-8 p-4 my-auto">
             <button
               onClick={() => toggle()}

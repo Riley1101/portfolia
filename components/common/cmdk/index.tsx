@@ -12,7 +12,8 @@ import { getAlgoliaResults } from "@algolia/autocomplete-preset-algolia";
 import { createAutocomplete } from "@algolia/autocomplete-core";
 import { useHotkeys } from "react-hotkeys-hook";
 
-const CommandMenu = () => { const [open, setOpen] = React.useState(false);
+const CommandMenu = () => {
+  const [open, setOpen] = React.useState(false);
   const [autocompleteState, setAutocompleteState] = React.useState({});
   const inputRef = React.useRef<HTMLInputElement>(null);
   const autocomplete = React.useMemo(
@@ -64,7 +65,6 @@ const CommandMenu = () => { const [open, setOpen] = React.useState(false);
                 return item.url;
               },
             },
-           
           ];
         },
       }),
@@ -85,11 +85,19 @@ const CommandMenu = () => { const [open, setOpen] = React.useState(false);
     }
   }, [open]);
 
+  function handleClose(e: React.MouseEventHandler<HTMLButtonElement>) {
+    setOpen(false);
+  }
+
   return (
     <>
       {open && (
-        <div className="fixed top-0 left-0 grid w-full h-screen isolate z-[999] text-theme-accent place-items-center backdrop-filter backdrop-blur-lg">
+        <div
+          onClick={handleClose}
+          className="fixed top-0 left-0 grid w-full h-screen isolate z-[999] text-theme-accent place-items-center backdrop-filter backdrop-blur-lg"
+        >
           <div
+            onClick={(e) => e.stopPropagation()}
             {...autocomplete.getRootProps({})}
             className="relative gradient-box rounded-lg  bg-theme-bg  lg:w-[600px] min-h-[400px] md:w-[600px] w-[300px]  px-4 "
           >
@@ -137,7 +145,7 @@ const CommandMenu = () => { const [open, setOpen] = React.useState(false);
                             return (
                               <Link
                                 href={url}
-                                onClick={() => {
+                                onClick={(e) => {
                                   setOpen(false);
                                 }}
                                 key={itm.id}
