@@ -49,7 +49,7 @@ export const BurmaSocial = asyncComponent(async () => {
           <a
             href="https://burma.social/@arkardev"
             target={"_blank"}
-            rel="noreferrer"
+            rel="me"
             className="block object-contain cursor-pointer text-body hover:text-theme-accent"
           >
             arkardev
