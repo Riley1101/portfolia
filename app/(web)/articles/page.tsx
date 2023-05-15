@@ -19,14 +19,14 @@ const hero = {
 
 function ArticlePage() {
   return (
-    <div className="w-full lg:w-[60%] " >
+    <>
       <Hero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
       />
       <ArticleTimeLine />
-    </div>
+    </>
   );
 }
 export default ArticlePage;

@@ -20,7 +20,7 @@ export const metadata : Metadata = {
 
 function AboutPage() {
   return (
-    <>
+    <div className="w-full lg:w-[60%]" >
       <Hero
         title={hero.title}
         description={hero.description}
@@ -58,7 +58,7 @@ function AboutPage() {
           </a>
         </p>
       </div>
-    </>
+    </div>
   );
 }
 export default AboutPage;

@@ -16,7 +16,7 @@ export const metadata : Metadata = {
 }
 function VideoPage() {
   return (
-    <div className="w-full md:w-[70%]">
+    <>
       <Hero
         title={hero.title}
         description={hero.description}
@@ -24,7 +24,7 @@ function VideoPage() {
       />
 
       <VideoTimeLine />
-    </div>
+    </>
   );
 }
 export default VideoPage;

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   return (
-    <div className="w-full lg:w-[60%] ">
+    <>
       <Hero
         title={hero.title}
         description={hero.description}
@@ -44,6 +44,6 @@ export default async function Home() {
       </div>
       <LatestPostHome />
       <LatestSnippets></LatestSnippets>
-    </div>
+    </>
   );
 }
