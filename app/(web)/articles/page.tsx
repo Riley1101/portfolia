@@ -19,14 +19,14 @@ const hero = {
 
 function ArticlePage() {
   return (
-    <>
+    <div className="page-container">
       <Hero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
       />
       <ArticleTimeLine />
-    </>
+    </div>
   );
 }
 export default ArticlePage;

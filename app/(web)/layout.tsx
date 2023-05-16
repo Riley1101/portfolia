@@ -66,14 +66,14 @@ export default function RootLayout({
       <body>
         <div className="grid w-full max-h-screen  grid-cols-1 gird-rows-2  md:grid-cols-[5%_auto_5%]  lg:grid-cols-[15%_auto] overflow-hidden font-theme bg-theme-bg ">
           <Header />
-          <div className=" row-start-2 md:row-start-1 col-start-2 grid grid-cols-1 border
+          <div className=" row-start-2 md:row-start-1 col-start-2 grid grid-cols-1 
           lg:grid-cols-[230px_auto] xl:grid-cols-[230px_auto]  w-full   text-theme-body  overflow-hidden">
-            <NavAside />
+            <NavAside/>
             <main
               id="main"
               className="h-screen scroll-mt-1 z-[10] col-start-2 pt-[6em] p-4   overflow-hidden overflow-y-scroll lg:p-12 lg:pt-[6em]"
             >
-              <div className="w-full md:max-w-[1140px] lg:max-w-[800px]">{children}</div>
+              <div>{children}</div>
             </main>
           </div>
 

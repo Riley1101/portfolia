@@ -32,14 +32,14 @@ async function ArticlePage() {
 
   const raw_data: ArticlCardType[] = await client.fetch(query);
   return (
-    <>
+    <div className="page-container">
       <Hero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
       />
       <SnippetTimeLine data={raw_data} />
-    </>
+    </div>
   );
 }
 export default ArticlePage;

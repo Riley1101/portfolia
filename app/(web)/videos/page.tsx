@@ -16,7 +16,7 @@ export const metadata : Metadata = {
 }
 function VideoPage() {
   return (
-    <>
+    <div className="page-container">
       <Hero
         title={hero.title}
         description={hero.description}
@@ -24,7 +24,7 @@ function VideoPage() {
       />
 
       <VideoTimeLine />
-    </>
+    </div>
   );
 }
 export default VideoPage;
