@@ -14,7 +14,7 @@ export default defineType({
       name: "projects",
       title: "Projects",
       type: "array",
-      of: [{ type: "project" }],
+      of: [{ type: "reference", to: { type: "project" } }],
     }),
   ],
 });

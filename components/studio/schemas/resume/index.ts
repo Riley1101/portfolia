@@ -6,18 +6,21 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
-      name: "Title",
+      name: "title",
       title: "Title",
       type: "string",
     }),
     defineField({
-      name: "sections",
-      title: "Sections",
+      name: "experiences",
+      title: "experiences",
       type: "array",
-      of: [
-          { type: "testimonial" },
-          { type: "projects" }
-      ],
+      of: [{ type: "experience" }],
+    }),
+    defineField({
+      name: "projects",
+      title: "Projects",
+      type: "array",
+      of: [{ type: "reference", to: { type: "project" } }],
     }),
   ],
 });

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import type { Project } from "@/types/page/testimonials";
 import cx from "classnames";
@@ -9,13 +10,14 @@ interface Props {
 }
 
 export function Project({ index, data }: Props) {
-  const { title, description, technologies } = data;
+  const { title, description, technologies, slug } = data;
   const isOdd = index % 2 === 0;
   return (
-    <div
+    <Link
+      href={`/projects/${slug}`}
       className={cx(
-        "hover:bg-gradient-to-r rounded-md hover:from-theme-accent-opaque flex gap-6 cursor-pointer flex-col glass-box border p-6",
-        isOdd ? "md:flex-row" : "md:flex-row-reverse"
+        "hover:bg-gradient-to-r @lg:flex-row rounded-md border border-theme-primary-opaque hover:from-theme-accent-opaque flex gap-6 cursor-pointer flex-col p-6",
+        isOdd ? "" : "md:flex-row-reverse "
       )}
     >
       <div>
@@ -27,7 +29,7 @@ export function Project({ index, data }: Props) {
           alt="Image"
         />
       </div>
-      <div className="basis-1/2 flex gap-2 flex-col justify-center">
+      <div className="basis-[70%] flex gap-2 flex-col justify-center">
         <h4 className="text-xl text-theme-primary"> {title}</h4>
         <p className="text-sm text-theme-body mb-2 leading-relaxed">
           {description}
@@ -38,6 +40,6 @@ export function Project({ index, data }: Props) {
           ))}
         </ul>
       </div>
-    </div>
+    </Link>
   );
 }
