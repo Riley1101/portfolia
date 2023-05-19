@@ -25,29 +25,9 @@ const CommandMenu = () => {
         },
         getSources() {
           return [
-            // (3) Use an Algolia index source.
-            // {
-            //   sourceId: "goto",
-            //   getItemInputValue({ item }) {
-            //     return item.query;
-            //   },
-            //   getItems({ query }) {
-            //     return getAlgoliaResults({
-            //       searchClient,
-            //       queries: [
-            //         {
-            //           indexName: "navigation",
-            //           query,
-            //         },
-            //       ],
-            //     });
-            //   },
-            //   getItemUrl({ item }) {
-            //     return item.url;
-            //   },
-            // },
+           
             {
-              sourceId: "blog",
+              sourceId: "articles",
               getItemInputValue({ item }) {
                 return item.query;
               },
@@ -56,7 +36,7 @@ const CommandMenu = () => {
                   searchClient,
                   queries: [
                     {
-                      indexName: "blogs",
+                      indexName: "articles",
                       query,
                     },
                   ],
@@ -67,7 +47,7 @@ const CommandMenu = () => {
               },
             },
             {
-              sourceId: "snippet",
+              sourceId: "snippets",
               getItemInputValue({ item }) {
                 return item.query;
               },
@@ -86,26 +66,7 @@ const CommandMenu = () => {
                 return item.url;
               },
             },
-            // {
-            //   sourceId: "bookmarks",
-            //   getItemInputValue({ item }) {
-            //     return item.query;
-            //   },
-            //   getItems({ query }) {
-            //     return getAlgoliaResults({
-            //       searchClient,
-            //       queries: [
-            //         {
-            //           indexName: "bookmarks",
-            //           query,
-            //         },
-            //       ],
-            //     });
-            //   },
-            //   getItemUrl({ item }) {
-            //     return item.url;
-            //   },
-            // },
+        
           ];
         },
       }),
@@ -168,20 +129,17 @@ const CommandMenu = () => {
                         <div className="flex flex-col gap-3 mt-2">
                           {items.map((itm) => {
                             let obj = {
-                              snippet: `/snippets/${itm.slug}`,
-                              blog: `/articles/${itm.slug}`,
-                              goto: `${itm.slug}`,
-                              bookmarks: `${itm.link}`,
+                              snippets: `/snippets/${itm.slug}`,
+                              articles: `/articles/${itm.slug}`,
                             };
                             let url = obj[source.sourceId];
-
                             return (
                               <Link
+                                key={itm.objectID}
                                 href={url}
                                 onClick={() => {
                                   setOpen(false);
                                 }}
-                                key={itm.id}
                                 className="flex items-center gap-4 px-2 py-3 border-b border-r border-gray-800 rounded-md group hover:bg-gradient-to-l hover:from-theme-accent-opaque"
                               >
                                 <ArrowUturnLeftIcon className="w-4 h-4 rotate-180 group-hover:text-theme-primary group" />
