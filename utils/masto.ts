@@ -19,6 +19,7 @@ export interface MastodonPost {
   id: string;
   created_at: string;
   url: string;
+  visibility: "public" | "unlisted" | "private" | "direct";
   content: string;
   account: MastodonAccount;
   media_attachments: MastodonMedia[];
@@ -30,8 +31,13 @@ async function getPosts(): Promise<MastodonPost[]> {
     timeout_ms: 60 * 1000, // optional HTTP request timeout to apply to all requests.
     api_url: "https://burma.social/api/v1", // optional, defaults to https://mastodon.social/api/v1/
   });
-  return M.get(`/accounts/${accountId}/statuses?limit=5`, {}).then(
-    (res: any) => res.data
+  return M.get(`/accounts/${accountId}/statuses?limit=10`, {}).then(
+    (res: any) => {
+      let data = res.data.filter(
+        (post: MastodonPost) => post.visibility == "public"
+      );
+      return data;
+    }
   );
 }
 export { getPosts };

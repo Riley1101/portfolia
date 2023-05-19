@@ -1,5 +1,5 @@
 import VideoCard from "@/components/pages/videos/video-card";
-import type {  VideoAPIType } from "@/types/videos";
+import type { VideoAPIType } from "@/types/videos";
 import asyncComponent from "@/utils/async-component";
 
 const VideoTimeLine = async () => {
@@ -11,22 +11,11 @@ const VideoTimeLine = async () => {
     }
   ).then((res) => res.json());
   return (
-    <>
-      {/* <div className="flex items-center px-4 my-4 border rounded-md border-theme-accent-opaque group hover:from-theme-accent-opaque bg-gradient-to-l">
-        <VideoCameraIcon className="w-6 h-6 group-focus-within:text-theme-accent group" />
-        <input
-          type="text"
-          placeholder="Search"
-          className="w-full px-4 py-2 bg-transparent rounded-md outline-none text-bg-theme-accent"
-        />
-      </div> */}
-
-      <div className="grid gap-4 mt-4 grid-col-1 md:grid-cols-2 lg:grid-cols-3">
-        {data.items.map((item) => (
-          <VideoCard data={item} key={item.id} />
-        ))}
-      </div>
-    </>
+    <div className="grid gap-4 mt-4 grid-col-1">
+      {data.items.map((item) => (
+        <VideoCard data={item} key={item.id} />
+      ))}
+    </div>
   );
 };
 

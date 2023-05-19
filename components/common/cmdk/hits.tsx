@@ -22,7 +22,7 @@ function Hits({ searchState, searchResults }: any) {
           return [
             // (3) Use an Algolia index source.
             {
-              sourceId: "goto",
+              sourceId: "articles",
               getItemInputValue({ item }) {
                 return item.query;
               },
@@ -31,7 +31,7 @@ function Hits({ searchState, searchResults }: any) {
                   searchClient,
                   queries: [
                     {
-                      indexName: "navigation",
+                      indexName: "articles",
                       query,
                     },
                   ],
@@ -42,27 +42,7 @@ function Hits({ searchState, searchResults }: any) {
               },
             },
             {
-              sourceId: "blog",
-              getItemInputValue({ item }) {
-                return item.query;
-              },
-              getItems({ query }) {
-                return getAlgoliaResults({
-                  searchClient,
-                  queries: [
-                    {
-                      indexName: "blogs",
-                      query,
-                    },
-                  ],
-                });
-              },
-              getItemUrl({ item }) {
-                return item.url;
-              },
-            },
-            {
-              sourceId: "snippet",
+              sourceId: "snippets",
               getItemInputValue({ item }) {
                 return item.query;
               },
@@ -72,26 +52,6 @@ function Hits({ searchState, searchResults }: any) {
                   queries: [
                     {
                       indexName: "snippets",
-                      query,
-                    },
-                  ],
-                });
-              },
-              getItemUrl({ item }) {
-                return item.url;
-              },
-            },
-            {
-              sourceId: "bookmarks",
-              getItemInputValue({ item }) {
-                return item.query;
-              },
-              getItems({ query }) {
-                return getAlgoliaResults({
-                  searchClient,
-                  queries: [
-                    {
-                      indexName: "bookmarks",
                       query,
                     },
                   ],
@@ -127,21 +87,7 @@ function Hits({ searchState, searchResults }: any) {
       )}
       <div>
         <span className="text-sm text-theme-primary">Connect me</span>
-        <div className="flex flex-col gap-3 mt-2">
-          {social.map((nav) => (
-            <Link
-              key={nav.id}
-              target="_blank"
-              href={nav.href}
-              className="flex items-center gap-4 px-2 py-3 border-b border-r border-gray-800 rounded-md group hover:bg-gradient-to-l hover:from-theme-accent-opaque"
-            >
-              <div className="text-white group-hover:text-theme-accent">
-                {nav.icon}
-              </div>
-              <span className="text-theme-body">{nav.name}</span>
-            </Link>
-          ))}
-        </div>
+     
       </div>
     </>
   );
