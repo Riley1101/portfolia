@@ -16,7 +16,7 @@ export const metadata : Metadata = {
 }
 function VideoPage() {
   return (
-    <div className="w-full md:w-[70%]">
+    <div className="page-container">
       <Hero
         title={hero.title}
         description={hero.description}
