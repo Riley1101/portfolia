@@ -25,29 +25,12 @@ const CommandMenu = () => {
         },
         getSources() {
           return [
-            // (3) Use an Algolia index source.
-            // {
-            //   sourceId: "goto",
-            //   getItemInputValue({ item }) {
-            //     return item.query;
-            //   },
-            //   getItems({ query }) {
-            //     return getAlgoliaResults({
-            //       searchClient,
-            //       queries: [
-            //         {
-            //           indexName: "navigation",
-            //           query,
-            //         },
-            //       ],
-            //     });
-            //   },
-            //   getItemUrl({ item }) {
-            //     return item.url;
-            //   },
-            // },
+<<<<<<< HEAD
+           
+=======
+>>>>>>> 1bc5981a9f34f52507c30b180e99f6f490c827f4
             {
-              sourceId: "blog",
+              sourceId: "articles",
               getItemInputValue({ item }) {
                 return item.query;
               },
@@ -56,7 +39,7 @@ const CommandMenu = () => {
                   searchClient,
                   queries: [
                     {
-                      indexName: "blogs",
+                      indexName: "articles",
                       query,
                     },
                   ],
@@ -67,7 +50,7 @@ const CommandMenu = () => {
               },
             },
             {
-              sourceId: "snippet",
+              sourceId: "snippets",
               getItemInputValue({ item }) {
                 return item.query;
               },
@@ -86,31 +69,16 @@ const CommandMenu = () => {
                 return item.url;
               },
             },
-            // {
-            //   sourceId: "bookmarks",
-            //   getItemInputValue({ item }) {
-            //     return item.query;
-            //   },
-            //   getItems({ query }) {
-            //     return getAlgoliaResults({
-            //       searchClient,
-            //       queries: [
-            //         {
-            //           indexName: "bookmarks",
-            //           query,
-            //         },
-            //       ],
-            //     });
-            //   },
-            //   getItemUrl({ item }) {
-            //     return item.url;
-            //   },
-            // },
+<<<<<<< HEAD
+        
+=======
+>>>>>>> 1bc5981a9f34f52507c30b180e99f6f490c827f4
           ];
         },
       }),
     []
   );
+
   useHotkeys(
     "ctrl+/",
     () => {
@@ -118,16 +86,26 @@ const CommandMenu = () => {
     },
     { preventDefault: true }
   );
+
   useEffect(() => {
     if (open) {
       inputRef.current?.focus();
     }
   }, [open]);
+
+  function handleClose(e: React.MouseEventHandler<HTMLButtonElement>) {
+    setOpen(false);
+  }
+
   return (
     <>
       {open && (
-        <div className="fixed top-0 left-0 grid w-full h-screen isolate z-[999] text-theme-accent place-items-center backdrop-filter backdrop-blur-lg">
+        <div
+          onClick={handleClose}
+          className="fixed top-0 left-0 grid w-full h-screen isolate z-[999] text-theme-accent place-items-center backdrop-filter backdrop-blur-lg"
+        >
           <div
+            onClick={(e) => e.stopPropagation()}
             {...autocomplete.getRootProps({})}
             className="relative gradient-box rounded-lg  bg-theme-bg  lg:w-[600px] min-h-[400px] md:w-[600px] w-[300px]  px-4 "
           >
@@ -168,20 +146,17 @@ const CommandMenu = () => {
                         <div className="flex flex-col gap-3 mt-2">
                           {items.map((itm) => {
                             let obj = {
-                              snippet: `/snippets/${itm.slug}`,
-                              blog: `/articles/${itm.slug}`,
-                              goto: `${itm.slug}`,
-                              bookmarks: `${itm.link}`,
+                              snippets: `/snippets/${itm.slug}`,
+                              articles: `/articles/${itm.slug}`,
                             };
                             let url = obj[source.sourceId];
-
                             return (
                               <Link
+                                key={itm.objectID}
                                 href={url}
-                                onClick={() => {
+                                onClick={(e) => {
                                   setOpen(false);
                                 }}
-                                key={itm.id}
                                 className="flex items-center gap-4 px-2 py-3 border-b border-r border-gray-800 rounded-md group hover:bg-gradient-to-l hover:from-theme-accent-opaque"
                               >
                                 <ArrowUturnLeftIcon className="w-4 h-4 rotate-180 group-hover:text-theme-primary group" />
