@@ -25,10 +25,6 @@ const CommandMenu = () => {
         },
         getSources() {
           return [
-<<<<<<< HEAD
-           
-=======
->>>>>>> 1bc5981a9f34f52507c30b180e99f6f490c827f4
             {
               sourceId: "articles",
               getItemInputValue({ item }) {
@@ -69,10 +65,6 @@ const CommandMenu = () => {
                 return item.url;
               },
             },
-<<<<<<< HEAD
-        
-=======
->>>>>>> 1bc5981a9f34f52507c30b180e99f6f490c827f4
           ];
         },
       }),
