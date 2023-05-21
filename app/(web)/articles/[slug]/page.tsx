@@ -1,4 +1,6 @@
 export const revalidate = 60;
+
+import { Related } from "@/components/common/related";
 import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
 import type { ArticleDetailType } from "@/types/articles";
@@ -16,6 +18,13 @@ const query = `
   'categories':categories[]->title,
   'mainImage':mainImage.asset->{url}.url,
   body,
+  "related": *[_type == "article" && count(categories[@._ref in ^.^.categories[]._ref]) > 0] | order(releasedAt desc, _createdAt desc) [0..2] {
+     title,
+     _id,
+    'mainImage':mainImage.asset->{url}.url,
+     "slug": slug.current,
+     description
+   }
 }`;
 export async function generateMetadata({
   params,
@@ -35,7 +44,6 @@ export async function generateMetadata({
     slug: params?.slug,
   });
 
-  
   return {
     title: data?.title,
     description: data?.description,
@@ -57,21 +65,22 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
   if (data === null) return <div>404</div>;
   return (
     <div>
-    <div className="lg:w-[60%]">
-      <Hero
-        title={data.title}
-        description={data.description}
-        categories={data.categories}
-        mainImage={data.mainImage}
-        releasedAt={data.releasedAt}
-      />
-    </div>
+      <div className="lg:w-[60%]">
+        <Hero
+          title={data.title}
+          description={data.description}
+          categories={data.categories}
+          mainImage={data.mainImage}
+          releasedAt={data.releasedAt}
+        />
+      </div>
       <div className="flex flex-col gap-2 lg:grid lg:grid-cols-[60%_40%] lg:gap-8  relative">
         <div className="col-starts-2 order-1 lg:order-2">
-            <TableOfContents value={data.body} />
+          <TableOfContents value={data.body} />
         </div>
-        <div className="col-starts-1 order-2 lg:order-1">
-            <PortableBody value={data.body} />
+        <div className="col-starts-1 order-2 lg:order-1 page-container">
+          <PortableBody value={data.body} />
+          <Related data={data.related} />
         </div>
       </div>
     </div>
