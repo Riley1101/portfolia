@@ -6,7 +6,6 @@ interface ArticlCardType {
   categories?: string[];
   mainImage?: any;
 }
-
 interface ArticleDetailType {
   title: string;
   description: string;
@@ -15,6 +14,13 @@ interface ArticleDetailType {
   categories: string[];
   body: any;
   mainImage: string;
+  related :{
+    title: string;
+    description: string;
+    slug: string;
+    _id: string;
+    mainImage: string;
+  }[]
 }
 
 interface SnippetCardType {
