@@ -4,7 +4,7 @@ type Props = {};
 
 export function Loader({}: Props) {
   return (
-    <div className=" w-full lg:w-[60%] min-h-[70vh] grid justify-center items-center relative ">
+    <div className=" w-full min-h-[70vh] grid md:justify-center md:items-center absolute top-[50%] md:top-[0%] left-0 col-start-1 ">
       <div className="aspect-square pulse ">
         <div className="min-h-[15rem] flex flex-col  shadow-sm rounded-xl">
           <div className="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
