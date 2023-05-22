@@ -1,10 +1,28 @@
 import React from "react";
+import { redirect } from "next/navigation";
 import cx from "classnames";
-import { NewspaperIcon } from "@heroicons/react/20/solid";
+import { user_exists, add_user } from "@/utils/newsletter";
 
 type Props = {};
 
 export function NewsLetter({}: Props) {
+  async function handleSubmit(formData: FormData) {
+    "use server";
+    const email = formData.get("email");
+    const name = formData.get("name");
+    if (email) {
+      const exists = await user_exists(email as string);
+      if (!exists) {
+        const response = await add_user(email as string, name as string);
+        if (response !== null) {
+          redirect("/newsletter/thank-you");
+        }
+      } else {
+        redirect("/newsletter/already-with-me");
+      }
+    }
+  }
+
   return (
     <div className=" relative flex flex-col my-12 rounded-md p-4 bg-theme-accent-opaque">
       <div className="absolute top-0 left-0 border-l-2 border-theme-primary w-[5px] h-full"></div>
@@ -17,13 +35,26 @@ export function NewsLetter({}: Props) {
           tips, and trends directly in your inbox.
         </p>
       </div>
-      <form className="flex items-center px-4 my-4 py-2 border rounded-md border-theme-primary-opaque group hover:bg-gradient-to-r hover:from-theme-accent-opaque  ">
-        <NewspaperIcon className="w-8 h-8 group-focus-within:text-theme-accent group" />
+      <form
+        /* @ts-ignore */
+        action={handleSubmit}
+        className="flex items-center gap-4 my-4  group "
+      >
+        <input
+          type="text"
+          name="name"
+          spellCheck={false}
+          placeholder="Enter your name! "
+          className="w-full px-4 py-3 border border-theme-accent-opaque bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
+          required={true}
+        />
         <input
           type="email"
+          name="email"
+          required={true}
           spellCheck={false}
           placeholder="Enter your email! "
-          className="w-full px-4 py-1 bg-transparent rounded-md outline-none text-bg-theme-accent"
+          className="w-full px-4 py-3 border border-theme-primary-opaque  bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
         />
         <button
           type="submit"

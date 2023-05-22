@@ -1,6 +1,7 @@
 export const revalidate = 60;
 
 import Hero from "@/components/pages/hero";
+import { NewsLetter } from "@/components/common/newsletter";
 import LatestPostHome from "@/components/pages/home/latest-blogs";
 import { BurmaSocial } from "@/components/pages/home/burma-social";
 import { GithubFeed } from "@/components/pages/home/github";
@@ -43,6 +44,7 @@ export default async function Home() {
         <BurmaSocial />
       </div>
       <LatestPostHome />
+      <NewsLetter></NewsLetter>
       <LatestSnippets></LatestSnippets>
     </div>
   );
