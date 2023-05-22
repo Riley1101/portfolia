@@ -13,6 +13,7 @@ type Props = {
 };
 
 export function Related({ data }: Props) {
+  if (data.length === 0) return <></>;
   return (
     <div className="mt-12 mb-12 @container/main">
       <h3 className="text-theme-accent text-xl mb-4">Related Articles</h3>

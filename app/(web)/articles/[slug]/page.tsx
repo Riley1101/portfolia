@@ -1,5 +1,4 @@
 export const revalidate = 60;
-
 import { Related } from "@/components/common/related";
 import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
