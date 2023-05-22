@@ -3,7 +3,7 @@ import dateFormat from "dateformat";
 type Props = {
   title: string;
   description: string;
-  categories: string[];
+  categories?: string[];
   mainImage: string;
   releasedAt: string;
 };
@@ -23,8 +23,8 @@ function Hero(props: Props) {
         </span>
       </div>
       <div className="flex gap-4 my-4">
-        {props.categories &&
-          props.categories.map((itm) => (
+        {props?.categories &&
+          props?.categories.map((itm) => (
             <span
               key={itm}
               className="block px-2 py-1 text-sm rounded-lg cursor-pointer bg-theme-primary-opaque"

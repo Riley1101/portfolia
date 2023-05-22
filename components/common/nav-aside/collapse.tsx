@@ -1,6 +1,4 @@
 "use client";
-import cx from "classnames";
-import { useSelectedLayoutSegment } from "next/navigation";
 import NavIconLink from "../link";
 import React from "react";
 import {
@@ -16,7 +14,6 @@ import {
   LinkedIn,
   Mastaodon,
 } from "@/components/common/icons";
-import CommandMenu from "@/components/common/cmdk";
 export type Nav = {
   id: number;
   name: string;
@@ -85,41 +82,15 @@ export const social: Nav[] = [
   },
 ];
 function NavASide() {
-  const selectedSegment = useSelectedLayoutSegment();
-  const isTestimonials = selectedSegment === "testimonials";
   return (
-    <nav
-      className={cx(
-        "z-[20] transition-all flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex ",
-        isTestimonials && "max-w-max my-auto"
-      )}
-    >
-      {selectedSegment !== "testimonials" && <CommandMenu />}
+    <nav className="z-[20] max-w-max  flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex ">
       <div className="flex flex-col gap-4 p-4 border rounded-md glass-box">
         <div className="flex flex-col gap-4 ">
           {navs.map((nav) => (
             <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
-              {selectedSegment !== "testimonials" && nav.name}
             </NavIconLink>
           ))}
         </div>
-        {!isTestimonials && (
-          <>
-            <hr className="h-[1px] border-gray-800 cursor-pointer" />
-            <div className="flex flex-col gap-4 mt-4">
-              {social.map((nav) => (
-                <NavIconLink
-                  target="_blank"
-                  key={nav.id}
-                  href={nav.href}
-                  icon={nav.icon}
-                >
-                  {selectedSegment !== "testimonials" && nav.name}
-                </NavIconLink>
-              ))}
-            </div>
-          </>
-        )}
       </div>
     </nav>
   );

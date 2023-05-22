@@ -2,13 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-.glass-box {
-    @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.1];
+@layer utilities {
+  .page-container {
+    @apply w-full md:max-w-[1140px] lg:max-w-[800px];
+  }
+  .glass-box {
+      @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.1];
+  }
+}
+::-moz-selection {
+  @apply bg-gray-700;
+}
+
+::selection {
+  @apply bg-gray-700;
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -92,7 +103,7 @@ pre[class*="language-"] {
 
 .html-renderer a {
   text-decoration: underline;
-  line-height:1.5;
+  line-height: 1.5;
 }
 
 .html-renderer img {

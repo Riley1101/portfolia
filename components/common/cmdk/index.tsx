@@ -25,6 +25,7 @@ const CommandMenu = () => {
         },
         getSources() {
           return [
+
             {
               sourceId: "articles",
               getItemInputValue({ item }) {
@@ -65,6 +66,7 @@ const CommandMenu = () => {
                 return item.url;
               },
             },
+
           ];
         },
       }),

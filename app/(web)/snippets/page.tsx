@@ -32,7 +32,7 @@ async function ArticlePage() {
 
   const raw_data: ArticlCardType[] = await client.fetch(query);
   return (
-    <div className="w-full lg:w-[60%] " >
+    <div className="page-container">
       <Hero
         title={hero.title}
         description={hero.description}
