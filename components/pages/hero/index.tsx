@@ -9,9 +9,7 @@ function Hero(props: Props) {
       <p className="w-full mb-6 ml-auto text-base text-right text-theme-primary">
         {props.title}
       </p>
-      <h1 className="mb-4 text-4xl font-bold lg:text-5xl">
-        {props.subtitle}
-      </h1>
+      <h1 className="mb-4 text-4xl font-bold lg:text-5xl">{props.subtitle}</h1>
       <p className="leading-loose text-lg text-theme-body">
         {props.description}
       </p>

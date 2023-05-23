@@ -1,4 +1,6 @@
+
 export const revalidate = 60;
+import { NewsLetter } from "@/components/common/newsletter";
 import { Related } from "@/components/common/related";
 import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
@@ -63,24 +65,19 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
   });
   if (data === null) return <div>404</div>;
   return (
-    <div>
-      <div className="lg:w-[60%]">
-        <Hero
-          title={data.title}
-          description={data.description}
-          categories={data.categories}
-          mainImage={data.mainImage}
-          releasedAt={data.releasedAt}
-        />
-      </div>
-      <div className="flex flex-col gap-2 lg:grid lg:grid-cols-[60%_40%] lg:gap-8  relative">
-        <div className="col-starts-2 order-1 lg:order-2">
-          <TableOfContents value={data.body} />
-        </div>
-        <div className="col-starts-1 order-2 lg:order-1 page-container">
-          <PortableBody value={data.body} />
-          <Related data={data.related} />
-        </div>
+    <div className="page-container">
+      <Hero
+        title={data.title}
+        description={data.description}
+        categories={data.categories}
+        mainImage={data.mainImage}
+        releasedAt={data.releasedAt}
+      />
+      <div className="">
+        <TableOfContents value={data.body} />
+        <PortableBody value={data.body} />
+        <NewsLetter />
+        <Related data={data.related} />
       </div>
     </div>
   );

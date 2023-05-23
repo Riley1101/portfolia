@@ -90,7 +90,7 @@ function NavASide() {
   return (
     <nav
       className={cx(
-        "z-[20] transition-all flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex ",
+        "z-[20] transition-all flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex",
         isTestimonials && "max-w-max my-auto"
       )}
     >
