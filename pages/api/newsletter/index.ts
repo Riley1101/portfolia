@@ -33,6 +33,7 @@ const mail_handler = async (req: NextApiRequest, res: NextApiResponse) => {
         return {
           [row.email]: {
             name: row.name,
+            email: row.email,
           },
         };
       });
