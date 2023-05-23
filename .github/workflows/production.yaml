@@ -10,13 +10,33 @@ jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - id: pnpm-install
+        name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+          version: 8
+      - id: pnpm-cache
+        name: Get pnpm store directory
+        run: "echo \"STORE_PATH=$(pnpm store path)\" >> $GITHUB_OUTPUT\n"
+        shell: bash
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          key: '${{ runner.os }}-pnpm-store-${{ hashFiles(''**/pnpm-lock.yaml'') }}'
+          path: '${{ steps.pnpm-cache.outputs.STORE_PATH }}'
+          restore-keys: "${{ runner.os }}-pnpm-store-\n"
+      - name: Install dependencies
+        run: pnpm install
       - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+        run: pnpm install --global vercel@latest
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
 
