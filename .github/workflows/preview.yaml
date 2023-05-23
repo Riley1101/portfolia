@@ -1,0 +1,42 @@
+name: Vercel Preview Deployment
+env:
+  VERCEL_ORG_ID: '${{ secrets.VERCEL_ORG_ID }}'
+  VERCEL_PROJECT_ID: '${{ secrets.VERCEL_PROJECT_ID }}'
+on:
+  push:
+    branches-ignore:
+      - main
+jobs:
+  Deploy-Preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - id: pnpm-install
+        name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: false
+          version: 8
+      - id: pnpm-cache
+        name: Get pnpm store directory
+        run: "echo \"STORE_PATH=$(pnpm store path)\" >> $GITHUB_OUTPUT\n"
+        shell: bash
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          key: '${{ runner.os }}-pnpm-store-${{ hashFiles(''**/pnpm-lock.yaml'') }}'
+          path: '${{ steps.pnpm-cache.outputs.STORE_PATH }}'
+          restore-keys: "${{ runner.os }}-pnpm-store-\n"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Test
+        run: pnpm prod-test 
+      - name: Install Vercel CLI
+        run: pnpm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        run: 'vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN}}'
+      - name: Build Project Artifacts
+        run: 'vercel build --token=${{ secrets.VERCEL_TOKEN }}'
+      - name: Deploy Project Artifacts to Vercel
+        run: 'vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}'
