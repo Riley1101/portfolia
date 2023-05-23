@@ -38,14 +38,14 @@ export function NewsLetter({}: Props) {
       <form
         /* @ts-ignore */
         action={handleSubmit}
-        className="flex items-center gap-4 my-4  group "
+        className="flex md:flex-row flex-col items-center gap-2 my-4  group "
       >
         <input
           type="text"
           name="name"
           spellCheck={false}
           placeholder="Enter your name! "
-          className="w-full px-4 py-3 border border-theme-accent-opaque bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
+          className="w-full px-4 py-2 border border-theme-accent-opaque bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
           required={true}
         />
         <input
@@ -54,12 +54,12 @@ export function NewsLetter({}: Props) {
           required={true}
           spellCheck={false}
           placeholder="Enter your email! "
-          className="w-full px-4 py-3 border border-theme-primary-opaque  bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
+          className="w-full px-4 py-2 border border-theme-primary-opaque  bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
         />
         <button
           type="submit"
           className={cx(
-            ` flex cursor-pointer items-center hover:text-theme-accent border-theme-primary-opaque py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  px-4  rounded-md`,
+            ` flex cursor-pointer items-center hover:text-theme-accent w-full md:max-w-max justify-center items-center border-theme-primary-opaque py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  px-4  rounded-md`,
             "hover:bg-theme-primary hover:bg-opacity-5 border-opacity-5 hover:border-theme-primary hover:text-theme-accent"
           )}
         >
