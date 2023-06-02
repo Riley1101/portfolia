@@ -19,6 +19,8 @@ const Header = () => {
       <NavModal visible={visible} toggle={toggle} />
 
       <button
+        aria-label="Open Navigation Modal" 
+        role="button"
         onClick={() => toggle()}
         className="flex p-2 border border-gray-800 rounded-md cursor-pointer lg:hidden text-theme-body md:block bg-opacity-10 hover:bg-theme-primary hover:bg-opacity-5 "
       >

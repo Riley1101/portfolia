@@ -12,11 +12,20 @@ const hero = {
     "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
 };
 
-export const metadata : Metadata = {
-  title:  "About",
-  openGraph: getOpenGraph("/images/arkar.png", "About | " + metaData.title, metaData.description, new URL("/about", metaData.url)),
-  twitter:getTwitterCard("/images/arkar.png", "About | " + metaData.title, metaData.description),
-}
+export const metadata: Metadata = {
+  title: "About",
+  openGraph: getOpenGraph(
+    "/images/arkar.png",
+    "About | " + metaData.title,
+    metaData.description,
+    new URL("/about", metaData.url)
+  ),
+  twitter: getTwitterCard(
+    "/images/arkar.png",
+    "About | " + metaData.title,
+    metaData.description
+  ),
+};
 
 function AboutPage() {
   return (
@@ -45,17 +54,6 @@ function AboutPage() {
           <br />I am always eager to learn new technologies and stay up-to-date
           with industry trends to provide the best solutions for my clients and
           build innovative robots.
-        </p>
-        <p>
-          I now work at
-          <a
-            href="https://otterdev.io"
-            rel="noreferrer"
-            target={"_blank"}
-            className="pl-4 cursor-pointer text-theme-primary"
-          >
-            Otterdev.io
-          </a>
         </p>
       </div>
     </div>
