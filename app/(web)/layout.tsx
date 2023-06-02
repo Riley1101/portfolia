@@ -84,7 +84,7 @@ export default function RootLayout({
               id="main"
               className="h-screen scroll-mt-1 z-[10] col-start-2 pt-[6em] p-4   overflow-hidden overflow-y-scroll  md:p-4 lg:p-12 md:pt-[6em]"
             >
-              <div>{children}</div>
+              <div className="mt-4 md:mt-12">{children}</div>
             </main>
           </div>
 

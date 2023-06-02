@@ -20,9 +20,9 @@ const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..4]  {
 async function LatestPostHome() {
   const data: Props = await client.fetch(query);
   return (
-    <div className="lg:mt-8">
-      <div className="flex flex-col">
-        <h3 className="mt-12 text-xl font-bold text-theme-primary">
+    <div className="">
+      <div className="flex flex-col  ">
+        <h3 className=" text-xl md:mt-8 font-bold text-theme-primary">
           LATEST POST
         </h3>
         <p className="my-2 text-md">
