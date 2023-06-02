@@ -24,13 +24,13 @@ export function NewsLetter({}: Props) {
   }
 
   return (
-    <div className=" relative flex flex-col my-12 rounded-md p-4 bg-theme-accent-opaque">
+    <div className=" relative flex flex-col my-6 rounded-md p-4 bg-theme-accent-opaque">
       <div className="absolute top-0 left-0 border-l-2 border-theme-primary w-[5px] h-full"></div>
       <div className="text-left">
         <span className="font-bold text-theme-accent md:text-xl mb-2 text-lg md:text-xl my-2 block">
           Subscribe to my NewsLetter!{" "}
         </span>
-        <p className="text-theme-body text-lg ">
+        <p className="text-theme-body ">
           Join my web development newsletter to receive the latest updates,
           tips, and trends directly in your inbox.
         </p>

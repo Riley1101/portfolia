@@ -5,7 +5,7 @@ import SnippetCard from "../../snippets/card";
 import { CommandLineIcon } from "@heroicons/react/24/outline";
 import asyncComponent from "@/utils/async-component";
 let query = `
-*[_type=='snippet'] | order(releasedAt desc) [0..1]  {
+*[_type=='snippet'] | order(releasedAt desc) [0..4]  {
   title,
   'slug':slug.current,
   'categories':categories[]->title,
