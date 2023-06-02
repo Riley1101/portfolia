@@ -21,31 +21,13 @@ export const metadata: Metadata = {
 export default async function Home() {
   return (
     <div className="page-container">
-      <Hero
-        title={hero.title}
-        description={hero.description}
-        subtitle={hero.subtitle}
-      ></Hero>
-      <div className="flex flex-col gap-4">
-        <p>
-          I now work at
-          <a
-            href="https://otterdev.io"
-            rel="noreferrer"
-            target={"_blank"}
-            className="pl-4 cursor-pointer text-theme-primary"
-          >
-            Otterdev.io
-          </a>
-        </p>
-      </div>
+      <LatestPostHome />
+      <LatestSnippets></LatestSnippets>
       <div className="py-4 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-2">
         <GithubFeed />
         <BurmaSocial />
       </div>
-      <LatestPostHome />
       <NewsLetter></NewsLetter>
-      <LatestSnippets></LatestSnippets>
     </div>
   );
 }
