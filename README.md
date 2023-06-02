@@ -1,3 +1,5 @@
+![Preview image](https://github.com/Riley1101/portfolia/blob/main/preview/peview.png)
+
 My personal website is built using the latest version of Next.js 13 and server components. Server components is a new feature in Next.js 13 that allows me to write server-side code using React components. This helps me to create more dynamic server-side rendering and improve the performance of my website. I am always exploring new things and trying to keep my website up to date with the latest technologies and trends in web development.
 
 ## Installation
