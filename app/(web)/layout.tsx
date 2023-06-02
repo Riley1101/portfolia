@@ -82,7 +82,7 @@ export default function RootLayout({
             <NavAside />
             <main
               id="main"
-              className="h-screen scroll-mt-1 z-[10] col-start-2 pt-[6em] p-4   overflow-hidden overflow-y-scroll  md:p-4 lg:p-12 lg:pt-[6em]"
+              className="h-screen scroll-mt-1 z-[10] col-start-2 pt-[6em] p-4   overflow-hidden overflow-y-scroll  md:p-4 lg:p-12 md:pt-[6em]"
             >
               <div>{children}</div>
             </main>

@@ -1,7 +1,5 @@
 import Header from "@/components/common/header";
-import Link from "@/components/common/link";
 import "@testing-library/jest-dom";
-import { mock_router } from "../tools/mocks.ts";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { navs, social } from "@/components/common/nav-aside";
 

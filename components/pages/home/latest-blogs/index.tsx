@@ -7,7 +7,7 @@ import asyncComponent from "@/utils/async-component";
 interface Props {
   posts: ArticlCardType[];
 }
-const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..2]  {
+const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..4]  {
   title,
   'slug':slug.current,
   releasedAt,
@@ -20,7 +20,7 @@ const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..2]  {
 async function LatestPostHome() {
   const data: Props = await client.fetch(query);
   return (
-    <div>
+    <div className="lg:mt-8">
       <div className="flex flex-col">
         <h3 className="mt-12 text-xl font-bold text-theme-primary">
           LATEST POST
