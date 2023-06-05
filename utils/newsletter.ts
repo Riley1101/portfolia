@@ -44,7 +44,7 @@ export async function add_user(
 ): Promise<User | null> {
   try {
     const result = await queryDb<User>(
-      `INSERT INTO mailing_list (name, email) VALUES ('${name}', ${email}') RETURNING *`
+      `INSERT INTO mailing_list (name, email) VALUES ('${name}', '${email}') RETURNING *`
     );
     if (result && result.rowCount > 0) {
       return result.rows[0];
