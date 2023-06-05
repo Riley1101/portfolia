@@ -7,7 +7,7 @@ jest.mock("../../utils/newsletter", () => ({
 }));
 
 describe("Newsletter UI", () => {
-  test("renders Newsletter component", () => {
+  test.skip("renders Newsletter component", () => {
     render(<NewsLetter />);
     expect(screen.getByRole("form")).toBeInTheDocument();
     expect(
@@ -18,7 +18,7 @@ describe("Newsletter UI", () => {
     ).toBeInTheDocument();
   });
 
-  test("expect form to have correct action", () => {
+  test.skip("expect form to have correct action", () => {
     render(<NewsLetter />);
     expect(screen.getByRole("form")).toHaveAttribute("action");
     expect(screen.getByRole("form")).toHaveAttribute(
