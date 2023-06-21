@@ -1,5 +1,4 @@
 export const revalidate = 60;
-
 import Image from "next/image";
 import Hero from "@/components/pages/hero";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
 
 function AboutPage() {
   return (
-    <div className="page-container">
+    <div className="page-container ">
       <Hero
         title={hero.title}
         description={hero.description}
@@ -48,12 +47,11 @@ function AboutPage() {
           I am a web developer with a passion for building robots. I have 4
           years of experience in web development. I have been working on web
           development projects for the past few years.
-          <br /> My true passion lies in creating robots and automating tasks. I
-          am currently balancing my love for web development and robotics by
-          incorporating my robotics knowledge into my web development projects.
-          <br />I am always eager to learn new technologies and stay up-to-date
-          with industry trends to provide the best solutions for my clients and
-          build innovative robots.
+          <br />I love building web and building things that are{" "}
+          <span className="relative place-items-center  max-w-max inline-grid text-xl text-theme-accent cursor-pointer">
+            Blazingly
+          </span>{" "}
+          fast
         </p>
       </div>
     </div>

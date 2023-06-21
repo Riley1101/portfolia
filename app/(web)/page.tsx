@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 export default async function Home() {
   return (
     <div className="page-container">
-      <LatestPostHome />
-      <LatestSnippets></LatestSnippets>
       <div className="py-4 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-2">
         <GithubFeed />
       </div>
+      <LatestPostHome />
+      <LatestSnippets></LatestSnippets>
       <NewsLetter></NewsLetter>
     </div>
   );
