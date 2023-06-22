@@ -1,4 +1,5 @@
 export const revalidate = 60;
+import { GithubFeed } from "@/components/pages/home/github";
 import Image from "next/image";
 import Hero from "@/components/pages/hero";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
@@ -44,15 +45,18 @@ function AboutPage() {
             width={800}
             height={600}
           />
-          I am a web developer with a passion for building robots. I have 4
+          I am a web developer with a passion for building amazing things. I have 4
           years of experience in web development. I have been working on web
           development projects for the past few years.
           <br />I love building web and building things that are{" "}
           <span className="relative place-items-center  max-w-max inline-grid text-xl text-theme-accent cursor-pointer">
             Blazingly
           </span>{" "}
-          fast
+          fast.
         </p>
+      </div>
+      <div className="py-4 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-2">
+        <GithubFeed />
       </div>
     </div>
   );

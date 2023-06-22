@@ -14,7 +14,7 @@ const hero = {
   title: "Article",
   subtitle: "Published Articles",
   description:
-    "Here is where you'll find a wealth of information on Next.js, React, JavaScript, and web development. Whether you're just getting started in web development or looking to deepen your knowledge and skills, this page has something for you. ",
+    "Here is where you'll find a wealth of information on Next.js, React, JavaScript, and web development.",
 };
 
 function ArticlePage() {
