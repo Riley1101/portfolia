@@ -95,8 +95,8 @@ function NavASide() {
       )}
     >
       {selectedSegment !== "testimonials" && <CommandMenu />}
-      <div className="flex flex-col gap-4 p-4 border rounded-md glass-box">
-        <div className="flex flex-col gap-4 ">
+      <div className="flex flex-col gap-2 p-4 border rounded-md glass-box">
+        <div className="flex flex-col gap-2 ">
           {navs.map((nav) => (
             <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
               {selectedSegment !== "testimonials" && nav.name}
@@ -106,7 +106,7 @@ function NavASide() {
         {!isTestimonials && (
           <>
             <hr className="h-[1px] border-gray-800 cursor-pointer" />
-            <div className="flex flex-col gap-4 mt-4">
+            <div className="flex flex-col gap-2 mt-4">
               {social.map((nav) => (
                 <NavIconLink
                   target="_blank"

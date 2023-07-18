@@ -77,7 +77,7 @@ export default function RootLayout({
           <Header />
           <div
             className=" row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
-          lg:grid-cols-[230px_auto] xl:grid-cols-[230px_auto]  w-full   text-theme-body overflow-hidden "
+          lg:grid-cols-[200px_auto_200px] xl:grid-cols-[200px_auto_200px]  w-full   text-theme-body overflow-hidden "
           >
             <NavAside />
             <main
