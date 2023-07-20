@@ -1,7 +1,7 @@
 export const revalidate = 60;
-import { NewsLetter } from "@/components/common/newsletter";
 import LatestPostHome from "@/components/pages/home/latest-blogs";
 import LatestSnippets from "@/components/pages/home/latest-snippets";
+import { NewsLetter } from "@/components/common/newsletter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

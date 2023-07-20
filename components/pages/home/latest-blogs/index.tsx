@@ -1,12 +1,14 @@
 import Link from "next/link";
 import HomeBlogCard from "@/components/pages/home/blog-card";
 import client from "@/utils/client";
-import type { ArticlCardType } from "@/types/articles";
 import { PencilIcon } from "@heroicons/react/20/solid";
 import asyncComponent from "@/utils/async-component";
+import type { ArticlCardType } from "@/types/articles";
+
 interface Props {
   posts: ArticlCardType[];
 }
+
 const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..4]  {
   title,
   'slug':slug.current,
@@ -17,11 +19,12 @@ const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..4]  {
     body,
 }}
 `;
+
 async function LatestPostHome() {
   const data: Props = await client.fetch(query);
   return (
-    <div className="">
-      <div className="flex flex-col  ">
+    <div>
+      <div className="flex flex-col @container">
         <h3 className=" text-xl md:mt-8 font-bold text-theme-primary">
           LATEST POST
         </h3>
@@ -29,8 +32,7 @@ async function LatestPostHome() {
           Here&rsquo;s the latest posts I&rsquo;ve written and published here on
           my site.
         </p>
-
-        <div className="flex flex-col gap-4 my-4">
+        <div className="grid grid-cols-1 gap-4 my-4 @md:grid-cols-2 @xl:grid-cols-3">
           {data.posts.map((article, index) => {
             return (
               <HomeBlogCard
