@@ -13,7 +13,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     default: metaData.title,
-    template: "%s | Arkar Kaung Myat",
+    template: "%s",
   },
   description: metaData.description,
   generator: "Next.js",

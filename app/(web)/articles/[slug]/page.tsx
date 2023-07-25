@@ -1,4 +1,3 @@
-
 export const revalidate = 60;
 import { NewsLetter } from "@/components/common/newsletter";
 import { Related } from "@/components/common/related";
@@ -58,6 +57,7 @@ export async function generateMetadata({
     twitter: getTwitterCard(data?.mainImage, data.title, data.description),
   };
 }
+
 async function ArticleDetailPage(props: DetailPageParamTypes) {
   const { params } = props;
   const data: ArticleDetailType = await client.fetch(query, {
@@ -73,7 +73,7 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
         mainImage={data.mainImage}
         releasedAt={data.releasedAt}
       />
-      <div className="">
+      <div>
         <TableOfContents value={data.body} />
         <PortableBody value={data.body} />
         <NewsLetter />
