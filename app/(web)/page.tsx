@@ -1,7 +1,6 @@
 export const revalidate = 60;
 import LatestPostHome from "@/components/pages/home/latest-blogs";
-import LatestSnippets from "@/components/pages/home/latest-snippets";
-import { NewsLetter } from "@/components/common/newsletter";
+import { Intro } from "@/components/common/intro/Intro";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,9 +10,10 @@ export const metadata: Metadata = {
 export default async function Home() {
   return (
     <div className="page-container">
-      <LatestPostHome />
-      <LatestSnippets></LatestSnippets>
-      <NewsLetter></NewsLetter>
+      <div className="w-full flex flex-col gap-4">
+        <Intro />
+        <LatestPostHome />
+      </div>
     </div>
   );
 }

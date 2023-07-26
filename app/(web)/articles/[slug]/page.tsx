@@ -66,18 +66,20 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
   if (data === null) return <div>404</div>;
   return (
     <div className="page-container">
-      <Hero
-        title={data.title}
-        description={data.description}
-        categories={data.categories}
-        mainImage={data.mainImage}
-        releasedAt={data.releasedAt}
-      />
       <div>
-        <TableOfContents value={data.body} />
-        <PortableBody value={data.body} />
-        <NewsLetter />
-        <Related data={data.related} />
+        <Hero
+          title={data.title}
+          description={data.description}
+          categories={data.categories}
+          mainImage={data.mainImage}
+          releasedAt={data.releasedAt}
+        />
+        <div>
+          <TableOfContents value={data.body} />
+          <PortableBody value={data.body} />
+          <NewsLetter />
+          <Related data={data.related} />
+        </div>
       </div>
     </div>
   );

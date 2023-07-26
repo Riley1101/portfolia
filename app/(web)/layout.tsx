@@ -76,8 +76,8 @@ export default function RootLayout({
         <div className="grid  w-full max-h-screen  grid-cols-1 gird-rows-2 md:grid-cols-[5%_auto_5%]  lg:grid-cols-[15%_auto] overflow-hidden font-theme bg-theme-bg ">
           <Header />
           <div
-            className=" row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
-          lg:grid-cols-[200px_auto_200px] xl:grid-cols-[200px_auto_200px]  w-full   text-theme-body overflow-hidden "
+            className="row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
+          lg:grid-cols-[200px_auto_200px] xl:grid-cols-[200px_auto_200px] w-full text-theme-body overflow-hidden"
           >
             <NavAside />
             <main
@@ -87,7 +87,6 @@ export default function RootLayout({
               <div className="mt-4 md:my-12">{children}</div>
             </main>
           </div>
-
           <GradientMesh />
         </div>
         <AnalyticsWrapper />
