@@ -44,7 +44,13 @@ interface SnippetDetailType {
   };
   mainImage: string;
 }
+
+interface Category{
+    title:string;
+    _id:string;
+}
 export type {
+    Category,
   ArticlCardType,
   ArticleDetailType,
   SnippetDetailType,
