@@ -18,13 +18,15 @@ export default function GradientMesh() {
   return (
     <>
       <div
-        ref={blobOne}
-        className="pointer-events-none w-[150px] md:w-[200px]  aspect-square rounded-full top-[10%] left-[0%] absolute  gradient-one "
-      ></div>
-
-      <div
         ref={blobTwo}
         className="pointer-events-none w-[200px] md:w-[200px]  aspect-square top-[25%] left-[5%] absolute rounded-full gradient-two"
+      ></div>
+      <div
+        ref={blobOne}
+        className="pointer-events-none w-[150px] md:w-[200px]  aspect-square rounded-full top-[10%] left-[0%] absolute  gradient-one "
+        style={{
+          opacity: 0.35,
+        }}
       ></div>
     </>
   );

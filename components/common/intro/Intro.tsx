@@ -15,7 +15,7 @@ export function Intro() {
         enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
         exercitation amet.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {data.map((item) => (
           <div
             key={item}

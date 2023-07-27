@@ -32,12 +32,6 @@ export const navs: Nav[] = [
     icon: <HomeIcon className="w-5 h-5 " />,
   },
   {
-    id: 1,
-    name: "About",
-    href: "/about",
-    icon: <UserIcon className="w-5 h-5 " />,
-  },
-  {
     id: 2,
     name: "Articles",
     href: "/articles",
