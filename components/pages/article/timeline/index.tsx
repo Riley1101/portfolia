@@ -18,7 +18,7 @@ async function ArticleTimeLine() {
   const data: ArticlCardType[] = await client.fetch(query);
   return (
     <div className="flex flex-col my-6 ">
-      <div className="relative  columns-3xs gap-4 ">
+      <div className="relative  grid grid-cols-1 md:grid-cols-2 grid-flow-dense  gap-4 md:gap-4">
         {data.map((article, index) => {
           return (
             <ArticleCard

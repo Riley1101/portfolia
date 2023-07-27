@@ -1,4 +1,3 @@
-"use client";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import client from "../../..//utils/client";
 import { useNextSanityImage } from "next-sanity-image";
