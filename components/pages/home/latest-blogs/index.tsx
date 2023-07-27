@@ -19,12 +19,12 @@ const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..3]  {
 async function LatestPostHome() {
   const data: Props = await client.fetch(query);
   return (
-    <div className="flex flex-col gap-4 @container my-4">
+    <div className="flex flex-col gap-4 @container">
       <p className="my-2 text-md">
         Here&rsquo;s the latest posts I&rsquo;ve written and published here on
         my site.
       </p>
-      <div className="gap-4  grid  @md:grid-cols-2">
+      <div className="gap-4 grid @md:grid-cols-2">
         {data.posts.map((article, index) => {
           return (
             <HomeBlogCard

@@ -20,7 +20,6 @@ const CommandMenu = () => {
     () =>
       createAutocomplete({
         onStateChange({ state }) {
-          // (2) Synchronize the Autocomplete state with the React state.
           setAutocompleteState(state);
         },
         getSources() {
@@ -194,7 +193,7 @@ const CommandMenu = () => {
         }}
         type="text"
         placeholder="Search | Ctrl + /"
-        className="px-4 py-2 pt-3 bg-transparent border border-gray-800 rounded-md outline-none placeholder:text-sm placeholder:text-theme-accent"
+        className="px-4 py-2 pt-3 bg-transparent border border-theme-accent-opaque rounded-md outline-none placeholder:text-sm placeholder:text-theme-accent"
       />
     </>
   );
