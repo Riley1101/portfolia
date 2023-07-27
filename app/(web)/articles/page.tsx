@@ -1,5 +1,4 @@
 export const revalidate = 60;
-import Hero from "@/components/pages/hero";
 import ArticleTimeLine from "@/components/pages/article/timeline";
 import { Metadata } from "next";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
@@ -18,23 +17,15 @@ export const metadata: Metadata = {
     metaData.description
   ),
 };
-const hero = {
-  title: "Article",
-  subtitle: "Published Articles",
-  description:
-    "Here is where you'll find a wealth of information on Next.js, React, JavaScript, and web development.",
-};
 
 function ArticlePage() {
   return (
-    <div className="page-container">
+    <div className="page-container gap-4">
       <div>
-        <Hero
-          title={hero.title}
-          description={hero.description}
-          subtitle={hero.subtitle}
-        />
         <ArticleTimeLine />
+      </div>
+      <div>
+        <h3>Categories</h3>
       </div>
     </div>
   );

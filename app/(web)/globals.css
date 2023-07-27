@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer utilities {
   .page-container {
     @apply w-full grid  lg:grid-cols-[2fr_1fr] md:max-w-[800px] lg:max-w-[1140px];

@@ -24,13 +24,17 @@ export function NewsLetter({}: Props) {
   }
 
   return (
-    <div className=" relative flex flex-col my-6 rounded-md p-4 bg-theme-accent-opaque">
+    <div className=" relative group flex flex-col  cursor-pointer overflow-hidden rounded-md px-6 py-2 border border-theme-accent-opaque bg-theme-bg-secondary">
+      <div
+        className="absolute group-hover:scale-[1.2] origin-b-l  transition-all duration-500 z-0 w-[30%] aspect-square gradient-two right-[-60px] -bottom-1/2"
+        style={{ opacity: 0.1 }}
+      ></div>
       <div className="absolute top-0 left-0 border-l-2 border-theme-primary w-[5px] h-full"></div>
-      <div className="text-left">
+      <div className="text-left z-10">
         <span className="font-bold text-theme-accent md:text-xl mb-2 text-lg md:text-xl my-2 block">
           Subscribe to my NewsLetter!{" "}
         </span>
-        <p className="text-theme-body ">
+        <p className="text-gray-400">
           Join my web development newsletter to receive the latest updates,
           tips, and trends directly in your inbox.
         </p>
@@ -45,7 +49,7 @@ export function NewsLetter({}: Props) {
           name="name"
           spellCheck={false}
           placeholder="Enter your name! "
-          className="w-full px-4 py-2 border border-theme-accent-opaque bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
+          className="w-full px-4 py-2 border border-theme-primary-opaque bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
           required={true}
         />
         <input
@@ -59,8 +63,8 @@ export function NewsLetter({}: Props) {
         <button
           type="submit"
           className={cx(
-            ` flex cursor-pointer items-center hover:text-theme-accent w-full md:max-w-max justify-center items-center border-theme-primary-opaque py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  px-4  rounded-md`,
-            "hover:bg-theme-primary hover:bg-opacity-5 border-opacity-5 hover:border-theme-primary hover:text-theme-accent"
+            `flex cursor-pointer items-center hover:text-theme-accent w-full md:max-w-max justify-center items-center border-theme-primary-opaque py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  px-4  rounded-md`,
+            "z-10 hover:bg-theme-primary  border-opacity-5 hover:border-theme-primary hover:text-theme-accent"
           )}
         >
           Submit

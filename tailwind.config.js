@@ -14,6 +14,7 @@ module.exports = {
         dashboard: "1fr",
       },
       colors: {
+        "theme-bg-secondary": "#16142d",
         "theme-bg": "#131127",
         "theme-primary": "#f056c8",
         "theme-primary-opaque": "#f056c71a",

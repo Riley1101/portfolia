@@ -9,7 +9,7 @@ let query = `
   'slug':slug.current,
   releasedAt,
   description,
-  'mainImage':mainImage.asset->{url}.url,
+  'mainImage':mainImage,
   'categories':categories[]->title,
   }
 `;
@@ -18,11 +18,12 @@ async function ArticleTimeLine() {
   const data: ArticlCardType[] = await client.fetch(query);
   return (
     <div className="flex flex-col my-6 ">
-      <div className="relative flex flex-col gap-4  6pb-6 ">
+      <div className="relative  columns-3xs gap-4 ">
         {data.map((article, index) => {
           return (
             <ArticleCard
               key={index}
+              mainImage={article.mainImage}
               title={article.title}
               description={article.description}
               slug={article.slug}

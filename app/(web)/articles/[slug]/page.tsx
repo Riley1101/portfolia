@@ -66,7 +66,7 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
   if (data === null) return <div>404</div>;
   return (
     <div className="page-container">
-      <div>
+      <div className="w-full flex flex-col gap-4">
         <Hero
           title={data.title}
           description={data.description}

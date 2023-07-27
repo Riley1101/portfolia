@@ -128,6 +128,9 @@ dependencies:
   next:
     specifier: 13.4.10
     version: 13.4.10(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
+  next-sanity-image:
+    specifier: ^6.1.0
+    version: 6.1.0(@sanity/client@4.0.1)(next@13.4.10)(react@18.2.0)
   octokit:
     specifier: ^2.0.14
     version: 2.0.14
@@ -9582,6 +9585,19 @@ packages:
 
   /new-array@1.0.0:
     resolution: {integrity: sha512-K5AyFYbuHZ4e/ti52y7k18q8UHsS78FlRd85w2Fmsd6AkuLipDihPflKC0p3PN5i8II7+uHxo+CtkLiJDfmS5A==}
+    dev: false
+
+  /next-sanity-image@6.1.0(@sanity/client@4.0.1)(next@13.4.10)(react@18.2.0):
+    resolution: {integrity: sha512-xSIMPqgRFsurZhNTp0d0q/8ZDjmOR3thhle7u0M9SHIKCYWMy3e3p9Q6Gx2f+CcY8TbE43OPZHVEsMrzt0yqNQ==}
+    peerDependencies:
+      '@sanity/client': ^5.0.0 || ^6.0.0
+      next: ^13.0.0
+      react: ^18.0.0
+    dependencies:
+      '@sanity/client': 4.0.1
+      '@sanity/image-url': 1.0.2
+      next: 13.4.10(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
     dev: false
 
   /next-tick@1.1.0:
