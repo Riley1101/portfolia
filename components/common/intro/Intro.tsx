@@ -1,5 +1,7 @@
+import { ProjectCard } from "../project-card";
+
 export function Intro() {
-  const data = [1, 2, 3, ];
+  const data = [1, 2, 3];
   return (
     <div className="flex flex-col gap-4 mt-8">
       <h1 className="text-lg font-bold text-white">
@@ -17,10 +19,7 @@ export function Intro() {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {data.map((item) => (
-          <div
-            key={item}
-            className="border min-h-[200px] border-gray-700 rounded-md"
-          ></div>
+          <ProjectCard key={item} />
         ))}
       </div>
       <p className="text-base leading-relaxed">

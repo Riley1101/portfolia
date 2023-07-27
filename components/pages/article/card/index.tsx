@@ -19,7 +19,7 @@ export default function ArticleCard({
     >
       <SanityImage
         image={mainImage}
-        className="mb-4 transition-all rounded-xl overflow-hidden  group-hover:blur-none"
+        className="mb-4 transition-all rounded-xl overflow-hidden group-hover:blur-none"
       ></SanityImage>
       <h2 className="text-lg  font-bold text-white">{title}</h2>
       <div className="flex justify-between">
@@ -30,8 +30,9 @@ export default function ArticleCard({
           <div className="flex items-center gap-2 ">
             {categories.map((category) => (
               <div key={category}>
-                <span className="text-sm ">{category}</span>
-                <span className="text-theme-accent"> / </span>
+                <span className="block px-2 py-1 text-sm rounded-lg cursor-pointer bg-theme-primary-opaque">
+                  {category}
+                </span>
               </div>
             ))}
           </div>
