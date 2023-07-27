@@ -34,12 +34,11 @@ function Categories({ categories }: Props) {
   if (!categories) return null;
   return (
     <div className="border p-4 border-theme-accent-opaque glass-box rounded-md sticky top-10 md:top-20">
-      <h3 className="text-theme-primary md:mb-4">Categories</h3>
-      <div className="flex py-2 md:p-0 gap-2 md:flex-wrap pt-4 overflow-x-auto">
+      <div className="flex  gap-2 md:flex-wrap  overflow-x-auto">
         <button
           onClick={() => handleFilter("All")}
           className={cx(
-            `text-sm flex cursor-pointer items-center hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-full`,
+            `text-sm flex max-h-max cursor-pointer items-center hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-full`,
             {
               "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
                 params.get("category") === "All" || !params.get("category"),
@@ -53,7 +52,7 @@ function Categories({ categories }: Props) {
             onClick={() => handleFilter(item.title)}
             key={item._id}
             className={cx(
-              `text-sm flex cursor-pointer items-center hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-full`,
+              `px-4 text-sm text-left max-h-max  cursor-pointer hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-full`,
               {
                 "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
                   params.get("category") === item.title,
@@ -69,4 +68,3 @@ function Categories({ categories }: Props) {
 }
 
 export default Categories;
-
