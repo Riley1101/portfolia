@@ -65,7 +65,7 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
   });
   if (data === null) return <div>404</div>;
   return (
-    <div className="page-container">
+    <div className="page-container md:gap-4">
       <div className="w-full flex flex-col gap-4">
         <Hero
           title={data.title}
@@ -75,11 +75,14 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
           releasedAt={data.releasedAt}
         />
         <div>
-          <TableOfContents value={data.body} />
           <PortableBody value={data.body} />
           <NewsLetter />
           <Related data={data.related} />
         </div>
+      </div>
+
+      <div className="row-start-1 lg:col-start-2 w-full">
+        <TableOfContents value={data.body} />
       </div>
     </div>
   );

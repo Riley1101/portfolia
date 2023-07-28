@@ -24,19 +24,19 @@ export default function TableOfContents({ value }: Props) {
     });
   };
   return (
-    <div>
+    <div className="border-l-2 border-opacity-20  border-theme-accent pl-4 md:max-w-max lg:sticky top-20 ">
       <span
         onClick={() => setToggle(!toggle)}
-        className="bg-theme-accent-opaque cursor-pointer max-w-max 
-        px-4 py-2 rounded-md font-bold uppercase mb-2 block text-theme-primary flex items-center gap-4"
+        className="cursor-pointer max-w-max 
+        py-2 rounded-md font-bold uppercase mb-2 block text-theme-primary flex items-center gap-4"
       >
-        Table of Contents{" "}
+        On this page{" "}
         <ChevronDownIcon
           className={cx("w-6 h-6 text-theme-primary", toggle && "rotate-180")}
         />
       </span>
       {toggle && (
-        <ul className=" list-disc pl-8 flex p-4 flex-col gap-2 max-w-max bg-theme-accent-opaque">
+        <ul className=" pb-4 flex flex-col gap-4 max-w-max ">
           {titles.map((e) => (
             <li
               key={e}
