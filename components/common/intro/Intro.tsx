@@ -9,24 +9,27 @@ export function Intro() {
       </h1>
       <p className="text-base leading-relaxed">
         Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
-        enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
-        exercitation amet.
+        enim labore culpa sint ad nisi lorem pariatur mollit ex esse enim labore
+        culpa sint ad nisi lorem pariatur mollit ex esse enim labore culpa sint
+        ad nisi lorem pariatur mollit ex esse exercitation amet.
       </p>
-      <p className="text-base leading-relaxed">
-        Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
-        enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
-        exercitation amet.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {data.map((item) => (
-          <ProjectCard key={item} />
-        ))}
+
+      <div className="my-4">
+        <h2 className="text-xl font-semibold  mb-2 text-theme-accent">
+          Projects
+        </h2>
+        <p className="text-base leading-relaxed mb-4">
+          Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
+          enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
+          exercitation amet.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {data.map((item) => (
+            <ProjectCard key={item} />
+          ))}
+        </div>
       </div>
-      <p className="text-base leading-relaxed">
-        Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
-        enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
-        exercitation amet.
-      </p>
     </div>
   );
 }

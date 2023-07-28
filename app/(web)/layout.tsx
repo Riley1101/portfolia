@@ -73,7 +73,7 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <head />
       <body className="overflow-hidden">
-        <div className="grid  w-full max-h-screen  grid-cols-1 gird-rows-2 md:grid-cols-[5%_auto_5%]  lg:grid-cols-[15%_auto] overflow-hidden font-theme bg-theme-bg ">
+        <div className="grid  w-full max-h-screen  grid-cols-1 gird-rows-2 md:grid-cols-[5%_auto_5%]  lg:grid-cols-[15%_auto] overflow-hidden font-theme bg-[#33161600]">
           <Header />
           <div
             className="row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 

@@ -32,7 +32,7 @@ async function ArticleTimeLine(props: Props) {
     <div className="flex flex-col @container my-6 ">
       {filteredArticles.length > 0 ? (
         <div
-          className="relative grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3
+          className="relative grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))]
        grid-flow-dense  gap-4 md:gap-8"
         >
           {filteredArticles.map((article, index) => {

@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
+        fluid: "repeat(auto-fill, minmax(200px, 1fr))",
+      },
+      gridTemplateColumns: {
         dashboard: "200px auto 300px",
       },
       gridTemplateRows: {

@@ -18,6 +18,7 @@ export default function ArticleCard({
       className="relative transition-all group  border-theme-accent-opaque  duration-500 flex flex-col  rounded-md cursor-pointer  border-theme-accent hover:border-theme-primary border-opacity-10 hover:border-opacity-20"
     >
       <SanityImage
+        alt={title}
         image={mainImage}
         className="mb-4 transition-all rounded-xl overflow-hidden group-hover:blur-none"
       ></SanityImage>
