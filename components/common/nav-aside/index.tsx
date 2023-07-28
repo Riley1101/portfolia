@@ -5,7 +5,6 @@ import NavIconLink from "../link";
 import React from "react";
 import {
   HomeIcon,
-  UserIcon,
   PencilIcon,
   CodeBracketIcon,
   PlayIcon,
@@ -30,12 +29,6 @@ export const navs: Nav[] = [
     name: "Home",
     href: "/",
     icon: <HomeIcon className="w-5 h-5 " />,
-  },
-  {
-    id: 1,
-    name: "About",
-    href: "/about",
-    icon: <UserIcon className="w-5 h-5 " />,
   },
   {
     id: 2,

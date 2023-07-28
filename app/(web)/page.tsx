@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   return (
     <div className="page-container">
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-8">
         <Intro />
         <LatestPostHome />
         <NewsLetter/>

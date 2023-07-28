@@ -37,6 +37,7 @@ export default function SnippetCard({
     >
       <div
         ref={blob}
+        style={{ opacity: 0.2 }}
         className="w-[15%] top-[20%] left-[0%] transform-center hidden translate-y-[-1/2] 
         aspect-square  absolute  translate-x-[-1/2] gradient-one"
       ></div>
