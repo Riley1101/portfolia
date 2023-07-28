@@ -24,7 +24,7 @@ export function NewsLetter({}: Props) {
   }
 
   return (
-    <div className=" relative group flex flex-col  cursor-pointer overflow-hidden rounded-md px-6 py-2 border border-theme-accent-opaque bg-theme-bg-secondary">
+    <div className=" relative group flex flex-col  cursor-pointer overflow-hidden rounded-md px-6 py-2 border border-theme-accent-opaque bg-theme-accent-opaque my-4">
       <div
         className="absolute group-hover:scale-[1.2] origin-b-l  transition-all duration-500 z-0 w-[30%] aspect-square gradient-two right-[-60px] -bottom-1/2"
         style={{ opacity: 0.1 }}
