@@ -1,9 +1,10 @@
 "use client";
 
-import { Studio } from "sanity";
 import studioConfig from "./sanity.config";
 
-const StudioComponent = () => {
-  return <Studio config={studioConfig} />;
-};
-export default StudioComponent;
+import { NextStudio } from "next-sanity/studio";
+
+export default function Studio() {
+  //  Supports the same props as `import {Studio} from 'sanity'`, `config` is required
+  return <NextStudio config={studioConfig} />;
+}

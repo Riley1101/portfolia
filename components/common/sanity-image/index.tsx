@@ -17,7 +17,7 @@ export default function SanityImage(props: Props) {
     <Img
       {...imageProps}
       {...props}
-      style={{ width: "100%", height: "auto" }} // layout="responsive" prior to Next 13.0.0
+      style={{ width: "100%", height: "auto" }} 
       placeholder="blur"
       blurDataURL={rgbDataURL(29, 25, 39)}
       sizes="(max-width: 800px) 100vw, 800px"
