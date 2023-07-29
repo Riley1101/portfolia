@@ -16,12 +16,23 @@ const query = `
   releasedAt,
   description,
   'categories':categories[]->title,
-  'mainImage':mainImage.asset->{url}.url,
-  body,
+  body[]{
+    ..., 
+    asset->{
+      metadata,
+      "_type":"reference",
+      "_ref": _id
+    }
+  },
   "related": *[_type == "article" && _id != ^._id && count(categories[@._ref in ^.^.categories[]._ref]) > 0] | order(releasedAt desc, _createdAt desc) [0..2] {
      title,
      _id,
-    'mainImage':mainImage.asset->{url}.url,
+    "mainImage":{
+    "asset":{
+        ...mainImage.asset,
+         "metadata":mainImage.asset->metadata
+    },
+    },
      "slug": slug.current,
      description
    }
@@ -71,7 +82,6 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
           title={data.title}
           description={data.description}
           categories={data.categories}
-          mainImage={data.mainImage}
           releasedAt={data.releasedAt}
         />
         <div className="block lg:hidden">

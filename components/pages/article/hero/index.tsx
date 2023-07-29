@@ -4,7 +4,6 @@ type Props = {
   title: string;
   description: string;
   categories?: string[];
-  mainImage: string;
   releasedAt: string;
 };
 

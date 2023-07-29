@@ -61,7 +61,6 @@ async function SnippetDetailPage(props: DetailPageParamTypes) {
           title={data.title}
           description={data.description}
           categories={data.categories}
-          mainImage={data.mainImage}
           releasedAt={data.releasedAt}
         />
         <CodeBlock

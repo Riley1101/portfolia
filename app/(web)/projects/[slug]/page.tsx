@@ -59,7 +59,6 @@ async function ProjectDetailPage(props: DetailPageParamTypes) {
           title={data.title}
           description={data.description}
           releasedAt={data.releasedAt}
-          mainImage={data.mainImage}
         />
       </div>
       <div className="flex flex-col gap-2 lg:grid lg:grid-cols-[60%_40%] lg:gap-8  relative">

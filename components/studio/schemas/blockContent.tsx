@@ -87,7 +87,10 @@ export default defineType({
     // as a block type.
     defineArrayMember({
       type: "image",
-      options: { hotspot: true },
+      options: {
+        hotspot: true,
+        metadata: ["blurhash"],
+      },
     }),
     defineArrayMember({
       type: "youtube",

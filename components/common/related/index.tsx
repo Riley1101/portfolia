@@ -1,5 +1,6 @@
 import React from "react";
-import Image from "next/image";
+import type { SanityImage } from "@/types/sanity-image";
+import Image from "../sanity-image";
 import Link from "next/link";
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
     slug: string;
     description: string;
     _id: string;
-    mainImage: string;
+    mainImage: SanityImage;
   }[];
 };
 
@@ -27,10 +28,8 @@ export function Related({ data }: Props) {
           >
             <div className="w-full ml-auto md:w-auto">
               <Image
-                src={itm.mainImage}
-                alt={"image"}
-                width={200}
-                height={200}
+                image={itm.mainImage}
+                alt={itm.title}
                 className="w-full  aspect-video object-cover rounded-md "
               ></Image>
             </div>

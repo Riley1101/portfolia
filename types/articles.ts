@@ -1,3 +1,4 @@
+import type { SanityImage } from "./sanity-image";
 interface ArticlCardType {
   title: string;
   description: string;
@@ -19,7 +20,7 @@ interface ArticleDetailType {
     description: string;
     slug: string;
     _id: string;
-    mainImage: string;
+    mainImage: SanityImage;
   }[]
 }
 
