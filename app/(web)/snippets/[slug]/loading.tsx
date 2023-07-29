@@ -1,4 +1,8 @@
-import { Loader } from "@/components/common/loader"
+import { Loader } from "@/components/common/loader";
 export default function Loading() {
-      return <Loader/>
+  return (
+    <div className="page-container">
+      <Loader />
+    </div>
+  );
 }

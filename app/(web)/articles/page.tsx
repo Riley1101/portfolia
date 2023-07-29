@@ -36,7 +36,7 @@ async function ArticlePage(props: {
   const categories = await client.fetch(categoryQuery);
   return (
     <div className="page-container gap-4 md:gap-12">
-      <div>
+      <div className="page-left">
         <Banner></Banner>
 
         <div className="block md:hidden row-start-1 lg:col-start-2">
@@ -44,7 +44,7 @@ async function ArticlePage(props: {
         </div>
         <ArticleTimeLine current={searchParams?.category} />
       </div>
-      <div className="hidden md:block row-start-1 lg:col-start-2">
+      <div className="hidden page-right md:block row-start-1 lg:col-start-2">
         <Categories categories={categories} />
       </div>
     </div>

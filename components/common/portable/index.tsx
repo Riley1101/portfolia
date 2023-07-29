@@ -19,6 +19,8 @@ export default function PortableBody({ value }: Props) {
     Prism.highlightAll();
   }, []);
   return (
-        <PortableText value={value} components={components} />
+  <div className='w-full flex flex-col'>
+  <PortableText value={value} components={components} />
+  </div>
   );
 }
