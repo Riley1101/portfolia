@@ -20,7 +20,7 @@ export default function SanityImage(props: Props) {
       style={{ width: "100%", height: "auto" }} // layout="responsive" prior to Next 13.0.0
       placeholder="blur"
       blurDataURL={rgbDataURL(29, 25, 39)}
-      sizes="(max-width: 750px) 100vw, 800px"
+      sizes="(max-width: 800px) 100vw, 800px"
     />
   );
 }
