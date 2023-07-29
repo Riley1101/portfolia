@@ -24,7 +24,7 @@ export default function TableOfContents({ value }: Props) {
     });
   };
   return (
-    <div className=" border-l-2 border-opacity-20  border-theme-accent pl-4 max-w-max lg:sticky top-20 ">
+    <div className=" border-l-2 border-opacity-20  border-theme-accent pl-4 max-w-max lg:sticky lg:top-20 ">
       <span
         onClick={() => setToggle(!toggle)}
         className="cursor-pointer max-w-max 

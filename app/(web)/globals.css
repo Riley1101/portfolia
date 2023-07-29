@@ -9,6 +9,9 @@
   .glass-box {
     @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.1];
   }
+  .title {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+  }
 }
 ::-moz-selection {
   @apply bg-gray-700;

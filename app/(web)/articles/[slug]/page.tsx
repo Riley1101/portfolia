@@ -65,7 +65,7 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
   });
   if (data === null) return <div>404</div>;
   return (
-    <div className="page-container md:gap-4">
+    <div className="page-container md:gap-4 lg:gap-12">
       <div className="flex shrink page-left flex-col gap-4">
         <Hero
           title={data.title}
@@ -74,9 +74,9 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
           mainImage={data.mainImage}
           releasedAt={data.releasedAt}
         />
-      <div className="block lg:hidden">
-        <TableOfContents value={data.body} />
-      </div>
+        <div className="block lg:hidden">
+          <TableOfContents value={data.body} />
+        </div>
         <div className="flex flex-col">
           <PortableBody value={data.body} />
           <NewsLetter />
@@ -84,10 +84,8 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
         </div>
       </div>
 
-      <div className="">
-      <div className="hidden min-w-[200px] lg:block">
-      <TableOfContents value={data.body} />
-      </div>
+      <div className="hidden min-w-[200px] lg:block pt-24">
+        <TableOfContents value={data.body} />
       </div>
     </div>
   );

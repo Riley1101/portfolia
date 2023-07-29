@@ -1,3 +1,4 @@
+
 function CodeBlock(props: {
   value: {
     language: string;
@@ -5,9 +6,14 @@ function CodeBlock(props: {
   };
 }) {
   const { value } = props;
+
   return (
-    <div className="w-full my-6 transition-all duration-300 border border-transparent rounded-md bg-[#f056c705] bg-gradient-to-r ">
-    {value.code}
+    <div className="block grid my-6 transition-all duration-300 border border-transparent rounded-md bg-[#f056c705] bg-gradient-to-r ">
+      <pre className={`command-line bg-transparent language-${value.language}`}>
+        <code className={`text-sm line-number language-${value.language}`}>
+          {value.code}
+        </code>
+      </pre>
     </div>
   );
 }
