@@ -24,7 +24,6 @@ const CommandMenu = () => {
         },
         getSources() {
           return [
-
             {
               sourceId: "articles",
               getItemInputValue({ item }) {
@@ -65,7 +64,6 @@ const CommandMenu = () => {
                 return item.url;
               },
             },
-
           ];
         },
       }),
@@ -100,7 +98,7 @@ const CommandMenu = () => {
           <div
             onClick={(e) => e.stopPropagation()}
             {...autocomplete.getRootProps({})}
-            className="relative gradient-box rounded-lg  bg-theme-bg  lg:w-[600px] min-h-[400px] md:w-[600px] w-[300px]  px-4 "
+            className="relative gradient-box rounded-lg  bg-[#121212] lg:w-[600px] min-h-[400px] md:w-[600px] w-[300px]  px-4 "
           >
             <div className="flex items-center px-4 mt-4 border-b rounded-md border-opacity-30 group border-theme-accent hover:from-theme-accent-opaque bg-gradient-to-l">
               <MagnifyingGlassIcon className="w-6 h-6 group-focus-within:text-theme-accent group" />

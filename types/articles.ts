@@ -1,4 +1,5 @@
 import type { SanityImage } from "./sanity-image";
+
 interface ArticlCardType {
   title: string;
   description: string;
@@ -7,6 +8,7 @@ interface ArticlCardType {
   categories?: string[];
   mainImage?: any;
 }
+
 interface ArticleDetailType {
   title: string;
   description: string;

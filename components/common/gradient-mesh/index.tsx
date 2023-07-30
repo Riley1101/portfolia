@@ -19,7 +19,7 @@ export default function GradientMesh() {
     <>
       <div
         ref={blobTwo}
-        className="pointer-events-none w-[200px] md:w-[200px]  aspect-square top-[25%] left-[5%] absolute rounded-full gradient-two"
+        className="pointer-events-none w-[220px] md:w-[220px]  aspect-square top-[25%] left-[5%] absolute rounded-full gradient-two"
       ></div>
       <div
         ref={blobOne}

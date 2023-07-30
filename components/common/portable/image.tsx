@@ -1,11 +1,12 @@
 import SanityImage from "../sanity-image";
 function NextImage(props: any) {
   const { value, alt } = props;
+  console.log(props)
   return (
     <SanityImage
       image={value}
       className={"mx-auto object-cover rounded-md my-8 w-full overflow-hidden "}
-      alt={alt}
+      alt={alt || "article image"}
     ></SanityImage>
   );
 }

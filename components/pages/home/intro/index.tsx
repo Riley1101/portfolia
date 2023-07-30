@@ -1,7 +1,5 @@
-import { ProjectCard } from "../project-card";
 
 export function Intro() {
-  const data = [1, 2, 3];
   return (
     <div className="flex flex-col gap-4 mt-8">
       <h1 className="text-2xl font-bold text-white">
@@ -26,12 +24,6 @@ export function Intro() {
         enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
         exercitation amet.
       </p>
-
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
-        {data.map((item) => (
-          <ProjectCard key={item} />
-        ))}
-      </div>
     </div>
   );
 }

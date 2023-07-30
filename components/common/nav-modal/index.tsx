@@ -20,7 +20,7 @@ export default function NavModal({ visible, toggle }: Props) {
             toggle();
           }}
           className="flex flex-col ml-auto w-[70%]
-       text-white bg-[#131127]"
+       text-white bg-[#111316] rounded-l-[20px] "
         >
           <div className="flex flex-col justify-end gap-8 p-4 my-auto">
             <button
@@ -28,7 +28,7 @@ export default function NavModal({ visible, toggle }: Props) {
               onClick={() => toggle()}
               className="flex p-2 ml-auto border border-gray-800 rounded-md cursor-pointer max-w-max top-8 right-8 text-theme-body md:block bg-opacity-10 hover:bg-theme-primary hover:bg-opacity-5"
             >
-              <XMarkIcon className="w-6 h-6" />
+              <XMarkIcon className="w-4 aspect-square" />
             </button>
             <div className="flex flex-col gap-3">
               {navs.map((nav) => (
