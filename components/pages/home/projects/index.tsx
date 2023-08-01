@@ -5,7 +5,10 @@ import asyncComponent from "@/utils/async-component";
 import client from "@/utils/client";
 
 const query = `
-    *[_type=='project' && pinned==true][0..2]
+    *[_type=='project' && pinned==true][0..2]{
+            ...,
+            "slug": slug.current
+        }
 `;
 
 async function ProjectsComponent() {

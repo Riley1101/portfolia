@@ -36,7 +36,7 @@ export async function generateMetadata({
   return {
     title: data?.title,
     description: data?.description,
-    keywords: [...metaData.keywords], 
+    keywords: [...metaData.keywords],
     openGraph: getOpenGraph(
       data?.mainImage,
       data?.title,
@@ -53,21 +53,23 @@ async function ProjectDetailPage(props: DetailPageParamTypes) {
   });
   if (data === null) return <div>404</div>;
   return (
-    <div>
-      <div className="lg:w-[60%]">
+    <div className="page-container md:gap-4 lg:gap-12">
+      <div className="flex shrink page-left flex-col gap-4">
         <Hero
           title={data.title}
           description={data.description}
           releasedAt={data.releasedAt}
         />
-      </div>
-      <div className="flex flex-col gap-2 lg:grid lg:grid-cols-[60%_40%] lg:gap-8  relative">
-        <div className="col-starts-2 order-1 lg:order-2">
+        <div className="block lg:hidden">
           <TableOfContents value={data.body} />
         </div>
-        <div className="col-starts-1 order-2 lg:order-1">
+        <div className="flex flex-col">
           <PortableBody value={data.body} />
         </div>
+      </div>
+
+      <div className="hidden min-w-[200px] lg:block pt-24">
+        <TableOfContents value={data.body} />
       </div>
     </div>
   );

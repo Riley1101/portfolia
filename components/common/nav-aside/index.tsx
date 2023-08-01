@@ -1,6 +1,4 @@
-"use client";
 import cx from "classnames";
-import { useSelectedLayoutSegment } from "next/navigation";
 import NavIconLink from "../link";
 import React from "react";
 import {
@@ -78,41 +76,38 @@ export const social: Nav[] = [
   },
 ];
 function NavASide() {
-  const selectedSegment = useSelectedLayoutSegment();
-  const isTestimonials = selectedSegment === "testimonials";
   return (
     <nav
       className={cx(
-        "z-[20] transition-all flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex",
-        isTestimonials && "max-w-max my-auto"
+        "z-[20] transition-all flex-col pt-0 lg:pt-[8em] col-start-1 gap-4 lg:pointer-events-auto lg:flex"
       )}
     >
-      {selectedSegment !== "testimonials" && <CommandMenu />}
+      <div className="hidden lg:block">
+        <CommandMenu />
+      </div>
       <div className="flex flex-col gap-2 p-4 border rounded-md glass-box border-theme-accent-opaque">
         <div className="flex flex-col gap-2 ">
           {navs.map((nav) => (
             <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
-              {selectedSegment !== "testimonials" && nav.name}
+              {nav.name}
             </NavIconLink>
           ))}
         </div>
-        {!isTestimonials && (
-          <>
-            <hr className="h-[1px] border-theme-accent-opaque cursor-pointer" />
-            <div className="flex flex-col gap-2 mt-4">
-              {social.map((nav) => (
-                <NavIconLink
-                  target="_blank"
-                  key={nav.id}
-                  href={nav.href}
-                  icon={nav.icon}
-                >
-                  {selectedSegment !== "testimonials" && nav.name}
-                </NavIconLink>
-              ))}
-            </div>
-          </>
-        )}
+        <>
+          <hr className="h-[1px] border-theme-accent-opaque cursor-pointer" />
+          <div className="flex flex-col gap-2 mt-4">
+            {social.map((nav) => (
+              <NavIconLink
+                target="_blank"
+                key={nav.id}
+                href={nav.href}
+                icon={nav.icon}
+              >
+                {nav.name}
+              </NavIconLink>
+            ))}
+          </div>
+        </>
       </div>
     </nav>
   );

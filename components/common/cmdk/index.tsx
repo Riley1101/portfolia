@@ -191,7 +191,7 @@ const CommandMenu = () => {
         }}
         type="text"
         placeholder="Search | Ctrl + /"
-        className="px-4 py-2 pt-3 bg-transparent border border-theme-accent-opaque rounded-md outline-none placeholder:text-sm placeholder:text-theme-accent"
+        className="w-full px-4 mb-2 py-2 pt-3 bg-transparent border border-theme-accent-opaque rounded-md outline-none placeholder:text-sm placeholder:text-theme-accent"
       />
     </>
   );

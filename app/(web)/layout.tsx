@@ -74,12 +74,14 @@ export default function RootLayout({
       <head />
       <body className="overflow-hidden">
         <div className="w-full overflow-hidden md:px-[10%] lg:pr-[0%] max-h-screen  bg-[#33161600]">
-          <Header />{" "}
+          <Header />
           <div
             className="row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
           lg:grid-cols-[200px_auto] xl:grid-cols-[200px_auto] w-full text-theme-body overflow-hidden"
           >
-            <NavAside />
+            <div className="hidden lg:block">
+              <NavAside />
+            </div>
             <main
               id="main"
               className="h-screen scroll-mt-1 z-[10]  pt-[6em] p-4 overflow-y-scroll md:p-0 lg:p-12 md:pt-[6em]"

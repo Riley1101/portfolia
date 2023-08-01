@@ -10,16 +10,18 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gray-900  bg-clip-padding backdrop-filter 
+    <header
+      className="bg-gray-900  bg-clip-padding backdrop-filter 
     backdrop-blur-lg bg-opacity-[0.15] border-gray-800 justify-between border-b  flex items-center px-4 md:px-[10%]
-     absolute top-0 left-0 h-[3.5em] z-40 w-full">
+     absolute top-0 left-0 h-[3.5em] z-40 w-full"
+    >
       <Link href="/" className="font-bold text-theme-body">
         ArkarDev
       </Link>
       <NavModal visible={visible} toggle={toggle} />
 
       <button
-        aria-label="Open Navigation Modal" 
+        aria-label="Open Navigation Modal"
         role="button"
         onClick={() => toggle()}
         className="flex p-2 border border-gray-800 rounded-md cursor-pointer lg:hidden text-theme-body md:block bg-opacity-10 hover:bg-theme-primary hover:bg-opacity-5 "
