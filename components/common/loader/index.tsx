@@ -4,21 +4,23 @@ type Props = {};
 
 export function Loader({}: Props) {
   return (
-    <div className=" w-full min-h-[70vh] grid md:justify-center md:items-center absolute top-[50%] md:top-[0%] left-0 col-start-1 ">
-      <div className="aspect-square pulse ">
-        <div className="min-h-[15rem] flex flex-col  shadow-sm rounded-xl">
-          <div className="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
-            <div className="flex justify-center">
-              <div
-                className="animate-spin inline-block w-12 h-12 border-[3px] border-current border-t-transparent text-blue-600 rounded-full"
-                role="status"
-                aria-label="loading"
-              >
-                <span className="sr-only">Loading...</span>
-              </div>
-            </div>
+    <div className=" mt-8  p-8 w-full h-full min-h-[80vh] grid grid-rows-[150px,auto]  gap-4">
+      <div className="rounded-md grid grid-rows-[30px_30px_auto]  opacity-[20] gap-4 animate-pulse">
+        <div className="bg-theme-accent-opaque rounded-lg"></div>
+        <div className="bg-theme-accent-opaque rounded-lg w-[70%] "></div>
+        <div className="grid grid-rows-[25px_25px] gap-3">
+          <div className="flex items-center justify-between ">
+            <div className="bg-theme-accent-opaque min-w-[90px] h-full rounded-lg"></div>
+            <div className="bg-theme-accent-opaque min-w-[150px] h-full rounded-lg"></div>
           </div>
+          <div className="bg-theme-accent-opaque min-w-[150px] h-full rounded-lg"></div>
         </div>
+      </div>
+      <div className="rounded-md grid grid-rows-4 gap-6  mt-8">
+        <div className="bg-theme-accent-opaque opacity-20 animate-pulse rounded-lg"></div>
+        <div className="bg-theme-accent-opaque opacity-20 animate-pulse rounded-lg"></div>
+        <div className="bg-theme-accent-opaque opacity-20 min-h-[120px] animate-pulse rounded-lg"></div>
+        <div className="bg-theme-accent-opaque opacity-20 animate-pulse rounded-lg"></div>
       </div>
     </div>
   );

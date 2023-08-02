@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { PortableText } from "@portabletext/react";
 import { useEffect } from "react";
 import Prism from "prismjs";
@@ -19,6 +19,6 @@ export default function PortableBody({ value }: Props) {
     Prism.highlightAll();
   }, []);
   return (
-        <PortableText value={value} components={components} />
+    <PortableText value={value} components={components} />
   );
 }

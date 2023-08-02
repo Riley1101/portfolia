@@ -4,14 +4,13 @@ type Props = {
   title: string;
   description: string;
   categories?: string[];
-  mainImage: string;
   releasedAt: string;
 };
 
 function Hero(props: Props) {
   return (
     <div className="py-8">
-      <h1 className="text-3xl leading-[1.2] lg:leading-[1.1] font-bold text-white lg:text-5xl">
+      <h1 className="  font-bold text-white title">
         {props.title}
       </h1>
       <div className="flex items-center justify-between">

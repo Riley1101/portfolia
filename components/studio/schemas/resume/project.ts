@@ -12,12 +12,18 @@ export default defineType({
     }),
     defineField({
       name: "title",
-      title: "title",
+      title: "Title",
       type: "string",
     }),
     defineField({
+      name: "pinned",
+      title: "Pinned",
+      type: "boolean",
+      initialValue: false,
+    }),
+    defineField({
       name: "description",
-      title: "description",
+      title: "Description",
       type: "string",
     }),
     defineField({
@@ -27,7 +33,7 @@ export default defineType({
     }),
     defineField({
       name: "slug",
-      title: "slug",
+      title: "Slug",
       type: "slug",
       options: {
         source: "title",
@@ -39,6 +45,26 @@ export default defineType({
       title: "Technologies",
       type: "array",
       of: [{ type: "string" }],
+    }),
+
+    defineField({
+        name: "language",
+        title: "Language",
+        type: "string",
+        options: {
+            list: [
+                'TypeScript',
+                'JavaScript',
+                'Rust',
+                'Python',
+                'Svelte',
+                'React',
+                'AWS',
+                'Docker',
+                'Next.js',
+                'Solid',
+            ]
+        },
     }),
     defineField({
       name: "body",

@@ -14,11 +14,20 @@ const hero = {
     "Some of the code snippets that I came across in my explore or the internet !",
 };
 
-export const metadata : Metadata = {
-  title:  "Snippets",
-  openGraph: getOpenGraph("/images/snippets.png","Snippets | " + metaData.title, metaData.description, new URL("/snippets", metaData.url)),
-  twitter:getTwitterCard("/images/snippets.png","Snippets | " + metaData.title, metaData.description),
-}
+export const metadata: Metadata = {
+  title: "Snippets",
+  openGraph: getOpenGraph(
+    "/images/snippets.png",
+    "Snippets | " + metaData.title,
+    metaData.description,
+    new URL("/snippets", metaData.url)
+  ),
+  twitter: getTwitterCard(
+    "/images/snippets.png",
+    "Snippets | " + metaData.title,
+    metaData.description
+  ),
+};
 async function ArticlePage() {
   let query = `
 *[_type=='snippet'] | order(releasedAt desc)  {
@@ -33,12 +42,14 @@ async function ArticlePage() {
   const raw_data: ArticlCardType[] = await client.fetch(query);
   return (
     <div className="page-container">
-      <Hero
-        title={hero.title}
-        description={hero.description}
-        subtitle={hero.subtitle}
-      />
-      <SnippetTimeLine data={raw_data} />
+      <div>
+        <Hero
+          title={hero.title}
+          description={hero.description}
+          subtitle={hero.subtitle}
+        />
+        <SnippetTimeLine data={raw_data} />
+      </div>
     </div>
   );
 }

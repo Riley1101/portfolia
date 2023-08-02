@@ -1,3 +1,5 @@
+import type { SanityImage } from "./sanity-image";
+
 interface ArticlCardType {
   title: string;
   description: string;
@@ -6,6 +8,7 @@ interface ArticlCardType {
   categories?: string[];
   mainImage?: any;
 }
+
 interface ArticleDetailType {
   title: string;
   description: string;
@@ -19,7 +22,7 @@ interface ArticleDetailType {
     description: string;
     slug: string;
     _id: string;
-    mainImage: string;
+    mainImage: SanityImage;
   }[]
 }
 
@@ -44,7 +47,13 @@ interface SnippetDetailType {
   };
   mainImage: string;
 }
+
+interface Category{
+    title:string;
+    _id:string;
+}
 export type {
+    Category,
   ArticlCardType,
   ArticleDetailType,
   SnippetDetailType,

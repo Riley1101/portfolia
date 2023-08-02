@@ -4,10 +4,13 @@
 
 @layer utilities {
   .page-container {
-    @apply w-full md:max-w-[1140px] lg:max-w-[800px];
+    @apply w-full grid  grid-cols-1 lg:grid-cols-[2.5fr_1fr] md:max-w-[800px] lg:max-w-[1140px];
   }
   .glass-box {
-      @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.1];
+    @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.1];
+  }
+  .title {
+    font-size: clamp(2.5rem, 5vw, 3rem);
   }
 }
 ::-moz-selection {

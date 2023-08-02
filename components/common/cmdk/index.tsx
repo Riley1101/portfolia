@@ -20,12 +20,10 @@ const CommandMenu = () => {
     () =>
       createAutocomplete({
         onStateChange({ state }) {
-          // (2) Synchronize the Autocomplete state with the React state.
           setAutocompleteState(state);
         },
         getSources() {
           return [
-
             {
               sourceId: "articles",
               getItemInputValue({ item }) {
@@ -66,7 +64,6 @@ const CommandMenu = () => {
                 return item.url;
               },
             },
-
           ];
         },
       }),
@@ -101,7 +98,7 @@ const CommandMenu = () => {
           <div
             onClick={(e) => e.stopPropagation()}
             {...autocomplete.getRootProps({})}
-            className="relative gradient-box rounded-lg  bg-theme-bg  lg:w-[600px] min-h-[400px] md:w-[600px] w-[300px]  px-4 "
+            className="relative gradient-box rounded-lg  bg-[#121212] lg:w-[600px] min-h-[400px] md:w-[600px] w-[300px]  px-4 "
           >
             <div className="flex items-center px-4 mt-4 border-b rounded-md border-opacity-30 group border-theme-accent hover:from-theme-accent-opaque bg-gradient-to-l">
               <MagnifyingGlassIcon className="w-6 h-6 group-focus-within:text-theme-accent group" />
@@ -194,7 +191,7 @@ const CommandMenu = () => {
         }}
         type="text"
         placeholder="Search | Ctrl + /"
-        className="px-4 py-2 pt-3 bg-transparent border border-gray-800 rounded-md outline-none placeholder:text-sm placeholder:text-theme-accent"
+        className="w-full px-4 mb-2 py-2 pt-3 bg-transparent border border-theme-accent-opaque rounded-md outline-none placeholder:text-sm placeholder:text-theme-accent"
       />
     </>
   );

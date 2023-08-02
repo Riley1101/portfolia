@@ -6,24 +6,35 @@ import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 const hero = {
   title: "Videos",
   subtitle: "Videos",
-  description: "My playlists on Youtube",
+  description: "My sharing videos on Youtube",
 };
 
-export const metadata : Metadata = {
-  title:  "Videos",
-  openGraph: getOpenGraph("/images/videos.png","Videos | " + metaData.title, metaData.description, new URL("/videos", metaData.url)),
-  twitter:getTwitterCard("/images/videos.png","Videos | " + metaData.title, metaData.description),
-}
+export const metadata: Metadata = {
+  title: "Videos",
+  openGraph: getOpenGraph(
+    "/images/videos.png",
+    "Videos | " + metaData.title,
+    metaData.description,
+    new URL("/videos", metaData.url)
+  ),
+  twitter: getTwitterCard(
+    "/images/videos.png",
+    "Videos | " + metaData.title,
+    metaData.description
+  ),
+};
 function VideoPage() {
   return (
     <div className="page-container">
-      <Hero
-        title={hero.title}
-        description={hero.description}
-        subtitle={hero.subtitle}
-      />
+      <div>
+        <Hero
+          title={hero.title}
+          description={hero.description}
+          subtitle={hero.subtitle}
+        />
 
-      <VideoTimeLine />
+        <VideoTimeLine />
+      </div>
     </div>
   );
 }

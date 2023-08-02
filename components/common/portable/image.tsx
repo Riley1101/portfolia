@@ -1,17 +1,13 @@
-import Image from "next/image";
-import urlBuilder from "@sanity/image-url";
-import client from "@/utils/client";
+import SanityImage from "../sanity-image";
 function NextImage(props: any) {
   const { value, alt } = props;
-  const url = urlBuilder(client).image(value).url();
+  console.log(props)
   return (
-    <Image
-      src={url}
+    <SanityImage
+      image={value}
       className={"mx-auto object-cover rounded-md my-8 w-full overflow-hidden "}
-      width={1500}
-      height={843}
-      alt={alt}
-    ></Image>
+      alt={alt || "article image"}
+    ></SanityImage>
   );
 }
 export default NextImage;

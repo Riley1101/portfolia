@@ -73,21 +73,24 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <head />
       <body className="overflow-hidden">
-        <div className="grid  w-full max-h-screen  grid-cols-1 gird-rows-2 md:grid-cols-[5%_auto_5%]  lg:grid-cols-[15%_auto] overflow-hidden font-theme bg-theme-bg ">
+        <div className="w-full overflow-hidden md:px-[10%] lg:pr-[0%] max-h-screen  bg-[#33161600]">
           <Header />
           <div
-            className=" row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
-          lg:grid-cols-[200px_auto_200px] xl:grid-cols-[200px_auto_200px]  w-full   text-theme-body overflow-hidden "
+            className="row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
+          lg:grid-cols-[200px_auto] xl:grid-cols-[200px_auto] w-full text-theme-body overflow-hidden"
           >
-            <NavAside />
+            <div className="hidden lg:block">
+              <NavAside />
+            </div>
             <main
               id="main"
-              className="h-screen scroll-mt-1 z-[10] col-start-2 pt-[6em] p-4   overflow-hidden overflow-y-scroll  md:p-4 lg:p-12 md:pt-[6em]"
+              className="h-screen scroll-mt-1 z-[10]  pt-[6em] p-4 overflow-y-scroll md:p-0 lg:p-12 md:pt-[6em]"
             >
-              <div className="mt-4 md:my-12">{children}</div>
+              <div className="mt-4 mb-4 flex flex-col w-full md:my-12">
+                {children}
+              </div>
             </main>
           </div>
-
           <GradientMesh />
         </div>
         <AnalyticsWrapper />

@@ -16,12 +16,23 @@ const query = `
   releasedAt,
   description,
   'categories':categories[]->title,
-  'mainImage':mainImage.asset->{url}.url,
-  body,
+  body[]{
+    ..., 
+    asset->{
+      metadata,
+      "_type":"reference",
+      "_ref": _id
+    }
+  },
   "related": *[_type == "article" && _id != ^._id && count(categories[@._ref in ^.^.categories[]._ref]) > 0] | order(releasedAt desc, _createdAt desc) [0..2] {
      title,
      _id,
-    'mainImage':mainImage.asset->{url}.url,
+    "mainImage":{
+    "asset":{
+        ...mainImage.asset,
+         "metadata":mainImage.asset->metadata
+    },
+    },
      "slug": slug.current,
      description
    }
@@ -65,19 +76,26 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
   });
   if (data === null) return <div>404</div>;
   return (
-    <div className="page-container">
-      <Hero
-        title={data.title}
-        description={data.description}
-        categories={data.categories}
-        mainImage={data.mainImage}
-        releasedAt={data.releasedAt}
-      />
-      <div>
+    <div className="page-container md:gap-4 lg:gap-12">
+      <div className="flex shrink page-left flex-col gap-4">
+        <Hero
+          title={data.title}
+          description={data.description}
+          categories={data.categories}
+          releasedAt={data.releasedAt}
+        />
+        <div className="block lg:hidden">
+          <TableOfContents value={data.body} />
+        </div>
+        <div className="flex flex-col">
+          <PortableBody value={data.body} />
+          <NewsLetter />
+          <Related data={data.related} />
+        </div>
+      </div>
+
+      <div className="hidden min-w-[200px] lg:block pt-24">
         <TableOfContents value={data.body} />
-        <PortableBody value={data.body} />
-        <NewsLetter />
-        <Related data={data.related} />
       </div>
     </div>
   );
