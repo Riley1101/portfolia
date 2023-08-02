@@ -6,7 +6,7 @@ import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 const hero = {
   title: "Videos",
   subtitle: "Videos",
-  description: "My playlists on Youtube",
+  description: "My sharing videos on Youtube",
 };
 
 export const metadata: Metadata = {
