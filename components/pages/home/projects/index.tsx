@@ -16,10 +16,9 @@ async function ProjectsComponent() {
   return (
     <div className="flex flex-col gap-4">
       <p className="text-gray-300 leading-relaxed">
-        Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
-        enim labore culpa sint ad nisi lorem pariatur mollit ex esse enim labore
-        culpa sint ad nisi lorem pariatur mollit ex esse enim labore culpa sint
-        ad nisi lorem pariatur mollit ex esse exercitation amet.
+        Some of the projects I have been working on in my free time involve
+        technologies that interest me or let&apos;s say it&apos;s me trying new
+        things.
       </p>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4">
         {data.map((project) => (

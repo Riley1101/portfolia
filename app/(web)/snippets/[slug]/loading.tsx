@@ -1,8 +1,11 @@
 import { Loader } from "@/components/common/loader";
 export default function Loading() {
   return (
-    <>
-      <Loader />
-    </>
+    <div className="page-container">
+      <div>
+        <Loader />
+      </div>
+      <div></div>
+    </div>
   );
 }

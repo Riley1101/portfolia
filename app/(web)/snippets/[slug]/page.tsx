@@ -55,18 +55,21 @@ async function SnippetDetailPage(props: DetailPageParamTypes) {
   });
   if (data === null) return <div>404</div>;
   return (
-    <div className="page-container">
-      <div>
+    <div className="page-container md:gap-4 lg:gap-12">
+      <div className="flex shrink page-left flex-col gap-4">
         <Hero
           title={data.title}
           description={data.description}
           categories={data.categories}
           releasedAt={data.releasedAt}
         />
-        <CodeBlock
-          value={{ code: data.snippet.code, language: data.snippet.language }}
-        />
+        <div className="flex flex-col">
+          <CodeBlock
+            value={{ code: data.snippet.code, language: data.snippet.language }}
+          />
+        </div>
       </div>
+      <div></div>
     </div>
   );
 }

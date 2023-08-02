@@ -21,8 +21,7 @@ async function LatestPostHome() {
   return (
     <div className="flex flex-col gap-4 @container">
       <p className="my-2 text-md">
-        Here&rsquo;s the latest posts I&rsquo;ve written and published here on
-        my site.
+        Here are the latest posts I have written and published on my site.
       </p>
       <div className="gap-4 grid @md:grid-cols-2">
         {data.posts.map((article, index) => {
