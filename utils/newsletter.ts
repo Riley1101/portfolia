@@ -16,7 +16,6 @@ export async function queryDb<T extends QueryResultRow>(
     client.release();
     return response;
   } catch (e) {
-    console.log(e);
     return null;
   }
 }

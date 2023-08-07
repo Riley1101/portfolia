@@ -13,7 +13,7 @@ const Header = () => {
     <header
       className="bg-gray-900  bg-clip-padding backdrop-filter 
     backdrop-blur-lg bg-opacity-[0.15] border-gray-800 justify-between border-b  flex items-center px-4 md:px-[10%]
-     absolute top-0 left-0 h-[3.5em] z-40 w-full"
+     absolute top-0 left-0 h-[3.5em] z-[99999] w-full"
     >
       <Link href="/" className="font-bold text-theme-body">
         ArkarDev

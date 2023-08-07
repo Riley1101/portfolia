@@ -1,7 +1,6 @@
 import SanityImage from "../sanity-image";
 function NextImage(props: any) {
   const { value, alt } = props;
-  console.log(props)
   return (
     <SanityImage
       image={value}
