@@ -10,7 +10,6 @@ import searchClient from "@/utils/search-client";
 function Hits({ searchState, searchResults }: any) {
   const [autocompleteState, setAutocompleteState] = React.useState({});
   const validQuery = searchState.query?.length >= 3;
-  console.log(autocompleteState)
   const autocomplete = React.useMemo(
     () =>
       createAutocomplete({
