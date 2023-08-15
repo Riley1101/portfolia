@@ -10,7 +10,7 @@ export default function NavModal({ visible, toggle }: Props) {
     return (
       <div
         role="dialog"
-        className="fixed top-0 left-0 grid place-items-center  z-[999] flex w-full h-screen  backdrop-filter backdrop-blur-lg bg-[#121212] bg-opacity-[0.6]"
+        className="fixed top-0 left-0 grid place-items-center  z-[999] w-full h-screen  backdrop-filter backdrop-blur-lg bg-[#121212] bg-opacity-[0.6]"
         onClick={toggle}
       >
         <div

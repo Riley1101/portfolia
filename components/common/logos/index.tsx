@@ -1,4 +1,5 @@
 import svelteIcon from "./svelte.svg";
+import ferrisIcon from "./ferris.svg";
 import Image from "next/image";
 
 import type { Languages } from "@/types/projects";
@@ -21,6 +22,12 @@ export function ReactIcon(props: LogoProps) {
         <ellipse rx="11" ry="4.2" transform="rotate(120)" />
       </g>
     </svg>
+  );
+}
+
+export function FerrisIcon(props: LogoProps) {
+  return (
+    <Image src={ferrisIcon} alt="Rust Logo" className={props.className} />
   );
 }
 
@@ -59,6 +66,8 @@ export function LanguageLogo({ type }: { type: Languages }) {
       return <TypescriptIcon className={className} />;
     case "Svelte":
       return <SvelteIcon className={className} />;
+    case "Rust":
+      return <FerrisIcon className={className} />;
     default:
       return <div>Null</div>;
   }

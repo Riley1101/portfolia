@@ -16,7 +16,7 @@ async function ProjectsComponent() {
   return (
     <div className="flex flex-col gap-4">
       <p className="text-gray-300 leading-relaxed">
-        Some of the projects I have been working on in my free time involve
+        Some of the projects I have been working on this week to involve in
         technologies that interest me or let&apos;s say it&apos;s me trying new
         things.
       </p>
