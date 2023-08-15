@@ -19,7 +19,7 @@ export function ProjectCard({ data }: Props) {
         aspect-square  absolute  translate-x-[-1/2] gradient-one"
       ></div>
       <div
-        className="w-[40px] aspect-square p-2 grid place-items-center aspect-square border rounded-full
+        className="w-[40px] p-2 grid place-items-center aspect-square border rounded-full
       border-theme-accent-opaque group-hover:border-theme-primary-opaque group-hover:rotate-[30deg] transition-all duration-500"
       >
         <LanguageLogo type={data.language} />
