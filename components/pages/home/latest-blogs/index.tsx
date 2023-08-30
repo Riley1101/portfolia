@@ -7,7 +7,7 @@ interface Props {
   posts: ArticlCardType[];
 }
 
-const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..3]  {
+const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..4]  {
   title,
   'slug':slug.current,
   releasedAt,

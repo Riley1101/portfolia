@@ -34,7 +34,7 @@ export default function HomeBlogCard({
       ref={container}
       onMouseMove={handleMouseMove}
       href={`/articles/${slug}`}
-      className="relative md:brightness-75 md:hover:brightness-100 overflow-hidden flex flex-col gap-2 p-4 transition-all duration-500 rounded-md border
+      className="relative  md:brightness-75 md:hover:brightness-100 overflow-hidden flex flex-col gap-2 p-4 transition-all duration-500 rounded-md border
 hover:bg-gradient-to-r hover:from-theme-accent-opaque  border-theme-accent border-opacity-10 hover:border-opacity-20"
     >
       <div
