@@ -2,8 +2,7 @@ export const revalidate = 60;
 import { GithubFeed } from "@/components/pages/home/github";
 import Image from "next/image";
 import Hero from "@/components/pages/hero";
-import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
-import type { Metadata } from "next";
+import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata"; import type { Metadata } from "next";
 
 const hero = {
   title: "About",
