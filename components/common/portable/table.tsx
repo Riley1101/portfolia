@@ -20,10 +20,8 @@ export function TableBlock({ value }: Props) {
   let head = rows[0];
   let body = rows.slice(1);
   return (
-    <div className="overflow-x-auto w-full">
-      <table
-        className="table-auto text-left my-6 w-full transition-all duration-300 overflow-x-scroll rounded-md p-4 border-spacing-2 bg-theme-accent-opaque "
-      >
+    <div className="overflow-x-auto max-w-[700px]">
+      <table className="table-auto text-left my-6 max-w-max transition-all duration-300 overflow-x-scroll rounded-md p-4 border-spacing-2 bg-theme-accent-opaque ">
         <thead>
           <tr>
             {head?.cells.map((cell) => (
@@ -40,8 +38,9 @@ export function TableBlock({ value }: Props) {
           {body?.map((row) => (
             <tr key={row._key}>
               {row.cells.map((cell) => (
-                <td key={cell} 
-                className="p-4 font-bold cursor-pointer hover:text-theme-accent min-w-[200px]"
+                <td
+                  key={cell}
+                  className="p-4 font-bold cursor-pointer hover:text-theme-accent min-w-[200px]"
                 >
                   {cell}
                 </td>
