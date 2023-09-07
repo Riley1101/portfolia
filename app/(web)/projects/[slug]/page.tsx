@@ -64,6 +64,8 @@ async function ProjectDetailPage(props: DetailPageParamTypes) {
           <TableOfContents value={data.body} />
         </div>
         <div className="flex flex-col">
+
+          {/* @ts-expect-error Server Component */}
           <PortableBody value={data.body} />
         </div>
       </div>

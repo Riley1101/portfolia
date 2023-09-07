@@ -1,7 +1,5 @@
-"use client";
-import { useEffect } from "react";
-import CodeBlock from "@/components/common/portable/code";
-import Prism from "prismjs";
+import { Code } from "bright";
+import theme from "./theme.json";
 
 type Props = {
   value: {
@@ -9,15 +7,13 @@ type Props = {
     language: string;
   };
 };
+Code.theme = theme;
 
-require("prismjs/components/prism-javascript");
-require("prismjs/components/prism-typescript");
-require("prismjs/components/prism-css");
-require("prismjs/components/prism-jsx");
-require("prismjs/components/prism-python");
-export default function SnippetCodeBlock({ value }: Props) {
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
-  return <CodeBlock value={{ code: value.code, language: value.language }} />;
+export default async function CodeBlock({ value }: Props) {
+  return (
+    /* @ts-expect-error Server Component */
+    <Code lang={value.language} className="bg-transparent" lineNumbers>
+      {value.code}
+    </Code>
+  );
 }

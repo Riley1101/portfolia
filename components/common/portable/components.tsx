@@ -14,10 +14,8 @@ const components: PortableTextComponents = {
   marks: {
     latex: (props: any) => {
       return (
-        <span  className="mx-2 text-theme-accent text-[14px]">
-          <InlineMath>
-            {props.text}
-          </InlineMath>
+        <span className="mx-2 text-theme-accent text-[14px]">
+          <InlineMath>{props.text}</InlineMath>
         </span>
       );
     },
@@ -25,7 +23,9 @@ const components: PortableTextComponents = {
       <em className="italic text-theme-accent underline ">{children}</em>
     ),
     strong: ({ children }) => (
-      <strong className="text-theme-accent font-mono text-[14px]">{children}</strong>
+      <strong className="text-theme-accent font-mono text-[14px]">
+        {children}
+      </strong>
     ),
     code: ({ children }) => (
       <code className="bg-theme-primary-opaque p-2 text-[12px] rounded-md">
@@ -48,6 +48,7 @@ const components: PortableTextComponents = {
     },
   },
   types: {
+    /* @ts-expect-error Server Component */
     code: CodeBlock,
     image: NextImage,
     latex: KatexBlock,

@@ -63,7 +63,7 @@ export async function generateMetadata({
       data?.mainImage,
       data?.title,
       data.description,
-      new URL(`/snippets/${data?.slug}`, metaData?.url)
+      new URL(`/snippets/${data?.slug}`, metaData?.url),
     ),
     twitter: getTwitterCard(data?.mainImage, data.title, data.description),
   };
@@ -88,6 +88,7 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
           <TableOfContents value={data.body} />
         </div>
         <div className="flex flex-col">
+          {/* @ts-expect-error Server Component */}
           <PortableBody value={data.body} />
           <NewsLetter />
           <Related data={data.related} />

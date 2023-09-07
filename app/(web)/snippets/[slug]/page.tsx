@@ -43,7 +43,7 @@ export async function generateMetadata({
       data?.mainImage,
       data.title,
       data.description,
-      new URL(`/snippets/${data?.slug}`, metaData?.url)
+      new URL(`/snippets/${data?.slug}`, metaData?.url),
     ),
     twitter: getTwitterCard(data?.mainImage, data.title, data.description),
   };
@@ -64,6 +64,7 @@ async function SnippetDetailPage(props: DetailPageParamTypes) {
           releasedAt={data.releasedAt}
         />
         <div className="flex flex-col">
+          {/* @ts-expect-error Server Component */}
           <CodeBlock
             value={{ code: data.snippet.code, language: data.snippet.language }}
           />
