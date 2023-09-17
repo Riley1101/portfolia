@@ -35,7 +35,7 @@ function CodeBlock(props: {
   return (
     <div
       className={cx(
-        "block grid my-6 transition-all duration-300 border relative border-transparent rounded-md bg-[#f056c705] bg-gradient-to-r ",
+        " max-h-auto grid transition-all my-6 overflow-y-hidden duration-300 border relative border-transparent rounded-md bg-[#f056c705] bg-gradient-to-r ",
         {
           "max-h-[200px] overflow-y-hidden": collapse,
         },
