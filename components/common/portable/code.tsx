@@ -38,7 +38,7 @@ function CodeBlock(props: {
         "block grid my-6 transition-all duration-300 border relative border-transparent rounded-md bg-[#f056c705] bg-gradient-to-r ",
         {
           "max-h-[200px] overflow-y-hidden": collapse,
-        }
+        },
       )}
     >
       <pre className={`command-line bg-transparent language-${value.language}`}>
@@ -50,7 +50,7 @@ function CodeBlock(props: {
         onClick={handleCollapse}
         className={cx(
           "bottom-0 right-0 w-full p-2 glass-box grid place-items-center",
-          { absolute: collapse }
+          { absolute: collapse },
         )}
       >
         {!collapse ? (

@@ -1,14 +1,14 @@
 export const revalidate = 60;
-import { GithubFeed } from "@/components/pages/home/github";
 import Image from "next/image";
+import { NewsLetter } from "@/components/common/newsletter";
 import Hero from "@/components/pages/hero";
-import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata"; import type { Metadata } from "next";
+import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
+import type { Metadata } from "next";
 
 const hero = {
   title: "About",
   subtitle: "Arkar Kaung Myat",
-  description:
-    "I’m an inspiring full-stack engineer. I do Web development as a developer, and love teaching and sharing about technology, computer science and design.",
+  description: "",
 };
 
 export const metadata: Metadata = {
@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     "/images/arkar.png",
     "About | " + metaData.title,
     metaData.description,
-    new URL("/about", metaData.url)
+    new URL("/about", metaData.url),
   ),
   twitter: getTwitterCard(
     "/images/arkar.png",
     "About | " + metaData.title,
-    metaData.description
+    metaData.description,
   ),
 };
 
@@ -45,19 +45,22 @@ function AboutPage() {
               width={800}
               height={600}
             />
-            I am a web developer with a passion for building amazing things. I
-            have 4 years of experience in web development. I have been working
-            on web development projects for the past few years.
-            <br />I love building web and building things that are{" "}
-            <span className="relative place-items-center  max-w-max inline-grid text-xl text-theme-accent cursor-pointer">
-              Blazingly
-            </span>{" "}
-            fast.
+            An inspiring software engineer, Coding with a strong passion for
+            design and computer science, I enjoy creating amazing things and
+            building blazingly-fast websites.
+            <br />
+            Currently working mostly with Typescript, React, and Svelte, as well
+            as other JavaScript technologies for now. Here in my blog, I mostly
+            write about my experiences and share my thoughts on various topics
+            related to software engineering.
+            <br />
+            Over the past years, I have written content for my blog and
+            newsletter. I strive to keep things simple by writing about
+            technologies that interest me at the time, as well as how I am
+            learning and growing in my career.
           </p>
         </div>
-        <div className="py-4 md:py-8 grid grid-cols-1 md:grid-cols-2 gap-2">
-          <GithubFeed />
-        </div>
+        <NewsLetter />
       </div>
     </div>
   );

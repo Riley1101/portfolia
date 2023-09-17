@@ -4,6 +4,7 @@ import React from "react";
 import {
   HomeIcon,
   PencilIcon,
+  UserIcon,
   CodeBracketIcon,
   PlayIcon,
 } from "@heroicons/react/20/solid";
@@ -29,6 +30,12 @@ export const navs: Nav[] = [
     icon: <HomeIcon className="w-5 h-5 " />,
   },
   {
+    id: 1,
+    name: "About",
+    href: "/about",
+    icon: <UserIcon className="w-5 h-5 " />,
+  },
+  {
     id: 2,
     name: "Articles",
     href: "/articles",
@@ -40,7 +47,6 @@ export const navs: Nav[] = [
     href: "/snippets",
     icon: <CodeBracketIcon className="w-5 h-5 " />,
   },
-
   {
     id: 5,
     name: "Videos",
@@ -79,7 +85,7 @@ function NavASide() {
   return (
     <nav
       className={cx(
-        "z-[20] transition-all flex-col pt-0 lg:pt-[8em] col-start-1 gap-4 lg:pointer-events-auto lg:flex"
+        "z-[20] transition-all flex-col pt-0 lg:pt-[8em] col-start-1 gap-4 lg:pointer-events-auto lg:flex",
       )}
     >
       <div className="hidden lg:block">

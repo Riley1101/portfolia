@@ -1,6 +1,6 @@
 export interface VideoCardType {
   id: string;
-  kind : string;
+  kind: string;
   etag: string;
   snippet: {
     publishedAt: string;
@@ -8,8 +8,21 @@ export interface VideoCardType {
     description: string;
     preview: string;
     href: string;
+    thumbnails: Thumbnail;
   };
 }
+
+type Thumbnail = {
+  standard: {
+    url: string;
+  };
+  medium: {
+    url: string;
+  };
+  high: {
+    url: string;
+  };
+};
 
 export interface VideoAPIType {
   kind: string;

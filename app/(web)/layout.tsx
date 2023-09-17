@@ -50,12 +50,12 @@ export const metadata: Metadata = {
     "/images/arkar.png",
     metaData.title,
     metaData.description,
-    metaData.url
+    metaData.url,
   ),
   twitter: getTwitterCard(
     "/images/arkar.png",
     metaData.title,
-    metaData.description
+    metaData.description,
   ),
 };
 

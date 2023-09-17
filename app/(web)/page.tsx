@@ -1,7 +1,6 @@
 export const revalidate = 60;
 
 import LatestPostHome from "@/components/pages/home/latest-blogs";
-import { GithubFeed } from "@/components/pages/home/github";
 import type { Metadata } from "next";
 import { Intro } from "@/components/pages/home/intro";
 import { NewsLetter } from "@/components/common/newsletter";
@@ -19,9 +18,6 @@ export default async function Home() {
         <LatestPostHome />
         <Projects />
         <NewsLetter />
-        <div className="max-w-[370px]">
-        <GithubFeed />
-        </div>
       </div>
     </div>
   );

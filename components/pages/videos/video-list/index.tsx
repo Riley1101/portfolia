@@ -8,13 +8,18 @@ const VideoTimeLine = async () => {
     {
       //@ts-ignore
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_YT_API}`,
-    }
+    },
   ).then((res) => res.json());
   return (
-    <div className="grid gap-4 mt-4 grid-col-1">
-      {data.items.map((item) => (
-        <VideoCard data={item} key={item.id} />
-      ))}
+    <div className="@container">
+      <div
+        className="relative grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))]
+       grid-flow-dense gap-4 md:gap-6"
+      >
+        {data.items.map((item) => (
+          <VideoCard data={item} key={item.id} />
+        ))}
+      </div>
     </div>
   );
 };

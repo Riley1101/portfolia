@@ -6,7 +6,7 @@ import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 const hero = {
   title: "Videos",
   subtitle: "Videos",
-  description: "My sharing videos on Youtube",
+  description: "My sharing videos on Youtube.",
 };
 
 export const metadata: Metadata = {
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "/images/videos.png",
     "Videos | " + metaData.title,
     metaData.description,
-    new URL("/videos", metaData.url)
+    new URL("/videos", metaData.url),
   ),
   twitter: getTwitterCard(
     "/images/videos.png",
     "Videos | " + metaData.title,
-    metaData.description
+    metaData.description,
   ),
 };
 function VideoPage() {
