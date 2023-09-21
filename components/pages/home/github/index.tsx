@@ -17,7 +17,7 @@ import asyncComponent from "@/utils/async-component";
 function WatchEventCard(data: WatchEvent) {
   const { created_at, payload, repo } = data;
   return (
-    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
+    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 bg-theme-accent-opaque">
       <span className="text-sm text-theme-accent">
         {dateFormat(created_at, "mmm dd yyyy HH:MM")}
       </span>

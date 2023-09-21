@@ -41,7 +41,7 @@ export async function generateMetadata({
       data?.mainImage,
       data?.title,
       data.description,
-      new URL(`/projects/${data?.slug}`, metaData?.url)
+      new URL(`/projects/${data?.slug}`, metaData?.url),
     ),
     twitter: getTwitterCard(data?.mainImage, data.title, data.description),
   };
