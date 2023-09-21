@@ -1,7 +1,7 @@
 export const revalidate = 60;
 import Image from "next/image";
-import { NewsLetter } from "@/components/common/newsletter";
 import Hero from "@/components/pages/hero";
+import { GithubFeed } from "@/components/pages/home/github";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import type { Metadata } from "next";
 
@@ -60,7 +60,11 @@ function AboutPage() {
             learning and growing in my career.
           </p>
         </div>
-        <NewsLetter />
+        <div className="flex flex-col gap-4">
+          <div className="md:max-w-[370px]">
+            <GithubFeed />
+          </div>
+        </div>
       </div>
     </div>
   );
