@@ -5,7 +5,7 @@ import asyncComponent from "@/utils/async-component";
 import client from "@/utils/client";
 
 const query = `
-    *[_type=='project' && pinned==true][0..2]{
+    *[_type=='project' && pinned==true][0..6]{
             ...,
             "slug": slug.current
         }
