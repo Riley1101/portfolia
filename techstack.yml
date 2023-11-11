@@ -1,0 +1,448 @@
+repo_name: Riley1101/portfolia
+report_id: 4b97cf0f46feafbfe3a89d704f6ff22f
+repo_type: Public
+timestamp: '2023-11-11T17:14:27+00:00'
+requested_by: Riley1101
+provider: github
+branch: main
+detected_tools_count: 34
+tools:
+- name: CSS 3
+  description: The latest evolution of the Cascading Style Sheets language
+  website_url: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source: Repo Metadata
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source: Repo Metadata
+- name: TypeScript
+  description: A superset of JavaScript that compiles to clean JavaScript output
+  website_url: http://www.typescriptlang.org
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1612/bynNY5dJ.jpg
+  detection_source: Repo Metadata
+- name: Autoprefixer
+  description: PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
+  website_url: https://github.com/postcss/autoprefixer
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/2202/72d087642cfce6fef6f2dabec5bf49e8_400x400.png
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: Chart.js
+  description: Simple, clean and engaging charts for designers and developers
+  website_url: http://www.chartjs.org/
+  version: 4.4.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript Utilities & Libraries
+  image_url: https://img.stackshare.io/service/3866/_GD1-XrU_400x400.jpg
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-09-21 20:02:51.000000000 Z
+- name: Next.js
+  description: 'A small framework for server-rendered universal JavaScript apps '
+  website_url: https://nextjs.org/
+  version: 14.0.1
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/5936/nextjs.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-09-21 20:02:51.000000000 Z
+- name: Node.js
+  description: A platform built on Chrome's JavaScript runtime for easily building
+    fast, scalable network applications
+  website_url: http://nodejs.org/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Frameworks (Full Stack)
+  image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
+  detection_source: package.json
+  last_updated_by: Arkar Kaung Myat
+  last_updated_on: 2022-11-27 05:04:50.000000000 Z
+- name: React
+  description: A JavaScript library for building user interfaces
+  website_url: https://reactjs.org/
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript UI Libraries
+  image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: styled-components
+  description: Visual primitives for the component age. Use the best bits of ES6 and
+    CSS to style your apps without stress.
+  website_url: https://styled-components.com
+  version: 5.3.11
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: JavaScript Framework Components
+  image_url: https://img.stackshare.io/service/6749/styled-components.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: ESLint
+  description: The fully pluggable JavaScript code quality tool
+  website_url: http://eslint.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Code Review
+  image_url: https://img.stackshare.io/service/3337/Q4L7Jncy.jpg
+  detection_source: package.json
+  last_updated_by: Arkar Kaung Myat
+  last_updated_on: 2022-11-27 05:04:50.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
+- name: GitHub Actions
+  description: Automate your workflow from idea to production
+  website_url: https://github.com/features/actions
+  open_source: false
+  hosted_saas: true
+  category: Build, Test, Deploy
+  sub_category: Continuous Integration
+  image_url: https://img.stackshare.io/service/11563/actions.png
+  detection_source: ".github/workflows/production.yaml"
+  last_updated_by: Riley1101
+  last_updated_on: 2023-05-23 19:53:22.000000000 Z
+- name: Jest
+  description: Painless JavaScript Unit Testing
+  website_url: http://facebook.github.io/jest/
+  version: 29.7.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Javascript Testing Framework
+  image_url: https://img.stackshare.io/service/830/jest.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Arkar Kaung Myat
+  last_updated_on: 2022-11-27 05:04:50.000000000 Z
+- name: Octokit
+  description: GitHub API Client Library for .NET
+  website_url: https://github.com/octokit/octokit.net
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Tools for GitHub
+  image_url: https://img.stackshare.io/service/9827/octokit-dotnet_2.png
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-08-30 15:53:59.000000000 Z
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source: package.json
+  last_updated_by: Arkar Kaung Myat
+  last_updated_on: 2022-11-27 05:04:50.000000000 Z
+- name: Algolia
+  description: Developer-friendly API and complete set of tools for building search
+  website_url: https://www.algolia.com/?utm_source=stackshare&utm_medium=referral
+  version: 4.20.0
+  open_source: false
+  hosted_saas: true
+  category: Application Utilities
+  sub_category: Search as a Service
+  image_url: https://img.stackshare.io/service/589/default_452afb716f8f4b904f267638e5c6b9172f9fa06d.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: Prism
+  description: An extensible syntax highlighter, built with modern web standards
+  website_url: https://prismjs.com/
+  version: 1.29.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Javascript Utilities & Libraries
+  image_url: https://img.stackshare.io/service/10010/Screen_Shot_2012-07-31_at_21.57.03__400x400.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: three.js
+  description: A JavaScript 3D library
+  website_url: https://threejs.org/
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Game Development
+  image_url: https://img.stackshare.io/service/5883/preview.png
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: "@testing-library/jest-dom"
+  description: Custom jest matchers to test the state of the DOM
+  package_url: https://www.npmjs.com/@testing-library/jest-dom
+  version: 5.17.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17424/default_1cdcda15ebb7caed879f8340bc212b44c4ec9dac.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: "@testing-library/react"
+  description: Simple and complete React DOM testing utilities that encourage good
+    testing practices
+  package_url: https://www.npmjs.com/@testing-library/react
+  version: 14.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16549/default_d522554c6a41cb28d922d6d3ad32ad4afa0e3bb5.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: "@types/jest"
+  description: TypeScript definitions for Jest
+  package_url: https://www.npmjs.com/@types/jest
+  version: 29.5.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15840/default_004658cda9b38934f2871435e9dc15608c86e8be.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: "@types/node"
+  description: TypeScript definitions for Node.js
+  package_url: https://www.npmjs.com/@types/node
+  version: 18.11.18
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15809/default_5e5e8ac63beda29f31f1844df64d4b8247570a66.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: "@types/react"
+  description: TypeScript definitions for React
+  package_url: https://www.npmjs.com/@types/react
+  version: 18.0.27
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15894/default_1d65e37e65b7f80761374f0202776043277d505d.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: "@types/react-dom"
+  description: TypeScript definitions for React
+  package_url: https://www.npmjs.com/@types/react-dom
+  version: 18.0.10
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15946/default_54b691c123fc8979741e800e4dcd3936c0f3b246.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: algoliasearch
+  description: A fully-featured and blazing-fast JavaScript API client to interact
+    with Algolia API
+  package_url: https://www.npmjs.com/algoliasearch
+  version: 4.20.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17074/default_5b9eca95ab3651165eb280ed5e0bc9a9382ad24d.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: classnames
+  description: A simple utility for conditionally joining classNames together
+  package_url: https://www.npmjs.com/classnames
+  version: 2.3.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15942/default_4040fefea2f98006727f63d042275b96a275ab2d.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-04-07 18:52:25.000000000 Z
+- name: dateformat
+  description: A node.js package for Steven Levithan's excellent dateFormat
+  package_url: https://www.npmjs.com/dateformat
+  version: 5.0.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16480/default_55f3303d620c93eecbee69c43373d484f2be492f.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Arkar Kaung Myat
+  last_updated_on: 2023-05-22 21:41:31.000000000 Z
+- name: form-data
+  description: A library to create readable "multipart/form-data" streams
+  package_url: https://www.npmjs.com/form-data
+  version: 4.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16415/default_aa91da3cee4d961f0eea8ca5de77f399ec7ec794.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Arkar Kaung Myat
+  last_updated_on: 2023-05-22 21:41:31.000000000 Z
+- name: html-to-text
+  description: Advanced html to plain text converter
+  package_url: https://www.npmjs.com/html-to-text
+  version: 9.0.5
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18417/default_866295ec9b57ad977c956d0fed2e144aaca6c4a0.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-09-17 14:54:07.000000000 Z
+- name: jest-environment-jsdom
+  description: Delightful JavaScript Testing
+  package_url: https://www.npmjs.com/jest-environment-jsdom
+  version: 29.7.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18413/default_867ef7396016341fd213fa568d6de11cc98fefff.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-09-17 14:54:07.000000000 Z
+- name: postcss
+  description: Tool for transforming styles with JS plugins
+  package_url: https://www.npmjs.com/postcss
+  version: 8.4.31
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16012/default_7a88bebb451873cc63bd99007de5bd3bb8ef85de.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: prismjs
+  description: Lightweight, robust, elegant syntax highlighting
+  package_url: https://www.npmjs.com/prismjs
+  version: 1.29.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16351/default_4cc3f31b8c64a6268fc123f0965a09d1b11180af.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: react-dom
+  description: React package for working with the DOM
+  package_url: https://www.npmjs.com/react-dom
+  version: 18.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+- name: tailwindcss
+  description: A utility-first CSS framework for rapidly building custom user interfaces
+  package_url: https://www.npmjs.com/tailwindcss
+  version: 3.3.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/17398/default_2cd7ed1c123f2fca074a6f4b16c4e73d5bfe82be.png
+  detection_source_url: package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-09-17 14:54:07.000000000 Z
