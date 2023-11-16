@@ -88,10 +88,10 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="ml-12 space-y-2 list-disc">{children}</ul>
+      <ul className="ml-12 space-y-2 list-disc leading-loose">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="ml-12 space-y-2 list-decimal">{children}</ol>
+      <ol className="ml-12 space-y-2 list-decimal leading-loose">{children}</ol>
     ),
   },
 };
