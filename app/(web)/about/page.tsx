@@ -39,7 +39,7 @@ function AboutPage() {
         <div className="flex flex-col gap-6 mb-4 ">
           <p className="leading-[2.5] text-gray-200 text-lg">
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile.png"
               alt="My profile"
               className="object-cover float-none md:float-left  w-[200px] rounded-full aspect-square m-8"
               width={800}
