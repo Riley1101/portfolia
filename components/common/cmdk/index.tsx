@@ -67,7 +67,7 @@ const CommandMenu = () => {
           ];
         },
       }),
-    []
+    [],
   );
 
   useHotkeys(
@@ -75,7 +75,7 @@ const CommandMenu = () => {
     () => {
       setOpen((prev) => !prev);
     },
-    { preventDefault: true }
+    { preventDefault: true },
   );
 
   useEffect(() => {
@@ -93,7 +93,7 @@ const CommandMenu = () => {
       {open && (
         <div
           onClick={handleClose}
-          className="fixed top-0 left-0 grid w-full h-screen isolate z-[999] text-theme-accent place-items-center backdrop-filter backdrop-blur-lg"
+          className="fixed top-0 left-0 grid w-full h-screen isolate z-[999] text-accent place-items-center backdrop-filter backdrop-blur-lg"
         >
           <div
             onClick={(e) => e.stopPropagation()}
@@ -185,6 +185,7 @@ const CommandMenu = () => {
           </div>
         </div>
       )}
+      {/**
       <input
         onClick={() => {
           setOpen(true);
@@ -193,6 +194,7 @@ const CommandMenu = () => {
         placeholder="Search | Ctrl + /"
         className="w-full px-4 mb-2 py-2 pt-3 bg-transparent border border-theme-accent-opaque rounded-md outline-none placeholder:text-sm placeholder:text-theme-accent"
       />
+    */}
     </>
   );
 };

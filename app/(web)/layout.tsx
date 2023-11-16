@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     { name: "Arkar Dev", url: "https://arkar.space" },
     { name: "ArkarDev", url: "https://arkar.space" },
   ],
-  colorScheme: "dark",
   creator: metaData.title,
   publisher: metaData.title,
   formatDetection: {
@@ -72,7 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head />
-      <body className="overflow-hidden">
+      <body className="overflow-hidden bg-[#121212]">
         <div className="w-full overflow-hidden md:px-[10%] lg:pr-[0%] max-h-screen  bg-[#33161600]">
           <Header />
           <div
