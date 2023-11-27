@@ -23,9 +23,7 @@ const components: PortableTextComponents = {
       <em className="italic text-theme-accent underline ">{children}</em>
     ),
     strong: ({ children }) => (
-      <strong className="text-theme-accent">
-        {children}
-      </strong>
+      <strong className="text-theme-accent">{children}</strong>
     ),
     code: ({ children }) => (
       <code className="bg-theme-primary-opaque p-1 text-[14px] rounded-md">
@@ -88,10 +86,14 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="ml-12 space-y-2 list-disc">{children}</ul>
+      <ul className="ml-6 md:ml-12 space-y-2 list-disc leading-loose">
+        {children}
+      </ul>
     ),
     number: ({ children }) => (
-      <ol className="ml-12 space-y-2 list-decimal">{children}</ol>
+      <ol className="ml-6 md:ml-12 space-y-2 list-decimal leading-loose">
+        {children}
+      </ol>
     ),
   },
 };
