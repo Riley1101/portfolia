@@ -5,7 +5,6 @@ export default function Loading() {
       <div>
         <Loader />
       </div>
-      <div></div>
     </div>
   );
 }

@@ -38,11 +38,11 @@ const query = `
    }
 }`;
 export async function generateMetadata({
-  params,
+    params,
 }: {
-  params: { slug: string };
+    params: { slug: string };
 }) {
-  const seoQuery = `
+    const seoQuery = `
 *[_type == "article" && slug.current == $slug][0]{
   title,
   'slug':slug.current,
@@ -51,54 +51,55 @@ export async function generateMetadata({
   'mainImage':mainImage.asset->{url}.url
 }`;
 
-  const data: ArticleDetailType = await client.fetch(seoQuery, {
-    slug: params?.slug,
-  });
+    const data: ArticleDetailType = await client.fetch(seoQuery, {
+        slug: params?.slug,
+    });
 
-  return {
-    title: data?.title,
-    description: data?.description,
-    keywords: [...metaData.keywords, ...data?.categories],
-    openGraph: getOpenGraph(
-      data?.mainImage,
-      data?.title,
-      data.description,
-      new URL(`/snippets/${data?.slug}`, metaData?.url)
-    ),
-    twitter: getTwitterCard(data?.mainImage, data.title, data.description),
-  };
+    return {
+        title: data?.title,
+        description: data?.description,
+        keywords: [...metaData.keywords, ...data?.categories],
+        openGraph: getOpenGraph(
+            data?.mainImage,
+            data?.title,
+            data.description,
+            new URL(`/snippets/${data?.slug}`, metaData?.url)
+        ),
+        twitter: getTwitterCard(data?.mainImage, data.title, data.description),
+    };
 }
 
 async function ArticleDetailPage(props: DetailPageParamTypes) {
-  const { params } = props;
-  const data: ArticleDetailType = await client.fetch(query, {
-    slug: params?.slug,
-  });
-  if (data === null) return <div>404</div>;
-  return (
-    <div className="page-container md:gap-4 lg:gap-12">
-      <div className="flex shrink page-left flex-col gap-4">
-        <Hero
-          title={data.title}
-          description={data.description}
-          categories={data.categories}
-          releasedAt={data.releasedAt}
-        />
-        <div className="block lg:hidden">
-          <TableOfContents value={data.body} />
-        </div>
-        <div className="flex flex-col">
-          <PortableBody value={data.body} />
-          <NewsLetter />
-          <Related data={data.related} />
-        </div>
-      </div>
+    const { params } = props;
+    const data: ArticleDetailType = await client.fetch(query, {
+        slug: params?.slug,
+    });
+    if (data === null) return <div>404</div>;
+    return (
+        <div className="page-container md:gap-4 lg:gap-12">
+            <div className="flex shrink page-left flex-col gap-4">
+                <Hero
+                    title={data.title}
+                    description={data.description}
+                    categories={data.categories}
+                    releasedAt={data.releasedAt}
+                />
+                <div className="block lg:hidden">
+                    <TableOfContents value={data.body} />
+                </div>
+                <div className="flex flex-col">
+                    <PortableBody value={data.body} />
+                    <NewsLetter />
+                    <Related data={data.related} />
+                </div>
+            </div>
 
-      <div className="hidden min-w-[200px] lg:block pt-24">
-        <TableOfContents value={data.body} />
-      </div>
-    </div>
-  );
+            <div className="hidden min-w-[200px] lg:block pt-24">
+                <TableOfContents value={data.body} />
+            </div>
+
+        </div>
+    );
 }
 
 export default ArticleDetailPage;

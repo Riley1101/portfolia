@@ -38,7 +38,7 @@ const components: PortableTextComponents = {
         <Link
           href={value?.href}
           target={target}
-          className="inline hover:underline text-theme-accent"
+          className="inline hover:underline text-theme-accent whitespace-normal"
         >
           {children} <LinkIcon className="inline w-4 h-4 ml-1" />
         </Link>
@@ -80,7 +80,7 @@ const components: PortableTextComponents = {
       </h4>
     ),
     normal: ({ children }) => (
-      <p className="my-4 text-lg leading-loose text-theme-body">{children}</p>
+      <p className="break-words my-4 text-lg leading-loose text-theme-body">{children}</p>
     ),
     blockquote: BlockQuote,
   },
