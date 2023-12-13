@@ -20,7 +20,7 @@ function CodeBlock(props: {
   const [collapse, setCollapse] = useState(false);
 
   useEffect(() => {
-    let lines = count_line_numbers(value.code);
+    const lines = count_line_numbers(value.code);
     if (lines > 15) {
       setCollapse(true);
     } else {
@@ -28,7 +28,7 @@ function CodeBlock(props: {
     }
   }, [value.code]);
 
-  let handleCollapse = () => {
+  const handleCollapse = () => {
     setCollapse(!collapse);
   };
 

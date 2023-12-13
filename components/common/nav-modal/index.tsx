@@ -14,6 +14,8 @@ export default function NavModal({ visible, toggle }: Props) {
         onClick={toggle}
       >
         <div
+          role="button"
+          tabIndex={0}
           className="w-[90%] bg-[#141518] rounded-lg shadow-lg "
           onClick={(e) => e.stopPropagation()}
         >

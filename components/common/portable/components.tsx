@@ -23,7 +23,7 @@ const components: PortableTextComponents = {
       <em className="italic text-theme-accent underline ">{children}</em>
     ),
     strong: ({ children }) => (
-      <strong className="text-theme-accent">{children}</strong>
+      <strong className="text-theme-accent/90">{children}</strong>
     ),
     code: ({ children }) => (
       <code className="bg-theme-primary-opaque p-1 text-[14px] rounded-md">
@@ -55,7 +55,7 @@ const components: PortableTextComponents = {
   block: {
     h1: ({ children }) => (
       <h1
-        className="mt-10 text-4xl font-bold text-theme-primary"
+        className="mt-10 text-4xl font-semibold text-theme-primary"
         id={toUrl(children)}
       >
         {children}
@@ -63,19 +63,19 @@ const components: PortableTextComponents = {
     ),
     h2: ({ children }) => (
       <h2
-        className="mt-10 mb-4 text-3xl font-bold text-theme-primary"
+        className="mt-10 mb-4 text-3xl font-semibold text-theme-primary"
         id={toUrl(children)}
       >
         {children}
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="mt-10 mb-4 text-2xl font-bold text-theme-primary">
+      <h3 className="mt-10 mb-4 text-2xl font-semibold text-theme-primary">
         {children}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="mt-10 mb-4 text-xl font-bold text-theme-primary">
+      <h4 className="mt-10 mb-4 text-xl font-semibold text-theme-primary">
         {children}
       </h4>
     ),
@@ -86,12 +86,12 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="ml-6 md:ml-12 space-y-2 list-disc leading-loose">
+      <ul className="ml-4 md:text-lg md:ml-8 space-y-2 list-disc leading-relaxed">
         {children}
       </ul>
     ),
     number: ({ children }) => (
-      <ol className="ml-6 md:ml-12 space-y-2 list-decimal leading-loose">
+      <ol className="ml-4 md:text-lg md:ml-8 space-y-2 list-decimal leading-relaxed">
         {children}
       </ol>
     ),

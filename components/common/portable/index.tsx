@@ -1,4 +1,5 @@
 "use client";
+
 import { PortableText } from "@portabletext/react";
 import { useEffect } from "react";
 import Prism from "prismjs";
