@@ -1,11 +1,11 @@
 repo_name: Riley1101/portfolia
-report_id: 4b97cf0f46feafbfe3a89d704f6ff22f
+report_id: 984f9cf5cc210891a44b841c030c3551
 repo_type: Public
-timestamp: '2023-11-11T17:14:27+00:00'
+timestamp: '2023-12-14T10:25:26+00:00'
 requested_by: Riley1101
 provider: github
 branch: main
-detected_tools_count: 34
+detected_tools_count: 40
 tools:
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -56,7 +56,7 @@ tools:
   category: Libraries
   sub_category: Javascript Utilities & Libraries
   image_url: https://img.stackshare.io/service/3866/_GD1-XrU_400x400.jpg
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
   last_updated_on: 2023-09-21 20:02:51.000000000 Z
@@ -69,7 +69,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/5936/nextjs.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
   last_updated_on: 2023-09-21 20:02:51.000000000 Z
@@ -85,6 +85,18 @@ tools:
   detection_source: package.json
   last_updated_by: Arkar Kaung Myat
   last_updated_on: 2022-11-27 05:04:50.000000000 Z
+- name: PostCSS
+  description: Transform CSS with JS plugins
+  website_url: https://github.com/postcss/postcss
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/3339/rlFcjEdI.png
+  detection_source: package.json
+  last_updated_by: Arkar Kaung Myat
+  last_updated_on: 2022-11-27 05:04:50.000000000 Z
 - name: React
   description: A JavaScript library for building user interfaces
   website_url: https://reactjs.org/
@@ -95,10 +107,22 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
+- name: Tailwind CSS
+  description: A utility-first CSS framework for rapid UI development
+  website_url: https://tailwindcss.com
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Front-End Frameworks
+  image_url: https://img.stackshare.io/service/8158/default_660b7c41c3ba489cb581eec89c04655404258c19.png
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: styled-components
   description: Visual primitives for the component age. Use the best bits of ES6 and
     CSS to style your apps without stress.
@@ -110,10 +134,21 @@ tools:
   category: Libraries
   sub_category: JavaScript Framework Components
   image_url: https://img.stackshare.io/service/6749/styled-components.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
+- name: pgvector
+  description: Open-source vector similarity search for Postgres
+  website_url: https://github.com/pgvector/pgvector/
+  open_source: false
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Database Tools
+  image_url: https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png
+  detection_source: public/robots.txt
+  last_updated_by: Riley1101
+  last_updated_on: 2023-03-07 21:43:07.000000000 Z
 - name: ESLint
   description: The fully pluggable JavaScript code quality tool
   website_url: http://eslint.org/
@@ -143,7 +178,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Continuous Integration
   image_url: https://img.stackshare.io/service/11563/actions.png
-  detection_source: ".github/workflows/production.yaml"
+  detection_source: ".github/workflows/preview.yaml"
   last_updated_by: Riley1101
   last_updated_on: 2023-05-23 19:53:22.000000000 Z
 - name: Jest
@@ -156,7 +191,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Javascript Testing Framework
   image_url: https://img.stackshare.io/service/830/jest.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Arkar Kaung Myat
   last_updated_on: 2022-11-27 05:04:50.000000000 Z
@@ -191,10 +226,21 @@ tools:
   category: Application Utilities
   sub_category: Search as a Service
   image_url: https://img.stackshare.io/service/589/default_452afb716f8f4b904f267638e5c6b9172f9fa06d.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
+- name: LangChain
+  description: Build AI apps with LLMs through composability
+  website_url: https://github.com/hwchase17/langchain
+  open_source: true
+  hosted_saas: false
+  category: Communications
+  sub_category: Large Language Model Tools
+  image_url: https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg
+  detection_source: public/robots.txt
+  last_updated_by: Riley1101
+  last_updated_on: 2023-03-07 21:43:07.000000000 Z
 - name: Prism
   description: An extensible syntax highlighter, built with modern web standards
   website_url: https://prismjs.com/
@@ -205,10 +251,36 @@ tools:
   category: Libraries
   sub_category: Javascript Utilities & Libraries
   image_url: https://img.stackshare.io/service/10010/Screen_Shot_2012-07-31_at_21.57.03__400x400.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
+- name: Sanity
+  description: A headless CMS construction kit in JavaScript
+  website_url: https://www.sanity.io/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Support, Sales, and Marketing
+  sub_category: Cloud Content Management System
+  image_url: https://img.stackshare.io/service/7890/default_d27dfdf7a8694b3065e33c299df346a99299f4d2.png
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
+- name: Vercel AI SDK
+  description: An interoperable, streaming-enabled, edge-ready software development
+    kit for AI apps
+  website_url: https://sdk.vercel.ai/docs
+  version: 0.1.11
+  open_source: true
+  hosted_saas: false
+  category: Communications
+  sub_category: Large Language Model Tools
+  image_url: https://img.stackshare.io/service/101756/default_4f2991cba3ec7fdd1cc87de69f4868157b0f2001.png
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-08-30 15:53:59.000000000 Z
 - name: three.js
   description: A JavaScript 3D library
   website_url: https://threejs.org/
@@ -219,7 +291,7 @@ tools:
   image_url: https://img.stackshare.io/service/5883/preview.png
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: "@testing-library/jest-dom"
   description: Custom jest matchers to test the state of the DOM
   package_url: https://www.npmjs.com/@testing-library/jest-dom
@@ -230,39 +302,39 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17424/default_1cdcda15ebb7caed879f8340bc212b44c4ec9dac.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: "@testing-library/react"
   description: Simple and complete React DOM testing utilities that encourage good
     testing practices
   package_url: https://www.npmjs.com/@testing-library/react
-  version: 14.0.0
+  version: 14.1.2
   license: MIT
   open_source: true
   hosted_saas: false
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16549/default_d522554c6a41cb28d922d6d3ad32ad4afa0e3bb5.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: "@types/jest"
   description: TypeScript definitions for Jest
   package_url: https://www.npmjs.com/@types/jest
-  version: 29.5.5
+  version: 29.5.10
   license: MIT
   open_source: true
   hosted_saas: false
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15840/default_004658cda9b38934f2871435e9dc15608c86e8be.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: "@types/node"
   description: TypeScript definitions for Node.js
   package_url: https://www.npmjs.com/@types/node
@@ -273,10 +345,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15809/default_5e5e8ac63beda29f31f1844df64d4b8247570a66.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: "@types/react"
   description: TypeScript definitions for React
   package_url: https://www.npmjs.com/@types/react
@@ -287,10 +359,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15894/default_1d65e37e65b7f80761374f0202776043277d505d.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: "@types/react-dom"
   description: TypeScript definitions for React
   package_url: https://www.npmjs.com/@types/react-dom
@@ -301,10 +373,23 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15946/default_54b691c123fc8979741e800e4dcd3936c0f3b246.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
+- name: "@vercel/analytics"
+  description: Gain real-time traffic insights with Vercel Web Analytics
+  package_url: https://www.npmjs.com/@vercel/analytics
+  version: 0.1.11
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/npm/image.png
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Riley1101
+  last_updated_on: 2023-08-30 15:53:59.000000000 Z
 - name: algoliasearch
   description: A fully-featured and blazing-fast JavaScript API client to interact
     with Algolia API
@@ -316,10 +401,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17074/default_5b9eca95ab3651165eb280ed5e0bc9a9382ad24d.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: classnames
   description: A simple utility for conditionally joining classNames together
   package_url: https://www.npmjs.com/classnames
@@ -330,7 +415,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15942/default_4040fefea2f98006727f63d042275b96a275ab2d.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
   last_updated_on: 2023-04-07 18:52:25.000000000 Z
@@ -344,10 +429,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16480/default_55f3303d620c93eecbee69c43373d484f2be492f.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
-  last_updated_by: Arkar Kaung Myat
-  last_updated_on: 2023-05-22 21:41:31.000000000 Z
+  last_updated_by: Riley1101
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: form-data
   description: A library to create readable "multipart/form-data" streams
   package_url: https://www.npmjs.com/form-data
@@ -358,10 +443,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16415/default_aa91da3cee4d961f0eea8ca5de77f399ec7ec794.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
-  last_updated_by: Arkar Kaung Myat
-  last_updated_on: 2023-05-22 21:41:31.000000000 Z
+  last_updated_by: Riley1101
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: html-to-text
   description: Advanced html to plain text converter
   package_url: https://www.npmjs.com/html-to-text
@@ -372,10 +457,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/18417/default_866295ec9b57ad977c956d0fed2e144aaca6c4a0.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-09-17 14:54:07.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: jest-environment-jsdom
   description: Delightful JavaScript Testing
   package_url: https://www.npmjs.com/jest-environment-jsdom
@@ -386,24 +471,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/18413/default_867ef7396016341fd213fa568d6de11cc98fefff.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-09-17 14:54:07.000000000 Z
-- name: postcss
-  description: Tool for transforming styles with JS plugins
-  package_url: https://www.npmjs.com/postcss
-  version: 8.4.31
-  license: MIT
-  open_source: true
-  hosted_saas: false
-  category: Libraries
-  sub_category: npm Packages
-  image_url: https://img.stackshare.io/package/16012/default_7a88bebb451873cc63bd99007de5bd3bb8ef85de.png
-  detection_source_url: package.json
-  detection_source: package.json
-  last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: prismjs
   description: Lightweight, robust, elegant syntax highlighting
   package_url: https://www.npmjs.com/prismjs
@@ -414,10 +485,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16351/default_4cc3f31b8c64a6268fc123f0965a09d1b11180af.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: react-dom
   description: React package for working with the DOM
   package_url: https://www.npmjs.com/react-dom
@@ -428,21 +499,21 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-10-17 00:12:30.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
 - name: tailwindcss
   description: A utility-first CSS framework for rapidly building custom user interfaces
   package_url: https://www.npmjs.com/tailwindcss
-  version: 3.3.3
+  version: 3.3.5
   license: MIT
   open_source: true
   hosted_saas: false
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17398/default_2cd7ed1c123f2fca074a6f4b16c4e73d5bfe82be.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Riley1101/portfolia/blob/main/package.json
   detection_source: package.json
   last_updated_by: Riley1101
-  last_updated_on: 2023-09-17 14:54:07.000000000 Z
+  last_updated_on: 2023-11-27 21:00:15.000000000 Z
