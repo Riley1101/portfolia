@@ -28,6 +28,7 @@ export default function HomeBlogCard({
 
   return (
     <Link
+      test-id="home-articles-card"
       onMouseLeave={() => {
         blob.current?.classList.add("hidden");
       }}
@@ -41,7 +42,7 @@ hover:bg-gradient-to-r hover:from-theme-accent-opaque  border-theme-accent borde
         ref={blob}
         className="w-[25%]  top-[20%] left-[0%] transform-center hidden translate-y-[-1/2] 
         aspect-square  absolute  translate-x-[-1/2] gradient-two"
-      ></div>
+      />
       <h2 className="text-base mb-2 leading-relaxed font-semibold">{title}</h2>
       <p className="text-base  line-clamp-2 text-gray-400">{description}</p>
       <div className="flex justify-between  items-center gap-4">
