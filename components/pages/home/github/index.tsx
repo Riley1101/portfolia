@@ -182,6 +182,7 @@ export const GithubFeed = asyncComponent(async () => {
         <Github className="w-[20px] aspect-square text-theme-primary"></Github>
         Recent Events
       </div>
+
       <div className="flex flex-col gap-4 max-h-[300px] overflow-auto pr-1">
         {data.map((item) => {
           switch (item.type) {
@@ -204,6 +205,7 @@ export const GithubFeed = asyncComponent(async () => {
           }
         })}
       </div>
+
     </div>
   );
 });

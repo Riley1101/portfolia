@@ -1,9 +1,13 @@
 export const revalidate = 60;
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Hero from "@/components/pages/hero";
 import { GithubFeed } from "@/components/pages/home/github";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import type { Metadata } from "next";
+const ComputerModel = dynamic(() => import("@/components/common/model"), {
+  ssr: false,
+});
 
 const hero = {
   title: "About",
@@ -49,6 +53,9 @@ function AboutPage() {
             design and computer science, I enjoy creating amazing things and
             building blazingly-fast websites.
             <br />
+            <div className="md:float-right w-[200px] rounded-full aspect-square m-2">
+              <ComputerModel />
+            </div>
             Currently working mostly with Typescript, React, and Svelte, as well
             as other JavaScript technologies for now. Here in my blog, I mostly
             write about my experiences and share my thoughts on various topics
@@ -60,10 +67,8 @@ function AboutPage() {
             learning and growing in my career.
           </p>
         </div>
-        <div className="flex flex-col gap-4">
-          <div className="md:max-w-[370px]">
-            <GithubFeed />
-          </div>
+        <div className="md:max-w-[370px]">
+          <GithubFeed />
         </div>
       </div>
     </div>
