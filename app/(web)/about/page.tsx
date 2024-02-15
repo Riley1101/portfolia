@@ -1,10 +1,13 @@
 export const revalidate = 60;
-import ComputerModel from "@/components/common/model";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Hero from "@/components/pages/hero";
 import { GithubFeed } from "@/components/pages/home/github";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import type { Metadata } from "next";
+const ComputerModel = dynamic(() => import("@/components/common/model"), {
+  ssr: false,
+});
 
 const hero = {
   title: "About",
@@ -64,9 +67,9 @@ function AboutPage() {
             learning and growing in my career.
           </p>
         </div>
-          <div className="md:max-w-[370px]">
-            <GithubFeed />
-          </div>
+        <div className="md:max-w-[370px]">
+          <GithubFeed />
+        </div>
       </div>
     </div>
   );
