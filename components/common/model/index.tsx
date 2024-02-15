@@ -1,21 +1,20 @@
 "use client";
 import { Canvas, PrimitiveProps, useLoader} from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls} from "@react-three/drei";
 import { MutableRefObject,  useRef } from "react";
 import { useObjectMovement } from "@/hooks/useMouse";
 import { DirectionalLight } from "three";
 const ComputerModel = () => {
   // change  gltf file to url
-  useLoader.preload(GLTFLoader, '/models/retro.glb' /* extensions */)
-  const gltf = useLoader(GLTFLoader, "/models/retro.glb");
+  const glbpath = "/models/retro.glb";
+  useLoader.preload(GLTFLoader, glbpath /* extensions */)
+  const gltf = useLoader(GLTFLoader, glbpath);
   const object: MutableRefObject<PrimitiveProps> =
     useRef() as MutableRefObject<PrimitiveProps>;
   const primaryLight: MutableRefObject<DirectionalLight> =
     useRef<DirectionalLight>() as MutableRefObject<DirectionalLight>;
   const accentLight: MutableRefObject<DirectionalLight> =
     useRef<DirectionalLight>() as MutableRefObject<DirectionalLight>;
-  const control: any = useRef();
   useObjectMovement(object);
   return (
     <div className="w-full mt-auto aspect-square">
@@ -43,11 +42,10 @@ const ComputerModel = () => {
           ref={object}
           object={gltf.scene}
           position={[0, 0, 0]}
-          scale={[1, 1, 1]}
+          scale={[1.5, 1.5, 1.5]}
           children-0-castShadow
         />
 
-        <OrbitControls ref={control} minZoom={1} maxZoom={4} />
       </Canvas>
     </div>
   );
