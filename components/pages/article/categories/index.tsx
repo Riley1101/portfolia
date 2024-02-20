@@ -8,7 +8,7 @@ type Props = {
   categories: Category[];
 };
 
-function Categories({ categories }: Props) {
+export function Categories({ categories }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -52,7 +52,7 @@ function Categories({ categories }: Props) {
             onClick={() => handleFilter(item.title)}
             key={item._id}
             className={cx(
-              `px-4 text-sm min-w-max  cursor-pointer hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-full`,
+              `text-sm min-w-max  cursor-pointer hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-full`,
               {
                 "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
                   params.get("category") === item.title,
@@ -67,4 +67,3 @@ function Categories({ categories }: Props) {
   );
 }
 
-export default Categories;

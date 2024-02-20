@@ -1,7 +1,7 @@
 import Hero from "@/components/pages/hero";
-import VideoTimeLine from "@/components/pages/videos/video-list";
-import type { Metadata } from "next";
+import { VideoTimeline } from "@/components/pages/videos/video-list";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
+import type { Metadata } from "next";
 
 const hero = {
   title: "Videos",
@@ -33,7 +33,7 @@ function VideoPage() {
           subtitle={hero.subtitle}
         />
 
-        <VideoTimeLine />
+        <VideoTimeline/>
       </div>
     </div>
   );

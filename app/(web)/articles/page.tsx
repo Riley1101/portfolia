@@ -1,10 +1,9 @@
 export const revalidate = 60;
-import asyncComponent from "@/utils/async-component";
-import Categories from "@/components/pages/article/categories";
-import ArticleTimeLine from "@/components/pages/article/timeline";
+import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
+import { Categories } from "@/components/pages/article/categories";
+import { ArticleTimeLine } from "@/components/pages/article/timeline";
 import { Banner } from "@/components/pages/banner";
 import { Metadata } from "next";
-import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import client from "@/utils/client";
 
 export const metadata: Metadata = {
@@ -13,12 +12,12 @@ export const metadata: Metadata = {
     "/images/articles.png",
     "Articles | " + metaData.title,
     metaData.description,
-    new URL("/articles", metaData.url)
+    new URL("/articles", metaData.url),
   ),
   twitter: getTwitterCard(
     "/images/articles.png",
     "Articles | " + metaData.title,
-    metaData.description
+    metaData.description,
   ),
 };
 
@@ -29,7 +28,7 @@ const categoryQuery = `
 }
 `;
 
-async function ArticlePage(props: {
+export default async function ArticlePage(props: {
   searchParams?: { [key: string]: string | undefined };
 }) {
   const { searchParams } = props;
@@ -50,5 +49,3 @@ async function ArticlePage(props: {
     </div>
   );
 }
-
-export default asyncComponent(ArticlePage);

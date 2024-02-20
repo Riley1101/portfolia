@@ -1,7 +1,6 @@
 import React from "react";
 import { ProjectCard } from "@/components/common/project-card";
 import type { Project } from "@/types/projects";
-import asyncComponent from "@/utils/async-component";
 import client from "@/utils/client";
 
 const query = `
@@ -11,7 +10,7 @@ const query = `
         }
 `;
 
-async function ProjectsComponent() {
+export async function Projects() {
   const data: Project[] = await client.fetch(query);
   return (
     <div className="flex flex-col gap-4">
@@ -28,5 +27,3 @@ async function ProjectsComponent() {
     </div>
   );
 }
-
-export const Projects = asyncComponent(ProjectsComponent);

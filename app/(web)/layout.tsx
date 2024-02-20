@@ -11,6 +11,7 @@ import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN || ""),
   title: {
     default: metaData.title,
     template: "%s",

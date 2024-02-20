@@ -1,7 +1,7 @@
 import client from "@/utils/client";
 import type { ArticlCardType } from "@/types/articles";
 import SnippetCard from "../../snippets/card";
-import asyncComponent from "@/utils/async-component";
+
 let query = `
 *[_type=='snippet'] | order(releasedAt desc) [0..1]  {
   title,
@@ -12,7 +12,7 @@ let query = `
 }
 `;
 
-async function LatestSnippets() {
+export default async function LatestSnippets() {
   const data: ArticlCardType[] = await client.fetch(query);
   return (
     <div className="flex flex-col gap-4">
@@ -39,4 +39,3 @@ async function LatestSnippets() {
   );
 }
 
-export default asyncComponent(LatestSnippets);

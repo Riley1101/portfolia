@@ -2,7 +2,6 @@ import ArticleCard from "../card";
 import Link from "next/link";
 import client from "@/utils/client";
 import type { ArticlCardType } from "@/types/articles";
-import asyncComponent from "@/utils/async-component";
 
 let query = `
   *[_type=='article'] | order(releasedAt desc)  {
@@ -18,7 +17,7 @@ let query = `
 interface Props {
   current: string | undefined;
 }
-async function ArticleTimeLine(props: Props) {
+export async function ArticleTimeLine(props: Props) {
   const { current } = props;
   const data: ArticlCardType[] = await client.fetch(query);
   const filteredArticles = data.filter((article) => {
@@ -73,4 +72,3 @@ async function ArticleTimeLine(props: Props) {
     </div>
   );
 }
-export default asyncComponent(ArticleTimeLine);

@@ -1,8 +1,7 @@
 import VideoCard from "@/components/pages/videos/video-card";
 import type { VideoAPIType } from "@/types/videos";
-import asyncComponent from "@/utils/async-component";
 
-const VideoTimeLine = async () => {
+export async function VideoTimeline() {
   const data: VideoAPIType = await fetch(
     `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&part=id&channelId=UC_RfEQCC3gL2AzsFFAABikg&maxResults=20&key=AIzaSyAtWf4t83KhLS48fEgqwPKDTDWLZrTBbds`,
     {
@@ -22,6 +21,4 @@ const VideoTimeLine = async () => {
       </div>
     </div>
   );
-};
-
-export default asyncComponent(VideoTimeLine);
+}

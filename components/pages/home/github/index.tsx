@@ -12,7 +12,6 @@ import type {
 } from "@/types/github";
 
 import dateFormat from "dateformat";
-import asyncComponent from "@/utils/async-component";
 
 function WatchEventCard(data: WatchEvent) {
   const { created_at, payload, repo } = data;
@@ -41,10 +40,11 @@ function WatchEventCard(data: WatchEvent) {
     </div>
   );
 }
+
 function CreateEventCard(data: CreateEvent) {
   const { created_at, payload, repo } = data;
   return (
-    <div className="flex flex-col gap-2 p-2 border rounded-md cursor-pointer cusor-pointer hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
+    <div className="flex flex-col gap-2 p-2 border rounded-md cursor-pointer cusor-pointer hover:bg-gradient-to-r hover:from-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
       <span className="text-sm text-theme-accent">
         {dateFormat(created_at, "mmm dd yyyy HH:MM")}
       </span>
@@ -84,7 +84,7 @@ function CreateEventCard(data: CreateEvent) {
 function ForkEventCard(data: ForkEvent) {
   const { created_at, repo } = data;
   return (
-    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
+    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
       <span className="text-sm text-theme-accent">
         {dateFormat(created_at, "mmm dd yyyy HH:MM")}
       </span>
@@ -108,7 +108,7 @@ function ForkEventCard(data: ForkEvent) {
 function PullRequestCard(data: PullRequestEvent) {
   const { created_at, repo, type } = data;
   return (
-    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
+    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
       <span className="text-sm text-theme-accent">
         {dateFormat(created_at, "mmm dd yyyy HH:MM")}
       </span>
@@ -131,7 +131,7 @@ function PullRequestCard(data: PullRequestEvent) {
 function PushEventCard(data: PushEvent) {
   const { created_at, repo, payload } = data;
   return (
-    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
+    <div className="flex flex-col gap-2 p-2 border rounded-md hover:bg-gradient-to-r hover:from-theme-accent-opaque md:p-4 border-theme-primary-opaque bg-theme-accent-opaque">
       <span className="text-sm text-theme-accent">
         {dateFormat(created_at, "mmm dd yyyy HH:MM")}
       </span>
@@ -154,7 +154,7 @@ function PushEventCard(data: PushEvent) {
   );
 }
 
-export const GithubFeed = asyncComponent(async () => {
+export const GithubFeed = async () => {
   const data = await getGithubFeed();
   return (
     <div className="lg:w-[90%]  p-4 bg-theme-accent-opaque w-full border border-theme-primary-opaque rounded-md">
@@ -205,7 +205,6 @@ export const GithubFeed = asyncComponent(async () => {
           }
         })}
       </div>
-
     </div>
   );
-});
+};
