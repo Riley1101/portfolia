@@ -88,6 +88,7 @@ function NavASide() {
         <div className="flex flex-col gap-4 ">
           {navs.map((nav) => (
             <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>
+              {nav.name}
             </NavIconLink>
           ))}
         </div>

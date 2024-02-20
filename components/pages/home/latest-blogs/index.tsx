@@ -1,6 +1,5 @@
 import HomeBlogCard from "@/components/pages/home/blog-card";
 import client from "@/utils/client";
-import asyncComponent from "@/utils/async-component";
 import type { ArticlCardType } from "@/types/articles";
 
 interface Props {
@@ -16,7 +15,7 @@ const query = `{"posts":*[_type == "article"] | order(releasedAt desc) [0..4]  {
 }}
 `;
 
-async function LatestPostHome() {
+export async function HomeLatestPost() {
   const data: Props = await client.fetch(query);
   return (
     <div className="flex flex-col gap-4 @container">
@@ -40,5 +39,3 @@ async function LatestPostHome() {
     </div>
   );
 }
-
-export default asyncComponent(LatestPostHome);

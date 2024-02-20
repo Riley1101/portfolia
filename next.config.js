@@ -1,8 +1,32 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   swcMinify: true,
+  experimental: {
+    ppr: true,
+  },
   images: {
-    domains: ["cdn.sanity.io", "arkar.space", "i.ytimg.com", "burma.social"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.arkar.space",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "burma.social",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        port: "",
+      },
+    ],
   },
 };
 
