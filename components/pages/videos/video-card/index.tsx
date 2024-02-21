@@ -21,7 +21,7 @@ const VideoCard = ({ data }: { data: VideoCardType }) => {
         <span className="block my-1 text-sm  text-theme-primary">
           {dateformat(data.snippet.publishedAt, "mediumDate")}
         </span>
-        <p className="my-2 text-sm text-gray-400">{data.snippet.description}</p>
+        <p className="my-2 text-sm text-gray-400 line-clamp-3">{data.snippet.description}</p>
       </div>
     </Link>
   );

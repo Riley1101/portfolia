@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
 import cx from "classnames";
-import { useSelectedLayoutSegment } from "next/navigation";
+import { useRouter, useSelectedLayoutSegment } from "next/navigation";
+import { useTransition } from "react";
+
 interface Props {
   href: string;
   icon: React.ReactNode;
@@ -11,8 +13,18 @@ interface Props {
 
 function NavIconLink({ children, icon, href, target }: Props) {
   const selected = useSelectedLayoutSegment();
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+
+  function navigate() {
+    if (target === "_blank") return;
+    startTransition(() => {
+      router.push(href);
+    });
+  }
   return (
     <Link
+      onClick={navigate}
       target={target}
       href={href}
       className={cx(
@@ -20,15 +32,16 @@ function NavIconLink({ children, icon, href, target }: Props) {
         duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all 
         border  border-transparent px-4  rounded-full`,
         {
-          "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
+          "bg-theme-primary/5  border-opacity-5 border-theme-primary text-theme-accent":
             `/${selected}` === href || (selected === null && href === "/"),
         },
+        isPending && "cursor-wait",
       )}
     >
-      <div className="flex gap-4 text-sm text-theme-body">
+      <span className="flex items-center gap-4 text-sm text-theme-body">
         {icon}
         {children}
-      </div>
+      </span>
     </Link>
   );
 }

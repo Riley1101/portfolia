@@ -1,8 +1,9 @@
 "use client";
-import { useRef } from "react";
-
+import { useRef, useTransition } from "react";
+import cx from "classnames";
 import Link from "next/link";
 import dateformat from "dateformat";
+import { useRouter } from "next/navigation";
 import type { ArticlCardType } from "@/types/articles";
 
 export default function SnippetCard({
@@ -13,6 +14,13 @@ export default function SnippetCard({
 }: ArticlCardType) {
   const blob = useRef<HTMLDivElement | null>(null);
   const container = useRef<HTMLAnchorElement | null>(null);
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+  function navigate() {
+    startTransition(() => {
+      router.push(`/articles/${slug}`);
+    });
+  }
 
   function handleMouseMove(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     if (!blob.current || !container.current) return;
@@ -30,10 +38,14 @@ export default function SnippetCard({
       onMouseLeave={() => {
         blob.current?.classList.add("hidden");
       }}
+      onClick={navigate}
       ref={container}
       onMouseMove={handleMouseMove}
       href={`/snippets/${slug}`}
-      className="relative overflow-hidden p-4 transition-all duration-500 border rounded-md cursor-pointer border-theme-accent hover:border-theme-primary border-opacity-10 hover:border-opacity-20"
+      className={cx(
+        "relative overflow-hidden p-4 transition-all duration-500 border rounded-md cursor-pointer border-theme-accent hover:border-theme-primary border-opacity-10 hover:border-opacity-20",
+        isPending && "cursor-wait",
+      )}
     >
       <div
         ref={blob}

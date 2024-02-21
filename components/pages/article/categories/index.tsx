@@ -1,6 +1,7 @@
 "use client";
+
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React from "react";
+import React, { useTransition } from "react";
 import type { Category } from "@/types/articles";
 import cx from "classnames";
 
@@ -9,6 +10,7 @@ type Props = {
 };
 
 export function Categories({ categories }: Props) {
+  const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -16,19 +18,21 @@ export function Categories({ categories }: Props) {
   const search = params.get("search");
 
   function handleFilter(category: string) {
-    // set serach param with category
-    if (search) {
-      params.set("search", search);
-    } else {
-      params.delete("search");
-    }
-    if (category !== "All") {
-      params.set("category", category);
-    } else {
-      params.delete("category");
-    }
-    const query = params.toString();
-    router.push(`${pathname}?${query}`);
+    startTransition(() => {
+      // set serach param with category
+      if (search) {
+        params.set("search", search);
+      } else {
+        params.delete("search");
+      }
+      if (category !== "All") {
+        params.set("category", category);
+      } else {
+        params.delete("category");
+      }
+      const query = params.toString();
+      router.push(`${pathname}?${query}`);
+    });
   }
 
   if (!categories) return null;
@@ -42,7 +46,8 @@ export function Categories({ categories }: Props) {
             {
               "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
                 params.get("category") === "All" || !params.get("category"),
-            }
+            },
+            isPending && "cursor-wait",
           )}
         >
           All
@@ -56,7 +61,8 @@ export function Categories({ categories }: Props) {
               {
                 "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
                   params.get("category") === item.title,
-              }
+              },
+              isPending && "cursor-wait",
             )}
           >
             {item.title}
@@ -66,4 +72,3 @@ export function Categories({ categories }: Props) {
     </div>
   );
 }
-
