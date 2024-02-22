@@ -73,7 +73,7 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <head />
       <body className="overflow-hidden bg-[#121212]">
-        <div className="w-full overflow-hidden md:px-[10%] lg:pr-[0%] max-h-screen  bg-[#33161600]">
+        <div className="w-full overflow-hidden md:px-[10%] lg:pr-[0%] max-h-dvh bg-[#33161600]">
           <Header />
           <div
             className="row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
@@ -81,10 +81,10 @@ export default function RootLayout({
           >
             <div className="hidden lg:block">
               <NavAside />
-            </div>
+              </div>
             <main
               id="main"
-              className="h-screen scroll-mt-1 z-[10]  pt-[6em] p-4 overflow-y-scroll md:p-0 lg:p-12 md:pt-[6em]"
+              className="h-dvh scroll-mt-1 z-[10]  pt-[6em] p-4 overflow-y-scroll md:p-0 lg:p-12 md:pt-[6em]"
             >
               <div className="mt-4 mb-4 flex flex-col w-full md:my-12">
                 {children}

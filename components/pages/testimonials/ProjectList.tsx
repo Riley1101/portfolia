@@ -8,7 +8,7 @@ type Props = {
 
 export function ProjectList({ data }: Props) {
   return (
-    <div className="min-h-screen  flex flex-col justify-center ">
+    <div className="min-h-dvh flex flex-col justify-center ">
       <h2 className="font-theme  text-3xl my-2 mb-6 md:text-3xl">Some Of My Works</h2>
       <div className="@container flex flex-col gap-4 md:gap-6">
         {data?.map((item, idx) => (
