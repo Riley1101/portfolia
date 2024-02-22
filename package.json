@@ -68,6 +68,7 @@
     "sanity-plugin-asset-source-unsplash": "^1.1.2",
     "sanity-plugin-graph-view": "^2.0.1",
     "sanity-plugin-latex-input": "^2.0.4",
+    "sharp": "^0.33.2",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {

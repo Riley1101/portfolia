@@ -7,7 +7,7 @@ interface Props {
 
 export function Experiences({ data }: Props) {
   return (
-    <div className="min-h-screen py-24 flex flex-col flex flex-col justify-center">
+    <div className="min-h-dvh py-24  flex flex-col justify-center">
       <h2 className="font-theme  text-3xl my-2 mb-6 md:text-3xl">
         My Work Experiences
       </h2>

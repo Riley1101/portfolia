@@ -93,7 +93,7 @@ const CommandMenu = () => {
       {open && (
         <div
           onClick={handleClose}
-          className="fixed top-0 left-0 grid w-full h-screen isolate z-[999] text-accent place-items-center backdrop-filter backdrop-blur-lg"
+          className="fixed top-0 left-0 grid w-full h-dvh isolate z-[999] text-accent place-items-center backdrop-filter backdrop-blur-lg"
         >
           <div
             onClick={(e) => e.stopPropagation()}
