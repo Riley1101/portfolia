@@ -71,9 +71,6 @@ function AboutPage() {
             </p>
           </div>
         </div>
-        <div className="md:max-w-[370px]">
-          <GithubFeed />
-        </div>
       </div>
     </div>
   );

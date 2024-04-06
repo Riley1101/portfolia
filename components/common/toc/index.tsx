@@ -28,7 +28,7 @@ export default function TableOfContents({ value }: Props) {
       <span
         onClick={() => setToggle(!toggle)}
         className="cursor-pointer max-w-max 
-        py-2 rounded-md font-bold uppercase mb-2 block text-theme-primary flex items-center gap-4"
+        py-2 rounded-md font-bold uppercase mb-2 text-theme-primary flex items-center gap-4"
       >
         On this page{" "}
         <ChevronDownIcon
