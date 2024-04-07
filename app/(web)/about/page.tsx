@@ -2,7 +2,6 @@ export const revalidate = 60;
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Hero from "@/components/pages/hero";
-import { GithubFeed } from "@/components/pages/home/github";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import type { Metadata } from "next";
 const ComputerModel = dynamic(() => import("@/components/common/model"), {
