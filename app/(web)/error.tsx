@@ -9,6 +9,7 @@ export default function Error({}: {}) {
     <div className="pt-24 page-container">
       <div>
         <Image
+          unoptimized
           src="/images/puglie-pug.gif"
           alt="sad pug "
           className="mb-8  aspect-square rounded-full border border-theme-accent-opaque"
