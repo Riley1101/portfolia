@@ -1,4 +1,5 @@
 export const revalidate = 60;
+
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import { Categories } from "@/components/pages/article/categories";
 import { ArticleTimeLine } from "@/components/pages/article/timeline";
@@ -42,7 +43,7 @@ export default async function ArticlePage(props: {
         </div>
         <ArticleTimeLine current={searchParams?.category} />
       </div>
-      <div className="hidden page-right md:block row-start-1 lg:col-start-2">
+      <div className="page-right hidden md:block row-start-1 lg:col-start-2">
         <Categories categories={categories} />
       </div>
     </div>

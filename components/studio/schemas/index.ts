@@ -1,5 +1,6 @@
 import blockContent from "./blockContent";
 import category from "./category";
+import serie from "./serie";
 import article from "./article";
 import author from "./author";
 import snippet from "./snippet";
@@ -16,10 +17,11 @@ export const schemaTypes = [
   resume,
   projects,
   project,
+  serie,
   article,
   author,
   category,
   blockContent,
   snippet,
-  testimonail
+  testimonail,
 ];

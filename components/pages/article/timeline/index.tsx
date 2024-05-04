@@ -34,10 +34,10 @@ export async function ArticleTimeLine(props: Props) {
           className="relative grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))]
        grid-flow-dense  gap-4 md:gap-8"
         >
-          {filteredArticles.map((article, index) => {
+          {filteredArticles.map((article) => {
             return (
               <ArticleCard
-                key={index}
+                key={article._id}
                 mainImage={article.mainImage}
                 title={article.title}
                 description={article.description}

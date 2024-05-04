@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   swcMinify: true,
-  experimental: {
-    ppr: true,
-  },
   images: {
     remotePatterns: [
       {
