@@ -18,7 +18,7 @@ function Hero(props: Props) {
           {dateFormat(props.releasedAt, "mediumDate")}
         </span>
         <span className="block text-sm font-bold text-theme-primary">
-          Arkar Kaung Myat
+          Arkar
         </span>
       </div>
       <div className="flex gap-4 my-4">

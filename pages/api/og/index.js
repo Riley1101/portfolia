@@ -12,7 +12,7 @@ export default function handler(req) {
     const tags = hasTag ? searchParams.get("tags").split(",") : ["Welcome"];
     const title = hasTitle
       ? searchParams.get("title")?.slice(0, 100)
-      : "Arkar Kaung Myat — An Inspiring Developer, travelling in CS 🚀";
+      : "Arkar — An Inspiring Developer, travelling in CS 🚀";
     const description = hasDescription
       ? searchParams.get("description")?.slice(0, 100)
       : "An inspiring developer who loves computer science, frontend technlogies, coding and designs.";
@@ -91,7 +91,7 @@ export default function handler(req) {
       {
         width: 1200,
         height: 630,
-      }
+      },
     );
   } catch {
     return new Response(`Failed to generate the image`, {

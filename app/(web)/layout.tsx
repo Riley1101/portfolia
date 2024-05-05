@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   keywords: metaData.keywords,
   authors: [
     { name: metaData.title, url: metaData.url },
-    { name: "Arkar Dev", url: "https://arkar.space" },
-    { name: "ArkarDev", url: "https://arkar.space" },
+    { name: "Arkar", url: "https://arkar.space" },
+    { name: "Arkar", url: "https://arkar.space" },
   ],
   creator: metaData.title,
   publisher: metaData.title,

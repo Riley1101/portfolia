@@ -9,7 +9,7 @@ import { ArticleSeries } from "@/components/common/article-series/ArticleSeries"
 
 
 export const metadata: Metadata = {
-  title: "Arkar Kaung Myat",
+  title: "Arkar",
 };
 
 export default async function Home() {

@@ -16,7 +16,7 @@ const Header = () => {
      absolute top-0 left-0 h-[3.5em] z-[99999] w-full"
     >
       <Link href="/" className="font-bold text-theme-body">
-        ArkarDev
+        Arkar
       </Link>
       <NavModal visible={visible} toggle={toggle} />
 

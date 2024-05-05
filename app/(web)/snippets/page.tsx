@@ -15,7 +15,7 @@ const hero = {
 };
 
 export const metadata: Metadata = {
-  title: "Snippets",
+  title: "Snippets | Arkar",
   openGraph: getOpenGraph(
     "/images/snippets.png",
     "Snippets | " + metaData.title,

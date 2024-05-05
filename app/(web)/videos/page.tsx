@@ -10,7 +10,7 @@ const hero = {
 };
 
 export const metadata: Metadata = {
-  title: "Videos",
+  title: "Videos | Arkar",
   openGraph: getOpenGraph(
     "/images/videos.png",
     "Videos | " + metaData.title,

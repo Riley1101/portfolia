@@ -1,11 +1,11 @@
 
 export const metaData = {
-  title: "Arkar Kaung Myat",
-  siteName: "ArkarDev",
+  title: "Arkar",
+  siteName: "Arkar",
   description:
     "An inspiring engineer who loves coding, problem-solving and design",
   url: new URL("https://arkar.space"),
-  keywords: ["Next.js", "React", "JavaScript", "ArkarDev", "Arkar Kaung Myat"],
+  keywords: ["Next.js", "React", "JavaScript", "ArkarDev", "Arkar Myat","Arkar", "Arkar Kaung Myat"],
 };
 
 

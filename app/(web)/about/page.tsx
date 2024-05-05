@@ -10,12 +10,12 @@ const ComputerModel = dynamic(() => import("@/components/common/model"), {
 
 const hero = {
   title: "About",
-  subtitle: "Arkar Kaung Myat",
+  subtitle: "Arkar",
   description: "",
 };
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About | Arkar",
   openGraph: getOpenGraph(
     "/images/arkar.png",
     "About | " + metaData.title,
