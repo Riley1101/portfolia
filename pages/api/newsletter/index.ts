@@ -42,7 +42,7 @@ const mail_handler = async (req: NextApiRequest, res: NextApiResponse) => {
         {}
       );
       const data = {
-        from: "ArkarDev <me@arkar.space>",
+        from: "Arkar <me@arkar.space>",
         to: emails,
         subject: `${title}`,
         template: EMAIL_TEMPLATE,

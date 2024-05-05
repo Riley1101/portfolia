@@ -8,7 +8,7 @@ import { Metadata } from "next";
 import client from "@/utils/client";
 
 export const metadata: Metadata = {
-  title: "Articles",
+  title: "Articles | Arkar",
   openGraph: getOpenGraph(
     "/images/articles.png",
     "Articles | " + metaData.title,
