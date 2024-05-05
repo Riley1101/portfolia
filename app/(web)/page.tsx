@@ -5,6 +5,8 @@ import { Intro } from "@/components/pages/home/intro";
 import { NewsLetter } from "@/components/common/newsletter";
 import { Projects } from "@/components/pages/home/projects";
 import { HomeLatestPost } from "@/components/pages/home/latest-blogs";
+import { ArticleSeries } from "@/components/common/article-series/ArticleSeries";
+
 
 export const metadata: Metadata = {
   title: "Arkar Kaung Myat",
@@ -18,6 +20,7 @@ export default async function Home() {
         <HomeLatestPost />
         <Projects />
         <NewsLetter />
+        <ArticleSeries />
       </div>
     </div>
   );
