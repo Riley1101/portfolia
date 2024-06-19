@@ -1,26 +1,11 @@
 import React from "react";
 import type { Serie } from "@/types/series";
-import client from "@/utils/client";
 import { ArticlCardType } from "@/types/articles";
-import { ArticleSerieCard } from "../article-serie-card/ArticleSerieCard";
+import { ArticleSerieCard } from "@/components/common/article-serie-card";
+import { getArticleSeries } from "@/actions/postAcions";
 
-type Props = {};
-
-const query = `
-*[_type=='serie']   {
-    _id,
-    title,
-    description, 
-    'articles':articles[]->{
-    title,
-    'categories':categories[]->title,
-    'slug':slug.current,
-    releasedAt,
-  },
-}`;
-
-export async function ArticleSeries({}: Props) {
-  const series: Serie[] = await client.fetch(query);
+export async function ArticleSeries() {
+  const series: Serie[] = await getArticleSeries();
   return (
     <div className="flex flex-col gap-8 w-full">
       {!!series &&

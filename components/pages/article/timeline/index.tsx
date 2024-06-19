@@ -1,32 +1,27 @@
 import ArticleCard from "../card";
 import Link from "next/link";
-import client from "@/utils/client";
 import type { ArticlCardType } from "@/types/articles";
-
-let query = `
-  *[_type=='article'] | order(releasedAt desc)  {
-  title,
-  'slug':slug.current,
-  releasedAt,
-  description,
-  'mainImage':mainImage,
-  'categories':categories[]->title,
-  }
-`;
+import { getArticles } from "@/actions/postAcions";
 
 interface Props {
   current: string | undefined;
 }
-export async function ArticleTimeLine(props: Props) {
-  const { current } = props;
-  const data: ArticlCardType[] = await client.fetch(query);
-  const filteredArticles = data.filter((article) => {
-    if (current) {
+
+function filterArticlesByParam(data: ArticlCardType[], param?: string) {
+  return data.filter((article) => {
+    if (param) {
       if (!article.categories) return false;
-      return article.categories.includes(current);
+      return article.categories.includes(param);
     }
     return true;
   });
+}
+
+export async function ArticleTimeLine(props: Props) {
+  const { current } = props;
+  const data = await getArticles();
+  const filteredArticles = filterArticlesByParam(data, current);
+
   return (
     <div className="flex flex-col @container my-6 ">
       {filteredArticles.length > 0 ? (

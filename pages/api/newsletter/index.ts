@@ -1,5 +1,5 @@
 import sanityClient from "@/utils/client";
-import { queryDb } from "@/utils/newsletter";
+import { queryDb } from "@/actions/newsLetterActions";
 import formData from "form-data";
 import Mailgun from "mailgun.js";
 import { NextApiRequest, NextApiResponse } from "next";
@@ -20,7 +20,7 @@ const mail_handler = async (req: NextApiRequest, res: NextApiResponse) => {
       query,
       {
         slug: url,
-      }
+      },
     );
 
     const mailgun = new Mailgun(formData);
@@ -39,7 +39,7 @@ const mail_handler = async (req: NextApiRequest, res: NextApiResponse) => {
       });
       const object = recipent_vars.reduce(
         (acc, obj) => ({ ...acc, ...obj }),
-        {}
+        {},
       );
       const data = {
         from: "Arkar <me@arkar.space>",

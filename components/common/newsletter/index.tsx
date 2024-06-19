@@ -1,28 +1,8 @@
 import React from "react";
-import { redirect } from "next/navigation";
 import cx from "classnames";
-import { user_exists, add_user } from "@/utils/newsletter";
+import { handleSubmit } from "@/actions/newsLetterActions";
 
-type Props = {};
-
-export function NewsLetter({}: Props) {
-  async function handleSubmit(formData: FormData) {
-    "use server";
-    const email = formData.get("email");
-    const name = formData.get("name");
-    if (email) {
-      const exists = await user_exists(email as string);
-      if (!exists) {
-        const response = await add_user(email as string, name as string);
-        if (response !== null) {
-          redirect("/newsletter/thank-you");
-        }
-      } else {
-        redirect("/newsletter/already-with-me");
-      }
-    }
-  }
-
+export function NewsLetter() {
   return (
     <div className=" relative group flex flex-col  cursor-pointer overflow-hidden rounded-md px-6 py-2 border border-theme-accent-opaque bg-theme-accent-opaque my-4">
       <div
@@ -40,7 +20,6 @@ export function NewsLetter({}: Props) {
         </p>
       </div>
       <form
-        /* @ts-ignore */
         action={handleSubmit}
         className="flex md:flex-row flex-col items-center gap-2 my-4  group "
       >
@@ -48,7 +27,7 @@ export function NewsLetter({}: Props) {
           type="text"
           name="name"
           spellCheck={false}
-          placeholder="Enter your name! "
+          placeholder="Your Name ! "
           className="w-full px-4 py-2 border border-theme-primary-opaque bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
           required={true}
         />
@@ -57,14 +36,14 @@ export function NewsLetter({}: Props) {
           name="email"
           required={true}
           spellCheck={false}
-          placeholder="Enter your email! "
+          placeholder="Your email ! "
           className="w-full px-4 py-2 border border-theme-primary-opaque  bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
         />
         <button
           type="submit"
           className={cx(
             `flex cursor-pointer hover:text-theme-accent w-full md:max-w-max justify-center items-center border-theme-primary-opaque py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  px-4  rounded-md`,
-            "z-10 hover:bg-theme-primary  border-opacity-5 hover:border-theme-primary hover:text-theme-accent"
+            "z-10 hover:bg-theme-primary  border-opacity-5 hover:border-theme-primary hover:text-theme-accent",
           )}
         >
           Submit

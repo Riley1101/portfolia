@@ -7,7 +7,8 @@ import { ArticlCardType } from "@/types/articles";
 interface Props {
   data: ArticlCardType[];
 }
-function SnippetTimeLine({ data }: Props) {
+
+export function SnippetTimeLine({ data }: Props) {
   const { filteredData, handleChange, searchTerm } = useSearchByTitle(data);
   return (
     <div className="flex flex-col ">
@@ -38,5 +39,3 @@ function SnippetTimeLine({ data }: Props) {
     </div>
   );
 }
-
-export default SnippetTimeLine;
