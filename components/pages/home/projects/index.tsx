@@ -1,17 +1,9 @@
 import React from "react";
 import { ProjectCard } from "@/components/common/project-card";
-import type { Project } from "@/types/projects";
-import client from "@/utils/client";
-
-const query = `
-    *[_type=='project' && pinned==true][0..6]{
-            ...,
-            "slug": slug.current
-        }
-`;
+import { getHomeProjects } from "@/actions/projectActions";
 
 export async function Projects() {
-  const data: Project[] = await client.fetch(query);
+  const data = await getHomeProjects();
   return (
     <div className="flex flex-col gap-4">
       <p className="text-gray-300 leading-relaxed">

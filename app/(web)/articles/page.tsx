@@ -1,11 +1,11 @@
 export const revalidate = 60;
 
-import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
-import { Categories } from "@/components/pages/article/categories";
 import { ArticleTimeLine } from "@/components/pages/article/timeline";
 import { Banner } from "@/components/pages/banner";
+import { Categories } from "@/components/pages/article/categories";
 import { Metadata } from "next";
-import client from "@/utils/client";
+import { getCategories } from "@/actions/categoryActions";
+import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 
 export const metadata: Metadata = {
   title: "Articles | Arkar",
@@ -22,18 +22,11 @@ export const metadata: Metadata = {
   ),
 };
 
-const categoryQuery = `
-*[_type=='category']{
-  title,
-    _id
-}
-`;
-
 export default async function ArticlePage(props: {
-  searchParams?: { [key: string]: string | undefined };
+  searchParams?: { category: string | undefined };
 }) {
   const { searchParams } = props;
-  const categories = await client.fetch(categoryQuery);
+  const categories = await getCategories();
   return (
     <div className="page-container gap-4 md:gap-12">
       <div className="page-left">

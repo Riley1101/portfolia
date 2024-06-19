@@ -1,4 +1,4 @@
-export const revalidate = 60;
+export const revalidate = 3600;
 
 import type { Metadata } from "next";
 import { Intro } from "@/components/pages/home/intro";
@@ -7,9 +7,8 @@ import { Projects } from "@/components/pages/home/projects";
 import { HomeLatestPost } from "@/components/pages/home/latest-blogs";
 import { ArticleSeries } from "@/components/common/article-series/ArticleSeries";
 
-
 export const metadata: Metadata = {
-  title: "Arkar",
+  title: "Arkar Myat | An Inspiring Developer",
 };
 
 export default async function Home() {

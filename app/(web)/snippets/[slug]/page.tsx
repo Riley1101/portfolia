@@ -43,17 +43,19 @@ export async function generateMetadata({
       data?.mainImage,
       data.title,
       data.description,
-      new URL(`/snippets/${data?.slug}`, metaData?.url)
+      new URL(`/snippets/${data?.slug}`, metaData?.url),
+      'article'
     ),
     twitter: getTwitterCard(data?.mainImage, data.title, data.description),
   };
 }
+
 async function SnippetDetailPage(props: DetailPageParamTypes) {
   const { params } = props;
   const data: SnippetDetailType = await client.fetch(query, {
     slug: params?.slug,
   });
-  if (data === null) return <div>404</div>;
+  if (data === null) return <></>;
   return (
     <div className="page-container md:gap-4 lg:gap-12">
       <div className="flex shrink page-left flex-col gap-4">

@@ -1,14 +1,18 @@
 import VideoCard from "@/components/pages/videos/video-card";
 import type { VideoAPIType } from "@/types/videos";
 
-export async function VideoTimeline() {
-  const data: VideoAPIType = await fetch(
+async function getVideos(): Promise<VideoAPIType> {
+  return await fetch(
     `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&part=id&channelId=UC_RfEQCC3gL2AzsFFAABikg&maxResults=20&key=AIzaSyAtWf4t83KhLS48fEgqwPKDTDWLZrTBbds`,
     {
       //@ts-ignore
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_YT_API}`,
     },
   ).then((res) => res.json());
+}
+
+export async function VideoTimeline() {
+  const data = await getVideos();
   return (
     <div className="@container">
       <div

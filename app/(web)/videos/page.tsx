@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     metaData.description,
   ),
 };
+
 function VideoPage() {
   return (
     <div className="page-container">
@@ -33,7 +34,7 @@ function VideoPage() {
           subtitle={hero.subtitle}
         />
 
-        <VideoTimeline/>
+        <VideoTimeline />
       </div>
     </div>
   );

@@ -4,18 +4,19 @@ import Image from "next/image";
 import Hero from "@/components/pages/hero";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import type { Metadata } from "next";
+
 const ComputerModel = dynamic(() => import("@/components/common/model"), {
   ssr: false,
 });
 
 const hero = {
   title: "About",
-  subtitle: "Arkar",
+  subtitle: "Arkar Myat",
   description: "",
 };
 
 export const metadata: Metadata = {
-  title: "About | Arkar",
+  title: "About | Arkar Myat",
   openGraph: getOpenGraph(
     "/images/arkar.png",
     "About | " + metaData.title,
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
 
 function AboutPage() {
   return (
-    <div className="page-container ">
-      <div>
+    <div className="page-container">
+      <div className="col-span-full md:col-span-1">
         <Hero
           title={hero.title}
           description={hero.description}

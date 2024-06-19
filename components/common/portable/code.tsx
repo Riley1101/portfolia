@@ -18,9 +18,11 @@ function CodeBlock(props: {
 }) {
   const { value } = props;
   const [collapse, setCollapse] = useState(false);
+  const [lines, setLines] = useState(0);
 
   useEffect(() => {
     let lines = count_line_numbers(value.code);
+    setLines(lines);
     if (lines > 15) {
       setCollapse(true);
     } else {
@@ -46,19 +48,21 @@ function CodeBlock(props: {
           {value.code}
         </code>
       </pre>
-      <button
-        onClick={handleCollapse}
-        className={cx(
-          "bottom-0 right-0 w-full p-2 glass-box grid place-items-center",
-          { absolute: collapse },
-        )}
-      >
-        {!collapse ? (
-          <ArrowsPointingInIcon className="w-5 h-5 text-gray-500" />
-        ) : (
-          <ArrowsPointingOutIcon className="w-5 h-5 text-gray-500" />
-        )}
-      </button>
+      {lines > 15 && (
+        <button
+          onClick={handleCollapse}
+          className={cx(
+            "bottom-0 right-0 w-full p-2 glass-box grid place-items-center hover:bg-theme-accent-opaque",
+            { absolute: collapse },
+          )}
+        >
+          {!collapse ? (
+            <ArrowsPointingInIcon className="w-5 h-5 text-gray-500" />
+          ) : (
+            <ArrowsPointingOutIcon className="w-5 h-5 text-gray-500" />
+          )}
+        </button>
+      )}
     </div>
   );
 }
