@@ -5,7 +5,7 @@ export function Intro() {
         Hello, I&apos;m <span className="text-theme-primary">Arkar Myat</span> 👋
       </h1>
       <p className="text-gray-300 leading-relaxed ">
-        An inspiring softare engineer{" "}
+        An inspiring software engineer{" "}
         <a
           href="https://fortune.com"
           target="_blank"
