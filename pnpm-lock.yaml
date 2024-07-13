@@ -46,7 +46,7 @@ importers:
         version: 1.3.0
       '@sanity/client':
         specifier: ^6.17.2
-        version: 6.17.2
+        version: 6.17.2(debug@3.2.7)
       '@sanity/code-input':
         specifier: ^4.1.1
         version: 4.1.2(@babel/runtime@7.24.4)(@codemirror/lint@6.5.0)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.2.0)(react@18.3.1)(sanity@3.40.0(@types/node@20.11.19)(@types/react@18.2.57)(bufferutil@4.0.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.27.2)(utf-8-validate@6.0.3))(styled-components@6.1.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -152,6 +152,9 @@ importers:
       octokit:
         specifier: ^2.1.0
         version: 2.1.0
+      posthog-js:
+        specifier: ^1.147.0
+        version: 1.147.0
       prismjs:
         specifier: ^1.29.0
         version: 1.29.0
@@ -4663,6 +4666,9 @@ packages:
   fd-slicer@1.1.0:
     resolution: {integrity: sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g==}
 
+  fflate@0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
+
   fflate@0.6.10:
     resolution: {integrity: sha512-IQrh3lEPM93wVCEczc9SaAOvkmcoQn/G8Bo1e8ZPlY3X3bnAxWaBdvTdvM1hP62iZp0BXWDy4vTAy4fF0+Dlpg==}
 
@@ -6729,6 +6735,9 @@ packages:
     resolution: {integrity: sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==}
     engines: {node: '>=0.10.0'}
 
+  posthog-js@1.147.0:
+    resolution: {integrity: sha512-cALKIcix1W9xMsfUUI/QUFhtBeabDGsQCb3lpZEFd7WCPNLOcGmpeomm4xMX7MO2OnfK6Ov91/HNyfK1wncjSA==}
+
   potpack@1.0.2:
     resolution: {integrity: sha512-choctRBIV9EMT9WGAZHn3V7t0Z2pMQyl0EZE6pFc/6ml3ssw7Dlf/oAOvFwjm1HVsqfQN8GfeFyJ+d8tRzqueQ==}
 
@@ -8159,6 +8168,9 @@ packages:
 
   wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
+
+  web-vitals@4.2.1:
+    resolution: {integrity: sha512-U6bAxeudnhDqcXNl50JC4hLlqox9DZnngxfISZm3DMZnonW35xtJOVUc091L+DOY+6hVZVpKXoiCP0RiT6339Q==}
 
   webgl-constants@1.1.1:
     resolution: {integrity: sha512-LkBXKjU5r9vAW7Gcu3T5u+5cvSvh5WwINdr0C+9jpzVB41cjQAP5ePArDtk/WHYdVj0GefCgM73BA7FlIiNtdg==}
@@ -11116,7 +11128,7 @@ snapshots:
   '@sanity/client@6.17.2':
     dependencies:
       '@sanity/eventsource': 5.0.2
-      get-it: 8.4.28
+      get-it: 8.4.28(debug@3.2.7)
       rxjs: 7.8.1
     transitivePeerDependencies:
       - debug
@@ -13984,6 +13996,8 @@ snapshots:
     dependencies:
       pend: 1.2.0
 
+  fflate@0.4.8: {}
+
   fflate@0.6.10: {}
 
   fflate@0.7.4: {}
@@ -14218,18 +14232,6 @@ snapshots:
       url-parse: 1.5.10
     transitivePeerDependencies:
       - supports-color
-
-  get-it@8.4.28:
-    dependencies:
-      decompress-response: 7.0.0
-      follow-redirects: 1.15.6(debug@2.6.9)
-      into-stream: 6.0.0
-      is-retry-allowed: 2.2.0
-      is-stream: 2.0.1
-      progress-stream: 2.0.0
-      tunnel-agent: 0.6.0
-    transitivePeerDependencies:
-      - debug
 
   get-it@8.4.28(debug@3.2.7):
     dependencies:
@@ -16358,6 +16360,12 @@ snapshots:
     dependencies:
       xtend: 4.0.2
 
+  posthog-js@1.147.0:
+    dependencies:
+      fflate: 0.4.8
+      preact: 10.19.5
+      web-vitals: 4.2.1
+
   potpack@1.0.2: {}
 
   preact@10.19.5: {}
@@ -18090,6 +18098,8 @@ snapshots:
   wcwidth@1.0.1:
     dependencies:
       defaults: 1.0.4
+
+  web-vitals@4.2.1: {}
 
   webgl-constants@1.1.1: {}
 
