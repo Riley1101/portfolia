@@ -1,14 +1,15 @@
 import "./globals.css";
-import "katex/dist/katex.min.css";
 import "dracula-prism/dist/css/dracula-prism.min.css";
-import NavAside from "@/components/common/nav-aside";
-import Header from "@/components/common/header";
-import React from "react";
-import { Inter } from "next/font/google";
-import { AnalyticsWrapper } from "@/components/common/analytics";
+import "katex/dist/katex.min.css";
 import GradientMesh from "@/components/common/gradient-mesh";
-import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
+import Header from "@/components/common/header";
+import NavAside from "@/components/common/nav-aside";
+import React from "react";
 import type { Metadata } from "next";
+import { AnalyticsWrapper } from "@/components/common/analytics";
+import { Inter } from "next/font/google";
+import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
+import { CSPostHogProvider } from "@/components/providers/PostHogProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN || ""),
@@ -71,29 +72,31 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head />
-      <body className="overflow-hidden bg-[#121212]">
-        <div className="w-full overflow-hidden md:px-[10%] lg:pr-[0%] max-h-dvh bg-[#33161600]">
-          <Header />
-          <div
-            className="row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
+      <CSPostHogProvider>
+        <body className="overflow-hidden bg-[#121212]">
+          <div className="w-full overflow-hidden md:px-[10%] lg:pr-[0%] max-h-dvh bg-[#33161600]">
+            <Header />
+            <div
+              className="row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
           lg:grid-cols-[200px_auto] xl:grid-cols-[200px_auto] w-full text-theme-body overflow-hidden"
-          >
-            <div className="hidden lg:block">
-              <NavAside />
-              </div>
-            <main
-              id="main"
-              className="h-dvh scroll-mt-1 z-[10]  pt-[6em] p-4 overflow-y-scroll md:p-0 lg:p-12 md:pt-[6em]"
             >
-              <div className="mt-4 mb-4 flex flex-col w-full md:my-12">
-                {children}
+              <div className="hidden lg:block">
+                <NavAside />
               </div>
-            </main>
+              <main
+                id="main"
+                className="h-dvh scroll-mt-1 z-[10]  pt-[6em] p-4 overflow-y-scroll md:p-0 lg:p-12 md:pt-[6em]"
+              >
+                <div className="mt-4 mb-4 flex flex-col w-full md:my-12">
+                  {children}
+                </div>
+              </main>
+            </div>
+            <GradientMesh />
           </div>
-          <GradientMesh />
-        </div>
-        <AnalyticsWrapper />
-      </body>
+          <AnalyticsWrapper />
+        </body>
+      </CSPostHogProvider>
     </html>
   );
 }
