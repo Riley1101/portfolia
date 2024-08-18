@@ -2,7 +2,7 @@ export const metaData = {
   title: "Arkar Myat",
   siteName: "Arkar Myat",
   description:
-    "An inspiring engineer who loves coding, problem-solving and design",
+    "An inspiring software engineer who loves coding, problem-solving and design",
   url: new URL("https://arkar.space"),
   keywords: [
     "Next.js",
@@ -29,8 +29,8 @@ export const getOpenGraph = (
   images: [
     {
       url: image,
-      width: 800,
-      height: 600,
+      width: 1200,
+      height: 630,
     },
   ],
   locale: "en-US",

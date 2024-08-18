@@ -24,7 +24,7 @@ export async function generateMetadata({
     description: data?.description,
     keywords: [...metaData.keywords, ...data?.categories],
     openGraph: getOpenGraph(
-      data?.mainImage,
+      data?.mainImage + "?w=1200&h=630",
       data?.title,
       data.description,
       new URL(`/snippets/${data?.slug}`, metaData?.url),
