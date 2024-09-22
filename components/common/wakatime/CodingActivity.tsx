@@ -23,7 +23,6 @@ export function CodingActivityChart() {
   const canvasEl = useRef<HTMLCanvasElement>(null);
   const [commits, _] = useState<CodingActivity | null>(null);
 
-  console.log(commits);
   useEffect(() => {
     getGoals().then((data) => {
       if (data.data) {

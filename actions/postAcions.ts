@@ -98,3 +98,18 @@ export const getArticleSEOContentBySlug = cache(async function (
     slug: slug,
   });
 });
+
+export const getArticleSlugs = cache(async function (): Promise<
+  {
+    slug: string;
+    _updatedAt: string;
+  }[]
+> {
+  const query = `
+  *[_type == "article"][0..100]{
+    'slug':slug.current,
+    _updatedAt
+  }
+`;
+  return await client.fetch(query);
+});

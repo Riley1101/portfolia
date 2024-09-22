@@ -1,6 +1,8 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { getArticleSlugs } from "@/actions/postAcions";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const articles = await getArticleSlugs();
   return [
     {
       url: "https://arkar.space",
@@ -28,5 +30,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       priority: 0.8,
     },
+    ...articles.map((article) => ({
+      url: `https://arkar.space/articles/${article.slug}`,
+      lastModified: new Date(article._updatedAt),
+      priority: 0.5,
+    })),
   ];
 }
