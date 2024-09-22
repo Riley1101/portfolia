@@ -3,7 +3,6 @@ import { getArticleSlugs } from "@/actions/postAcions";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const articles = await getArticleSlugs();
-  console.log(articles);
   return [
     {
       url: "https://arkar.space",
