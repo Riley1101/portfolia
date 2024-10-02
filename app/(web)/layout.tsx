@@ -7,7 +7,7 @@ import NavAside from "@/components/common/nav-aside";
 import React from "react";
 import type { Metadata } from "next";
 import { AnalyticsWrapper } from "@/components/common/analytics";
-import { Inter } from "next/font/google";
+import { Inter, Ubuntu } from "next/font/google";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import { CSPostHogProvider } from "@/components/providers/PostHogProvider";
 
@@ -59,7 +59,8 @@ export const metadata: Metadata = {
   ),
 };
 
-const inter = Inter({
+const ubuntu = Ubuntu({
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -70,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={ubuntu.className}>
       <head />
       <CSPostHogProvider>
         <body className="overflow-hidden bg-[#121212]">

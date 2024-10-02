@@ -24,7 +24,8 @@
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@design": ["./components/design/*"]
     },
     "plugins": [
       {
