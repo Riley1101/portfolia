@@ -1,5 +1,5 @@
 import React from "react";
-import './globals.css';
+import "@styles/globals.css";
 
 export default function RootLayout({
   children,
@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="font-design">{children}</body>
+      <body className="dark font-design bg-background">{children}</body>
     </html>
   );
 }

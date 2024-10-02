@@ -25,7 +25,8 @@
     "experimentalDecorators": true,
     "paths": {
       "@/*": ["./*"],
-      "@design": ["./components/design/*"]
+      "@design/*": ["./components/design/*"],
+      "@styles/*": ["./styles/*"]
     },
     "plugins": [
       {

@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@styles/globals.css";
 import "dracula-prism/dist/css/dracula-prism.min.css";
 import "katex/dist/katex.min.css";
 import GradientMesh from "@/components/common/gradient-mesh";
@@ -7,7 +7,7 @@ import NavAside from "@/components/common/nav-aside";
 import React from "react";
 import type { Metadata } from "next";
 import { AnalyticsWrapper } from "@/components/common/analytics";
-import { Inter, Ubuntu } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import { CSPostHogProvider } from "@/components/providers/PostHogProvider";
 

@@ -1,64 +1,99 @@
 import NextLink from "next/link";
+import { cn } from "@/lib/utils";
 
-export function H1() {
+interface TypographyProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export function H1(props: TypographyProps) {
+  let { children, className } = props;
   return (
-    <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-      The Joke Tax Chronicles
+    <h1
+      className={cn(
+        "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
+        className,
+      )}
+    >
+      {children}
     </h1>
   );
 }
 
-export function H2() {
+export function H2(props: TypographyProps) {
+  let { children, className } = props;
   return (
-    <h2 className="mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-      The King's Plan
+    <h2
+      className={cn(
+        "mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0",
+        className,
+      )}
+    >
+      {children}
     </h2>
   );
 }
 
-export function H3() {
+export function H3(props: TypographyProps) {
+  let { children, className } = props;
   return (
-    <h3 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
-      The Joke Tax
+    <h3
+      className={cn(
+        "mt-8 scroll-m-20 text-2xl font-semibold tracking-tight",
+        className,
+      )}
+    >
+      {children}
     </h3>
   );
 }
 
-export function H4() {
+export function H4(props: TypographyProps) {
+  let { children, className } = props;
   return (
-    <h3 className="mt-8 scroll-m-20 text-xl font-semibold tracking-tight">
-      The Joke Tax
-    </h3>
+    <h4
+      className={cn(
+        "mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+        className,
+      )}
+    >
+      {children}
+    </h4>
   );
 }
 
-export function Paragraph() {
+export function Paragraph(props: TypographyProps) {
+  let { children, className } = props;
   return (
-    <p className="leading-7 [&:not(:first-child)]:mt-6">
-      As a result, people stopped telling jokes, and the kingdom fell into a
-      gloom. But there was one person who refused to let the king's foolishness
-      get him down: a court jester named Jokester.
+    <p
+      className={cn("leading-7 [&:not(:first-child)]:mt-4 text-lg", className)}
+    >
+      {children}
     </p>
   );
 }
 
-export function Link() {
+export function Blockqoute({ children }: TypographyProps) {
   return (
-    <NextLink
-      href="#"
-      className="font-medium text-primary underline underline-offset-4"
-    >
-      a brilliant plan
-    </NextLink>
+    <blockquote className="mt-6 border-l-2 pl-6 italic">{children}</blockquote>
   );
 }
 
-export function Blockqoute() {
+interface LinkProps { }
+
+export function Link(props: React.AnchorHTMLAttributes<LinkProps>) {
+  const { children, className, ...rest } = props;
   return (
-    <blockquote className="mt-6 border-l-2 pl-6 italic">
-      "After all," he said, "everyone enjoys a good joke, so it's only fair that
-      they should pay for the privilege."
-    </blockquote>
+    <NextLink
+      href="#"
+      className={cn(
+        "font-medium text-primary underline underline-offset-4",
+        className,
+      )}
+      {...rest}
+    >
+      {children}
+    </NextLink>
   );
 }
 
@@ -114,4 +149,3 @@ export function Table() {
     </table>
   );
 }
-

@@ -22,8 +22,10 @@ module.exports = {
         "theme-accent": "#88ced3",
         "theme-accent-opaque": "#88ced309",
         "theme-body": "#cbd5e1",
+
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
