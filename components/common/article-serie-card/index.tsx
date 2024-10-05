@@ -19,6 +19,7 @@ export function ArticleSerieCard({ article }: { article: ArticlCardType }) {
   return (
     <Link
       onClick={navigate}
+      aria-lable={`Learn more about ${article.title}`}
       href={`/articles/${article.slug}`}
       className={cx(
         "p-4 shrink-0 h-[260px] flex flex-col  w-[220px] hover:ml-[-70px] hover:rotate-6 hover:-translate-y-2 first:hover:translate-y-0 first:hover:ml-[100px] hover:translate-x-[-80px] hover:mr-[50px] first:hover:mr-[40px]  first:ml-0 card-glass-box ml-[-100px] origin-center shadow  border gap-4 relative transition-all group  border-theme-accent  duration-200 will-change-transform  rounded-md cursor-pointer  hover:border-theme-accent border-opacity-20 hover:border-opacity-20",

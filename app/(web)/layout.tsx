@@ -7,7 +7,7 @@ import NavAside from "@/components/common/nav-aside";
 import React from "react";
 import type { Metadata } from "next";
 import { AnalyticsWrapper } from "@/components/common/analytics";
-import { Ubuntu } from "next/font/google";
+import { Merriweather } from "next/font/google";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import { CSPostHogProvider } from "@/components/providers/PostHogProvider";
 
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   ),
 };
 
-const ubuntu = Ubuntu({
-  weight: ["300", "400", "500", "700"],
+const ubuntu = Merriweather({
+  weight: ["300", "400", "700", "900"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -75,7 +75,7 @@ export default function RootLayout({
       <head />
       <CSPostHogProvider>
         <body className="overflow-hidden bg-[#121212]">
-          <div className="w-full overflow-hidden md:px-[10%] lg:pr-[0%] max-h-dvh bg-[#33161600]">
+          <div className="w-full overflow-hidden md:px-[15%] lg:pr-[0%] max-h-dvh bg-[#33161600]">
             <Header />
             <div
               className="row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 

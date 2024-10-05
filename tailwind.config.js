@@ -67,7 +67,7 @@ module.exports = {
       },
       fontFamily: {
         theme: ["Ubuntu", "Inter", "sans-serif"],
-        design: ["Ubuntu", "Inter", "sans-serif"],
+        design: ["Merriweather", "Inter", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -10,6 +10,7 @@ type Props = {
 export function ProjectCard({ data }: Props) {
   return (
     <Link
+      aria-label={`Read more about project on ${data.title}`}
       href={`/projects/${data.slug}`}
       className="border-theme-primary border-opacity-10 transition-all duration-300 relative border hover:border-opacity-[0.2] hover:border-theme-primary group overflow-hidden rounded-lg  cursor-pointer  min-h-[200px]  p-4 flex flex-col justify-between"
     >
