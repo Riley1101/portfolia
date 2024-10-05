@@ -31,6 +31,7 @@ export default function HomeBlogCard({
       onMouseLeave={() => {
         blob.current?.classList.add("hidden");
       }}
+      aria-label={`Read article about ${title}`}
       ref={container}
       onMouseMove={handleMouseMove}
       href={`/articles/${slug}`}

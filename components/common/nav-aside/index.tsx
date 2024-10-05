@@ -14,7 +14,7 @@ import {
   LinkedIn,
   Mastaodon,
 } from "@/components/common/icons";
-import CommandMenu from "@/components/common/cmdk";
+
 export type Nav = {
   id: number;
   name: string;
@@ -88,10 +88,7 @@ function NavASide() {
         "z-[20] transition-all flex-col pt-0 lg:pt-[8em] col-start-1 gap-4 lg:pointer-events-auto lg:flex",
       )}
     >
-      <div className="hidden lg:block">
-        <CommandMenu />
-      </div>
-      <div className="flex flex-col gap-2 p-4 border rounded-md glass-box border-theme-accent-opaque">
+      <div className="flex flex-col gap-2 p-4 border rounded-md glass-box ">
         <div className="flex flex-col gap-2 ">
           {navs.map((nav) => (
             <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>

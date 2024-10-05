@@ -23,6 +23,7 @@ export default function ArticleCard({
   }
   return (
     <Link
+      aria-label={`Read article titled ${title}`}
       onClick={navigate}
       href={`/articles/${slug}`}
       className={cx(
