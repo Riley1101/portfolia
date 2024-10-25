@@ -9,17 +9,19 @@ import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 
 export const metadata: Metadata = {
   title: "Articles | Arkar",
+
   openGraph: getOpenGraph(
     "/images/articles.png",
     "Articles | " + metaData.title,
     metaData.description,
     new URL("/articles", metaData.url),
   ),
+
   twitter: getTwitterCard(
     "/images/articles.png",
     "Articles | " + metaData.title,
     metaData.description,
-  ),
+  )
 };
 
 export default async function ArticlePage(props: {

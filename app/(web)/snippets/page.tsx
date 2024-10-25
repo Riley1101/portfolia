@@ -15,6 +15,7 @@ const hero = {
 
 export const metadata: Metadata = {
   title: "Snippets | Arkar Myat",
+
   openGraph: getOpenGraph(
     "/images/snippets.png",
     "Snippets | " + metaData.title,
@@ -22,11 +23,12 @@ export const metadata: Metadata = {
     new URL("/snippets", metaData.url),
     "article",
   ),
+
   twitter: getTwitterCard(
     "/images/snippets.png",
     "Snippets | " + metaData.title,
     metaData.description,
-  ),
+  )
 };
 
 async function ArticlePage() {

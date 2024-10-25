@@ -8,7 +8,7 @@ import { HomeLatestPost } from "@/components/pages/home/latest-blogs";
 import { ArticleSeries } from "@/components/common/article-series/ArticleSeries";
 
 export const metadata: Metadata = {
-  title: "Arkar Myat | An Inspiring Developer",
+  title: "Arkar Myat | An Inspiring Developer"
 };
 
 export default async function Home() {

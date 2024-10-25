@@ -17,17 +17,19 @@ const hero = {
 
 export const metadata: Metadata = {
   title: "About | Arkar Myat",
+
   openGraph: getOpenGraph(
     "/images/arkar.png",
     "About | " + metaData.title,
     metaData.description,
     new URL("/about", metaData.url),
   ),
+
   twitter: getTwitterCard(
     "/images/arkar.png",
     "About | " + metaData.title,
     metaData.description,
-  ),
+  )
 };
 
 function AboutPage() {
