@@ -16,11 +16,12 @@ const query = `
   'mainImage':mainImage.asset->{url}.url,
   body,
 }`;
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const seoQuery = `
 *[_type == "project" && slug.current == $slug][0]{
   title,

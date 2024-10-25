@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ArticlePage(props: {
-  searchParams?: { category: string | undefined };
+  searchParams?: Promise<{ category: string | undefined }>;
 }) {
   const { searchParams } = props;
   const categories = await getCategories();

@@ -13,11 +13,12 @@ import {
 } from "@/actions/postAcions";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const data: ArticleDetailType = await getArticleSEOContentBySlug(params.slug);
   return {
     title: data?.title,

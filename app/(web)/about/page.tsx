@@ -1,13 +1,10 @@
 export const revalidate = 60;
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import Hero from "@/components/pages/hero";
-import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
-import type { Metadata } from "next";
 
-const ComputerModel = dynamic(() => import("@/components/common/model"), {
-  ssr: false,
-});
+import ComputerModel from "@/components/common/model";
+import Hero from "@/components/pages/hero";
+import Image from "next/image";
+import type { Metadata } from "next";
+import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 
 const hero = {
   title: "About",
@@ -29,7 +26,7 @@ export const metadata: Metadata = {
     "/images/arkar.png",
     "About | " + metaData.title,
     metaData.description,
-  )
+  ),
 };
 
 function AboutPage() {

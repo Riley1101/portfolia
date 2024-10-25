@@ -1,9 +1,11 @@
 "use client";
+
 import { Canvas, PrimitiveProps, useLoader} from "@react-three/fiber";
+import { DirectionalLight } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { MutableRefObject,  useRef } from "react";
 import { useObjectMovement } from "@/hooks/useMouse";
-import { DirectionalLight } from "three";
+
 const ComputerModel = () => {
   // change  gltf file to url
   const glbpath = "/models/retro.glb";

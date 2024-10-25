@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, use, Usable } from "react";
 import { unsubscribe } from "@/actions/newsLetterActions";
 import { useTransition } from "react";
 
-export default function ByeBye({ params }: any) {
+export default function ByeBye(props: { params: Usable<{ email: string }> }) {
+  const params = use<{ email: string }>(props.params);
   const [message, setMessage] = useState("Unsubscribe");
   const { email } = params;
   let [isPending, startTransition] = useTransition();

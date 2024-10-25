@@ -18,11 +18,12 @@ const query = `
 }
   `;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const seoQuery = `
   *[_type == "snippet" && slug.current == $slug][0]{
     title,
