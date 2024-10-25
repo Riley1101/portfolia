@@ -46,7 +46,7 @@ function AboutPage() {
               src="/images/profile.png"
               alt="My profile"
               className="object-cover float-none md:float-left  w-[200px] rounded-full aspect-square m-8"
-              width={800}
+              width={600}
               height={600}
             />
             <p>

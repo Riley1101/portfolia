@@ -12,23 +12,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: "https://arkar.space/about",
       lastModified: new Date(),
-      priority: 0.8,
+      priority: 1,
     },
     {
       url: "https://arkar.space/articles",
       lastModified: new Date(),
-      priority: 0.8,
+      priority: 1,
     },
 
     {
       url: "https://arkar.space/snippets",
       lastModified: new Date(),
-      priority: 0.8,
+      priority: 1,
     },
     {
       url: "https://arkar.space/videos",
       lastModified: new Date(),
-      priority: 0.8,
+      priority: 1,
     },
     ...articles.map((article) => ({
       url: `https://arkar.space/articles/${article.slug}`,

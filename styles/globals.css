@@ -2,6 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 316 44% 95%;
+    --foreground: 316 5% 10%;
+    --card: 316 44% 95%;
+    --card-foreground: 316 5% 15%;
+    --popover: 316 44% 95%;
+    --popover-foreground: 316 95% 10%;
+    --primary: 316 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 316 30% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 278 30% 95%;
+    --muted-foreground: 316 5% 40%;
+    --accent: 278 30% 90%;
+    --accent-foreground: 316 5% 15%;
+    --destructive: 0 50% 50%;
+    --destructive-foreground: 316 5% 95%;
+    --border: 316 30% 82%;
+    --input: 316 30% 50%;
+    --ring: 316 100% 50%;
+    --radius: 0rem;
+  }
+  .dark {
+    --background: 316 10% 5%;
+    --foreground: 316 5% 90%;
+    --card: 316 8% 5%;
+    --card-foreground: 316 5% 90%;
+    --popover: 316 10% 5%;
+    --popover-foreground: 316 5% 90%;
+    --primary: 316 97% 41%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 316 10% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 278 10% 15%;
+    --muted-foreground: 316 5% 60%;
+    --accent: 278 10% 15%;
+    --accent-foreground: 316 5% 90%;
+    --destructive: 0 50% 30%;
+    --destructive-foreground: 316 5% 90%;
+    --border: 316 20% 18%;
+    --input: 316 20% 18%;
+    --ring: 316 97% 41%;
+    --radius: 0rem;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
 @layer utilities {
   .page-container {
     @apply w-full grid  grid-cols-1 lg:grid-cols-[2.5fr_1fr] md:max-w-[800px] lg:max-w-[1140px];
@@ -14,6 +69,10 @@
   }
   .title {
     font-size: clamp(2.5rem, 5vw, 3rem);
+  }
+
+  .box {
+    @apply p-4 md:p-8 lg:p-12;
   }
 }
 ::-moz-selection {
