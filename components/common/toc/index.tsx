@@ -45,7 +45,6 @@ export default function TableOfContents({ value }: Props) {
               <Link
                 href={`#${toUrl([e])}`}
                 className="cursor-pointer"
-                aria-label={`Go to section about ${e}`}
                 onClick={handleScroll}
               >
                 {e}

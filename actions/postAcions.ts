@@ -48,7 +48,7 @@ export const getArticles = cache(async function (): Promise<ArticlCardType[]> {
 });
 
 export const getArticleBySlug = cache(async function (
-  slug?: string,
+  slug: string,
 ): Promise<ArticleDetailType> {
   const query = `
 *[_type == "article" && slug.current == $slug][0]{

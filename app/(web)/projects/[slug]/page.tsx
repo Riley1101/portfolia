@@ -1,11 +1,13 @@
 export const revalidate = 60;
+
 import Hero from "@/components/pages/article/hero";
-import client from "@/utils/client";
-import type { Project } from "@/types/page/testimonials";
 import PortableBody from "@/components/common/portable";
 import TableOfContents from "@/components/common/toc";
+import client from "@/utils/client";
 import type { DetailPageParamTypes } from "@/types";
+import type { Project } from "@/types/page/testimonials";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
+import { redirect } from "next/navigation";
 
 const query = `
 *[_type == "project" && slug.current == $slug][0]{
@@ -16,11 +18,9 @@ const query = `
   'mainImage':mainImage.asset->{url}.url,
   body,
 }`;
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const seoQuery = `
 *[_type == "project" && slug.current == $slug][0]{
@@ -49,10 +49,13 @@ export async function generateMetadata(
 }
 async function ProjectDetailPage(props: DetailPageParamTypes) {
   const { params } = props;
+  const { slug } = await params;
   const data: Project = await client.fetch(query, {
-    slug: params?.slug,
+    slug: slug,
   });
-  if (data === null) return <div>404</div>;
+  if (data === null) {
+    return redirect("/404");
+  }
   return (
     <div className="page-container md:gap-4 lg:gap-12">
       <div className="flex shrink page-left flex-col gap-4">

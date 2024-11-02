@@ -1,8 +1,10 @@
 "use client";
+
 import NavModal from "@/components/common/nav-modal";
 import React from "react";
 import Link from "next/link";
 import { Bars2Icon } from "@heroicons/react/20/solid";
+
 const Header = () => {
   let [visible, setVisible] = React.useState(false);
   const toggle = () => {
@@ -15,7 +17,7 @@ const Header = () => {
     backdrop-blur-lg bg-opacity-[0.15] border-gray-800 justify-between border-b  flex items-center px-4 md:px-[15%]
      absolute top-0 left-0 h-[3.5em] z-[99999] w-full"
     >
-      <Link href="/" className="font-bold text-theme-body" aria-label="Logo of Arkar Myat's website">
+      <Link href="/" className="font-bold text-theme-body">
         Arkar Myat
       </Link>
       <NavModal visible={visible} toggle={toggle} />

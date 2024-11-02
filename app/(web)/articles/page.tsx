@@ -21,13 +21,15 @@ export const metadata: Metadata = {
     "/images/articles.png",
     "Articles | " + metaData.title,
     metaData.description,
-  )
+  ),
 };
 
-export default async function ArticlePage(props: {
+export default async function ArticlePage({
+  searchParams,
+}: {
   searchParams?: Promise<{ category: string | undefined }>;
 }) {
-  const { searchParams } = props;
+  const param = await searchParams;
   const categories = await getCategories();
   return (
     <div className="page-container gap-4 md:gap-12">
@@ -36,7 +38,7 @@ export default async function ArticlePage(props: {
         <div className="block md:hidden row-start-1 lg:col-start-2">
           <Categories categories={categories} />
         </div>
-        <ArticleTimeLine current={searchParams?.category} />
+        <ArticleTimeLine current={param?.category} />
       </div>
       <div className="page-right hidden md:block row-start-1 lg:col-start-2">
         <Categories categories={categories} />

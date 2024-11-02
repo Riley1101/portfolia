@@ -1,10 +1,12 @@
 export const revalidate = 60;
+
 import Hero from "@/components/pages/article/hero";
 import client from "@/utils/client";
 import type { DetailPageParamTypes } from "@/types";
 import type { SnippetDetailType } from "@/types/articles";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
 import CodeBlock from "@/components/pages/snippets/codeblock";
+import { redirect } from "next/navigation";
 
 const query = `
 *[_type == "snippet" && slug.current == $slug][0]{
@@ -18,11 +20,9 @@ const query = `
 }
   `;
 
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const seoQuery = `
   *[_type == "snippet" && slug.current == $slug][0]{
@@ -45,7 +45,7 @@ export async function generateMetadata(
       data.title,
       data.description,
       new URL(`/snippets/${data?.slug}`, metaData?.url),
-      'article'
+      "article",
     ),
     twitter: getTwitterCard(data?.mainImage, data.title, data.description),
   };
@@ -53,10 +53,13 @@ export async function generateMetadata(
 
 async function SnippetDetailPage(props: DetailPageParamTypes) {
   const { params } = props;
+  const { slug } = await params;
   const data: SnippetDetailType = await client.fetch(query, {
-    slug: params?.slug,
+    slug,
   });
-  if (data === null) return <></>;
+  if (data === null) {
+    return redirect("/404");
+  }
   return (
     <div className="page-container md:gap-4 lg:gap-12">
       <div className="flex shrink page-left flex-col gap-4">

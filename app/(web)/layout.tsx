@@ -1,6 +1,5 @@
 import "@styles/globals.css";
 import "dracula-prism/dist/css/dracula-prism.min.css";
-import "katex/dist/katex.min.css";
 import GradientMesh from "@/components/common/gradient-mesh";
 import Header from "@/components/common/header";
 import NavAside from "@/components/common/nav-aside";
@@ -64,7 +63,7 @@ export const metadata: Metadata = {
     "/images/arkar.png",
     metaData.title,
     metaData.description,
-  )
+  ),
 };
 
 const ubuntu = Merriweather({

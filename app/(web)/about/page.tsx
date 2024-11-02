@@ -1,6 +1,6 @@
 export const revalidate = 60;
 
-import ComputerModel from "@/components/common/model";
+import ComputerModel from "@/components/common/model/ModelWrapper";
 import Hero from "@/components/pages/hero";
 import Image from "next/image";
 import type { Metadata } from "next";
