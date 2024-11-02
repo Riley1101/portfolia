@@ -1,15 +1,19 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, use } from "react";
 import { unsubscribe } from "@/actions/newsLetterActions";
 import { useTransition } from "react";
 
-export default function ByeBye({ params }: any) {
+export default function ByeBye({
+  params,
+}: {
+  params: Promise<{ email: string }>;
+}) {
+  const p = use(params);
   const [message, setMessage] = useState("Unsubscribe");
-  const { email } = params;
   let [isPending, startTransition] = useTransition();
-  let mail = decodeURIComponent(email);
+  let mail = decodeURIComponent(p.email);
   return (
     <div className="pt-24 page-container">
       <div>

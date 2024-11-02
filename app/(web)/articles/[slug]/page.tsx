@@ -12,12 +12,12 @@ import {
   getArticleSEOContentBySlug,
 } from "@/actions/postAcions";
 import { getOpenGraph, getTwitterCard, metaData } from "@/utils/metadata";
+import { redirect } from "next/navigation";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
 }) {
+  const params = await props.params;
   const data: ArticleDetailType = await getArticleSEOContentBySlug(params.slug);
   return {
     title: data?.title,
@@ -36,8 +36,11 @@ export async function generateMetadata({
 
 async function ArticleDetailPage(props: DetailPageParamTypes) {
   const { params } = props;
-  const data = await getArticleBySlug(params?.slug);
-  if (data === null) return <></>;
+  const { slug } = await params;
+  const data = await getArticleBySlug(slug);
+  if (data === null) {
+    return redirect("/404");
+  }
   return (
     <div className="page-container md:gap-4 lg:gap-12">
       <div className="flex shrink page-left flex-col gap-4">

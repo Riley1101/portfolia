@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import Img from "next/image";
 import { useImage } from "./getImage";
@@ -6,7 +7,6 @@ import { rgbDataURL } from "@/utils/image-blur";
 import type { SanityImage } from "@/types/sanity-image";
 
 // extend native html image props
-//
 interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   image: SanityImage;
 }

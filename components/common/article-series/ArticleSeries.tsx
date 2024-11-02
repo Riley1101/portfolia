@@ -15,7 +15,7 @@ export async function ArticleSeries() {
             <p className="text-theme-body">{serie.description}</p>
             <div className="py-4  pb-4 flex gap-4 overflow-x-scroll md:max-w-[700px]">
               {serie.articles.map((e: ArticlCardType) => (
-                <ArticleSerieCard key={e._id} article={e} />
+                <ArticleSerieCard key={e.slug} article={e} />
               ))}
             </div>
           </div>

@@ -11,17 +11,19 @@ const hero = {
 
 export const metadata: Metadata = {
   title: "Videos | Arkar",
+
   openGraph: getOpenGraph(
     "/images/videos.png",
     "Videos | " + metaData.title,
     metaData.description,
     new URL("/videos", metaData.url),
   ),
+
   twitter: getTwitterCard(
     "/images/videos.png",
     "Videos | " + metaData.title,
     metaData.description,
-  ),
+  )
 };
 
 function VideoPage() {
