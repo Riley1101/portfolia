@@ -38,7 +38,7 @@ export const getArticles = cache(async function (): Promise<ArticlCardType[]> {
   *[_type=='article'] | order(releasedAt desc)  {
     'slug':slug.current,
     title,
-    releasedat,
+    releasedAt,
     description,
     mainImage,
     'categories':categories[]->title,
