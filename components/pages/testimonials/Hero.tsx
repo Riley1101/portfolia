@@ -19,7 +19,7 @@ export function ExperienceHero({}: Props) {
       </p>
       <button
         className="px-6 glass-box py-4 mt-10 relative transition-all duration-500 rounded-md cursor-pointer
-        bg-gradient-to-r max-w-max to-theme-accent-opaque from-theme-primary-opaque"
+        bg-linear-to-r max-w-max to-theme-accent-opaque from-theme-primary-opaque"
       >
         Checkout my resume !
       </button>

@@ -1,7 +1,7 @@
 export default function BlockQuote(props: any) {
   return (
     <blockquote className="p-4 transition-all duration-500 border rounded-md 
-    my-6 bg-gradient-to-r text-lg from-theme-accent-opaque border-theme-accent-opaque">
+    my-6 bg-linear-to-r text-lg from-theme-accent-opaque border-theme-accent-opaque">
       <svg
         aria-hidden="true"
         className="w-6 h-6  text-theme-accent"

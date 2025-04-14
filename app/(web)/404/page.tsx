@@ -21,7 +21,7 @@ export default function NotFound() {
           existed.
           <Link
             className={` mt-4 max-w-max  flex cursor-pointer items-center hover:text-theme-accent py-3 hover:bg-theme-accent-opaque duration-300  transition-all border  px-4  rounded-full
-          bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary  text-theme-accent`}
+          bg-theme-primary/5 border-theme-primary/5  text-theme-accent`}
             href="/articles"
           >
             Articles

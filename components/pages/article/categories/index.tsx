@@ -42,9 +42,9 @@ export function Categories({ categories }: Props) {
         <button
           onClick={() => handleFilter("All")}
           className={cx(
-            `text-sm flex  cursor-pointer items-center hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-theme`,
+            `text-sm flex  cursor-pointer items-center hover:text-theme-accent py-2 hover:bg-theme-primary/5 duration-300 hover:border-theme-primary/5 transition-all border  border-transparent px-4  rounded-theme`,
             {
-              "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
+              "bg-theme-primary/5  border-theme-primary/5 text-theme-accent":
                 params.get("category") === "All" || !params.get("category"),
             },
             isPending && "cursor-wait",
@@ -57,9 +57,9 @@ export function Categories({ categories }: Props) {
             onClick={() => handleFilter(item.title)}
             key={item._id}
             className={cx(
-              `text-sm min-w-max  cursor-pointer hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-theme`,
+              `text-sm min-w-max  cursor-pointer hover:text-theme-accent py-2 hover:bg-theme-primary/5 duration-300 hover:border-theme-primary/5 hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-theme`,
               {
-                "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
+                "bg-theme-primary/5 border-theme-primary/5 text-theme-accent":
                   params.get("category") === item.title,
               },
               isPending && "cursor-wait",

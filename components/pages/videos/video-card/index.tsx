@@ -10,7 +10,7 @@ const VideoCard = ({ data }: { data: VideoCardType }) => {
       className="group flex flex-col gap-4  transition-all duration-500 rounded-md cursor-pointer "
     >
       <Image
-        className="w-full object-cover rounded-sm brightness-75 blur-[3px] group-hover:blur-0 group-hover:brightness-100 transition-all duration-500"
+        className="w-full object-cover rounded-xs brightness-75 blur-[3px] group-hover:blur-0 group-hover:brightness-100 transition-all duration-500"
         src={data.snippet.thumbnails.standard.url}
         alt={data.snippet.title}
         width={200}

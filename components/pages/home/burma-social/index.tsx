@@ -10,7 +10,7 @@ export const SocialCard = ({ post }: { post: MastodonPost }) => {
   const media = media_attachments[0] || null;
   return (
     <a href={url} target={"_blank"} rel="noreferrer">
-      <div className="flex flex-col gap-2 p-2 border rounded-md cursor-pointer cusor-pointer hover:bg-gradient-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 bg-theme-accent-opaque">
+      <div className="flex flex-col gap-2 p-2 border rounded-md cursor-pointer cusor-pointer hover:bg-linear-to-r hover:from-theme-accent-opaque border-theme-accent-opaque md:p-4 bg-theme-accent-opaque">
         <p className="text-sm text-theme-accent">
           {dateFormat(created_at, "mmm dd yyyy HH:MM")}
         </p>

@@ -28,7 +28,7 @@ export function NewsLetter() {
           name="name"
           spellCheck={false}
           placeholder="Your Name ! "
-          className="w-full px-4 py-2 border border-theme-primary-opaque bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
+          className="w-full px-4 py-2 border border-theme-primary-opaque bg-transparent rounded-md outline-hidden  hover:bg-linear-to-r hover:from-theme-accent-opaque "
           required={true}
         />
         <input
@@ -37,7 +37,7 @@ export function NewsLetter() {
           required={true}
           spellCheck={false}
           placeholder="Your email ! "
-          className="w-full px-4 py-2 border border-theme-primary-opaque  bg-transparent rounded-md outline-none  hover:bg-gradient-to-r hover:from-theme-accent-opaque "
+          className="w-full px-4 py-2 border border-theme-primary-opaque  bg-transparent rounded-md outline-hidden  hover:bg-linear-to-r hover:from-theme-accent-opaque "
         />
         <button
           type="submit"

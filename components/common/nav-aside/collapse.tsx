@@ -84,7 +84,7 @@ export const social: Nav[] = [
 ];
 function NavASide() {
   return (
-    <nav className="z-[20] max-w-max  flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex ">
+    <nav className="z-20 max-w-max  flex-col pt-[8em] hidden col-start-1 gap-4 pointer-events-none lg:pointer-events-auto lg:flex ">
       <div className="flex flex-col gap-4 p-4 border rounded-md glass-box">
         <div className="flex flex-col gap-4 ">
           {navs.map((nav) => (

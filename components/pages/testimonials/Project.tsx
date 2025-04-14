@@ -16,7 +16,7 @@ export function Project({ index, data }: Props) {
     <Link
       href={`/projects/${slug}`}
       className={cx(
-        "hover:bg-gradient-to-r @lg:flex-row rounded-md border border-theme-primary-opaque hover:from-theme-accent-opaque flex gap-6 cursor-pointer flex-col p-6",
+        "hover:bg-linear-to-r @lg:flex-row rounded-md border border-theme-primary-opaque hover:from-theme-accent-opaque flex gap-6 cursor-pointer flex-col p-6",
         isOdd ? "" : "md:flex-row-reverse ",
       )}
     >

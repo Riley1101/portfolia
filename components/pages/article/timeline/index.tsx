@@ -29,10 +29,10 @@ export async function ArticleTimeLine(props: Props) {
           className="relative grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))]
        grid-flow-dense  gap-4 md:gap-8"
         >
-          {filteredArticles.map((article) => {
+          {filteredArticles.map((article, i) => {
             return (
               <ArticleCard
-                key={article._id}
+                key={i}
                 mainImage={article.mainImage}
                 title={article.title}
                 description={article.description}
@@ -50,14 +50,14 @@ export async function ArticleTimeLine(props: Props) {
             <Link
               href="/articles"
               className={` max-w-max  flex cursor-pointer items-center hover:text-theme-accent py-2 text-sm hover:bg-theme-accent-opaque duration-300  transition-all border  px-4  rounded-full
-          bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary  text-theme-accent`}
+          bg-theme-primary/5 border-theme-primary/5  text-theme-accent`}
             >
               Explore Articles
             </Link>
             <Link
               href="/snippets"
               className={` max-w-max  flex cursor-pointer items-center hover:text-theme-accent py-2 text-sm hover:bg-theme-accent-opaque duration-300  transition-all border  px-4  rounded-full
-          bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary  text-theme-accent`}
+          bg-theme-primary/5   border-theme-primary/5  text-theme-accent`}
             >
               Explore Snippets
             </Link>

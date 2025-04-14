@@ -24,7 +24,7 @@ export function Related({ data }: Props) {
             key={itm._id}
             href={`/articles/${itm.slug}`}
             className="flex flex-col items-center gap-4 p-4 transition-all duration-500 rounded-md
-             border rounded-md cursor-pointer hover:from-theme-primary-opaque hover:bg-gradient-to-r border-theme-primary-opaque"
+             border rounded-md cursor-pointer hover:from-theme-primary-opaque hover:bg-linear-to-r border-theme-primary-opaque"
           >
             <div className="w-full ml-auto md:w-auto">
               <Image

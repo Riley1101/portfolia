@@ -1,25 +1,62 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer utilities {
-  .page-container {
-    @apply w-full grid  grid-cols-1 lg:grid-cols-[2.5fr_1fr] md:max-w-[800px] lg:max-w-[1140px];
-  }
-  .glass-box {
-    @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.1];
-  }
-  .card-glass-box {
-    @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.2] border-2;
-  }
-  .title {
-    font-size: clamp(2.5rem, 5vw, 3rem);
-  }
+@custom-variant dark (&:is(.dark *));
 
-  .box {
-    @apply p-4 md:p-8 lg:p-12;
+@theme {
+  --grid-template-columns-dashboard: 200px auto 300px;
+
+  --grid-template-rows-dashboard: 1fr;
+
+  --color-theme-bg-secondary: #16142d;
+  --color-theme-bg: #131127;
+  --color-theme-primary: #f056c8;
+  --color-theme-primary-opaque: #f056c71a;
+  --color-theme-accent: #88ced3;
+  --color-theme-accent-opaque: #88ced309;
+  --color-theme-body: #cbd5e1;
+
+  --font-theme: Ubuntu, Inter, sans-serif;
+  --font-design: Merriweather, Inter, sans-serif;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
+
+@utility page-container {
+  @apply w-full grid  grid-cols-1 lg:grid-cols-[2.5fr_1fr] md:max-w-[800px] lg:max-w-[1140px];
+}
+
+@utility glass-box {
+  @apply border-theme-accent-opaque  bg-gray-900/10  bg-clip-padding backdrop-filter backdrop-blur-lg;
+}
+
+@utility card-glass-box {
+  @apply border-theme-accent-opaque  bg-gray-900/20  bg-clip-padding backdrop-filter backdrop-blur-lg border-2;
+}
+
+@utility title {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+}
+
+@utility box {
+  @apply p-4 md:p-8 lg:p-12;
+}
+
 ::-moz-selection {
   @apply bg-gray-700;
 }

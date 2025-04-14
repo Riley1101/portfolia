@@ -93,7 +93,7 @@ export default function RootLayout({
               </div>
               <main
                 id="main"
-                className="h-dvh scroll-mt-1 z-[10]  pt-[6em] p-4 overflow-y-scroll md:p-0 lg:p-12 md:pt-[6em]"
+                className="h-dvh scroll-mt-1 z-10  pt-[6em] p-4 overflow-y-scroll md:p-0 lg:p-12 md:pt-[6em]"
               >
                 <div className="mt-4 mb-4 flex flex-col w-full md:my-12">
                   {children}

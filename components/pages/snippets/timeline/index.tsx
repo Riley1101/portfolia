@@ -12,14 +12,14 @@ export function SnippetTimeLine({ data }: Props) {
   const { filteredData, handleChange, searchTerm } = useSearchByTitle(data);
   return (
     <div className="flex flex-col ">
-      <div className="flex items-center px-4 my-4 border rounded-md border-theme-accent-opaque group hover:from-theme-accent-opaque bg-gradient-to-l">
+      <div className="flex items-center px-4 my-4 border rounded-md border-theme-accent-opaque group hover:from-theme-accent-opaque bg-linear-to-l">
         <CommandLineIcon className="w-6 h-6 group-focus-within:text-theme-accent group" />
         <input
           onChange={handleChange}
           value={searchTerm}
           type="text"
           placeholder="Search"
-          className="w-full px-4 py-2 bg-transparent rounded-md outline-none text-bg-theme-accent"
+          className="w-full px-4 py-2 bg-transparent rounded-md outline-hidden text-bg-theme-accent"
         />
       </div>
       <div className="relative flex flex-col gap-4 pb-4 ">

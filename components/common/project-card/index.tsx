@@ -11,7 +11,7 @@ export function ProjectCard({ data }: Props) {
   return (
     <Link
       href={`/projects/${data.slug}`}
-      className="border-theme-primary border-opacity-10 transition-all duration-300 relative border hover:border-opacity-[0.2] hover:border-theme-primary group overflow-hidden rounded-lg  cursor-pointer  min-h-[200px]  p-4 flex flex-col justify-between"
+      className="border-theme-primary/10 transition-all duration-300 relative border hover:border-theme-primary/20 group overflow-hidden rounded-lg  cursor-pointer  min-h-[200px]  p-4 flex flex-col justify-between"
     >
       <div
         className=" top-[0%] right-[-10%] transform-center translate-y-[-1/2] 

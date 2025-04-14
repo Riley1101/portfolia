@@ -34,7 +34,7 @@ export function TableBlock({ value }: Props) {
             ))}
           </tr>
         </thead>
-        <tbody className="  bg-[#f056c705] bg-gradient-to-r border-theme-accent-opaque">
+        <tbody className="  bg-[#f056c705] bg-linear-to-r border-theme-accent-opaque">
           {body?.map((row) => (
             <tr key={row._key}>
               {row.cells.map((cell) => (
