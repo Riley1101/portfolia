@@ -20,7 +20,10 @@
     <Sidebar />
     <div
       id="body"
-      class={cn(activePanel === "main" && "bg-card text-card-foreground")}
+      class={cn(
+        "p-4",
+        activePanel === "main" && "bg-card text-card-foreground",
+      )}
     >
       {@render children()}
     </div>

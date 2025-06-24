@@ -19,7 +19,7 @@ export class App {
   constructor() {
     this.panel = $state("nav");
     this.buffer = $state("");
-    this.bufferTimeOut = 300;
+    this.bufferTimeOut = 200;
     this.bufferTimer = $state();
   }
 
@@ -48,6 +48,13 @@ export class App {
       case "Tab":
         this.togglePanel();
         break;
+      case "0":
+      case "1":
+      case "2":
+      case "3":
+      case "4":
+        this.goToKey(key);
+        break;
       default:
         break;
     }
@@ -56,13 +63,6 @@ export class App {
       switch (key) {
         case "g":
           console.log("Only 'g' was pressed.");
-          break;
-        case "0":
-        case "1":
-        case "2":
-        case "3":
-        case "4":
-          this.goToKey(key);
           break;
         default:
           break;
