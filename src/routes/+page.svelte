@@ -1,12 +1,3 @@
-<script lang="ts">
-  import { cn } from "$lib/utils";
-  import { getAppContext } from "$lib/states/context";
-  const app = getAppContext();
-  const activePanel = $derived(app.getCurrentPanel());
-</script>
-
-<nav id="sidebar" class={cn("border-r", activePanel === "nav" && "bg-card text-card-foreground")}>
-  sidebar
-</nav>
-
-<div id="body" class={cn(activePanel === "main" && "bg-card text-card-foreground")}>body</div>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla provident
+blanditiis dignissimos accusamus id sequi natus hic iure quia nemo et laborum
+eligendi, officiis iste molestias dolorem tempora optio consectetur?

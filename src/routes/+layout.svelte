@@ -16,7 +16,7 @@
 </svelte:head>
 
 <main class="dark w-full h-dvh overflow-hidden bg-background font-mono">
-  <Layout app={app}>
+  <Layout {app}>
     {@render children()}
   </Layout>
 </main>

@@ -1,93 +1,106 @@
+import { goto } from "$app/navigation";
+import { NAVMAP } from "./constants";
+
 type Panel = "nav" | "main";
 
-const keys = ["Tab", "g"];
+const globalKeys = ["Tab"];
+
+const panelKeys = {
+  nav: ["0", "1", "2", "3"],
+  main: ["j", "k", "g"],
+};
 
 export class App {
-	panel: Panel;
-	buffer: string;
-	bufferTimeOut: number;
-	bufferTimer: number | undefined;
+  panel: Panel;
+  buffer: string;
+  bufferTimeOut: number;
+  bufferTimer: number | undefined;
 
-	constructor() {
-		this.panel = $state("nav");
-		this.buffer = $state("");
-		this.bufferTimeOut = 300;
-		this.bufferTimer = $state();
-	}
+  constructor() {
+    this.panel = $state("nav");
+    this.buffer = $state("");
+    this.bufferTimeOut = 300;
+    this.bufferTimer = $state();
+  }
 
-	/**
-	 * Init keyboard event listener
-	 */
-	public onKeyPress(e: KeyboardEvent) {
-		const { key } = e;
-		if (!keys.includes(key)) return;
+  /**
+   * Init keyboard event listener
+   */
+  public onKeyPress(e: KeyboardEvent) {
+    const { key } = e;
+    const activeKeys = panelKeys[this.panel];
+    if (!globalKeys.includes(key) && !activeKeys.includes(key)) return;
 
-		clearTimeout(this.bufferTimer);
-		this.buffer += key;
+    clearTimeout(this.bufferTimer);
 
-		/** Double sequences **/
-		switch (this.buffer) {
-			case "gg":
-				console.log("double");
-				this.resetBuffer();
-				break;
-			default:
-				break;
-		}
+    this.buffer += key;
 
-		/** Double sequences **/
-		switch (key) {
-			case "Tab":
-				this.togglePanel();
-				this.resetBuffer();
-				break;
-			default:
-				break;
-		}
+    /** Double sequences **/
+    switch (this.buffer) {
+      case "gg":
+        break;
+      default:
+        break;
+    }
 
-		this.bufferTimer = setTimeout(() => {
-			switch (key) {
-				case "g":
-					console.log("Only 'g' was pressed.");
-					break;
-				default:
-					break;
-			}
-			this.resetBuffer();
-		}, this.bufferTimeOut);
-	}
+    /** Double sequences **/
+    switch (key) {
+      case "Tab":
+        this.togglePanel();
+        break;
+      default:
+        break;
+    }
 
-	/**
-	 * getCurrentPanel
-	 */
-	getCurrentPanel() {
-		return this.panel;
-	}
+    this.bufferTimer = setTimeout(() => {
+      switch (key) {
+        case "g":
+          console.log("Only 'g' was pressed.");
+          break;
+        case "0":
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+          this.goToKey(key);
+          break;
+        default:
+          break;
+      }
+      this.resetBuffer();
+    }, this.bufferTimeOut);
+  }
 
-	private resetBuffer() {
-		this.buffer = "";
-	}
+  /**
+   * getCurrentPanel
+   */
+  public getCurrentPanel() {
+    return this.panel;
+  }
 
-	private togglePanel() {
-		console.log("toggle", this.panel);
-		if (this.panel === "nav") {
-			this.panel = "main";
-		} else {
-			this.panel = "nav";
-		}
-	}
+  /**
+   * getCurrentBuffer
+   */
+  public getCurrentBuffer() {
+    return this.buffer;
+  }
 
-	/**
-	 * getPanel
-	 */
-	public getPanel() {
-		return this.panel;
-	}
+  private goToKey(key: string) {
+    const path = NAVMAP.get(key);
+    if (path) {
+      goto(path.path);
+    }
+  }
 
-	/**
-	 * getBuffer
-	 */
-	public getCmds() {
-		return this.buffer;
-	}
+  private resetBuffer() {
+    this.buffer = "";
+  }
+
+  private togglePanel() {
+    if (this.panel === "nav") {
+      this.panel = "main";
+    } else {
+      this.panel = "nav";
+    }
+  }
 }
