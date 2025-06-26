@@ -307,11 +307,11 @@
 
 @layer utilities {
   .app_shell {
-    @apply w-full h-full grid grid-rows-[2.5em_1fr_2em];
+    @apply w-full h-full lg:grid lg:grid-rows-[2.5em_1fr_2em];
   }
 
   .app_body {
-    @apply w-full h-full col-span-1 grid grid-cols-[230px_1fr];
+    @apply w-full h-full col-span-1 grid lg:grid-cols-[230px_1fr] overflow-hidden;
   }
 
   .app_status {

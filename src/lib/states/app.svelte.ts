@@ -15,12 +15,16 @@ export class App {
   buffer: string;
   bufferTimeOut: number;
   bufferTimer: number | undefined;
+  cursor: number;
+  maxCursor: number;
 
   constructor() {
     this.panel = $state("nav");
     this.buffer = $state("");
     this.bufferTimeOut = 200;
     this.bufferTimer = $state();
+    this.cursor = $state(0);
+    this.maxCursor = $state(0);
   }
 
   /**
@@ -55,6 +59,18 @@ export class App {
       case "4":
         this.goToKey(key);
         break;
+      case "j":
+        if (this.cursor < this.maxCursor) {
+          console.log("plus one");
+          this.cursor++;
+        }
+        break;
+      case "k":
+        if (this.cursor > 0) {
+          console.log("minus one");
+          this.cursor--;
+        }
+        break;
       default:
         break;
     }
@@ -83,6 +99,20 @@ export class App {
    */
   public getCurrentBuffer() {
     return this.buffer;
+  }
+
+  /**
+   * setMaxCursor
+   */
+  public setMaxCursor(max: number) {
+    this.maxCursor = max;
+  }
+
+  /**
+   * getCursor
+   */
+  public getCursor() {
+    return this.cursor;
   }
 
   private goToKey(key: string) {

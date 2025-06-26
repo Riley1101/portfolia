@@ -12,16 +12,16 @@
 
 <svelte:window on:keydown|preventDefault={(e) => app.onKeyPress(e)} />
 
-<div class="app_shell">
-  <div class="app_status">
+<div class="app_shell w-full relative">
+  <div class="app_status hidden lg:flex">
     <StatusBar />
   </div>
-  <div class="app_body text-foreground">
+  <div class="w-full app_body text-foreground">
     <Sidebar />
     <div
       id="body"
       class={cn(
-        "p-4",
+        "p-2 lg:p-4 overflow-hidden w-full h-full",
         activePanel === "main" && "bg-card text-card-foreground",
       )}
     >

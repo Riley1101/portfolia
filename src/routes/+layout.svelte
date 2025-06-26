@@ -15,7 +15,7 @@
   />
 </svelte:head>
 
-<main class="dark w-full h-dvh overflow-hidden bg-background font-mono">
+<main class="dark w-full min-h-dvh lg:h-dvh overflow-hidden bg-background font-mono relative">
   <Layout {app}>
     {@render children()}
   </Layout>

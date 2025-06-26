@@ -9,7 +9,7 @@
   const buffers = $derived(app.getCurrentBuffer().split(""));
 </script>
 
-<footer class="px-4 border-t w-full h-full flex items-center bg-card">
+<footer class="hidden px-4 border-t w-full h-full lg:flex items-center bg-card">
   <ul class="text-xs flex items-center text-card-foreground vertical-center">
     {#each TAB as nav}
       <li class="flex items-center gap-2 mr-4">
