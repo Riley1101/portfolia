@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@internationalized/date": "^3.8.1",
-		"@lucide/svelte": "^0.523.0",
+		"@lucide/svelte": "^0.515.0",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
@@ -21,6 +21,7 @@
 		"@tailwindcss/vite": "^4.0.0",
 		"bits-ui": "^2.8.6",
 		"clsx": "^2.1.1",
+		"embla-carousel-svelte": "^8.6.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"tailwind-merge": "^3.3.1",

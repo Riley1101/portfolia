@@ -20,7 +20,9 @@
 >
   <ul class="w-full flex gap-2 flex-col">
     <li class="w-full mx-autom mb-2">
-      <span class="w-full block text-center align-bottom text-base text-cyan-600">
+      <span
+        class="w-full block text-center align-bottom text-base text-cyan-600"
+      >
         ╔════ NAV ════╗
       </span>
     </li>
