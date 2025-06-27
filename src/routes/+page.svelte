@@ -62,13 +62,15 @@
   const currentCursor = $derived(app.getCursor());
 </script>
 
-<div class="font-mono space-y-4">
+<span class="block text-left align-bottom text-base text-cyan-600">
+  ╔════ HELLO! ════╗
+</span>
+<hr class="h-2 mt-2 mb-4">
+
+<div class="font-mono">
   <FocusBox id={0} cursor={currentCursor}>
     <div class="border border-double p-4">
-      <div class="mt-4 flex flex-col gap-4">
-        <span class="text-left align-bottom text-base text-cyan-600">
-          ╔════ HELLO ════╗
-        </span>
+      <div class="flex flex-col gap-4">
         <h1 class="content font-semibold text-2xl text-primary">
           I'm Arkar Myat
         </h1>
