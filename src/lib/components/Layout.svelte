@@ -18,15 +18,18 @@
   </div>
   <div class="w-full app_body text-foreground">
     <Sidebar />
-    <div
+    <main
       id="body"
+      onmouseenter={() => {
+        app.setPanel("main");
+      }}
       class={cn(
         "p-2 lg:p-4 overflow-hidden w-full h-full",
-        activePanel === "main" && "bg-card text-card-foreground",
+        activePanel === "main" && "bg-card/30 text-card-foreground",
       )}
     >
       {@render children()}
-    </div>
+    </main>
   </div>
   <div class="app_footer">
     <Footer />

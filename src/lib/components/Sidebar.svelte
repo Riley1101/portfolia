@@ -11,20 +11,26 @@
 </script>
 
 <nav
+  onmouseenter={() => app.setPanel("nav")}
   id="sidebar_desktop"
   class={cn(
     "border-r p-2 hidden lg:flex",
-    activePanel === "nav" && "bg-card text-card-foreground",
+    activePanel === "nav" && "bg-card/30 text-card-foreground",
   )}
 >
   <ul class="w-full flex gap-2 flex-col">
+    <li class="w-full mx-autom mb-2">
+      <span class="w-full block text-center align-bottom text-base text-cyan-600">
+        ╔════ NAV ════╗
+      </span>
+    </li>
     {#each NAV as nav}
       <li class="w-full">
         <Preload path={nav.path}>
           <Button
             href={nav.path}
             variant={page.route.id === nav.path ? "outline" : "ghost"}
-            class="w-full justify-start"
+            class="w-full justify-start border-double"
           >
             [{nav.id}] {nav.name}
           </Button>
