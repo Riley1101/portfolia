@@ -7,11 +7,11 @@ export function Intro() {
       <p className="text-gray-300 leading-relaxed ">
         An inspiring software engineer{" "}
         <a
-          href="https://fortune.com"
+          href="https://www.artian.ai/"
           target="_blank"
-          className="text-theme-accent"
+          className="text-theme-primary"
         >
-          @Fortune
+          @Artian
         </a>
         , Coding with a strong passion for design and computer science, I enjoy
         creating amazing things and building blazingly-fast websites.
