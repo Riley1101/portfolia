@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React, { useTransition } from "react";
+import { useTransition } from "react";
 import type { Category } from "@/types/articles";
 import cx from "classnames";
 
@@ -37,14 +37,18 @@ export function Categories({ categories }: Props) {
 
   if (!categories) return null;
   return (
-    <div className="border p-4 border-theme-accent-opaque glass-box rounded-theme sticky top-10 md:top-20">
-      <div className="flex max-h-max py-2 md:py-0 gap-2 md:flex-wrap  overflow-x-auto">
+    <div className="sticky top-10 border border-theme-accent-opaque p-4 glass-box rounded-theme md:top-20" role="group" aria-label="Filter by category">
+      <div className="flex gap-2 overflow-x-auto py-2 md:flex-wrap md:py-0">
         <button
+          type="button"
           onClick={() => handleFilter("All")}
           className={cx(
-            `text-sm flex  cursor-pointer items-center hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-theme`,
+            "flex min-w-max cursor-pointer items-center border border-transparent px-4 py-2 text-sm rounded-theme",
+            "transition-[color,background-color,border-color] duration-300",
+            "hover:border-theme-primary/5 hover:bg-theme-primary/5 hover:text-theme-accent",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary focus-visible:ring-offset-2 focus-visible:ring-offset-theme-bg-base",
             {
-              "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
+              "border-theme-primary/5 bg-theme-primary/5 text-theme-accent":
                 params.get("category") === "All" || !params.get("category"),
             },
             isPending && "cursor-wait",
@@ -54,12 +58,16 @@ export function Categories({ categories }: Props) {
         </button>
         {categories.map((item) => (
           <button
-            onClick={() => handleFilter(item.title)}
+            type="button"
             key={item._id}
+            onClick={() => handleFilter(item.title)}
             className={cx(
-              `text-sm min-w-max  cursor-pointer hover:text-theme-accent py-2 hover:bg-theme-primary duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all border  border-transparent px-4  rounded-theme`,
+              "flex min-w-max cursor-pointer items-center border border-transparent px-4 py-2 text-sm rounded-theme",
+              "transition-[color,background-color,border-color] duration-300",
+              "hover:border-theme-primary/5 hover:bg-theme-primary/5 hover:text-theme-accent",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary focus-visible:ring-offset-2 focus-visible:ring-offset-theme-bg-base",
               {
-                "bg-theme-primary bg-opacity-5 border-opacity-5 border-theme-primary text-theme-accent":
+                "border-theme-primary/5 bg-theme-primary/5 text-theme-accent":
                   params.get("category") === item.title,
               },
               isPending && "cursor-wait",

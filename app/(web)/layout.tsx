@@ -3,7 +3,6 @@ import "dracula-prism/dist/css/dracula-prism.min.css";
 import GradientMesh from "@/components/common/gradient-mesh";
 import Header from "@/components/common/header";
 import NavAside from "@/components/common/nav-aside";
-import React from "react";
 import type { Metadata } from "next";
 import { AnalyticsWrapper } from "@/components/common/analytics";
 import { Merriweather } from "next/font/google";
@@ -81,21 +80,26 @@ export default function RootLayout({
     <html lang="en" className={ubuntu.className}>
       <head />
       <CSPostHogProvider>
-        <body className="overflow-hidden bg-[#121212]">
-          <div className="w-full overflow-hidden md:px-[15%] lg:pr-[0%] max-h-dvh bg-[#33161600]">
+        <body className="overflow-hidden bg-theme-bg-base">
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100000] focus:px-4 focus:py-2 focus:rounded-theme focus:ring-2 focus:ring-theme-primary focus:ring-offset-2 focus:ring-offset-theme-bg-base focus:bg-theme-bg-elevated focus:outline-none"
+          >
+            Skip to main content
+          </a>
+          <div className="w-full overflow-hidden max-h-dvh bg-theme-bg-base/0 px-4 md:px-8 lg:px-10 xl:px-12">
             <Header />
             <div
-              className="row-start-2  md:row-start-1 col-start-2 grid grid-cols-1 
-          lg:grid-cols-[200px_auto] xl:grid-cols-[200px_auto] w-full text-theme-body overflow-hidden"
+              className="grid w-full max-w-[1400px] mx-auto grid-cols-1 text-theme-body overflow-hidden lg:grid-cols-[200px_minmax(0,1fr)]"
             >
               <div className="hidden lg:block">
                 <NavAside />
               </div>
               <main
                 id="main"
-                className="h-dvh scroll-mt-1 z-[10]  pt-[6em] p-4 overflow-y-scroll md:p-0 lg:p-12 md:pt-[6em]"
+                className="h-dvh scroll-mt-1 z-[10] pt-[5.5rem] px-4 pb-8 overflow-y-scroll md:px-6 md:pt-[5.5rem] lg:px-10 lg:pt-[5.5rem]"
               >
-                <div className="mt-4 mb-4 flex flex-col w-full md:my-12">
+                <div className="mt-4 mb-4 flex flex-col w-full min-w-0 md:my-8 lg:my-10">
                   {children}
                 </div>
               </main>

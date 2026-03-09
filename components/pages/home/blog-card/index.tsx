@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import dateformat from "dateformat";
 import type { ArticlCardType } from "@/types/articles";
 
@@ -34,8 +34,7 @@ export default function HomeBlogCard({
       ref={container}
       onMouseMove={handleMouseMove}
       href={`/articles/${slug}`}
-      className="relative  md:brightness-75 md:hover:brightness-100 overflow-hidden flex flex-col gap-2 p-4 transition-all duration-500 rounded-md border
-hover:bg-gradient-to-r hover:from-theme-accent-opaque  border-theme-accent border-opacity-10 hover:border-opacity-20"
+      className="relative flex flex-col gap-2 overflow-hidden rounded-theme border border-theme-accent/10 p-4 transition-[border-color,filter,background-color] duration-300 hover:border-theme-accent/20 hover:bg-gradient-to-r hover:from-theme-accent-opaque md:brightness-75 md:hover:brightness-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary focus-visible:ring-offset-2 focus-visible:ring-offset-theme-bg-base"
     >
       <div
         ref={blob}

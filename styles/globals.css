@@ -4,20 +4,26 @@
 
 @layer utilities {
   .page-container {
-    @apply w-full grid  grid-cols-1 lg:grid-cols-[2.5fr_1fr] md:max-w-[800px] lg:max-w-[1140px];
+    @apply w-full grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-[2.5fr_1fr] md:max-w-[800px] lg:max-w-[1140px];
+  }
+  .page-left {
+    @apply min-w-0;
+  }
+  .page-right {
+    @apply min-w-0;
   }
   .glass-box {
-    @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.1];
+    @apply border border-theme-border border-theme-accent-opaque bg-theme-bg-elevated/10 bg-clip-padding backdrop-blur-lg backdrop-filter;
   }
   .card-glass-box {
-    @apply border-theme-accent-opaque  bg-gray-900  bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-[0.2] border-2;
+    @apply border-2 border-theme-border border-theme-accent-opaque bg-theme-bg-elevated/20 bg-clip-padding backdrop-blur-lg backdrop-filter;
   }
   .title {
     font-size: clamp(2.5rem, 5vw, 3rem);
   }
 
   .box {
-    @apply p-4 md:p-8 lg:p-12;
+    @apply p-4 md:p-6 lg:p-8;
   }
 }
 ::-moz-selection {
@@ -37,22 +43,21 @@
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #f056c71a #88ced309;
+  scrollbar-color: var(--scrollbar-thumb, #f056c71a) var(--scrollbar-track, #88ced309);
 }
 
-/* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 6px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #88ced309;
+  background: var(--scrollbar-track, #88ced309);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #f056c71a;
+  background-color: var(--scrollbar-thumb, #f056c71a);
   border-radius: 20px;
-  border: 3px solid #88ced309;
+  border: 3px solid var(--scrollbar-track, #88ced309);
 }
 
 code[class*="language-"],
@@ -91,6 +96,12 @@ pre[class*="language-"] {
   opacity: 0.7;
   transition: opacity 0.3s;
   border-radius: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-box:before {
+    transition: none;
+  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

@@ -1,4 +1,3 @@
-import React from "react";
 import type { SanityImage } from "@/types/sanity-image";
 import Image from "../sanity-image";
 import Link from "next/link";

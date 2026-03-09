@@ -1,5 +1,3 @@
-import React from "react";
-
 export function Loader() {
   return (
     <div className=" md:mt-8 w-full h-full min-h-[80vh] grid grid-rows-[150px,auto]  gap-4">

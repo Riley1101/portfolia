@@ -71,7 +71,6 @@ async function ProjectDetailPage(props: DetailPageParamTypes) {
           <PortableBody value={data.body} />
         </div>
       </div>
-
       <div className="hidden min-w-[200px] lg:block pt-24">
         <TableOfContents value={data.body} />
       </div>

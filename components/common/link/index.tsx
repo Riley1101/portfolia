@@ -1,13 +1,14 @@
 'use client'
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import cx from "classnames";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 interface Props {
   href: string;
-  icon: React.ReactNode;
-  children: React.ReactNode;
+  icon: ReactNode;
+  children: ReactNode;
   target?: string;
 }
 
@@ -18,19 +19,20 @@ function NavIconLink({ children, icon, href, target }: Props) {
       target={target}
       href={href}
       className={cx(
-        `text-sm flex cursor-pointer items-center hover:text-theme-accent py-3 hover:bg-theme-primary 
-        duration-300 hover:border-theme-primary hover:border-opacity-5 hover:bg-opacity-5 transition-all 
-        border  border-transparent px-4  rounded-theme`,
+        "flex cursor-pointer items-center gap-4 border border-transparent px-4 py-3 text-sm text-theme-body rounded-theme",
+        "transition-[color,background-color,border-color] duration-300",
+        "hover:text-theme-accent hover:bg-theme-primary/5 hover:border-theme-primary/5",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary focus-visible:ring-offset-2 focus-visible:ring-offset-theme-bg-base",
         {
-          "bg-theme-primary/5  border-opacity-5 border-theme-primary text-theme-accent":
+          "bg-theme-primary/5 border-theme-primary/5 text-theme-accent":
             `/${selected}` === href || (selected === null && href === "/"),
         },
       )}
     >
-      <span className="flex items-center gap-4 text-sm text-theme-body">
+      <span className="shrink-0 [&>svg]:size-5" aria-hidden>
         {icon}
-        {children}
       </span>
+      <span className="text-sm">{children}</span>
     </Link>
   );
 }

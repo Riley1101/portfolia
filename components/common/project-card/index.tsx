@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import type { Project } from "@/types/projects";
 import { LanguageLogo } from "../logos";
@@ -11,22 +10,20 @@ export function ProjectCard({ data }: Props) {
   return (
     <Link
       href={`/projects/${data.slug}`}
-      className="border-theme-primary border-opacity-10 transition-all duration-300 relative border hover:border-opacity-[0.2] hover:border-theme-primary group overflow-hidden rounded-lg  cursor-pointer  min-h-[200px]  p-4 flex flex-col justify-between"
+      className="group relative flex min-h-[200px] cursor-pointer flex-col justify-between rounded-theme border border-theme-primary/10 p-4 overflow-hidden transition-[border-color,background-color] duration-300 hover:border-theme-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-theme-primary focus-visible:ring-offset-2 focus-visible:ring-offset-theme-bg-base"
     >
       <div
-        className=" top-[0%] right-[-10%] transform-center translate-y-[-1/2] 
-        group-hover:w-[30%] w-[25%] duration-200 origin-center  transition-all
-        aspect-square  absolute  translate-x-[-1/2] gradient-one"
-      ></div>
+        className="absolute right-[-10%] top-0 aspect-square w-[25%] -translate-x-1/2 -translate-y-1/2 origin-center gradient-one transition-[width] duration-200 group-hover:w-[30%]"
+        aria-hidden
+      />
       <div
-        className="w-[40px] p-2 grid place-items-center aspect-square border rounded-full
-      border-theme-accent-opaque group-hover:border-theme-primary-opaque group-hover:rotate-[30deg] transition-all duration-500"
+        className="grid aspect-square w-10 place-items-center rounded-full border border-theme-accent-opaque p-2 transition-[border-color,transform] duration-500 group-hover:border-theme-primary-opaque group-hover:rotate-[30deg]"
       >
         <LanguageLogo type={data.language} />
       </div>
-      <div>
-        <h2 className="text-base  mb-1 font-bold text-white">{data.title}</h2>
-        <p className="text-sm text-gray-400">{data.description}</p>
+      <div className="min-w-0">
+        <h2 className="mb-1 text-base font-bold text-theme-body">{data.title}</h2>
+        <p className="text-sm text-theme-body/80 line-clamp-2">{data.description}</p>
       </div>
     </Link>
   );

@@ -1,6 +1,6 @@
+import type { ReactElement } from "react";
 import cx from "classnames";
 import NavIconLink from "../link";
-import React from "react";
 import {
   HomeIcon,
   PencilIcon,
@@ -19,7 +19,7 @@ export type Nav = {
   id: number;
   name: string;
   href: string;
-  icon: React.ReactElement;
+  icon: ReactElement;
 };
 
 export const navs: Nav[] = [
@@ -85,10 +85,10 @@ function NavASide() {
   return (
     <nav
       className={cx(
-        "z-[20] transition-all flex-col pt-0 lg:pt-[8em] col-start-1 gap-4 lg:pointer-events-auto lg:flex",
+        "z-[20] col-start-1 flex flex-col gap-4 pt-0 lg:pt-[8em] lg:pointer-events-auto lg:flex",
       )}
     >
-      <div className="flex flex-col gap-2 p-4 border rounded-md glass-box ">
+      <div className="flex flex-col gap-2 rounded-theme border border-theme-border p-4 glass-box">
         <div className="flex flex-col gap-2 ">
           {navs.map((nav) => (
             <NavIconLink key={nav.id} href={nav.href} icon={nav.icon}>

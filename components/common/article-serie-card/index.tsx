@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useTransition } from "react";
+import { useTransition } from "react";
 import cx from "classnames";
 import dateformat from "dateformat";
 import { ArticlCardType } from "@/types/articles";
