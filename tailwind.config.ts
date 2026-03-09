@@ -18,11 +18,17 @@ const config: Config = {
       colors: {
         "theme-bg-secondary": "#16142d",
         "theme-bg": "#131127",
+        "theme-bg-base": "#121212",
+        "theme-bg-elevated": "#141518",
         "theme-primary": "#f056c8",
         "theme-primary-opaque": "#f056c71a",
         "theme-accent": "#88ced3",
         "theme-accent-opaque": "#88ced309",
         "theme-body": "#cbd5e1",
+        "theme-border": "#1f2937",
+      },
+      borderRadius: {
+        theme: "0.375rem",
       },
       fontFamily: {
         theme: ["Ubuntu", "Inter", "sans-serif"],

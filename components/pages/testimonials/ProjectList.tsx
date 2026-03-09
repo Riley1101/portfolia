@@ -1,4 +1,3 @@
-import React from "react";
 import { Project } from "./Project";
 import type { Project as ProjectType } from "@/types/page/testimonials";
 

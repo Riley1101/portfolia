@@ -34,7 +34,7 @@ export default async function ArticlePage({
   return (
     <div className="page-container gap-4 md:gap-12">
       <div className="page-left">
-        <Banner></Banner>
+        <Banner />
         <div className="block md:hidden row-start-1 lg:col-start-2">
           <Categories categories={categories} />
         </div>

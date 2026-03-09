@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { getGithubFeed } from "@/utils/github-feed";
 import { Github } from "@/components/common/icons";

@@ -1,6 +1,6 @@
 "use client";
 import { toUrl } from "@/utils/to-url";
-import React, { useState } from "react";
+import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import cx from "classnames";
 import Link from "next/link";

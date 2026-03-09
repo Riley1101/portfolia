@@ -1,4 +1,3 @@
-import React from "react";
 import { ProjectCard } from "@/components/common/project-card";
 import { getHomeProjects } from "@/actions/projectActions";
 

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import SanityImage from "@/components/common/sanity-image";
 import dateformat from "dateformat";
 import type { ArticlCardType } from "@/types/articles";

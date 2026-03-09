@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useCallback } from "react";
 import NavASide from "../nav-aside/index";
 
 type Props = {
@@ -6,20 +9,39 @@ type Props = {
 };
 
 export default function NavModal({ visible, toggle }: Props) {
-  if (visible)
-    return (
+  const onEscape = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Escape") toggle();
+    },
+    [toggle],
+  );
+
+  useEffect(() => {
+    if (!visible) return;
+    document.addEventListener("keydown", onEscape);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onEscape);
+      document.body.style.overflow = "";
+    };
+  }, [visible, onEscape]);
+
+  if (!visible) return null;
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation menu"
+      className="fixed inset-0 z-[999] grid h-dvh w-full place-items-center overflow-y-auto overscroll-contain bg-theme-bg-base/80 py-6 backdrop-blur-lg"
+      onClick={toggle}
+    >
       <div
-        role="dialog"
-        className="fixed top-0 left-0 grid place-items-center  z-[999] w-full h-dvh backdrop-filter backdrop-blur-lg bg-[#121212] bg-opacity-[0.6]"
-        onClick={toggle}
+        className="w-[90%] max-w-sm rounded-theme bg-theme-bg-elevated shadow-lg"
+        onClick={(e) => e.stopPropagation()}
       >
-        <div
-          className="w-[90%] bg-[#141518] rounded-lg shadow-lg "
-          onClick={(e) => e.stopPropagation()}
-        >
-          <NavASide />
-        </div>
+        <NavASide />
       </div>
-    );
-  return <></>;
+    </div>
+  );
 }

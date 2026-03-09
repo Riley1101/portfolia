@@ -1,7 +1,7 @@
 "use client";
 
+import type { ReactElement } from "react";
 import NavIconLink from "../link";
-import React from "react";
 import {
   HomeIcon,
   UserIcon,
@@ -19,7 +19,7 @@ export type Nav = {
   id: number;
   name: string;
   href: string;
-  icon: React.ReactElement;
+  icon: ReactElement;
 };
 
 export const navs: Nav[] = [

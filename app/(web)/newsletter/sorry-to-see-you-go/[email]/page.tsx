@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, use } from "react";
+import { useState, use } from "react";
 import { unsubscribe } from "@/actions/newsLetterActions";
 import { useTransition } from "react";
 

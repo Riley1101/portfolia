@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Img from "next/image";
 import { useImage } from "./getImage";
 import { rgbDataURL } from "@/utils/image-blur";

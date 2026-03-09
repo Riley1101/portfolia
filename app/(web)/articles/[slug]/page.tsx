@@ -2,6 +2,7 @@ export const revalidate = 60;
 
 import Hero from "@/components/pages/article/hero";
 import PortableBody from "@/components/common/portable";
+import { PrismHighlight } from "@/components/common/portable/PrismHighlight";
 import TableOfContents from "@/components/common/toc";
 import type { ArticleDetailType } from "@/types/articles";
 import type { DetailPageParamTypes } from "@/types";
@@ -54,12 +55,13 @@ async function ArticleDetailPage(props: DetailPageParamTypes) {
           <TableOfContents value={data.body} />
         </div>
         <div className="flex flex-col">
-          <PortableBody value={data.body} />
+          <PrismHighlight>
+            <PortableBody value={data.body} />
+          </PrismHighlight>
           <NewsLetter />
           <Related data={data.related} />
         </div>
       </div>
-
       <div className="hidden min-w-[200px] lg:block pt-24">
         <TableOfContents value={data.body} />
       </div>

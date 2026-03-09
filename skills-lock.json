@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "skills": {
+    "building-components": {
+      "source": "vercel/components.build",
+      "sourceType": "github",
+      "computedHash": "ca96444b70257eb3f4f4c76dfdd4a32312c835fe3c8755d2e3d75ac78d384bfd"
+    },
+    "next-upgrade": {
+      "source": "vercel-labs/next-skills",
+      "sourceType": "github",
+      "computedHash": "be6bbf6ab1dc2cc6f2505cea52d497920c04f5b532c0846ee201f6029b803fb0"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "3462ec83f862abb2d532953df33a4dbf87f4616849da5d4b5cc7c13601aaf997"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "a6a44d5498f7e8f68289902f3dedfc6f38ae0cee1e96527c80724cf27f727c2a"
+    }
+  }
+}

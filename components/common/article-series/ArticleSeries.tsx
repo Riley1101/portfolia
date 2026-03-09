@@ -1,4 +1,3 @@
-import React from "react";
 import type { Serie } from "@/types/series";
 import { ArticlCardType } from "@/types/articles";
 import { ArticleSerieCard } from "@/components/common/article-serie-card";

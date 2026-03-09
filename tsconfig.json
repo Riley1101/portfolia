@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -11,7 +15,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -24,9 +28,15 @@
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "paths": {
-      "@/*": ["./*"],
-      "@design/*": ["./components/design/*"],
-      "@styles/*": ["./styles/*"]
+      "@/*": [
+        "./*"
+      ],
+      "@design/*": [
+        "./components/design/*"
+      ],
+      "@styles/*": [
+        "./styles/*"
+      ]
     },
     "plugins": [
       {
@@ -39,7 +49,10 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "next-sitemap.config.js"
+    "next-sitemap.config.js",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
